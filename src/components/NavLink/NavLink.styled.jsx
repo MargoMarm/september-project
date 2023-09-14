@@ -5,16 +5,14 @@ import { colors, mq } from '../../utils';
 
 export const Link = styled(NavLink)`
   box-sizing: border-box;
-  width: 136px;
-  height: 42px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: ${props => (props.isInHeader ? '10px 27px' : '12px 40px')};
+  display: inline;
   gap: 10px;
   border-radius: 12px;
 
   background-color: ${props => (props.isOrange ? colors.orange : 'none')};
-  border: ${props => props.isOrange ? 'none' : '1px solid rgba(239, 237, 232, 0.30)'};
+  border: ${props =>
+    props.isOrange ? 'none' : '1px solid rgba(239, 237, 232, 0.30)'};
   color: ${colors.white};
 
   font-size: 16px;
@@ -22,8 +20,7 @@ export const Link = styled(NavLink)`
   line-height: 1.13;
 
   ${mq.tablet} {
-    width: 190px;
-    height: 56px;
+    padding: ${props => (props.isInHeader ? '10px 27px' : '16px 60px')};
 
     font-size: 20px;
     line-height: 1.2;
