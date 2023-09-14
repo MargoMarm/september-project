@@ -81,4 +81,4 @@ Error generating stack: `+i.message+`
     width: 1440px;
     padding: 0px 96px;
   }
-`,tv=()=>Ue.jsx(ev,{children:Ue.jsx(N.Suspense,{fallback:null,children:Ue.jsx(Bd,{})})}),nv=N.lazy(()=>qh(()=>import("./Home-42939b83.js"),[]));function rv(){return Ue.jsx(Wd,{children:Ue.jsx(Li,{path:"/",element:Ue.jsx(tv,{}),children:Ue.jsx(Li,{index:!0,element:Ue.jsx(nv,{})})})})}Oi.createRoot(document.getElementById("root")).render(Ue.jsx(ca.StrictMode,{children:Ue.jsx(Qd,{basename:"/september-project",children:Ue.jsx(rv,{})})}));export{Ue as j};
+`,tv=()=>Ue.jsx(ev,{children:Ue.jsx(N.Suspense,{fallback:null,children:Ue.jsx(Bd,{})})}),nv=N.lazy(()=>qh(()=>import("./Home-e8d0b587.js"),[]));function rv(){return Ue.jsx(Wd,{children:Ue.jsx(Li,{path:"/",element:Ue.jsx(tv,{}),children:Ue.jsx(Li,{index:!0,element:Ue.jsx(nv,{})})})})}Oi.createRoot(document.getElementById("root")).render(Ue.jsx(ca.StrictMode,{children:Ue.jsx(Qd,{basename:"/september-project",children:Ue.jsx(rv,{})})}));export{Ue as j};
