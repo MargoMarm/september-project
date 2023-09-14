@@ -12,7 +12,7 @@ const NavLink = ({ to, isOrange, text }) => {
 
 NavLink.propTypes = {
   to: PropTypes.string,
-  isOrange: PropTypes.string,
+  isOrange: PropTypes.bool,
   text: PropTypes.string,
 };
 
