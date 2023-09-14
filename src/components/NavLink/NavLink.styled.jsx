@@ -13,8 +13,8 @@ export const Link = styled(NavLink)`
   gap: 10px;
   border-radius: 12px;
 
-  background-color: ${props => (props.signUp ? colors.orange : 'none')};
-  border: ${props => props.signUp ? 'none' : '1px solid rgba(239, 237, 232, 0.30)'};
+  background-color: ${props => (props.isOrange ? colors.orange : 'none')};
+  border: ${props => props.isOrange ? 'none' : '1px solid rgba(239, 237, 232, 0.30)'};
   color: ${colors.white};
 
   font-size: 16px;

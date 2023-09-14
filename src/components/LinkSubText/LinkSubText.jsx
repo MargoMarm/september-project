@@ -2,10 +2,10 @@ import { Text, Link } from './LinkSubText.styled';
 
 import PropTypes from 'prop-types';
 
-const LinkSubText = ({ to, linkText, children }) => {
+const LinkSubText = ({ to, linkText, text }) => {
   return (
     <Text>
-      {children}
+      {text}
       <Link to={to}>{linkText}</Link>
     </Text>
   );
@@ -14,7 +14,7 @@ const LinkSubText = ({ to, linkText, children }) => {
 LinkSubText.propTypes = {
   to: PropTypes.string,
   linkText: PropTypes.string,
-  children: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default LinkSubText;
