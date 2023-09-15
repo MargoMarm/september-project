@@ -1,3 +1,4 @@
+import DayDiary from '../../components/DayProductsAndExercises/DayDiary';
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
         one place, delete them, or edit them. It has the functionality of
         registration, login and logout of users.
       </p>
+      <DayDiary />
     </>
   );
 };
