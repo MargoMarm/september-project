@@ -12,7 +12,7 @@ export const Link = styled(NavLink)`
   border-radius: 12px;
 
   background-color: ${props =>
-    props.isorange === 'true' ? colors.orange : 'none'};
+    props.isorange === 'true' ? colors.orange : 'inherit'};
   border: ${props =>
     props.isorange === 'true' ? 'none' : '1px solid rgba(239, 237, 232, 0.30)'};
   color: ${colors.white};
@@ -20,6 +20,13 @@ export const Link = styled(NavLink)`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.13;
+
+  &:hover {
+    background-color: ${props =>
+      props.isorange === 'true' ? colors.orangeSecondary : 'inherit'};
+    border: ${props =>
+      props.isorange === 'true' ? 'none' : '1px solid #E6533C'};
+  }
 
   ${mq.tablet} {
     padding: ${props =>
