@@ -1,6 +1,7 @@
 // import MainTitle from '../../components/MainTitle'
 import CustomBtn from '../../components/CustomNavLink/CustomNavLink';
-import { Container, Content, Img, Title, Text } from './Error.styled';
+import { Container, Content, Title, Text } from './Error.styled';
+import { Wrapper } from '../Home/Home.styled';
 
 const Error = () => {
   return (
@@ -17,7 +18,7 @@ const Error = () => {
         <CustomBtn type="button" text={'Go Home'} />
       </Content>
 
-      <Img></Img>
+      <Wrapper></Wrapper>
     </Container>
   );
 };

@@ -19,23 +19,34 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+
+  padding: 20px;
   background-color: ${colors.orange};
 
   ${mq.mobile} {
     width: 240px;
+    height: 100%;
   }
 
   ${mq.tablet} {
     width: 420px;
+    padding: 32px;
   }
 
   ${mq.desktop} {
     width: 670px;
+    padding: 96px;
   }
 `;
 
 export const Title = styled.h1`
+  margin-bottom: 14px;
+
   color: ${colors.white};
   font-family: Roboto;
   font-size: 66px;
@@ -48,6 +59,7 @@ export const Title = styled.h1`
   }
 
   ${mq.tablet} {
+    margin-bottom: 28px;
   }
 
   ${mq.desktop} {
@@ -55,6 +67,8 @@ export const Title = styled.h1`
 `;
 
 export const Text = styled.p`
+  margin-bottom: 28px;
+
   color: ${colors.white};
   font-family: Roboto;
   font-size: 14px;
@@ -63,11 +77,14 @@ export const Text = styled.p`
   line-height: 1.28;
 
   ${mq.mobile} {
+    width: 200px;
   }
 
   ${mq.tablet} {
+    width: 356px;
   }
 
   ${mq.desktop} {
+    width: 447px;
   }
 `;
