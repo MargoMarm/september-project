@@ -12,8 +12,8 @@ const CustomNavLink = ({ to, isorange, isinheader, text }) => {
 
 CustomNavLink.propTypes = {
   to: PropTypes.string,
-  isorange: PropTypes.bool,
-  isinheader: PropTypes.bool,
+  isorange: PropTypes.string,
+  isinheader: PropTypes.string,
   text: PropTypes.string,
 };
 
