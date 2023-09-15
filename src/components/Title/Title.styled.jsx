@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { mq, colors } from '../../utils';
 
-export const StyledTitle = styled.h1`
+export const StyledTitle = styled.h2`
   color: ${colors.white};
 
   font-family: Roboto;
