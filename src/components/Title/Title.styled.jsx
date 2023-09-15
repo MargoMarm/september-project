@@ -5,20 +5,17 @@ export const StyledTitle = styled.h2`
   color: ${colors.white};
 
   font-family: Roboto;
-  font-size: 38px;
+  font-size: 24px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.05;
   letter-spacing: 0.38px;
-
-  ${mq.mobile} {
-    width: 335px;
-  }
+  margin-bottom: ${props => props.margin}px;
 
   ${mq.tablet} {
-    width: 598px;
+    margin-bottom: ${props => props.margin + 2}px;
 
-    font-size: 70px;
+    font-size: 32px;
 
     line-height: 1.11;
     letter-spacing: 0.7px;

@@ -12,6 +12,26 @@ export const Text = styled.h1`
   letter-spacing: 0.38px;
   ${commonStyles}
 
+  & > span {
+    position: relative;
+    display: inline-block;
+
+    & > svg {
+      position: absolute;
+      width: 98px;
+      height: 35px;
+      left: -13px;
+      top: 1px;
+
+      ${mq.tablet} {
+        width: 185px;
+        height: 67px;
+        left: -20px;
+        top: 10px;
+      }
+    }
+  }
+
   ${mq.mobile} {
     width: 335px;
     line-height: 105.26%;
@@ -22,5 +42,8 @@ export const Text = styled.h1`
     font-size: 70px;
     line-height: 111.43%;
     letter-spacing: 0.7px;
+
+    padding-top: 116px;
+    margin-bottom: 64px;
   }
 `;
