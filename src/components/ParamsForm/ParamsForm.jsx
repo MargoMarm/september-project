@@ -42,12 +42,12 @@ const ParamsForm = () => {
 
   return (
     <Page
-      style={{
-        backgroundImage:
-          (steps === 1 && `url(${planka})`) ||
-          (steps === 2 && `url(${stretch})`) ||
-          (steps === 3 && `url(${leg})`),
-      }}
+    // style={{
+    //   backgroundImage:
+    //     (steps === 1 && `url(${planka})`) ||
+    //     (steps === 2 && `url(${stretch})`) ||
+    //     (steps === 3 && `url(${leg})`),
+    // }}
     >
       <Logo>PowerPulse</Logo>
 
@@ -112,7 +112,22 @@ const ParamsForm = () => {
                   Next
                 </BtnNav>
 
-                <ParamsBlockCard props={1} />
+                {/* <ParamsBlockCard
+                  type={'video'}
+                  mt_m="116px"
+                  ml_m="101px"
+                  mb_m="70px"
+                  mt_t="165px"
+                  ml_t="311px"
+                  mb_t="56px"
+                /> */}
+
+                {/* <ParamsBlockCard
+                  type={'users'}
+                  ml_m={'auto'}
+                  mb_m={'16px'}
+                  mb_t={'12px'}
+                /> */}
               </SwiperSlide>
 
               <SwiperSlide>
@@ -415,7 +430,22 @@ const ParamsForm = () => {
                   >
                     Next
                   </BtnNav>
+
+                  {/* <ParamsBlockCard
+                    type={'video'}
+                    ml_m="20px"
+                    mt_t="165px"
+                    ml_t="311px"
+                    mb_t="56px"
+                  /> */}
                 </BtnsAndBlock>
+
+                {/* <ParamsBlockCard
+                  type={'users'}
+                  ml_m={'auto'}
+                  mb_m={'16px'}
+                  mb_t={'12px'}
+                /> */}
               </SwiperSlide>
               <SwiperSlide>
                 <Title>Dear user</Title>

@@ -1,12 +1,14 @@
-import CustomNavLink from "../../components/CustomNavLink/CustomNavLink";
-import MainTitle from "../../components/MainTitle/MainTitle";
-import Header from "../../components/headersComp/Header/Header";
-import { LinkList, Wrapper } from "./Home.styled";
+import ParamsForm from '../../components/ParamsForm/ParamsForm';
+
+// import CustomNavLink from '../../components/CustomNavLink/CustomNavLink';
+// import MainTitle from '../../components/MainTitle/MainTitle';
+// import Header from '../../components/headersComp/Header/Header';
+// import { LinkList, Wrapper } from './Home.styled';
 
 const Home = () => {
   return (
     <>
-      <Wrapper>
+      {/* <Wrapper>
         <Header />
         <MainTitle />
         <LinkList>
@@ -17,7 +19,9 @@ const Home = () => {
             <CustomNavLink text={'Sign in'} to={'/signin'} />
           </li>
         </LinkList>
-      </Wrapper>
+      </Wrapper> */}
+
+      <ParamsForm />
     </>
   );
 };

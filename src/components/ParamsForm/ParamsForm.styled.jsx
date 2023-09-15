@@ -144,36 +144,6 @@ export const FormRadioBtnGroupWrapper = styled.div`
   }
 `;
 
-export const BlockVideo = styled.div`
-  ${mq.smallMobile} {
-    width: 146px;
-    height: 66px;
-
-    background: #303030;
-
-    border-radius: 12px;
-  }
-
-  ${mq.tablet} {
-    width: 206px;
-    height: 96px;
-  }
-`;
-
-export const BlockOrange = styled.div`
-  ${mq.smallMobile} {
-    width: 119px;
-    height: 76px;
-
-    border-radius: 12px;
-    background: #ef8964;
-  }
-  ${mq.tablet} {
-    width: 180px;
-    height: 110px;
-  }
-`;
-
 export const BtnsAndBlock = styled.div`
   display: flex;
   align-items: flex-start;
