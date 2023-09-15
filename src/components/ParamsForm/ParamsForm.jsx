@@ -2,7 +2,19 @@ import { Formik, Form } from 'formik';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import {
+  FormControl,
+  FormLabel,
+  FormControlLabel,
+  RadioGroup,
+  Radio,
+  colors,
+} from '@mui/material';
 
+import { colors as palette } from '../../utils';
+import planka from '../../assets/images/params-step1_mobile_1x.jpg';
+import stretch from '../../assets/images/params-step2_mobile_1x.jpg';
+import leg from '../../assets/images/params-step3_mobile_1x.jpg';
 import {
   Page,
   Logo,
@@ -20,22 +32,7 @@ import {
   BarItem,
 } from './ParamsForm.styled';
 
-import { colors as palette } from '../../utils';
-
-import img from '../../assets/images/params-step1_mobile_1x.jpg';
-import img2 from '../../assets/images/params-step1_mobile_1x.jpg';
-import img3 from '../../assets/images/params-step1_mobile_1x.jpg';
-
-import {
-  FormControl,
-  FormLabel,
-  FormControlLabel,
-  RadioGroup,
-  Radio,
-  colors,
-} from '@mui/material';
-
-export const ParamsForm = () => {
+const ParamsForm = () => {
   const [swiperRef, setSwiperRef] = useState(null);
   const [steps, setSteps] = useState(1);
 
@@ -47,9 +44,9 @@ export const ParamsForm = () => {
     <Page
       style={{
         backgroundImage:
-          (steps === 1 && `url(${img})`) ||
-          (steps === 2 && `url(${img2})`) ||
-          (steps === 3 && `url(${img3})`),
+          (steps === 1 && `url(${planka})`) ||
+          (steps === 2 && `url(${stretch})`) ||
+          (steps === 3 && `url(${leg})`),
       }}
     >
       <Logo>PowerPulse</Logo>
@@ -74,12 +71,14 @@ export const ParamsForm = () => {
             >
               <SwiperSlide>
                 <Title>Get closer to your goals</Title>
-                <Text style={{ marginBottom: '50px' }}>
+
+                <Text>
                   To ensure a personalized user experience and the proper
                   functioning of our platform, we ask you to provide the
                   following information about your weight, height and other
                   relevant data:
                 </Text>
+
                 <InputGroup>
                   <FormikField
                     name="height"
@@ -113,8 +112,8 @@ export const ParamsForm = () => {
                   Next
                 </BtnNav>
 
-                <BlockVideo style={{ margin: '116px auto 70px' }}></BlockVideo>
-                <BlockOrange style={{ margin: '0 0 16px auto' }}></BlockOrange>
+                <BlockVideo></BlockVideo>
+                <BlockOrange></BlockOrange>
               </SwiperSlide>
 
               <SwiperSlide>
@@ -425,6 +424,7 @@ export const ParamsForm = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <Title>Dear user</Title>
+
                 <Text style={{ marginBottom: '28px' }}>
                   Thank you for filling in all the required data. We greatly
                   appreciate your cooperation and commitment to a healthy
@@ -433,6 +433,7 @@ export const ParamsForm = () => {
                 </Text>
 
                 <BtnSubmit>Go</BtnSubmit>
+
                 <BtnNav
                   type="button"
                   onClick={() => {
@@ -477,3 +478,5 @@ export const ParamsForm = () => {
     </Page>
   );
 };
+
+export default ParamsForm;
