@@ -1,0 +1,1 @@
+import{j as e}from"./index-120927f8.js";import{T as t,S as r}from"./SubTitle-c7c47b6d.js";import{W as s,H as o}from"./Home.styled-5e7bf35a.js";const m=()=>e.jsxs(s,{children:[e.jsx(o,{}),e.jsx(t,{text:"Sign In",margin:14}),e.jsx(r,{text:"Welcome! Please enter your credentials to login to the platform:"})]});export{m as default};
