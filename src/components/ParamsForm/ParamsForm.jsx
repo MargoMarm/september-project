@@ -24,13 +24,13 @@ import {
   InputGroup,
   FormRadioBtnGroupWrapper,
   BtnNav,
-  BlockVideo,
-  BlockOrange,
   BtnsAndBlock,
   BtnSubmit,
   ProgressBar,
   BarItem,
 } from './ParamsForm.styled';
+
+import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
 
 const ParamsForm = () => {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -112,8 +112,7 @@ const ParamsForm = () => {
                   Next
                 </BtnNav>
 
-                <BlockVideo></BlockVideo>
-                <BlockOrange></BlockOrange>
+                <ParamsBlockCard props={1} />
               </SwiperSlide>
 
               <SwiperSlide>
@@ -416,11 +415,7 @@ const ParamsForm = () => {
                   >
                     Next
                   </BtnNav>
-
-                  <BlockVideo></BlockVideo>
                 </BtnsAndBlock>
-
-                <BlockOrange style={{ marginLeft: 'auto' }}></BlockOrange>
               </SwiperSlide>
               <SwiperSlide>
                 <Title>Dear user</Title>
@@ -443,9 +438,6 @@ const ParamsForm = () => {
                 >
                   Back
                 </BtnNav>
-
-                <BlockVideo style={{ margin: '276px auto 25px' }}></BlockVideo>
-                <BlockOrange style={{ marginLeft: 'auto' }}></BlockOrange>
               </SwiperSlide>
             </Swiper>
           </Form>

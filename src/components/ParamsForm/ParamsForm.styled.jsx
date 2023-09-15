@@ -104,6 +104,8 @@ export const FormikField = styled(Field)`
     background-color: transparent;
     color: ${colors.textWhite06};
 
+    transition: border-color 250ms linear;
+
     &::placeholder {
       color: ${colors.textWhite06};
     }
