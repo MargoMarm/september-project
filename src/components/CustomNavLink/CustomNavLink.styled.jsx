@@ -7,7 +7,7 @@ export const Link = styled(NavLink)`
   box-sizing: border-box;
   padding: ${props =>
     props.isinheader === 'true' ? '10px 27px' : '12px 40px'};
-  display: inline;
+  display: inline-block;
   gap: 10px;
   border-radius: 12px;
 
