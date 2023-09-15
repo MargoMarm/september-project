@@ -12,11 +12,11 @@ export const Container = styled.div`
 
   ${mq.tablet} {
     width: 768px;
-    padding: 0px 32px;
+    ${'' /* padding: 0px 32px; */}
   }
 
   ${mq.desktop} {
     width: 1440px;
-    padding: 0px 96px;
+    ${'' /* padding: 0px 96px; */}
   }
 `;
