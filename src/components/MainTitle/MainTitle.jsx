@@ -7,7 +7,7 @@ export default function MainTitle() {
       Transforming your{' '}
       <span>
         body{' '}
-        <svg width={185} height={67}>
+        <svg>
           <use href={sprite + `#line`}></use>
         </svg>
       </span>{' '}
