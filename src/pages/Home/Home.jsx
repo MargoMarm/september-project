@@ -1,14 +1,15 @@
+import Title from '../../components/Title/Title';
+import SubTitle from '../../components/SubTitle/SubTitle';
 
 const Home = () => {
   return (
     <>
-      <h1>Welcome! </h1>
-      <p>
-        This is my very first React application with the usage of Redux and some
-        other libraries. It's a simple app when you can save your contacts in
-        one place, delete them, or edit them. It has the functionality of
-        registration, login and logout of users.
-      </p>
+      <Title text={'Transforming your body shape with Power Pulse'} />
+      <SubTitle
+        text={
+          'Thank you for your interest in our platform. To complete the registration process, please provide us with the following information.'
+        }
+      />
     </>
   );
 };
