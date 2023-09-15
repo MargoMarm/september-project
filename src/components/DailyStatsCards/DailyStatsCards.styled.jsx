@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors} from '../../utils';
+import { colors, mq } from '../../utils';
 
 export const CardWrap = styled.div`
   box-sizing: border-box;
@@ -26,11 +26,23 @@ export const CardWrap = styled.div`
   width: 150px;
   height: 96px;
   padding: 10px;
+  ${mq.mobile} {
+    padding: 14px;
+  }
+  ${mq.tablet} {
+    padding: 18px;
+  }
+  ${mq.desktop} {
+    padding: 14px;
+  }
 `;
 
 export const KeyWrap = styled.div`
   display: flex;
   gap: 3px;
+  ${mq.mobile} {
+    gap: 8px;
+  }
 `;
 
 export const Svg = styled.svg`
@@ -50,12 +62,13 @@ export const Label = styled.span`
   font-style: normal;
   font-weight: 400;
   line-height: ${16 / 12};
+  ${mq.tablet} {
+    line-height: ${18 / 12};
+  }
 `;
 
 export const KeyValue = styled.p`
-  color: ${props => {
-    return props.fill === 'true' ? colors.textWhite06 : colors.textWhite05;
-  }};
+  color: ${colors.white};
   margin: 0;
 
   font-family: Roboto;
@@ -63,4 +76,9 @@ export const KeyValue = styled.p`
   font-style: normal;
   font-weight: 700;
   line-height: ${18 / 20};
+
+  ${mq.tablet} {
+    font-size: 24px;
+    line-height: ${32 / 24};
+  }
 `;
