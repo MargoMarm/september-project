@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-import {imgForHome} from '../../assets/images';
-import { colors, mq } from '../../utils';
+import { imgForHome } from '../../assets/images';
+import { mq } from '../../utils';
 
 export const LinkList = styled.ul`
   display: flex;
