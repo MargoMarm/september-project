@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-import { mq } from '../../utils';
-import colors from '../../utils/colorVeriables';
+import { mq, colors } from '../../utils';
 
 const commonStyles = {
   color: colors.white,
