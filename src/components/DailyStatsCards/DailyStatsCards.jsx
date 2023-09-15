@@ -1,24 +1,30 @@
 import PropTypes from 'prop-types';
-import { KeyWrap, CardWrap,Svg } from './DailyStatsCards.styled';
+import {
+  KeyWrap,
+  CardWrap,
+  Svg,
+  KeyValue,
+  Label,
+} from './DailyStatsCards.styled';
 
 const DailyStatsCards = ({
   icon,
   keyValue,
   label,
   border = 'default',
-  fill = false,
+  fill = 'false',
 }) => {
   return (
-    <CardWrap>
+    <CardWrap fill={fill} border={border}>
       <KeyWrap>
         <Svg>
           <use href={`/src/assets/sprite.svg#${icon}`}></use>
         </Svg>
 
-        <span>{keyValue}</span>
+        <Label>{label}</Label>
       </KeyWrap>
 
-      <p>{label}</p>
+      <KeyValue>{keyValue}</KeyValue>
     </CardWrap>
   );
 };
@@ -27,8 +33,8 @@ DailyStatsCards.propTypes = {
   icon: PropTypes.string.isRequired,
   keyValue: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  border: PropTypes.string,
-  fill: PropTypes.bool,
+  border: PropTypes.oneOf(['green', 'red', "default"]),
+  fill: PropTypes.oneOf(['true', 'false']),
 };
 
 export default DailyStatsCards;

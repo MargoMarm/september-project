@@ -13,12 +13,64 @@ function App() {
   //   console.log(test);
   return (
     <>
-      <DailyStatsCards icon="fire" keyValue="wow" label="work more"></DailyStatsCards>
-      <Routes>
+      <ul
+        style={{
+          listStyle: 'none',
+          padding: '10px',
+          display: 'grid',
+          gridTemplateColumns: "1fr 1fr",
+          justifyContent: 'space-around',
+          gap: '8px',
+          backgroundColor: 'black',
+          border: '1px solid red',
+        }}
+      >
+        <li>
+          <DailyStatsCards
+            icon="running-man"
+            label=" The rest of sports"
+            keyValue="2200"
+            fill="false"
+            border="default"
+          />
+        </li>
+
+        <li>
+          <DailyStatsCards
+            icon="running-man"
+            label=" The rest of sports"
+            keyValue="2200"
+            fill="false"
+            border="default"
+          />
+        </li>
+
+        <li>
+          <DailyStatsCards
+            icon="running-man"
+            label=" The rest of sports"
+            keyValue="2200"
+            fill="false"
+            border="default"
+          />
+        </li>
+
+        <li>
+          <DailyStatsCards
+            icon="running-man"
+            label=" The rest of sports"
+            keyValue="2200"
+            fill="false"
+            border="default"
+          />
+        </li>
+      </ul>
+
+      {/* <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
         </Route>
-      </Routes>
+      </Routes> */}
     </>
   );
 }
