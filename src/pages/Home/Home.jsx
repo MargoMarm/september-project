@@ -1,4 +1,4 @@
-
+// import {Navbar} from "../../components/MobMenu/Sidebar"
 const Home = () => {
   return (
     <>
@@ -9,6 +9,7 @@ const Home = () => {
         one place, delete them, or edit them. It has the functionality of
         registration, login and logout of users.
       </p>
+      {/* <Navbar/>  тільки для тесту , можна видаляти*/}
     </>
   );
 };
