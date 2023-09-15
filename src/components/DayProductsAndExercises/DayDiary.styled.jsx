@@ -4,12 +4,13 @@ import { NavLink } from 'react-router-dom';
 import { colors, mq } from '../../utils';
 
 export const DayDiaryContainer = styled.div`
+  position: relative;
   box-sizing: border-box;
-  display: flex;
+  display: block;
   width: 100%;
   height: 335px;
-  padding: 0 20px;
-  justify-content: space-between;
+  margin: 0 20px;
+  padding: 16px;
   align-items: flex-start;
 
   font-size: 14px;
@@ -18,10 +19,50 @@ export const DayDiaryContainer = styled.div`
   border-radius: 12px;
   border: 1px solid ${colors.textWhite02};
   background: rgba(239, 237, 232, 0.05);
+
+  ${mq.mobile} {
+    width: 335px;
+  }
+
+  ${mq.tablet} {
+    width: 704px;
+    height: 234px;
+  }
+
+  ${mq.desktop} {
+    width: 826px;
+  }
 `;
 
-export const DayDiarySubTitle = styled.h4``;
+export const DayDiarySubDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
-export const AddLink = styled(NavLink)``;
+export const DayDiarySubTitle = styled.p`
+  margin: 0;
 
-export const DayNoContentText = styled.p``;
+  color: ${colors.textWhite05};
+`;
+
+export const AddLink = styled(NavLink)`
+  display: flex;
+  align-items: center;
+
+  color: ${colors.orange};
+`;
+
+export const DayNoContentText = styled.p`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: ${colors.textWhite05};
+`;
+
+export const ArrowRight = styled.svg`
+  width: 16px;
+  height: 16px;
+  padding-left: 8px;
+`;

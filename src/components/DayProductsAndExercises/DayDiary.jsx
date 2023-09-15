@@ -5,15 +5,25 @@ import {
   DayDiarySubTitle,
   AddLink,
   DayNoContentText,
+  ArrowRight,
+  DayDiarySubDiv,
 } from './DayDiary.styled';
+import sprite from '../../assets/sprite.svg';
 
-const DayDiary = ({ isDayProducts }) => {
+const DayDiary = ({ to, isDayProducts }) => {
   return (
     <DayDiaryContainer>
-      <DayDiarySubTitle>
-        {isDayProducts ? 'Products' : 'Exercises'}
-      </DayDiarySubTitle>
-      <AddLink>Add {isDayProducts ? 'product' : 'exercise'}</AddLink>
+      <DayDiarySubDiv>
+        <DayDiarySubTitle>
+          {isDayProducts ? 'Products' : 'Exercises'}
+        </DayDiarySubTitle>
+        <AddLink to={to}>
+          Add {isDayProducts ? 'product' : 'exercise'}
+          <ArrowRight>
+            <use href={sprite + `#arrow-right`}></use>
+          </ArrowRight>
+        </AddLink>
+      </DayDiarySubDiv>
       <DayNoContentText>
         Not found {isDayProducts ? 'products' : 'exercises'}
       </DayNoContentText>
@@ -22,10 +32,8 @@ const DayDiary = ({ isDayProducts }) => {
 };
 
 DayDiary.propTypes = {
-  subTitleText: PropTypes.string,
-  addLinkText: PropTypes.string,
+  to: PropTypes.string,
   isDayProducts: PropTypes.string,
-  text: PropTypes.string,
 };
 
 export default DayDiary;
