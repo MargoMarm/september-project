@@ -23,17 +23,17 @@ export const Navbar = () => {
       <MenuBars to="#">
         <ButtonMenu type="button">
           <Svg>
-            <use href={sprite + `#fire`}></use>
+            <use href={sprite + `#settings`}></use>
           </Svg>
         </ButtonMenu>
         <ButtonMenu type="button">
           <Svg>
-            <use href={sprite + `#fork-and-knife`}></use>
+            <use href={sprite + `#ecllipse`}></use>
           </Svg>
         </ButtonMenu>
         <ButtonMenu type="button" onClick={showSidebar}>
           <Svg>
-            <use href={sprite + `#apple`}></use>
+            <use href={sprite + `#menu`}></use>
           </Svg>
         </ButtonMenu>
       </MenuBars>

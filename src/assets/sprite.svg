@@ -43,7 +43,7 @@
 </symbol>
 
 <symbol id="menu" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M4 16h16M4 8h24M4 24h24"></path>
+<path fill="none" stroke="#e6533c" style="stroke: var(--color1, #e6533c)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M4 16h16M4 8h24M4 24h24"></path>
 </symbol>
 
 <symbol id="fire" viewBox="0 0 32 32">
