@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import image from '../../assets/images/home-page_mobile_1x.jpg';
 
 import { colors, mq } from '../../utils';
 
@@ -33,32 +32,6 @@ export const Content = styled.div`
 
   ${mq.desktop} {
     width: 670px;
-  }
-`;
-
-export const Img = styled.div`
-  padding: 32px;
-
-  width: 100vw;
-  height: 100vh;
-
-  background-image: url(${image});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  ${mq.mobile} {
-    width: 135px;
-  }
-
-  ${mq.tablet} {
-    width: 348px;
-  }
-
-  ${mq.desktop} {
-    width: 670px;
-    background-color: black;
-    padding-left: 100px;
   }
 `;
 
