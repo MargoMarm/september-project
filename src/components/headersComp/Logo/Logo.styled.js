@@ -15,11 +15,10 @@ export const WrapLogo = styled.div`
 `;
 
 export const Svg = styled.svg`
-  width: 36px;
+  width: 126px;
   height: 13px;
-
   ${mq.tablet} {
-    width: 126px;
-    height: 13px;
+    width: 152px;
+    height: 17px;
   }
 `;

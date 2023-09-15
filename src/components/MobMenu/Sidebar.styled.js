@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 import { mq } from '../../utils';
 
-export const MenuBars = styled.div`
-  margin-right: 2rem;
-`;
-
 const CommondStyledBtn = {
   display: 'flex',
   alignItems: 'center',
@@ -14,12 +10,28 @@ const CommondStyledBtn = {
   border: 'none',
 };
 
+export const MenuBars = styled.div`
+  display: flex;
+  margin-right: 20px;
+  gap: 14px;
+
+  ${mq.tablet} {
+    margin-right: 32px;
+    gap: 16px;
+  }
+`;
+
 export const ButtonMenu = styled.button`
   ${CommondStyledBtn}
   background-color: rgba(0, 0, 0, 0);
-  ${mq.tablet} {
+  ${mq.desktop} {
     display: none;
   }
+`;
+export const Svg = styled.svg`
+  fill: white;
+  width: 24px;
+  height: 24px;
 `;
 
 export const ButtonMenuExit = styled.button`

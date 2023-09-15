@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Header } from '../headersComp/Header/Header';
 import CustomNavLink from '../CustomNavLink/CustomNavLink';
 import {
   MenuBars,
@@ -10,9 +9,9 @@ import {
   ContainerMenu,
   ContainerLink,
   Span,
+  Svg,
 } from './Sidebar.styled';
 import sprite from '../../assets/sprite.svg';
-
 
 export const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -21,23 +20,30 @@ export const Navbar = () => {
 
   return (
     <>
-      <Header>
-        <MenuBars to="#">
-          <ButtonMenu type="button" onClick={showSidebar}>
-            <svg width={24} height={24} fill="white">
-              <use href={sprite + `#dumbbell`}></use>
-            </svg>{' '}
-          </ButtonMenu>
-        </MenuBars>
-      </Header>
+      <MenuBars to="#">
+        <ButtonMenu type="button">
+          <Svg>
+            <use href={sprite + `#fire`}></use>
+          </Svg>
+        </ButtonMenu>
+        <ButtonMenu type="button">
+          <Svg>
+            <use href={sprite + `#fork-and-knife`}></use>
+          </Svg>
+        </ButtonMenu>
+        <ButtonMenu type="button" onClick={showSidebar}>
+          <Svg>
+            <use href={sprite + `#apple`}></use>
+          </Svg>
+        </ButtonMenu>
+      </MenuBars>
 
       <ContainerMenu className={sidebar === true ? 'active' : ''}>
         <NavMenuItems onClick={showSidebar}>
           <ButtonMenuExit type="button" onClick={showSidebar}>
-            Exit
-            <svg width={24} height={24} fill="white">
-              <use href={sprite + `#fire`}></use>
-            </svg>{' '}
+            <Svg>
+              <use href={sprite + `#apple`}></use>
+            </Svg>
           </ButtonMenuExit>
           <ContainerLink>
             <CustomNavLink text="Diary" />
@@ -49,9 +55,9 @@ export const Navbar = () => {
             <MenuBars to="#">
               <ButtonMenu type="button" onClick={showSidebar}>
                 <Span> Logout</Span>
-                <svg width={24} height={24} fill="white">
-                  <use href={sprite + `#fire`}></use>
-                </svg>{' '}
+                <Svg>
+                  <use href={sprite + `#apple`}></use>
+                </Svg>
               </ButtonMenu>
             </MenuBars>
           </NavbarToggle>
