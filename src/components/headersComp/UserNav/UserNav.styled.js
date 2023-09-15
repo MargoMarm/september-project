@@ -8,7 +8,7 @@ export const WrapUserNav = styled.div`
   ${mq.desktop} {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     margin-left: auto;
   }
 `;
@@ -36,4 +36,8 @@ export const Span = styled.span`
   color: #efede8;
   font-size: 16px;
   line-height: 24px;
+
+  ${mq.desktop} {
+	gap: 8px;
+  }
 `;

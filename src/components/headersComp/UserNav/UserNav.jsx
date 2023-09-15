@@ -11,18 +11,18 @@ export const UserNav = () => {
       <ButtonWrap>
         <Button>
           <Svg>
-            <use href={sprite + `#fire`}></use>
+            <use href={sprite + `#settings`}></use>
           </Svg>{' '}
         </Button>
         <Button>
           <Svg>
-            <use href={sprite + `#fire`}></use>
+            <use href={sprite + `#ecllipse`}></use>
           </Svg>{' '}
         </Button>
         <Button>
           <Span>Logout</Span>
           <Svg>
-            <use href={sprite + `#fire`}></use>
+            <use href={sprite + `#log-out`}></use>
           </Svg>{' '}
         </Button>
       </ButtonWrap>
