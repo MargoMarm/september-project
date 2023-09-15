@@ -1,4 +1,6 @@
-import { Container, Content, Img, Title, Text, Button } from './Error.styled';
+// import MainTitle from '../../components/MainTitle'
+import CustomBtn from '../../components/CustomNavLink/CustomNavLink';
+import { Container, Content, Img, Title, Text } from './Error.styled';
 
 const Error = () => {
   return (
@@ -12,7 +14,7 @@ const Error = () => {
           another dimension. We apologize for this inconvenience.
         </Text>
 
-        <Button type="button">Go Home</Button>
+        <CustomBtn type="button" text={'Go Home'} />
       </Content>
 
       <Img></Img>

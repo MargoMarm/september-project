@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import image from '../../assets/images/home-page_mobile_1x.jpg';
 
 import { colors, mq } from '../../utils';
 
@@ -19,6 +20,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  padding: 32px;
   background-color: ${colors.orange};
 
   ${mq.mobile} {
@@ -26,24 +28,37 @@ export const Content = styled.div`
   }
 
   ${mq.tablet} {
+    width: 420px;
   }
 
   ${mq.desktop} {
+    width: 670px;
   }
 `;
 
 export const Img = styled.div`
-  background-color: black;
+  padding: 32px;
+
+  width: 100vw;
   height: 100vh;
+
+  background-image: url(${image});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   ${mq.mobile} {
     width: 135px;
   }
 
   ${mq.tablet} {
+    width: 348px;
   }
 
   ${mq.desktop} {
+    width: 670px;
+    background-color: black;
+    padding-left: 100px;
   }
 `;
 
@@ -53,19 +68,16 @@ export const Title = styled.h1`
   font-size: 66px;
   font-style: normal;
   font-weight: 500;
-  line-height: 1 
+  line-height: 1;
   letter-spacing: 0.66px;
 
-
-	${mq.mobile}{
-	
-	}
-
-
-	  ${mq.tablet} {
+  ${mq.mobile} {
   }
 
-		  ${mq.desktop} {
+  ${mq.tablet} {
+  }
+
+  ${mq.desktop} {
   }
 `;
 
@@ -76,30 +88,6 @@ export const Text = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
-
-  ${mq.mobile} {
-  }
-
-  ${mq.tablet} {
-  }
-
-  ${mq.desktop} {
-  }
-`;
-
-export const Button = styled.button`
-  padding: 12px 40px;
-
-  background-color: transparent;
-  border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.3);
-
-  color: ${colors.white};
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.12;
 
   ${mq.mobile} {
   }
