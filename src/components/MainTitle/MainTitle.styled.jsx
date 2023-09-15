@@ -9,7 +9,7 @@ const commonStyles = {
   wordWrap: 'break-word',
 };
 
-export const Text = styled.div`
+export const Text = styled.h1`
   width: 335px;
   font-size: 38px;
   line-height: 105.26%;

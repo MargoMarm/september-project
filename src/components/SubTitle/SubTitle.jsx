@@ -1,10 +1,10 @@
 import React from 'react';
 import { SubStyle } from './SubTitle.styled';
 
-const SubTitle = ({ children }) => {
+const SubTitle = ({ text }) => {
   return (
     <SubStyle>
-      <div>{children}</div>
+      <div>{text}</div>
     </SubStyle>
   );
 };

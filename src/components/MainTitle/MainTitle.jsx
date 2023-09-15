@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from './Title.styled'; 
+import { Text } from './MainTitle.styled'; 
 
 export default function Title() {
   return (
