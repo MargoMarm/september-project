@@ -9,23 +9,18 @@ const commonStyles = {
   wordWrap: 'break-word',
 };
 
-export const StyledTitle = styled.div`
+export const StyledTitle = styled.h2`
   h2 {
     ${commonStyles}
 
     ${mq.mobile} {
       font-size: 24px;
-      line-height: 28px;
+      line-height: 116.667%;
     }
 
     ${mq.tablet} {
       font-size: 32px;
-      line-height: 44px;
-    }
-
-    ${mq.desktop} {
-      font-size: 32px;
-      line-height: 44px;
+      line-height: 137.5%;
     }
   }
 `;

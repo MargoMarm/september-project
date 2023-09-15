@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledTitle } from './Title.styled';
 
-const TitleLess = ({ text }) => {
+const Title = ({ text }) => {
   return (
     <StyledTitle>
       <h2>{text}</h2>
@@ -9,4 +9,4 @@ const TitleLess = ({ text }) => {
   );
 };
 
-export default TitleLess;
+export default Title;
