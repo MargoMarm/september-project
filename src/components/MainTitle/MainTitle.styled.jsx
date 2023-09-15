@@ -43,7 +43,7 @@ export const Text = styled.h1`
     line-height: 111.43%;
     letter-spacing: 0.7px;
 
-    /* margin-top: 116px; */
+    padding-top: 116px;
     margin-bottom: 64px;
   }
 `;
