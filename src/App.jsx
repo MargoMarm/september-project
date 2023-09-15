@@ -13,7 +13,7 @@ function App() {
   //   console.log(test);
   return (
     <>
-      <DailyStatsCards label='run forest' fill='true' keyValue='i`m running' border='green' icon='fire'/>
+      {/* <DailyStatsCards label='run forest' fill='true' keyValue='i`m running' border='green' icon='fire'/> */}
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
