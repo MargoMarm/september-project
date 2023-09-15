@@ -5,17 +5,21 @@ import SharedLayout from './components/SharedLayout/SharedLayout';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
 
 const Home = lazy(() => import('../src/pages/Home/Home'));
+import DailyStatsCards from './components/DailyStatsCards/DailyStatsCards';
 
 const test = import.meta.env.VITE_API_TEST;
 
 function App() {
   //   console.log(test);
   return (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Home />} />
-      </Route>
-    </Routes>
+    <>
+      <DailyStatsCards icon="fire" keyValue="wow" label="work more"></DailyStatsCards>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 export default App;
