@@ -1,3 +1,4 @@
+@import 'node_modules/modern-normalize/modern-normalize.css';
 @font-face {
   font-family: 'Roboto';
   font-weight: 400;
@@ -20,6 +21,7 @@
     url('assets/fonts/roboto-bold-webfont.woff2') format('woff2'),
     url('assets/fonts/roboto-bold-webfont.woff') format('woff');
 }
+
 body {
   background-color: white;
   background-size: auto 100%;
@@ -54,4 +56,12 @@ img {
 }
 button {
   cursor: pointer;
+}
+
+.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
+  color: #efede8;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 128%; /* 128.571% */
 }
