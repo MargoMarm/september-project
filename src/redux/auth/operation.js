@@ -17,7 +17,8 @@ export const authUser = createAsyncThunk(
   'addUserStatus',
   async (user, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post('/api/auth/register', user);
+      const { data } = await axios.post('/api/users/register', user);
+      console.log(data);
       token.set(data.token);
       return data;
     } catch (error) {
@@ -27,11 +28,12 @@ export const authUser = createAsyncThunk(
   },
 );
 
-export const logIn = createAsyncThunk(
+export const logInUser = createAsyncThunk(
   'logInStatus',
   async (user, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post('/api/auth/login', user);
+      const { data } = await axios.post('/api/users/login', user);
+      console.log(data);
       token.set(data.token);
       return data;
     } catch (error) {
@@ -45,11 +47,12 @@ export const logIn = createAsyncThunk(
   },
 );
 
-export const logOut = createAsyncThunk(
+export const logOutUser = createAsyncThunk(
   'logOutStatus',
   async (_, { rejectWithValue }) => {
     try {
-      await axios.post('/api/auth/login');
+      await axios.post('/api/users/logout');
+      console.log('qwe');
       token.unSet();
     } catch (error) {
       toast.error('Oops, something went wrong((( Try again, please!');
@@ -70,7 +73,7 @@ export const fetchCurrentUser = createAsyncThunk(
     }
     token.set(persistedToken);
     try {
-      const { data } = await axios.get('/users/current');
+      const { data } = await axios.get('/api/users/current');
 
       return data;
     } catch (error) {

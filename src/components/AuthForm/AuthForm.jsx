@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { Formik, ErrorMessage } from 'formik';
-import sprite from '../../assets/sprite.svg';
+import { useState } from 'react';
 
+import sprite from '../../assets/sprite.svg';
 import {
   TextInput,
   FormContainer,
@@ -13,26 +14,27 @@ import {
   Warning,
 } from './AuthForm.styled';
 import AuthButton from '../AuthButton';
-import { useState } from 'react';
 
-const authSchema = Yup.object().shape({
-  name: Yup.string().required('Name is required'),
-  email: Yup.string()
-    .matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, {
-      message: 'Email must be valid',
-    })
-    .email('Invalid email')
-    .required('Email is required'),
-  password: Yup.string()
-    .matches(/^(&=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/, {
-      message: 'password must have ...',
-    })
-    .required('Password is required'),
-});
+const emailLyout = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+const passwordLayout = /^(&=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/;
 
-export default function AuthForm({ nameIsShown, btnTitle }) {
+export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
   const [typePasswordInput, setTypePasswordInput] = useState('password');
+
+  const validateName = nameIsShown => {
+    return nameIsShown ? Yup.string().required('Name is required') : null;
+  };
+  const authSchema = Yup.object().shape({
+    name: validateName(nameIsShown),
+    email: Yup.string()
+      .matches({ emailLyout, message: 'Email must be valid' })
+      .email('Invalid email')
+      .required('Email is required'),
+    password: Yup.string()
+      .matches({ passwordLayout, message: 'Password must contain...' })
+      .required('Password is required'),
+  });
 
   const initialValues = nameIsShown
     ? {
@@ -59,16 +61,20 @@ export default function AuthForm({ nameIsShown, btnTitle }) {
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={values => {
-        console.log(values);
-      }}
+      onSubmit={onSubmit}
       validationSchema={authSchema}
     >
       <FormContainer>
         <InputContainer>
           {nameIsShown && (
             <InputWrapper>
-              <TextInput id="name" type="text" placeholder="name" name="name" />
+              <TextInput
+                autocomplete="off"
+                id="name"
+                type="text"
+                placeholder="name"
+                name="name"
+              />
               <Warning>
                 <ErrorMessage name="name">
                   {msg => (
@@ -85,6 +91,7 @@ export default function AuthForm({ nameIsShown, btnTitle }) {
           )}
           <InputWrapper>
             <TextInput
+              autocomplete="off"
               id="email"
               type="email"
               placeholder="email"
@@ -105,12 +112,13 @@ export default function AuthForm({ nameIsShown, btnTitle }) {
           </InputWrapper>
           <InputWrapper>
             <TextInput
+              autocomplete="off"
               id="password"
               type={typePasswordInput}
               placeholder="password"
               name="password"
             />
-            <HidePasswordbtn onClick={toglePassword}>
+            <HidePasswordbtn onClick={toglePassword} type="button">
               <svg width="20" height="20">
                 <use
                   href={
