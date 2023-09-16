@@ -1,4 +1,4 @@
-import{n as s,m as e,j as t}from"./index-87c7a8db.js";import{c as n,s as o,W as r,H as p,L as x,C as i}from"./Home.styled-75dd96fa.js";const a={color:n.white,fontFamily:"Roboto",fontWeight:500,wordWrap:"break-word"},l=s.h1`
+import{n as s,m as e,j as t}from"./index-75daf448.js";import{c as n,s as o,W as r,H as p,L as x,C as i}from"./Home.styled-89f84e82.js";const a={color:n.white,fontFamily:"Roboto",fontWeight:500,wordWrap:"break-word"},l=s.h1`
   letter-spacing: 0.38px;
   ${a}
 
