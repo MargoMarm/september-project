@@ -1,1 +1,0 @@
-import{j as e}from"./index-dc240249.js";import{T as t,S as r,A as s}from"./AuthForm-7f7b1107.js";import{W as n,H as o}from"./Home.styled-c92e5331.js";const l=()=>e.jsxs(n,{children:[e.jsx(o,{}),e.jsx(t,{text:"Sign In",margin:14}),e.jsx(r,{text:"Welcome! Please enter your credentials to login to the platform:"}),e.jsx(s,{btnTitle:"Sign In",nameIsShown:!1})]});export{l as default};
