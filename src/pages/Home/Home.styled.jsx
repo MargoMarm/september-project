@@ -56,7 +56,6 @@ export const Wrapper = styled.div`
     }
   }
   ${mq.desktop} {
-    height: 800px;
     background-image: url(${imgForHome.imgDx1});
     background-size: 670px 800px;
 
