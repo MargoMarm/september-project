@@ -71,7 +71,14 @@ export default function AuthForm({ nameIsShown, btnTitle }) {
               <TextInput id="name" type="text" placeholder="name" name="name" />
               <Warning>
                 <ErrorMessage name="name">
-                  {msg => <Error>{msg}</Error>}
+                  {msg => (
+                    <Error>
+                      <svg width="20" height="20">
+                        <use href={sprite + `#icon-checkbox-circle-fill`}></use>
+                      </svg>
+                      {msg}
+                    </Error>
+                  )}
                 </ErrorMessage>
               </Warning>
             </InputWrapper>
@@ -85,7 +92,14 @@ export default function AuthForm({ nameIsShown, btnTitle }) {
             />
             <Warning>
               <ErrorMessage name="email">
-                {msg => <Error>{msg}</Error>}
+                {msg => (
+                  <Error>
+                    <svg width="20" height="20">
+                      <use href={sprite + `#icon-checkbox-circle-fill`}></use>
+                    </svg>
+                    {msg}
+                  </Error>
+                )}
               </ErrorMessage>
             </Warning>
           </InputWrapper>
@@ -108,12 +122,19 @@ export default function AuthForm({ nameIsShown, btnTitle }) {
             </HidePasswordbtn>
             <Warning>
               <ErrorMessage name="password">
-                {msg => <Error>{msg}</Error>}
+                {msg => (
+                  <Error>
+                    <svg width="20" height="20">
+                      <use href={sprite + `#icon-checkbox-circle-fill`}></use>
+                    </svg>
+                    {msg}
+                  </Error>
+                )}
               </ErrorMessage>
             </Warning>
           </InputWrapper>
         </InputContainer>
-        <AuthButton type="submit" title={btnTitle} />
+        <AuthButton title={btnTitle} />
       </FormContainer>
     </Formik>
   );

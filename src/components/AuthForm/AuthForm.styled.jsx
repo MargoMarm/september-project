@@ -59,6 +59,10 @@ export const Warning = styled.div`
 `;
 
 export const Error = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   font-size: 12px;
   color: ${colors.textError};
 `;
