@@ -15,7 +15,7 @@ const Error = () => {
           another dimension. We apologize for this inconvenience.
         </Text>
 
-        <CustomBtn type="button" text={'Go Home'} />
+        <CustomBtn type="button" text={'Go Home'} to={'/'} />
       </Content>
 
       <Wrapper></Wrapper>
