@@ -16,7 +16,7 @@ import {
 import AuthButton from '../AuthButton';
 
 const emailLyout = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-const passwordLayout = /^(&=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/;
+const passwordLayout = /^(?=.*[a-zA-Z]{6,})(?=.*\d)[a-zA-Z\d]{7,}$/;
 
 export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -32,7 +32,11 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
       .email('Invalid email')
       .required('Email is required'),
     password: Yup.string()
-      .matches({ passwordLayout, message: 'Password must contain...' })
+      .matches({
+        passwordLayout,
+        message:
+          'Password must contain 6+ letters, 1 number, and 1+ letter or number',
+      })
       .required('Password is required'),
   });
 
@@ -68,13 +72,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
         <InputContainer>
           {nameIsShown && (
             <InputWrapper>
-              <TextInput
-                autocomplete="off"
-                id="name"
-                type="text"
-                placeholder="name"
-                name="name"
-              />
+              <TextInput id="name" type="text" placeholder="name" name="name" />
               <Warning>
                 <ErrorMessage name="name">
                   {msg => (
@@ -91,7 +89,6 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
           )}
           <InputWrapper>
             <TextInput
-              autocomplete="off"
               id="email"
               type="email"
               placeholder="email"
@@ -112,7 +109,6 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
           </InputWrapper>
           <InputWrapper>
             <TextInput
-              autocomplete="off"
               id="password"
               type={typePasswordInput}
               placeholder="password"
