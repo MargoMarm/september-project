@@ -12,9 +12,9 @@ import {
 } from '@mui/material';
 
 import { colors as palette } from '../../utils';
-import planka from '../../assets/images/params-step1_mobile_1x.jpg';
-import stretch from '../../assets/images/params-step2_mobile_1x.jpg';
-import leg from '../../assets/images/params-step3_mobile_1x.jpg';
+import planka from '../../assets/images/params-step1_desktop_1x.jpg';
+import stretch from '../../assets/images/params-step2_desktop_1x.jpg';
+import leg from '../../assets/images/params-step3_desktop_1x.jpg';
 import {
   Page,
   Logo,
@@ -29,8 +29,10 @@ import {
   BarItem,
 } from './ParamsForm.styled';
 
-import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
+// import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
 import ParamsText from '../ParamsText/ParamsText';
+
+export const steps = 1;
 
 const ParamsForm = () => {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -57,12 +59,18 @@ const ParamsForm = () => {
           currentWeight: '',
           desiredWeight: '',
           birthday: '',
+          blood: '',
+          sex: '',
+          levelActivity: '',
         }}
-        onSubmit={values => {
+        onSubmit={(values, Formik) => {
           console.log(values);
+          Formik.resetForm();
+          setSteps(1);
+          slideTo(1);
         }}
       >
-        {({ handleChange }) => (
+        {({ handleChange, values }) => (
           <Form>
             <Swiper
               spaceBetween={10}
@@ -84,6 +92,7 @@ const ParamsForm = () => {
                     name="height"
                     placeholder="Height"
                     autoComplete="off"
+                    value={values.height}
                   />
                   <FormikField
                     name="currentWeight"
@@ -112,22 +121,26 @@ const ParamsForm = () => {
                   Next
                 </BtnNav>
 
-                <ParamsBlockCard
-                  type={'video'}
+                {/* <ParamsBlockCard
+                  data={350}
+                  type={'grey'}
                   mt_m={'100px'}
                   ml_m="101px"
-                  mb_m="70px"
+                  mb_m="75px"
                   mt_t="165px"
                   ml_t="311px"
                   mb_t="56px"
+                  mt_d="-200px"
+                  ml_d="674px"
                 />
 
                 <ParamsBlockCard
-                  type={'users'}
+                  data={300}
+                  type={'orange'}
                   ml_m={'auto'}
                   mb_m={'16px'}
                   mb_t={'12px'}
-                />
+                /> */}
               </SwiperSlide>
 
               <SwiperSlide>
@@ -139,8 +152,7 @@ const ParamsForm = () => {
                   <FormRadioBtnGroupWrapper>
                     <RadioGroup
                       aria-labelledby="demo-radio-buttons-group-label"
-                      defaultValue="1"
-                      name="radio-buttons-group"
+                      name="radio-buttons-group1"
                     >
                       <FormLabel
                         style={{
@@ -232,8 +244,7 @@ const ParamsForm = () => {
                     </RadioGroup>
                     <RadioGroup
                       aria-labelledby="demo-radio-buttons-group-label"
-                      defaultValue="1"
-                      name="radio-buttons-group"
+                      name="radio-buttons-group2"
                       style={{ marginLeft: '64px' }}
                     >
                       <FormLabel
@@ -290,8 +301,7 @@ const ParamsForm = () => {
 
                   <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="1"
-                    name="radio-buttons-group"
+                    name="radio-buttons-group3"
                   >
                     <FormLabel
                       style={{
@@ -430,20 +440,26 @@ const ParamsForm = () => {
                     Next
                   </BtnNav>
 
-                  <ParamsBlockCard
-                    type={'video'}
+                  {/* <ParamsBlockCard
+                    data={350}
+                    type={'grey'}
                     ml_m="20px"
                     mt_t="40px"
                     ml_t="165px"
-                  />
+                    ml_d="580px"
+                    mt_d="-300px"
+                  /> */}
                 </BtnsAndBlock>
 
-                <ParamsBlockCard
-                  type={'users'}
+                {/* <ParamsBlockCard
+                  data={300}
+                  type={'orange'}
                   ml_m={'auto'}
                   mb_m={'16px'}
                   mb_t={'12px'}
-                />
+                  mt_d={'-260px'}
+                  mb_d={'142px'}
+                /> */}
               </SwiperSlide>
               <SwiperSlide>
                 <Title>Dear user</Title>
@@ -467,16 +483,20 @@ const ParamsForm = () => {
                   Back
                 </BtnNav>
 
-                <ParamsBlockCard
-                  type={'video'}
+                {/* <ParamsBlockCard
+                  data={350}
+                  type={'grey'}
                   mt_m={'276px'}
                   ml_m={'101px'}
                   mb_m={'25px'}
                   mt_t={'249px'}
                   ml_t={'297px'}
                   mb_t={'56px'}
+                  mt_d={'-80px'}
+                  mb_d={'40px'}
+                  ml_d={'674px'}
                 />
-                <ParamsBlockCard type={'users'} ml_m={'auto'} />
+                <ParamsBlockCard type={'orange'} ml_m={'auto'} data={300} /> */}
               </SwiperSlide>
             </Swiper>
           </Form>

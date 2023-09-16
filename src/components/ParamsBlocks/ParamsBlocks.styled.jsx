@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
 import { mq, colors } from '../../utils';
 
-export const BlockVideoCard = styled.div`
+export const GreyCard = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   ${mq.smallMobile} {
     width: 146px;
     height: 66px;
@@ -33,8 +37,72 @@ export const BlockVideoCard = styled.div`
   }
 `;
 
-export const BlockOrangeCard = styled.div`
+export const GreySvgWrapper = styled.div`
   ${mq.smallMobile} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+
+    background: ${colors.orangeSecondary};
+
+    border-radius: 50%;
+  }
+
+  ${mq.tablet} {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+  }
+`;
+
+export const GreySvg = styled.div`
+  width: 10px;
+  height: 10px;
+  fill: ${colors.white};
+`;
+
+export const GreyTextWrapper = styled.div``;
+
+export const GreyDynamicText = styled.p`
+  ${mq.smallMobile} {
+    margin-bottom: 4px;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 112.5%;
+
+    color: ${colors.white};
+  }
+
+  ${mq.tablet} {
+    margin-bottom: 8px;
+    font-size: 24px;
+    line-height: 100%;
+  }
+`;
+
+export const GreyStaticText = styled.p`
+  ${mq.smallMobile} {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 133.3%;
+
+    color: rgba(239, 237, 232, 0.65);
+  }
+
+  ${mq.tablet} {
+    font-size: 16px;
+
+    line-height: 150%;
+  }
+`;
+
+export const OrangeCard = styled.div`
+  ${mq.smallMobile} {
+    padding: 14px 18px;
     width: 119px;
     height: 76px;
 
@@ -61,5 +129,70 @@ export const BlockOrangeCard = styled.div`
     margin-right: ${props => props.mr_d};
     margin-bottom: ${props => props.mb_d};
     margin-left: ${props => props.ml_d};
+  }
+`;
+
+export const OrangeSvgWrapper = styled.div`
+  ${mq.smallMobile} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+
+    background-color: #efa082;
+
+    border-radius: 50%;
+  }
+
+  ${mq.tablet} {
+    margin-bottom: 8px;
+
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const OrangeTextWrapper = styled.div`
+  display: flex;
+  align-items: baseline;
+`;
+
+export const OrangeDynamicText = styled.p`
+  ${mq.smallMobile} {
+    margin-right: 8px;
+
+    font-size: 24px;
+
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+
+    color: ${colors.white};
+  }
+
+  ${mq.tablet} {
+    margin-right: 11px;
+
+    font-size: 48px;
+    line-height: 104.167%;
+  }
+`;
+
+export const OrangeStaticText = styled.p`
+  ${mq.mobile} {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 133.33%;
+
+    color: rgba(239, 237, 232, 0.65);
+  }
+
+  ${mq.tablet} {
+    font-size: 16px;
+    line-height: 150%;
   }
 `;

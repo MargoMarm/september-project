@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Field } from 'formik';
+// import { steps } from './ParamsForm';
 
 import { colors, mq } from '../../utils';
 
@@ -18,6 +19,10 @@ export const Page = styled.div`
   ${mq.tablet} {
     padding: 32px;
   }
+
+  ${mq.desktop} {
+    padding: 32px 32px 32px 96px;
+  }
 `;
 
 export const Logo = styled.div`
@@ -31,6 +36,10 @@ export const Logo = styled.div`
 
   ${mq.tablet} {
     margin-bottom: 140px;
+  }
+
+  ${mq.desktop} {
+    margin-bottom: 151px;
   }
 `;
 
@@ -65,8 +74,8 @@ export const InputGroup = styled.div`
 
   ${mq.tablet} {
     justify-content: flex-start;
-    margin-bottom: 32px;
     width: 527px;
+    margin-bottom: 32px;
   }
 `;
 
@@ -77,6 +86,7 @@ export const FormikField = styled(Field)`
     margin: 7px;
 
     font-size: 14px;
+    line-height: 128.571%; /* 128.571% */
 
     border: 1px solid rgba(239, 237, 232, 0.3);
     border-radius: 12px;
@@ -98,6 +108,7 @@ export const FormikField = styled(Field)`
 
   ${mq.tablet} {
     font-size: 16px;
+    line-height: 150%;
   }
 `;
 
@@ -128,6 +139,10 @@ export const FormRadioBtnGroupWrapper = styled.div`
     display: flex;
     margin-bottom: 28px;
   }
+
+  ${mq.tablet} {
+    margin-bottom: 32px;
+  }
 `;
 
 export const BtnsAndBlock = styled.div`
@@ -142,17 +157,27 @@ export const BtnsAndBlock = styled.div`
 `;
 
 export const BtnSubmit = styled.button`
-  padding: 12px 40px;
+  ${mq.smallMobile} {
+    margin-right: 16px;
+    padding: 12px 40px;
 
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 112.5%; /* 112.5% */
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 112.5%; /* 112.5% */
 
-  color: ${colors.white};
-  background: ${colors.orange};
+    color: ${colors.white};
+    background: ${colors.orange};
 
-  border: none;
-  border-radius: 12px;
+    border: none;
+    border-radius: 12px;
+  }
+
+  ${mq.tablet} {
+    padding: 16px 75px;
+
+    font-size: 20px;
+    line-height: 120%; /* 120% */
+  }
 `;
 
 export const ProgressBar = styled.div`
