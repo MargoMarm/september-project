@@ -4,52 +4,26 @@ import colors from '../../utils/colorVeriables';
 import mq from '../../utils/mediaQuery';
 
 export const BtnSubtitleText = styled.span`
-  color: ${colors.textWhite06}; 
-  font-feature-settings:
-    'clig' off,
-    'liga' off;
+  color: ${colors.textWhite06};
   font-family: Roboto;
   font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-
-  ${mq.tablet} {
-    color: ${colors.textWhite06}; 
-    font-feature-settings:
-      'clig' off,
-      'liga' off;
-    font-family: Roboto;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
-  }
+  line-height: 150%;
 `;
 
 export const BtnSubtitleLink = styled(Link)`
-  color: ${colors.white}; 
-  font-feature-settings:
-    'clig' off,
-    'liga' off;
+  color: ${colors.white};
   font-family: Roboto;
   font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
+  line-height: 150%;
   text-decoration-line: underline;
   margin-left: 5px;
+`;
+
+export const TextWrapper = styled.div`
+  display: inline-block;
+  margin-top: 12px;
 
   ${mq.tablet} {
-    color: ${colors.white}; 
-    font-feature-settings:
-      'clig' off,
-      'liga' off;
-    font-family: Roboto;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
-    text-decoration-line: underline;
+    padding-left: 9px;
   }
 `;
