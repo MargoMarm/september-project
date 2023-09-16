@@ -1,42 +1,16 @@
-import {
-  Table,
-  Header,
-  HeaderRow,
-  Body,
-  Row,
-  HeaderCell,
-  Cell,
-} from '@table-library/react-table-library/table';
 import styled from '@emotion/styled';
 
-import { colors, mq } from '../../utils';
-
-export const CustomTable = styled(Table)`
-  margin-top: 19px;
-
-  background-color: inherit !important;
+export const DeleteBtn = styled.button`
+  padding: 0;
+  margin: 0;
+  background-color: inherit;
+  border: none;
+  display: flex;
 `;
 
-export const CustomHeader = styled(Header)`
-  background-color: inherit !important;
+export const DeleteIcon = styled.svg`
+  width: 20px;
+  height: 20px;
 `;
 
-export const CustomHeaderRow = styled(HeaderRow)`
-  background-color: inherit !important;
-`;
-
-export const CustomBody = styled(Body)`
-  background-color: inherit !important;
-`;
-
-export const CustomRow = styled(Row)`
-  background-color: inherit !important;
-`;
-
-export const CustomHeaderCell = styled(HeaderCell)`
-  background-color: inherit !important;
-`;
-
-export const CustomCell = styled(Cell)`
-  background-color: inherit !important;
-`;
+export const ScrollBarContainer = styled.div``;
