@@ -1,4 +1,4 @@
-import{n as i,N as b,m as o,g as h,j as t}from"./index-120927f8.js";const s={black:"#040404",white:"#EFEDE8",orange:"#E6533C",orangeSecondary:"#EF8964",textSuccess:"#3CBF61",textError:"#D80027",textWhite03:"rgba(239, 237, 232, 0.30);",textWhite05:"rgba(239, 237, 232, 0.50)",textWhite06:"rgba(239, 237, 232, 0.60)"},f=i(b)`
+import{n as i,N as b,m as o,g as h,j as t}from"./index-636c9545.js";const s={black:"#040404",white:"#EFEDE8",orange:"#E6533C",orangeSecondary:"#EF8964",textSuccess:"#3CBF61",textError:"#D80027",textWhite03:"rgba(239, 237, 232, 0.30);",textWhite05:"rgba(239, 237, 232, 0.50)",textWhite06:"rgba(239, 237, 232, 0.60)"},f=i(b)`
   box-sizing: border-box;
   padding: ${e=>e.isinheader==="true"?"10px 27px":"12px 40px"};
   display: inline-block;
@@ -24,7 +24,7 @@ import{n as i,N as b,m as o,g as h,j as t}from"./index-120927f8.js";const s={bla
     font-size: 20px;
     line-height: 1.2;
   }
-`;var d={exports:{}},y="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",k=y,v=k;function l(){}function x(){}x.resetWarningCache=l;var j=function(){function e(g,I,B,q,U,u){if(u!==v){var c=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw c.name="Invariant Violation",c}}e.isRequired=e;function r(){return e}var p={array:e,bigint:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:r,element:e,elementType:e,instanceOf:r,node:e,objectOf:r,oneOf:r,oneOfType:r,shape:r,exact:r,checkPropTypes:x,resetWarningCache:l};return p.PropTypes=p,p};d.exports=j();var $=d.exports;const a=h($),_=({to:e,isorange:r,isinheader:p,text:g})=>t.jsx(f,{isorange:r,isinheader:p,to:e,children:g});_.propTypes={to:a.string,isorange:a.string,isinheader:a.string,text:a.string};const w="/september-project/assets/sprite-7f6bfff0.svg",T=i.div`
+`;var d={exports:{}},y="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",k=y,v=k;function l(){}function x(){}x.resetWarningCache=l;var j=function(){function e(g,I,B,q,U,u){if(u!==v){var c=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw c.name="Invariant Violation",c}}e.isRequired=e;function r(){return e}var p={array:e,bigint:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:r,element:e,elementType:e,instanceOf:r,node:e,objectOf:r,oneOf:r,oneOfType:r,shape:r,exact:r,checkPropTypes:x,resetWarningCache:l};return p.PropTypes=p,p};d.exports=j();var $=d.exports;const a=h($),_=({to:e,isorange:r,isinheader:p,text:g})=>t.jsx(f,{isorange:r,isinheader:p,to:e,children:g});_.propTypes={to:a.string,isorange:a.string,isinheader:a.string,text:a.string};const w="/september-project/assets/sprite-e6c0fea4.svg",T=i.div`
   background-color: transparent;
   height: 84px;
   display: flex;
@@ -197,7 +197,6 @@ import{n as i,N as b,m as o,g as h,j as t}from"./index-120927f8.js";const s={bla
     }
   }
   ${o.desktop} {
-    height: 800px;
     background-image: url(${n.imgDx1});
     background-size: 670px 800px;
 
