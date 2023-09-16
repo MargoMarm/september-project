@@ -3,6 +3,8 @@ import MainTitle from '../../components/MainTitle/MainTitle';
 import Header from '../../components/headersComp/Header/Header';
 import { LinkList, Wrapper } from './Home.styled';
 
+import DiscriptionText from '../../components/DiscriptionText/DiscriptionText';
+
 const Home = () => {
   return (
     <>
@@ -18,6 +20,12 @@ const Home = () => {
           </li>
         </LinkList>
       </Wrapper>
+
+      <DiscriptionText
+        text={
+          'We understand that each individual is unique, so the entire approach to diet is relative and tailored to your unique body and goals.'
+        }
+      />
     </>
   );
 };
