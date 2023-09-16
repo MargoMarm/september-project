@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { Formik, ErrorMessage } from 'formik';
+import sprite from '../../assets/sprite.svg';
 
 import {
   TextInput,
@@ -9,8 +10,10 @@ import {
   InputContainer,
   InputWrapper,
   HidePasswordbtn,
+  Warning,
 } from './AuthForm.styled';
 import AuthButton from '../AuthButton';
+import { useState } from 'react';
 
 const authSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
@@ -28,6 +31,9 @@ const authSchema = Yup.object().shape({
 });
 
 export default function AuthForm({ nameIsShown, btnTitle }) {
+  const [isPasswordShown, setIsPasswordShown] = useState(false);
+  const [typePasswordInput, setTypePasswordInput] = useState('password');
+
   const initialValues = nameIsShown
     ? {
         name: '',
@@ -35,6 +41,20 @@ export default function AuthForm({ nameIsShown, btnTitle }) {
         password: '',
       }
     : { email: '', password: '' };
+
+  const toglePassword = () => {
+    setIsPasswordShown(prevstate => {
+      return !prevstate;
+    });
+    setTypePasswordInput(prevstate => {
+      if (prevstate === 'password') {
+        return 'text';
+      }
+      if (prevstate === 'text') {
+        return 'password';
+      }
+    });
+  };
 
   return (
     <Formik
@@ -47,29 +67,51 @@ export default function AuthForm({ nameIsShown, btnTitle }) {
       <FormContainer>
         <InputContainer>
           {nameIsShown && (
-            <>
+            <InputWrapper>
               <TextInput id="name" type="text" placeholder="name" name="name" />
-              <ErrorMessage name="name">
+              <Warning>
+                <ErrorMessage name="name">
+                  {msg => <Error>{msg}</Error>}
+                </ErrorMessage>
+              </Warning>
+            </InputWrapper>
+          )}
+          <InputWrapper>
+            <TextInput
+              id="email"
+              type="email"
+              placeholder="email"
+              name="email"
+            />
+            <Warning>
+              <ErrorMessage name="email">
                 {msg => <Error>{msg}</Error>}
               </ErrorMessage>
-            </>
-          )}
-          <TextInput id="email" type="email" placeholder="email" name="email" />
-          <ErrorMessage name="email">
-            {msg => <Error>{msg}</Error>}
-          </ErrorMessage>
+            </Warning>
+          </InputWrapper>
           <InputWrapper>
             <TextInput
               id="password"
-              type="password"
+              type={typePasswordInput}
               placeholder="password"
               name="password"
             />
+            <HidePasswordbtn onClick={toglePassword}>
+              <svg width="20" height="20">
+                <use
+                  href={
+                    sprite +
+                    `${isPasswordShown ? `#icon-eye-off` : `#icon-eye`}`
+                  }
+                ></use>
+              </svg>
+            </HidePasswordbtn>
+            <Warning>
+              <ErrorMessage name="password">
+                {msg => <Error>{msg}</Error>}
+              </ErrorMessage>
+            </Warning>
           </InputWrapper>
-          <ErrorMessage name="password">
-            {msg => <Error>{msg}</Error>}
-          </ErrorMessage>
-          <HidePasswordbtn></HidePasswordbtn>
         </InputContainer>
         <AuthButton type="submit" title={btnTitle} />
       </FormContainer>

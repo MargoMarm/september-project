@@ -54,13 +54,8 @@ export const TextInput = styled(Field)`
   }
 `;
 
-export const ShowPasswordBtn = styled.button`
+export const Warning = styled.div`
   position: absolute;
-  top: 200px;
-  right: 16px;
-  padding: 0;
-  border: none;
-  outline: none;
 `;
 
 export const Error = styled.div`
@@ -70,7 +65,20 @@ export const Error = styled.div`
 
 export const HidePasswordbtn = styled.button`
   position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
   padding: 0;
   border: none;
   outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  ${mq.tablet} {
+    right: 148px;
+  }
+  background-color: transparent;
+  stroke: ${colors.white};
 `;
