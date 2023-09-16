@@ -10,4 +10,4 @@
   textWhite06: 'rgba(239, 237, 232, 0.60)',
 };
 
-export default colors
+export default colors;

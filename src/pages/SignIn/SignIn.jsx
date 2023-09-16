@@ -5,8 +5,8 @@ import Header from '../../components/headersComp/Header/Header';
 
 const SignIn = () => {
   return (
-	  <Wrapper>
-		  <Header/>
+    <Wrapper>
+      <Header />
       <Title text={'Sign In'} margin={14} />
       <SubTitle
         text={
