@@ -9,8 +9,9 @@ import {
   DayDiarySubDiv,
 } from './DayDiary.styled';
 import sprite from '../../assets/sprite.svg';
+import ProductsTable from '../ProductsTable/ProductsTable';
 
-const DayDiary = ({ to, isDayProducts }) => {
+const DayDiary = ({ products, to, isDayProducts }) => {
   return (
     <DayDiaryContainer>
       <DayDiarySubDiv>
@@ -24,9 +25,13 @@ const DayDiary = ({ to, isDayProducts }) => {
           </ArrowRight>
         </AddLink>
       </DayDiarySubDiv>
-      <DayNoContentText>
-        Not found {isDayProducts ? 'products' : 'exercises'}
-      </DayNoContentText>
+      {products.length !== 0 ? (
+        <ProductsTable products={products} />
+      ) : (
+        <DayNoContentText>
+          Not found {isDayProducts ? 'products' : 'exercises'}
+        </DayNoContentText>
+      )}
     </DayDiaryContainer>
   );
 };
@@ -34,6 +39,7 @@ const DayDiary = ({ to, isDayProducts }) => {
 DayDiary.propTypes = {
   to: PropTypes.string,
   isDayProducts: PropTypes.string,
+  products: PropTypes.array,
 };
 
 export default DayDiary;
