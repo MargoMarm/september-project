@@ -19,11 +19,12 @@ export const CardWrap = styled.div`
     return props.fill === 'true' ? colors.orange : colors.textWhite005;
   }};
 
+  height: 96px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 150px;
+
   height: 96px;
   padding: 10px;
   ${mq.mobile} {
@@ -31,9 +32,10 @@ export const CardWrap = styled.div`
   }
   ${mq.tablet} {
     padding: 18px;
+    height: 116px;
   }
   ${mq.desktop} {
-    padding: 14px;
+    padding: 14px 18px;
   }
 `;
 
