@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { mq } from '../../../utils';
+import { mq, colors, button, svgUser } from '../../../utils';
 
 export const WrapUserNav = styled.div`
   ${mq.smallMobile} {
@@ -15,7 +15,10 @@ export const WrapUserNav = styled.div`
 export const Svg = styled.svg`
   width: 24px;
   height: 24px;
-  fill: white;
+  fill: ${colors.grey};
+`;
+export const SvgUser = styled.svg`
+  ${svgUser}
 `;
 export const ButtonWrap = styled.div`
   display: flex;
@@ -26,18 +29,15 @@ export const ButtonWrap = styled.div`
 export const Button = styled.button`
   display: flex;
   align-items: center;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
   gap: 5px;
+  ${button};
 `;
 export const Span = styled.span`
-  color: #efede8;
+  color: ${colors.orange};
   font-size: 16px;
   line-height: 24px;
 
   ${mq.desktop} {
-	gap: 8px;
+    gap: 8px;
   }
 `;

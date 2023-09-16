@@ -1,10 +1,11 @@
 import Title from '../../components/Title/Title';
 import SubTitle from '../../components/SubTitle/SubTitle';
-import { Wrapper } from '../Home/Home.styled';
 import Header from '../../components/headersComp/Header/Header';
 import AuthForm from '../../components/AuthForm';
 import { useDispatch } from 'react-redux';
 import { authUser } from '../../redux/auth/operation';
+import BtnSubtitle from '../../components/BtnSubtitle/BtnSubtitle';
+import { Wrapper } from '../Home/Home.styled';
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,12 @@ const SignUp = () => {
         }
       />
       <AuthForm nameIsShown={true} btnTitle="Sign Up" onSubmit={handleSubmit} />
+
+      <BtnSubtitle
+        text={'Already have account?'}
+        to={'/signin'}
+        linkText={'Sign In'}
+      />
     </Wrapper>
   );
 };
