@@ -13,7 +13,7 @@ const Error = lazy(() => import('../src/pages/Error/Error'));
 const test = import.meta.env.VITE_API_TEST;
 
 function App() {
-  //   console.log(test);
+	//   console.log(test);
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
