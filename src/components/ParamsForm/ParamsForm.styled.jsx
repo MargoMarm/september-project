@@ -53,23 +53,6 @@ export const Title = styled.h1`
   }
 `;
 
-export const Text = styled.p`
-  ${mq.smallMobile} {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 128.571%; /* 128.571% */
-
-    color: ${colors.textWhite03};
-  }
-
-  ${mq.tablet} {
-    width: 496px;
-
-    font-size: 16px;
-    line-height: 150%; /* 150% */
-  }
-`;
-
 export const InputGroup = styled.div`
   ${mq.smallMobile} {
     display: flex;
@@ -78,12 +61,10 @@ export const InputGroup = styled.div`
 
     margin: -7px;
     margin-bottom: 30px;
-    margin-top: 50px;
   }
 
   ${mq.tablet} {
     justify-content: flex-start;
-    margin-top: 54px;
     margin-bottom: 32px;
     width: 527px;
   }
@@ -114,25 +95,30 @@ export const FormikField = styled(Field)`
       border-color: ${colors.orange};
     }
   }
+
+  ${mq.tablet} {
+    font-size: 16px;
+  }
 `;
 
 export const BtnNav = styled.button`
   ${mq.smallMobile} {
-    color: ${colors.white};
-
+    ${'' /* padding: 0; */}
+    padding-top: 0;
+    padding-bottom: 0;
     font-size: 14px;
     font-weight: 400;
     line-height: 128%; /* 128.571% */
 
+    color: ${colors.white};
     background: transparent;
+
     border: none;
     outline: none;
   }
 
   ${mq.tablet} {
     font-size: 16px;
-
-    font-weight: 400;
     line-height: 150%;
   }
 `;
@@ -145,28 +131,13 @@ export const FormRadioBtnGroupWrapper = styled.div`
 `;
 
 export const BtnsAndBlock = styled.div`
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 25px;
-`;
-
-export const ProgressBar = styled.div`
   ${mq.smallMobile} {
     display: flex;
-    justify-content: space-around;
-    width: 178px;
-    height: 4px;
-    margin-top: auto;
+    align-items: flex-start;
+    margin-bottom: 25px;
   }
-`;
-
-export const BarItem = styled.div`
-  ${mq.smallMobile} {
-    width: 50px;
-    height: 4px;
-    border-radius: 2px;
-
-    background: #303030;
+  ${mq.tablet} {
+    margin-bottom: 56px;
   }
 `;
 
@@ -182,4 +153,29 @@ export const BtnSubmit = styled.button`
 
   border: none;
   border-radius: 12px;
+`;
+
+export const ProgressBar = styled.div`
+  ${mq.smallMobile} {
+    display: flex;
+    justify-content: space-around;
+    width: 178px;
+    height: 4px;
+  }
+  ${mq.tablet} {
+    width: 268px;
+  }
+`;
+
+export const BarItem = styled.div`
+  ${mq.smallMobile} {
+    width: 50px;
+    height: 4px;
+    border-radius: 2px;
+
+    background: #303030;
+  }
+  ${mq.tablet} {
+    width: 80px;
+  }
 `;

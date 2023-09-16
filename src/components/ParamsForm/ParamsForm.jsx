@@ -20,7 +20,6 @@ import {
   Logo,
   FormikField,
   Title,
-  Text,
   InputGroup,
   FormRadioBtnGroupWrapper,
   BtnNav,
@@ -31,6 +30,7 @@ import {
 } from './ParamsForm.styled';
 
 import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
+import ParamsText from '../ParamsText/ParamsText';
 
 const ParamsForm = () => {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -42,12 +42,12 @@ const ParamsForm = () => {
 
   return (
     <Page
-    // style={{
-    //   backgroundImage:
-    //     (steps === 1 && `url(${planka})`) ||
-    //     (steps === 2 && `url(${stretch})`) ||
-    //     (steps === 3 && `url(${leg})`),
-    // }}
+      style={{
+        backgroundImage:
+          (steps === 1 && `url(${planka})`) ||
+          (steps === 2 && `url(${stretch})`) ||
+          (steps === 3 && `url(${leg})`),
+      }}
     >
       <Logo>PowerPulse</Logo>
 
@@ -56,7 +56,7 @@ const ParamsForm = () => {
           height: '',
           currentWeight: '',
           desiredWeight: '',
-          birthdayDate: '',
+          birthday: '',
         }}
         onSubmit={values => {
           console.log(values);
@@ -70,14 +70,14 @@ const ParamsForm = () => {
               onSwiper={setSwiperRef}
             >
               <SwiperSlide>
-                <Title>Get closer to your goals</Title>
+                <Title>Get closer to your goals!</Title>
 
-                <Text>
+                <ParamsText mb_m={'50px'} mb_t={'54px'}>
                   To ensure a personalized user experience and the proper
                   functioning of our platform, we ask you to provide the
                   following information about your weight, height and other
                   relevant data:
-                </Text>
+                </ParamsText>
 
                 <InputGroup>
                   <FormikField
@@ -96,7 +96,7 @@ const ParamsForm = () => {
                     autoComplete="off"
                   />
                   <FormikField
-                    name="birthdayDate"
+                    name="birthday"
                     placeholder="Birthday"
                     autoComplete="off"
                   />
@@ -112,22 +112,22 @@ const ParamsForm = () => {
                   Next
                 </BtnNav>
 
-                {/* <ParamsBlockCard
+                <ParamsBlockCard
                   type={'video'}
-                  mt_m="116px"
+                  mt_m={'100px'}
                   ml_m="101px"
                   mb_m="70px"
                   mt_t="165px"
                   ml_t="311px"
                   mb_t="56px"
-                /> */}
+                />
 
-                {/* <ParamsBlockCard
+                <ParamsBlockCard
                   type={'users'}
                   ml_m={'auto'}
                   mb_m={'16px'}
                   mb_t={'12px'}
-                /> */}
+                />
               </SwiperSlide>
 
               <SwiperSlide>
@@ -154,7 +154,7 @@ const ParamsForm = () => {
                       </FormLabel>
 
                       <FormControlLabel
-                        name="blood-type"
+                        name="blood"
                         onChange={handleChange}
                         value="1"
                         control={
@@ -173,7 +173,7 @@ const ParamsForm = () => {
                         label="1"
                       />
                       <FormControlLabel
-                        name="blood-type"
+                        name="blood"
                         onChange={handleChange}
                         value="2"
                         control={
@@ -192,7 +192,7 @@ const ParamsForm = () => {
                         label="2"
                       />
                       <FormControlLabel
-                        name="blood-type"
+                        name="blood"
                         onChange={handleChange}
                         value="3"
                         control={
@@ -211,7 +211,7 @@ const ParamsForm = () => {
                         label="3"
                       />
                       <FormControlLabel
-                        name="blood-type"
+                        name="blood"
                         onChange={handleChange}
                         value="4"
                         control={
@@ -248,7 +248,7 @@ const ParamsForm = () => {
                       </FormLabel>
 
                       <FormControlLabel
-                        name="gender"
+                        name="sex"
                         onChange={handleChange}
                         value="male"
                         control={
@@ -267,7 +267,7 @@ const ParamsForm = () => {
                         label="male"
                       />
                       <FormControlLabel
-                        name="gender"
+                        name="sex"
                         onChange={handleChange}
                         value="female"
                         control={
@@ -305,7 +305,7 @@ const ParamsForm = () => {
                     </FormLabel>
 
                     <FormControlLabel
-                      name="level-activity"
+                      name="levelActivity"
                       onChange={handleChange}
                       value="1"
                       control={
@@ -325,7 +325,7 @@ const ParamsForm = () => {
                     />
 
                     <FormControlLabel
-                      name="level-activity"
+                      name="levelActivity"
                       onChange={handleChange}
                       value="2"
                       control={
@@ -346,7 +346,7 @@ const ParamsForm = () => {
                     />
 
                     <FormControlLabel
-                      name="level-activity"
+                      name="levelActivity"
                       onChange={handleChange}
                       value="3"
                       control={
@@ -367,7 +367,7 @@ const ParamsForm = () => {
                     />
 
                     <FormControlLabel
-                      name="level-activity"
+                      name="levelActivity"
                       onChange={handleChange}
                       value="4"
                       control={
@@ -387,8 +387,7 @@ const ParamsForm = () => {
                     />
 
                     <FormControlLabel
-                      id="level-5"
-                      name="level-activity"
+                      name="levelActivity"
                       onChange={handleChange}
                       value="5"
                       control={
@@ -431,31 +430,30 @@ const ParamsForm = () => {
                     Next
                   </BtnNav>
 
-                  {/* <ParamsBlockCard
+                  <ParamsBlockCard
                     type={'video'}
                     ml_m="20px"
-                    mt_t="165px"
-                    ml_t="311px"
-                    mb_t="56px"
-                  /> */}
+                    mt_t="40px"
+                    ml_t="165px"
+                  />
                 </BtnsAndBlock>
 
-                {/* <ParamsBlockCard
+                <ParamsBlockCard
                   type={'users'}
                   ml_m={'auto'}
                   mb_m={'16px'}
                   mb_t={'12px'}
-                /> */}
+                />
               </SwiperSlide>
               <SwiperSlide>
                 <Title>Dear user</Title>
 
-                <Text style={{ marginBottom: '28px' }}>
+                <ParamsText mb_m={'28px'} mb_t={'64px'}>
                   Thank you for filling in all the required data. We greatly
                   appreciate your cooperation and commitment to a healthy
                   lifestyle. The collected information will allow us to provide
                   you with a more individual and personalized approach.
-                </Text>
+                </ParamsText>
 
                 <BtnSubmit>Go</BtnSubmit>
 
@@ -468,6 +466,17 @@ const ParamsForm = () => {
                 >
                   Back
                 </BtnNav>
+
+                <ParamsBlockCard
+                  type={'video'}
+                  mt_m={'276px'}
+                  ml_m={'101px'}
+                  mb_m={'25px'}
+                  mt_t={'249px'}
+                  ml_t={'297px'}
+                  mb_t={'56px'}
+                />
+                <ParamsBlockCard type={'users'} ml_m={'auto'} />
               </SwiperSlide>
             </Swiper>
           </Form>
