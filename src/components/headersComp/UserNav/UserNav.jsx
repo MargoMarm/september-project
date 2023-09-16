@@ -1,5 +1,5 @@
 import CustomNavLink from '../../CustomNavLink/CustomNavLink';
-import { WrapUserNav, Button, Svg, ButtonWrap ,Span} from './UserNav.styled';
+import { WrapUserNav, Button, Svg,SvgUser, ButtonWrap ,Span} from './UserNav.styled';
 import sprite from '../../../assets/sprite.svg';
 
 export const UserNav = () => {
@@ -15,14 +15,14 @@ export const UserNav = () => {
           </Svg>{' '}
         </Button>
         <Button>
-          <Svg>
+          <SvgUser>
             <use href={sprite + `#ecllipse`}></use>
-          </Svg>{' '}
+          </SvgUser>{' '}
         </Button>
         <Button>
           <Span>Logout</Span>
           <Svg>
-            <use href={sprite + `#log-out`}></use>
+            <use href={sprite + `#logout`}></use>
           </Svg>{' '}
         </Button>
       </ButtonWrap>
