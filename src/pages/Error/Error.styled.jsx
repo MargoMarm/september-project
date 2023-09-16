@@ -30,7 +30,6 @@ export const Content = styled.div`
 
   ${mq.mobile} {
     width: 240px;
-    height: 100%;
   }
 
   ${mq.tablet} {
