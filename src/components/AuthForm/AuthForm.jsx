@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import * as Yup from 'yup';
 import { Formik, ErrorMessage } from 'formik';
 
@@ -8,6 +7,8 @@ import {
   FormContainer,
   Error,
   InputContainer,
+  InputWrapper,
+  HidePasswordbtn,
 } from './AuthForm.styled';
 import AuthButton from '../AuthButton';
 
@@ -57,15 +58,18 @@ export default function AuthForm({ nameIsShown, btnTitle }) {
           <ErrorMessage name="email">
             {msg => <Error>{msg}</Error>}
           </ErrorMessage>
-          <TextInput
-            id="password"
-            type="password"
-            placeholder="password"
-            name="password"
-          />
+          <InputWrapper>
+            <TextInput
+              id="password"
+              type="password"
+              placeholder="password"
+              name="password"
+            />
+          </InputWrapper>
           <ErrorMessage name="password">
             {msg => <Error>{msg}</Error>}
           </ErrorMessage>
+          <HidePasswordbtn></HidePasswordbtn>
         </InputContainer>
         <AuthButton type="submit" title={btnTitle} />
       </FormContainer>

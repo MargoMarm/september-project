@@ -60,3 +60,14 @@ export const InputContainer = styled.div`
     margin-bottom: 64px;
   }
 `;
+
+export const InputWrapper = styled.div`
+  position: relative;
+`;
+
+export const HidePasswordbtn = styled.button`
+  position: absolute;
+  padding: 0;
+  border: none;
+  outline: none;
+`;
