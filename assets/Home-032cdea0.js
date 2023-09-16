@@ -1,4 +1,4 @@
-import{n as s,m as e,j as t}from"./index-75daf448.js";import{c as n,s as o,W as r,H as p,L as x,C as i}from"./Home.styled-89f84e82.js";const a={color:n.white,fontFamily:"Roboto",fontWeight:500,wordWrap:"break-word"},l=s.h1`
+import{n as s,m as e,j as t}from"./index-485db194.js";import{c as n,s as o,W as r,H as p,L as x,C as i}from"./Home.styled-9df41bf5.js";const a={color:n.white,fontFamily:"Roboto",fontWeight:500,wordWrap:"break-word"},l=s.h1`
   letter-spacing: 0.38px;
   ${a}
 
@@ -8,6 +8,7 @@ import{n as s,m as e,j as t}from"./index-75daf448.js";import{c as n,s as o,W as 
 
     & > svg {
       position: absolute;
+      z-index: -1;
       width: 98px;
       height: 35px;
       left: -13px;
