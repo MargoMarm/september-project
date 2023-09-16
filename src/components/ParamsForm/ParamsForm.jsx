@@ -1,5 +1,5 @@
 import { Formik, Form } from 'formik';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import {
@@ -11,8 +11,9 @@ import {
   colors,
 } from '@mui/material';
 
+import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
+import ParamsText from '../ParamsText/ParamsText';
 import { colors as palette } from '../../utils';
-
 import {
   Page,
   Logo,
@@ -27,18 +28,17 @@ import {
   BarItem,
 } from './ParamsForm.styled';
 
-import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
-import ParamsText from '../ParamsText/ParamsText';
-
-export const steps = 1;
-
 const ParamsForm = () => {
   const [swiperRef, setSwiperRef] = useState(null);
   const [steps, setSteps] = useState(1);
 
-  const slideTo = index => {
-    swiperRef.slideTo(index - 1, 0);
-  };
+  useEffect(() => {
+    if (!swiperRef) {
+      return;
+    }
+
+    swiperRef.slideTo(steps - 1, 0);
+  }, [steps, swiperRef]);
 
   return (
     <Page steps={steps}>
@@ -58,7 +58,6 @@ const ParamsForm = () => {
           console.log(values);
           Formik.resetForm();
           setSteps(1);
-          slideTo(1);
         }}
       >
         {({ handleChange, values }) => (
@@ -105,7 +104,6 @@ const ParamsForm = () => {
                 <BtnNav
                   type="button"
                   onClick={() => {
-                    slideTo(2);
                     setSteps(2);
                   }}
                 >
@@ -414,7 +412,6 @@ const ParamsForm = () => {
                   <BtnNav
                     type="button"
                     onClick={() => {
-                      slideTo(1);
                       setSteps(1);
                     }}
                   >
@@ -424,7 +421,6 @@ const ParamsForm = () => {
                   <BtnNav
                     type="button"
                     onClick={() => {
-                      slideTo(3);
                       setSteps(3);
                     }}
                   >
@@ -438,7 +434,7 @@ const ParamsForm = () => {
                     mt_t={'40px'}
                     ml_t={'165px'}
                     ml_d={'580px'}
-                    mt_d={'-300px'}
+                    mt_d={'-310px'}
                   />
                 </BtnsAndBlock>
 
@@ -467,7 +463,6 @@ const ParamsForm = () => {
                 <BtnNav
                   type="button"
                   onClick={() => {
-                    slideTo(2);
                     setSteps(2);
                   }}
                 >
@@ -498,7 +493,7 @@ const ParamsForm = () => {
         <BarItem
           style={{
             background: steps >= 1 && '#ef8964',
-            boxShadow: steps >= 1 && `0px 1px 10px 0px rgba(230, 83, 60, 0.8)`,
+            boxShadow: steps >= 1 && '0px 1px 10px 0px rgba(230, 83, 60, 0.8)',
           }}
         ></BarItem>
         <BarItem
@@ -507,13 +502,13 @@ const ParamsForm = () => {
             boxShadow:
               steps >= 2 &&
               steps > 1 &&
-              `0px 1px 10px 0px rgba(230, 83, 60, 0.8)`,
+              '0px 1px 10px 0px rgba(230, 83, 60, 0.8)',
           }}
         ></BarItem>
         <BarItem
           style={{
             background: steps === 3 && '#ef8964',
-            boxShadow: steps === 3 && `0px 1px 10px 0px rgba(230, 83, 60, 0.8)`,
+            boxShadow: steps === 3 && '0px 1px 10px 0px rgba(230, 83, 60, 0.8)',
           }}
         ></BarItem>
       </ProgressBar>

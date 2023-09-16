@@ -267,7 +267,6 @@ export const FormikField = styled(Field)`
 
 export const BtnNav = styled.button`
   ${mq.smallMobile} {
-    ${'' /* padding: 0; */}
     padding-top: 0;
     padding-bottom: 0;
     font-size: 14px;
@@ -279,6 +278,14 @@ export const BtnNav = styled.button`
 
     border: none;
     outline: none;
+
+    &:hover {
+      color: ${colors.orange};
+    }
+
+    &:focus {
+      color: ${colors.orange};
+    }
   }
 
   ${mq.tablet} {
