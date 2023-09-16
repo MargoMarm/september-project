@@ -7,7 +7,7 @@ export const FormContainer = styled(Form)`
   margin-top: 28px;
   ${mq.tablet} {
     margin-top: 32px;
-    width: 496px;
+    width: 364px;
   }
 `;
 
@@ -30,10 +30,9 @@ export const InputWrapper = styled.div`
 
 export const TextInput = styled(Field)`
   height: 42px;
-  width: 305px;
+  width: 100%;
   ${mq.tablet} {
     height: 48px;
-    width: 334px;
   }
   padding-left: 14px;
   padding-right: 14px;
@@ -81,7 +80,7 @@ export const HidePasswordbtn = styled.button`
   align-items: center;
   justify-content: center;
   ${mq.tablet} {
-    right: 148px;
+    right: 14px;
   }
   background-color: transparent;
   stroke: ${colors.white};

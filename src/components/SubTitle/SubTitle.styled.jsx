@@ -11,6 +11,7 @@ export const SubStyle = styled.p`
 
 
   ${mq.tablet} {
+	max-width: 496px;
     font-size: 16px;
     line-height: 1.5;
   }
