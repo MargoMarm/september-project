@@ -16,7 +16,11 @@ const SignUp = () => {
         }
       />
       <AuthForm nameIsShown={true} btnTitle="Sign Up" />
-      <BtnSubtitle text={'Already have account?'} to={"/signin"} linkText={"Sign In"} />
+      <BtnSubtitle
+        text={'Already have account?'}
+        to={'/signin'}
+        linkText={'Sign In'}
+      />
     </Wrapper>
   );
 };
