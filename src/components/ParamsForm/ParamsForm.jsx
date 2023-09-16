@@ -411,6 +411,7 @@ const ParamsForm = () => {
                 <BtnsAndBlock>
                   <BtnNav
                     type="button"
+                    style={{ color: `${palette.textWhite06}` }}
                     onClick={() => {
                       setSteps(1);
                     }}
@@ -462,6 +463,7 @@ const ParamsForm = () => {
 
                 <BtnNav
                   type="button"
+                  style={{ color: `${palette.textWhite06}` }}
                   onClick={() => {
                     setSteps(2);
                   }}
@@ -492,13 +494,13 @@ const ParamsForm = () => {
       <ProgressBar>
         <BarItem
           style={{
-            background: steps >= 1 && '#ef8964',
+            background: steps >= 1 && `${palette.orangeSecondary}`,
             boxShadow: steps >= 1 && '0px 1px 10px 0px rgba(230, 83, 60, 0.8)',
           }}
         ></BarItem>
         <BarItem
           style={{
-            background: steps >= 2 && steps > 1 && '#ef8964',
+            background: steps >= 2 && steps > 1 && `${palette.orangeSecondary}`,
             boxShadow:
               steps >= 2 &&
               steps > 1 &&
@@ -507,7 +509,7 @@ const ParamsForm = () => {
         ></BarItem>
         <BarItem
           style={{
-            background: steps === 3 && '#ef8964',
+            background: steps === 3 && `${palette.orangeSecondary}`,
             boxShadow: steps === 3 && '0px 1px 10px 0px rgba(230, 83, 60, 0.8)',
           }}
         ></BarItem>

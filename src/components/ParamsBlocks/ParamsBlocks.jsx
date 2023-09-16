@@ -1,16 +1,19 @@
+import PropTypes from 'prop-types';
+import sprite from '../../assets/sprite.svg';
 import {
   GreyCard,
   GreySvgWrapper,
+  GreySvg,
   GreyTextWrapper,
   GreyDynamicText,
   GreyStaticText,
   OrangeCard,
   OrangeSvgWrapper,
+  OrangeSvg,
   OrangeTextWrapper,
   OrangeDynamicText,
   OrangeStaticText,
 } from './ParamsBlocks.styled';
-import PropTypes from 'prop-types';
 
 const ParamsBlockCard = ({
   data,
@@ -45,9 +48,9 @@ const ParamsBlockCard = ({
         ml_d={ml_d}
       >
         <GreySvgWrapper>
-          <svg>
-            <use></use>
-          </svg>
+          <GreySvg>
+            <use href={sprite + `#triangle`}></use>
+          </GreySvg>
         </GreySvgWrapper>
         <GreyTextWrapper>
           <GreyDynamicText>{data}+</GreyDynamicText>
@@ -74,9 +77,9 @@ const ParamsBlockCard = ({
         ml_d={ml_d}
       >
         <OrangeSvgWrapper>
-          <svg>
-            <use></use>
-          </svg>
+          <OrangeSvg>
+            <use href={sprite + `#running-man`}></use>
+          </OrangeSvg>
         </OrangeSvgWrapper>
         <OrangeTextWrapper>
           <OrangeDynamicText>{data}</OrangeDynamicText>

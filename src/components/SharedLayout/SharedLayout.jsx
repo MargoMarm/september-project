@@ -5,8 +5,8 @@ import { Container } from './SheradLayout.styled';
 
 const SharedLayout = () => {
   return (
-	  <Container>
-		  {/* <Header/> */}
+    <Container>
+      {/* <Header/> */}
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>

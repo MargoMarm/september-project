@@ -58,10 +58,17 @@ export const GreySvgWrapper = styled.div`
   }
 `;
 
-export const GreySvg = styled.div`
-  width: 10px;
-  height: 10px;
-  fill: ${colors.white};
+export const GreySvg = styled.svg`
+  ${mq.smallMobile} {
+    width: 12px;
+    height: 12px;
+    fill: ${colors.white};
+  }
+
+  ${mq.tablet} {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const GreyTextWrapper = styled.div``;
@@ -152,6 +159,19 @@ export const OrangeSvgWrapper = styled.div`
 
     width: 24px;
     height: 24px;
+  }
+`;
+
+export const OrangeSvg = styled.svg`
+  ${mq.smallMobile} {
+    width: 12px;
+    height: 12px;
+    fill: ${colors.white};
+  }
+
+  ${mq.tablet} {
+    width: 16px;
+    height: 16px;
   }
 `;
 
