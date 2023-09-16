@@ -10,6 +10,7 @@ import {
   ContainerLink,
   Span,
   Svg,
+  SvgUser
 } from './Sidebar.styled';
 import sprite from '../../assets/sprite.svg';
 
@@ -27,9 +28,9 @@ export const Navbar = () => {
           </Svg>
         </ButtonMenu>
         <ButtonMenu type="button">
-          <Svg>
+          <SvgUser>
             <use href={sprite + `#ecllipse`}></use>
-          </Svg>
+          </SvgUser>
         </ButtonMenu>
         <ButtonMenu type="button" onClick={showSidebar}>
           <Svg>
@@ -42,7 +43,7 @@ export const Navbar = () => {
         <NavMenuItems onClick={showSidebar}>
           <ButtonMenuExit type="button" onClick={showSidebar}>
             <Svg>
-              <use href={sprite + `#apple`}></use>
+              <use href={sprite + `#close`}></use>
             </Svg>
           </ButtonMenuExit>
           <ContainerLink>
@@ -56,7 +57,7 @@ export const Navbar = () => {
               <ButtonMenu type="button" onClick={showSidebar}>
                 <Span> Logout</Span>
                 <Svg>
-                  <use href={sprite + `#apple`}></use>
+                  <use href={sprite + `#logout`}></use>
                 </Svg>
               </ButtonMenu>
             </MenuBars>
