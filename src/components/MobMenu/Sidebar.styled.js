@@ -85,7 +85,7 @@ export const ContainerMenu = styled.div`
   z-index: 1;
 
   ${mq.tablet} {
-    width: 250px;
+    width: 350px;
   }
 
   &.active {

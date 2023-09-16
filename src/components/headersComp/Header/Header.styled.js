@@ -9,7 +9,14 @@ export const HeaderContainer = styled.div`
   align-items: center;
 
   ${mq.tablet} {
+    background-color: ${colors.black};
+
     height: 84px;
     border-bottom: 1px solid ${colors.textWhite03};
+  }
+
+  ${mq.desktop} {
+    background-color: transparent;
+	 border: none;
   }
 `;
