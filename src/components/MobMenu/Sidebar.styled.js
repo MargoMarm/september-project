@@ -1,14 +1,5 @@
 import styled from '@emotion/styled';
-import { mq } from '../../utils';
-
-const CommondStyledBtn = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: 10,
-  margin: 0,
-  padding: 0,
-  border: 'none',
-};
+import { mq, colors, button, svgUser } from '../../utils';
 
 export const MenuBars = styled.div`
   display: flex;
@@ -22,36 +13,54 @@ export const MenuBars = styled.div`
 `;
 
 export const ButtonMenu = styled.button`
-  ${CommondStyledBtn}
-  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  ${button}
+
   ${mq.desktop} {
     display: none;
   }
 `;
 export const Svg = styled.svg`
-  fill: white;
+  fill: ${colors.grey};
   width: 24px;
   height: 24px;
 `;
+export const SvgUser = styled.svg`
+  @media (max-width: 376px) {
+    width: 37px;
+    height: 37px;
+  }
+  ${svgUser}
+`;
 
 export const ButtonMenuExit = styled.button`
-  ${CommondStyledBtn}
+  display: flex;
+  align-items: center;
   flex-direction: row-reverse;
-  background-color: rgba(0, 0, 0, 0);
+  ${button}
 `;
 
 export const Span = styled.span`
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
+  color: ${colors.white};
+  font-family: Roboto;
   font-size: 14px;
-  color: white;
+
+  ${mq.tablet} {
+    color: ${colors.white};
+    font-size: 16px;
+    line-height: 24px;
+  }
 `;
 
 export const NavMenuItems = styled.div`
   display: flex;
   width: 100%;
-  background-color: #e6533c;
+  background-color: ${colors.orange};
   padding: 20px 20px 0px 20px;
   flex-direction: column;
   justify-content: space-between;
@@ -65,17 +74,22 @@ export const NavbarToggle = styled.div`
 `;
 
 export const ContainerMenu = styled.div`
-  width: 250px;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   position: fixed;
   top: 0;
-  left: -100%;
+  right: -100%;
   transition: 850ms;
+  z-index: 1;
+
+  ${mq.tablet} {
+    width: 250px;
+  }
 
   &.active {
-    left: 0;
+    right: 0;
     transition: 350ms;
   }
 `;

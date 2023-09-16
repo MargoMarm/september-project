@@ -9,8 +9,8 @@ export const Header = ({ children }) => {
     <>
       <HeaderContainer>
         <Logo />
-        {/* <UserNav />
-        <Navbar /> */}
+        <UserNav />
+        <Navbar />
       </HeaderContainer>
       {children}
     </>
