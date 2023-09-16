@@ -12,9 +12,7 @@ import {
 } from '@mui/material';
 
 import { colors as palette } from '../../utils';
-import planka from '../../assets/images/params-step1_desktop_1x.jpg';
-import stretch from '../../assets/images/params-step2_desktop_1x.jpg';
-import leg from '../../assets/images/params-step3_desktop_1x.jpg';
+
 import {
   Page,
   Logo,
@@ -29,7 +27,7 @@ import {
   BarItem,
 } from './ParamsForm.styled';
 
-// import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
+import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
 import ParamsText from '../ParamsText/ParamsText';
 
 export const steps = 1;
@@ -43,14 +41,7 @@ const ParamsForm = () => {
   };
 
   return (
-    <Page
-      style={{
-        backgroundImage:
-          (steps === 1 && `url(${planka})`) ||
-          (steps === 2 && `url(${stretch})`) ||
-          (steps === 3 && `url(${leg})`),
-      }}
-    >
+    <Page steps={steps}>
       <Logo>PowerPulse</Logo>
 
       <Formik
@@ -121,17 +112,17 @@ const ParamsForm = () => {
                   Next
                 </BtnNav>
 
-                {/* <ParamsBlockCard
+                <ParamsBlockCard
                   data={350}
                   type={'grey'}
                   mt_m={'100px'}
-                  ml_m="101px"
-                  mb_m="75px"
-                  mt_t="165px"
-                  ml_t="311px"
-                  mb_t="56px"
-                  mt_d="-200px"
-                  ml_d="674px"
+                  ml_m={'101px'}
+                  mb_m={'75px'}
+                  mt_t={'165px'}
+                  ml_t={'311px'}
+                  mb_t={'56px'}
+                  mt_d={'-200px'}
+                  ml_d={'674px'}
                 />
 
                 <ParamsBlockCard
@@ -140,7 +131,7 @@ const ParamsForm = () => {
                   ml_m={'auto'}
                   mb_m={'16px'}
                   mb_t={'12px'}
-                /> */}
+                />
               </SwiperSlide>
 
               <SwiperSlide>
@@ -440,18 +431,18 @@ const ParamsForm = () => {
                     Next
                   </BtnNav>
 
-                  {/* <ParamsBlockCard
+                  <ParamsBlockCard
                     data={350}
                     type={'grey'}
-                    ml_m="20px"
-                    mt_t="40px"
-                    ml_t="165px"
-                    ml_d="580px"
-                    mt_d="-300px"
-                  /> */}
+                    ml_m={'20px'}
+                    mt_t={'40px'}
+                    ml_t={'165px'}
+                    ml_d={'580px'}
+                    mt_d={'-300px'}
+                  />
                 </BtnsAndBlock>
 
-                {/* <ParamsBlockCard
+                <ParamsBlockCard
                   data={300}
                   type={'orange'}
                   ml_m={'auto'}
@@ -459,7 +450,7 @@ const ParamsForm = () => {
                   mb_t={'12px'}
                   mt_d={'-260px'}
                   mb_d={'142px'}
-                /> */}
+                />
               </SwiperSlide>
               <SwiperSlide>
                 <Title>Dear user</Title>
@@ -483,7 +474,7 @@ const ParamsForm = () => {
                   Back
                 </BtnNav>
 
-                {/* <ParamsBlockCard
+                <ParamsBlockCard
                   data={350}
                   type={'grey'}
                   mt_m={'276px'}
@@ -496,7 +487,7 @@ const ParamsForm = () => {
                   mb_d={'40px'}
                   ml_d={'674px'}
                 />
-                <ParamsBlockCard type={'orange'} ml_m={'auto'} data={300} /> */}
+                <ParamsBlockCard type={'orange'} ml_m={'auto'} data={300} />
               </SwiperSlide>
             </Swiper>
           </Form>
