@@ -14,10 +14,14 @@ export const StyledTitle = styled.h2`
 
   ${mq.tablet} {
     margin-bottom: ${props => props.margin + 2}px;
-
+    margin-top: 105px;
     font-size: 32px;
 
     line-height: 1.11;
     letter-spacing: 0.7px;
+  }
+
+  ${mq.desktop} {
+	margin-top: 116px;
   }
 `;
