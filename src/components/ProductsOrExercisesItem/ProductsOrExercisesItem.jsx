@@ -92,6 +92,7 @@ const ProductsOrExercisesItem = ({ page, data }) => {
 
 ProductsOrExercisesItem.propTypes = {
   page: PropTypes.string,
+  data: PropTypes.object,
 };
 
 export default ProductsOrExercisesItem;
