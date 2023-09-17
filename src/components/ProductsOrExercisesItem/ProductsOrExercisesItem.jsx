@@ -11,13 +11,13 @@ import {
   SubTypeValue,
   TextDiet,
   TextRecommended,
-} from './ProductsItem.styled';
+} from './ProductsOrExercisesItem.styled';
 import PropTypes from 'prop-types';
 
 import sprite from '../../assets/sprite.svg';
 import { useEffect, useState } from 'react';
 
-const ProductsItem = ({ product, exercise }) => {
+const ProductsOrExercisesItem = ({ product, exercise }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -118,9 +118,9 @@ const ProductsItem = ({ product, exercise }) => {
   );
 };
 
-ProductsItem.propTypes = {
+ProductsOrExercisesItem.propTypes = {
   product: PropTypes.object,
   exercise: PropTypes.object,
 };
 
-export default ProductsItem;
+export default ProductsOrExercisesItem;

@@ -103,7 +103,7 @@ export const ArrowRight = styled.svg`
   }
 `;
 
-export const NameProduct = styled.p`
+export const NameProduct = styled.div`
   display: inline-flex;
   margin-top: 30px;
   align-items: center;
@@ -146,7 +146,7 @@ export const SubTypeDiv = styled.div`
   }
 `;
 
-export const SubType = styled.p`
+export const SubType = styled.div`
   display: inline-flex;
   margin-right: 16px;
 

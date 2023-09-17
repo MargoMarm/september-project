@@ -1,6 +1,6 @@
 import CustomNavLink from '../../components/CustomNavLink/CustomNavLink';
 import MainTitle from '../../components/MainTitle/MainTitle';
-import ProductsItem from '../../components/ProductsItem/ProductsItem';
+import ProductsOrExercisesItem from '../../components/ProductsOrExercisesItem/ProductsOrExercisesItem';
 import Header from '../../components/headersComp/Header/Header';
 import { LinkList, Wrapper } from './Home.styled';
 
@@ -45,8 +45,9 @@ const Home = () => {
             <CustomNavLink text={'Sign in'} to={'/signin'} />
           </li>
         </LinkList>
+        <ProductsOrExercisesItem product={product} />
       </Wrapper>
-      <ProductsItem product={product} />
+      
     </>
   );
 };
