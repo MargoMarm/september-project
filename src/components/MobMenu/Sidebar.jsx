@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Modal } from '../Modal/Modal';
 import CustomNavLink from '../CustomNavLink/CustomNavLink';
 import {
   MenuBars,
@@ -10,62 +11,63 @@ import {
   ContainerLink,
   Span,
   Svg,
-  SvgUser
-} from './Sidebar.styled';
+  SvgUser,
+} from './MobMenu.styled';
+
 import sprite from '../../assets/sprite.svg';
 
-export const Navbar = () => {
-  const [sidebar, setSidebar] = useState(false);
-
-  const showSidebar = () => setSidebar(!sidebar);
+export const MobMenu = () => {
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
-      <MenuBars to="#">
-        <ButtonMenu type="button">
-          <Svg>
-            <use href={sprite + `#settings`}></use>
-          </Svg>
-        </ButtonMenu>
-        <ButtonMenu type="button">
-          <SvgUser>
-            <use href={sprite + `#ecllipse`}></use>
-          </SvgUser>
-        </ButtonMenu>
-        <ButtonMenu type="button" onClick={showSidebar}>
-          <Svg>
-            <use href={sprite + `#menu`}></use>
-          </Svg>
-        </ButtonMenu>
-      </MenuBars>
-
-      <ContainerMenu className={sidebar === true ? 'active' : ''}>
-        <NavMenuItems onClick={showSidebar}>
-          <ButtonMenuExit type="button" onClick={showSidebar}>
+      <Modal openModal={setOpenModal}>
+        <MenuBars to="#">
+          <ButtonMenu type="button">
             <Svg>
-              <use href={sprite + `#close`}></use>
+              <use href={sprite + `#settings`}></use>
             </Svg>
-          </ButtonMenuExit>
-          <ContainerLink>
-            <CustomNavLink text="Diary" />
-            <CustomNavLink text="Products" />
-            <CustomNavLink text="Exercises" />
-          </ContainerLink>
+          </ButtonMenu>
+          <ButtonMenu type="button">
+            <SvgUser>
+              <use href={sprite + `#ecllipse`}></use>
+            </SvgUser>
+          </ButtonMenu>
+          <ButtonMenu type="button" onClick={() => setOpenModal(true)}>
+            <Svg>
+              <use href={sprite + `#menu`}></use>
+            </Svg>
+          </ButtonMenu>
+        </MenuBars>
 
-          <NavbarToggle>
-            <MenuBars to="#">
-              <ButtonMenu type="button" onClick={showSidebar}>
-                <Span> Logout</Span>
-                <Svg>
-                  <use href={sprite + `#logout`}></use>
-                </Svg>
-              </ButtonMenu>
-            </MenuBars>
-          </NavbarToggle>
-        </NavMenuItems>
-      </ContainerMenu>
+        <ContainerMenu className={openModal === true ? 'active' : ''}>
+          <NavMenuItems>
+            <ButtonMenuExit type="button" onClick={() => setOpenModal(false)}>
+              <Svg>
+                <use href={sprite + `#close`}></use>
+              </Svg>
+            </ButtonMenuExit>
+            <ContainerLink>
+              <CustomNavLink text="Diary" />
+              <CustomNavLink text="Products" />
+              <CustomNavLink text="Exercises" />
+            </ContainerLink>
+
+            <NavbarToggle>
+              <MenuBars to="#">
+                <ButtonMenu type="button" onClick={() => setOpenModal(false)}>
+                  <Span> Logout</Span>
+                  <Svg>
+                    <use href={sprite + `#logout`}></use>
+                  </Svg>
+                </ButtonMenu>
+              </MenuBars>
+            </NavbarToggle>
+          </NavMenuItems>
+        </ContainerMenu>
+      </Modal>
     </>
   );
 };
 
-export default Navbar;
+export default MobMenu;
