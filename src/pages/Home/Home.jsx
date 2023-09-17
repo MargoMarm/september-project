@@ -2,7 +2,7 @@
 // import MainTitle from '../../components/MainTitle/MainTitle';
 // import Header from '../../components/headersComp/Header/Header';
 // import { LinkList, Wrapper } from './Home.styled';
-import ParamsForm from '../../components/ParamsForm/ParamsForm';
+
 const Home = () => {
   return (
     <>
@@ -18,8 +18,6 @@ const Home = () => {
           </li>
         </LinkList>
       </Wrapper> */}
-
-      <ParamsForm />
     </>
   );
 };

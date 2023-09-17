@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-
 import Logo from '../../components/headersComp/Logo/Logo';
 import ParamsForm from '../../components/ParamsForm/ParamsForm';
 import ParamsBar from '../../components/ParamsBar/ParamsBar';
-import { colors } from '../../utils';
 import { ParamsPageWrapper, LogoWrapper } from './Params.styled';
 
 const Params = () => {
@@ -24,13 +22,9 @@ const Params = () => {
         <Logo />
       </LogoWrapper>
 
-      <ParamsForm
-        setSwiperRef={setSwiperRef}
-        setSteps={setSteps}
-        palette={colors}
-      />
+      <ParamsForm setSwiperRef={setSwiperRef} setSteps={setSteps} />
 
-      <ParamsBar steps={steps} palette={colors} />
+      <ParamsBar steps={steps} />
     </ParamsPageWrapper>
   );
 };

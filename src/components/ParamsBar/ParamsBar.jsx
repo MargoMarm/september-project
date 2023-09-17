@@ -1,6 +1,8 @@
 import { ProgressBar, BarItem } from './ParamsBar.styled';
+import PropTypes from 'prop-types';
+import { colors as palette } from '../../utils';
 
-const ParamsBar = ({ steps, palette }) => {
+const ParamsBar = ({ steps }) => {
   return (
     <ProgressBar>
       <BarItem
@@ -26,6 +28,10 @@ const ParamsBar = ({ steps, palette }) => {
       ></BarItem>
     </ProgressBar>
   );
+};
+
+ParamsBar.propTypes = {
+  steps: PropTypes.number.isRequired,
 };
 
 export default ParamsBar;
