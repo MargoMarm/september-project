@@ -130,5 +130,10 @@
 
 </symbol>
 
+<symbol id="icon-exclamation-mark" viewBox="0 0 32 32">
+<path fill="#efa082" style="fill: var(--color1, #efa082)" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+<path fill="none" stroke="#efede8" style="stroke: var(--color2, #efede8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 25.333v0.013M16 20v-13.333"></path>
+</symbol>
+
 </defs>
 </svg>
