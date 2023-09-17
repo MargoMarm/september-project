@@ -17,7 +17,9 @@ import PropTypes from 'prop-types';
 import sprite from '../../assets/sprite.svg';
 import { useEffect, useState } from 'react';
 
-const ProductsOrExercisesItem = ({ product, exercise }) => {
+import { pageContentToRender } from '../../utils';
+
+const ProductsOrExercisesItem = ({ page, data }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -46,43 +48,13 @@ const ProductsOrExercisesItem = ({ product, exercise }) => {
       : name.substring(0, maxLength) + '...';
   };
 
-  let contentToRender;
-
-  if (product) {
-    contentToRender = {
-      key: product._id.$oid,
-      subtitle: 'DIET',
-      title: product.title,
-      button: 'Add',
-      text1: 'Calories:',
-      text2: 'Category:',
-      text3: 'Weight:',
-      subText1: product.calories,
-      subText2: product.category,
-      subText3: product.weight,
-    };
-  }
-
-  if (exercise) {
-    contentToRender = {
-      key: exercise.title,
-      subtitle: 'WORKOUT',
-      title: exercise.name,
-      button: 'Start',
-      text1: 'Burned calories:',
-      text2: 'Body part:',
-      text3: 'Target:',
-      subText1: exercise.burnedCalories,
-      subText2: exercise.bodyPart,
-      subText3: exercise.target,
-    };
-  }
+  const contentToRender = pageContentToRender(page, data);
 
   return (
     <Item key={contentToRender.key}>
       <SubDiv>
         <TextDiet>{contentToRender.subtitle}</TextDiet>
-        {product && <TextRecommended>Recommended</TextRecommended>}
+        {page === 'product' && <TextRecommended>Recommended</TextRecommended>}
         <AddBtn>
           {contentToRender.button}
           <ArrowRight>
@@ -119,8 +91,7 @@ const ProductsOrExercisesItem = ({ product, exercise }) => {
 };
 
 ProductsOrExercisesItem.propTypes = {
-  product: PropTypes.object,
-  exercise: PropTypes.object,
+  page: PropTypes.string,
 };
 
 export default ProductsOrExercisesItem;

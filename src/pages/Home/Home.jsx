@@ -45,9 +45,8 @@ const Home = () => {
             <CustomNavLink text={'Sign in'} to={'/signin'} />
           </li>
         </LinkList>
-        <ProductsOrExercisesItem product={product} />
+        <ProductsOrExercisesItem page={'exercise'} data={exercise} />
       </Wrapper>
-      
     </>
   );
 };
