@@ -124,7 +124,8 @@ const ParamsForm = () => {
                 />
 
                 <ParamsBlockCard
-                  data={300}
+                  data={100}
+                  measure={'users'}
                   type={'orange'}
                   ml_m={'auto'}
                   mb_m={'16px'}
@@ -440,7 +441,8 @@ const ParamsForm = () => {
                 </BtnsAndBlock>
 
                 <ParamsBlockCard
-                  data={300}
+                  data={24}
+                  measure={'hours'}
                   type={'orange'}
                   ml_m={'auto'}
                   mb_m={'16px'}
@@ -484,7 +486,12 @@ const ParamsForm = () => {
                   mb_d={'40px'}
                   ml_d={'674px'}
                 />
-                <ParamsBlockCard type={'orange'} ml_m={'auto'} data={300} />
+                <ParamsBlockCard
+                  data={300}
+                  measure={'ex'}
+                  type={'orange'}
+                  ml_m={'auto'}
+                />
               </SwiperSlide>
             </Swiper>
           </Form>

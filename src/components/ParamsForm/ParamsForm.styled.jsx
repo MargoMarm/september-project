@@ -279,6 +279,8 @@ export const BtnNav = styled.button`
     border: none;
     outline: none;
 
+    transition: color 250ms linear;
+
     &:hover {
       color: ${colors.orange};
     }
@@ -330,6 +332,12 @@ export const BtnSubmit = styled.button`
 
     border: none;
     border-radius: 12px;
+
+    transition: box-shadow 250ms linear;
+
+    &:hover {
+      box-shadow: 0px 1px 10px 0px rgba(230, 83, 60, 0.8);
+    }
   }
 
   ${mq.tablet} {

@@ -17,6 +17,7 @@ import {
 
 const ParamsBlockCard = ({
   data,
+  measure,
   type,
   mt_m,
   mr_m,
@@ -31,6 +32,8 @@ const ParamsBlockCard = ({
   mb_d,
   ml_d,
 }) => {
+  console.log(sprite);
+
   if (type === 'grey') {
     return (
       <GreyCard
@@ -83,7 +86,7 @@ const ParamsBlockCard = ({
         </OrangeSvgWrapper>
         <OrangeTextWrapper>
           <OrangeDynamicText>{data}</OrangeDynamicText>
-          <OrangeStaticText>ex</OrangeStaticText>
+          <OrangeStaticText>{measure}</OrangeStaticText>
         </OrangeTextWrapper>
       </OrangeCard>
     );
@@ -93,6 +96,7 @@ const ParamsBlockCard = ({
 ParamsBlockCard.propTypes = {
   data: PropTypes.number,
   type: PropTypes.string,
+  measure: PropTypes.string,
   mt_m: PropTypes.string,
   mr_m: PropTypes.string,
   mb_m: PropTypes.string,
