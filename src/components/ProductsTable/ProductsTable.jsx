@@ -101,7 +101,7 @@ const ProductsTable = ({ products }) => {
 
   const BASELINE_THEME = {
     Table: `
-      --data-table-library_grid-template-columns:  210px 134px 96px 96px 87px 27px;
+      --data-table-library_grid-template-columns:  210px 134px 96px 96px 87px 24px;
       margin-top: 19px; 
       height: 178px`,
     Body: ``,

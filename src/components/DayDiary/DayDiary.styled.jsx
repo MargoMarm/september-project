@@ -9,7 +9,6 @@ export const DayDiaryContainer = styled.div`
   display: block;
   width: 100%;
   height: 335px;
-  margin: 0 20px;
   padding: 16px;
   align-items: flex-start;
 
@@ -64,5 +63,5 @@ export const DayNoContentText = styled.p`
 export const ArrowRight = styled.svg`
   width: 16px;
   height: 16px;
-  padding-left: 8px;
+  margin-left: 8px;
 `;
