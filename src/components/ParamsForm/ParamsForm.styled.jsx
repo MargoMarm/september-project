@@ -248,7 +248,7 @@ export const FormikField = styled(Field)`
     background-color: transparent;
     color: ${colors.textWhite06};
 
-    transition: border-color 250ms linear;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &::placeholder {
       color: ${colors.textWhite06};
@@ -279,7 +279,7 @@ export const BtnNav = styled.button`
     border: none;
     outline: none;
 
-    transition: color 250ms linear;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
       color: ${colors.orange};
@@ -333,10 +333,14 @@ export const BtnSubmit = styled.button`
     border: none;
     border-radius: 12px;
 
-    transition: box-shadow 250ms linear;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-      box-shadow: 0px 1px 10px 0px rgba(230, 83, 60, 0.8);
+      transform: scale(0.99);
+    }
+
+    &:focus {
+      transform: scale(0.99);
     }
   }
 
