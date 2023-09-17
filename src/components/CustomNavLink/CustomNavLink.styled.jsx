@@ -18,7 +18,7 @@ export const Link = styled(NavLink)`
   color: ${colors.white};
 
   font-size: 16px;
-  font-weight: 500;
+  font-weight: ${props => (props.isinheader === 'true' ? '400' : '500')};
   line-height: 1.13;
 
   &:hover {
@@ -32,7 +32,7 @@ export const Link = styled(NavLink)`
     padding: ${props =>
       props.isinheader === 'true' ? '10px 27px' : '16px 60px'};
 
-    font-size: 20px;
+    font-size: ${props => (props.isinheader === 'true' ? '16px' : '20px')};
     line-height: 1.2;
   }
 `;

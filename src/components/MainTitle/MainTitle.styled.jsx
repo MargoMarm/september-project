@@ -18,6 +18,7 @@ export const Text = styled.h1`
 
     & > svg {
       position: absolute;
+      z-index: -1;
       width: 98px;
       height: 35px;
       left: -13px;

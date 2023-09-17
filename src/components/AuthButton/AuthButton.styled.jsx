@@ -10,12 +10,18 @@ export const AuthBtn = styled.button`
   background-color: ${colors.orange};
   border-radius: 12px;
   border: none;
+  width: 136px;
 
   color: ${colors.white};
   font-size: 16px;
   font-weight: 500;
   line-height: 112.5%;
+
   ${mq.tablet} {
     padding: 16px 60px;
+    font-size: 20px;
+    line-height: 120%;
+
+    width: 190px;
   }
 `;

@@ -12,7 +12,7 @@ const Products = lazy(() => import('../src/pages/Products/Products'));
 const test = import.meta.env.VITE_API_TEST;
 
 function App() {
-  //   console.log(test);
+	//   console.log(test);
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
