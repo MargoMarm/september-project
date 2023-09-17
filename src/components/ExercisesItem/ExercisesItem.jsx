@@ -1,25 +1,24 @@
 import PropTypes from 'prop-types';
 import {
-  Filter,
-  Name,
+  Item,
+  WrapCard,
   Image,
   WrapSpan,
-  WrapList,
-  WrapImg,
+  Name,
+  Filter,
 } from './ExercisesItem.styled';
 
 export const ExercisesItem = ({ filter, name, imgURL }) => {
   return (
-    <WrapList>
-      <WrapImg>
+    <Item>
+      <WrapCard>
         <Image src={imgURL} alt={name} />
-      </WrapImg>
-
-      <WrapSpan>
-        <Filter>{filter}</Filter>
-        <Name>{name}</Name>
-      </WrapSpan>
-    </WrapList>
+        <WrapSpan>
+          <Name>{name}</Name>
+          <Filter>{filter}</Filter>
+        </WrapSpan>
+      </WrapCard>
+    </Item>
   );
 };
 
