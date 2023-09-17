@@ -11,12 +11,12 @@ import {
   colors,
 } from '@mui/material';
 
+import Logo from '../headersComp/Logo/Logo';
 import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
 import ParamsText from '../ParamsText/ParamsText';
 import { colors as palette } from '../../utils';
 import {
   Page,
-  Logo,
   FormikField,
   Title,
   InputGroup,
@@ -25,6 +25,7 @@ import {
   BtnsAndBlock,
   BtnSubmit,
   ProgressBar,
+  LogoWrapper,
   BarItem,
 } from './ParamsForm.styled';
 
@@ -42,7 +43,9 @@ const ParamsForm = () => {
 
   return (
     <Page steps={steps}>
-      <Logo>PowerPulse</Logo>
+      <LogoWrapper>
+        <Logo />
+      </LogoWrapper>
 
       <Formik
         initialValues={{
@@ -111,8 +114,8 @@ const ParamsForm = () => {
                 </BtnNav>
 
                 <ParamsBlockCard
-                  data={350}
                   type={'grey'}
+                  data={350}
                   mt_m={'100px'}
                   ml_m={'101px'}
                   mb_m={'75px'}
@@ -441,9 +444,9 @@ const ParamsForm = () => {
                 </BtnsAndBlock>
 
                 <ParamsBlockCard
+                  type={'orange'}
                   data={24}
                   measure={'hours'}
-                  type={'orange'}
                   ml_m={'auto'}
                   mb_m={'16px'}
                   mb_t={'12px'}

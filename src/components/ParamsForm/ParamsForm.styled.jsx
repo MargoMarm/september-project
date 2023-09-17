@@ -178,7 +178,7 @@ export const Page = styled.div`
   }
 `;
 
-export const Logo = styled.div`
+export const LogoWrapper = styled.div`
   ${mq.smallMobile} {
     width: 100px;
     height: 17px;
