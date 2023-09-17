@@ -71,13 +71,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
         <InputContainer>
           {nameIsShown && (
             <InputWrapper>
-              <TextInput
-                autocomplete="off"
-                id="name"
-                type="text"
-                placeholder="name"
-                name="name"
-              />
+              <TextInput id="name" type="text" placeholder="name" name="name" />
               <Warning>
                 <ErrorMessage name="name">
                   {msg => (
@@ -94,7 +88,6 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
           )}
           <InputWrapper>
             <TextInput
-              autocomplete="off"
               id="email"
               type="email"
               placeholder="email"
@@ -115,7 +108,6 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
           </InputWrapper>
           <InputWrapper>
             <TextInput
-              autocomplete="off"
               id="password"
               type={typePasswordInput}
               placeholder="password"

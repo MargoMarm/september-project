@@ -1,11 +1,8 @@
 import styled from '@emotion/styled';
-import { mq } from '../../../utils';
+import { mq, button } from '../../../utils';
 
 export const Button = styled.button`
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
+  ${button}
 `;
 
 export const WrapLogo = styled.div`

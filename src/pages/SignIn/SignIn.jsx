@@ -1,7 +1,8 @@
 import Title from '../../components/Title/Title';
 import SubTitle from '../../components/SubTitle/SubTitle';
 import Header from '../../components/headersComp/Header/Header';
-import AuthForm from '../../components/AuthForm';
+import AuthForm from '../../components/AuthForm/AuthForm';
+import BtnSubtitle from '../../components/BtnSubtitle/BtnSubtitle';
 import { Wrapper } from '../Home/Home.styled';
 import { useDispatch } from 'react-redux';
 import { logInUser } from '../../redux/auth/operation';
@@ -24,6 +25,11 @@ const SignIn = () => {
         }
       />
       <AuthForm btnTitle="Sign In" nameIsShown={false} onSubmit={logIn} />
+      <BtnSubtitle
+        text={'Don’t have an account?'}
+        to={'/signup'}
+        linkText={'Sign Up'}
+      />
     </Wrapper>
   );
 };
