@@ -16,7 +16,7 @@ import {
 import AuthButton from '../AuthButton';
 
 const emailLyout = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-const passwordLayout = /^(&=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/;
+const passwordLayout = /^(?=.*[a-zA-Z]{6,})(?=.*\d)[a-zA-Z\d]{7,}$/;
 
 export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -28,11 +28,14 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
   const authSchema = Yup.object().shape({
     name: validateName(nameIsShown),
     email: Yup.string()
-      .matches({ emailLyout, message: 'Email must be valid' })
+      .matches(emailLyout, { message: 'Email must be valid' })
       .email('Invalid email')
       .required('Email is required'),
     password: Yup.string()
-      .matches({ passwordLayout, message: 'Password must contain...' })
+      .matches(passwordLayout, {
+        message:
+          'Password must contain 6+ letters, 1 number, and 1+ letter or number',
+      })
       .required('Password is required'),
   });
 
