@@ -1,5 +1,5 @@
 import { Formik, Form } from 'formik';
-import { useEffect, useState } from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import {
@@ -11,12 +11,10 @@ import {
   colors,
 } from '@mui/material';
 
-import Logo from '../headersComp/Logo/Logo';
 import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
 import ParamsText from '../ParamsText/ParamsText';
-import { colors as palette } from '../../utils';
+
 import {
-  Page,
   FormikField,
   Title,
   InputGroup,
@@ -24,29 +22,11 @@ import {
   BtnNav,
   BtnsAndBlock,
   BtnSubmit,
-  ProgressBar,
-  LogoWrapper,
-  BarItem,
 } from './ParamsForm.styled';
 
-const ParamsForm = () => {
-  const [swiperRef, setSwiperRef] = useState(null);
-  const [steps, setSteps] = useState(1);
-
-  useEffect(() => {
-    if (!swiperRef) {
-      return;
-    }
-
-    swiperRef.slideTo(steps - 1, 0);
-  }, [steps, swiperRef]);
-
+const ParamsForm = ({ setSteps, setSwiperRef, palette }) => {
   return (
-    <Page steps={steps}>
-      <LogoWrapper>
-        <Logo />
-      </LogoWrapper>
-
+    <>
       <Formik
         initialValues={{
           height: '',
@@ -500,31 +480,7 @@ const ParamsForm = () => {
           </Form>
         )}
       </Formik>
-
-      <ProgressBar>
-        <BarItem
-          style={{
-            background: steps >= 1 && `${palette.orangeSecondary}`,
-            boxShadow: steps >= 1 && '0px 1px 10px 0px rgba(230, 83, 60, 0.8)',
-          }}
-        ></BarItem>
-        <BarItem
-          style={{
-            background: steps >= 2 && steps > 1 && `${palette.orangeSecondary}`,
-            boxShadow:
-              steps >= 2 &&
-              steps > 1 &&
-              '0px 1px 10px 0px rgba(230, 83, 60, 0.8)',
-          }}
-        ></BarItem>
-        <BarItem
-          style={{
-            background: steps === 3 && `${palette.orangeSecondary}`,
-            boxShadow: steps === 3 && '0px 1px 10px 0px rgba(230, 83, 60, 0.8)',
-          }}
-        ></BarItem>
-      </ProgressBar>
-    </Page>
+    </>
   );
 };
 
