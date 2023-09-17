@@ -41,6 +41,8 @@ export const DayDiarySubDiv = styled.div`
 export const DayDiarySubTitle = styled.p`
   margin: 0;
 
+  line-height: 1.29;
+
   color: ${colors.textWhite05};
 `;
 
@@ -49,6 +51,12 @@ export const AddLink = styled(NavLink)`
   align-items: center;
 
   color: ${colors.orange};
+
+  ${mq.tablet} {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
 `;
 
 export const DayNoContentText = styled.p`
@@ -61,7 +69,7 @@ export const DayNoContentText = styled.p`
 `;
 
 export const ArrowRight = styled.svg`
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   margin-left: 8px;
 `;

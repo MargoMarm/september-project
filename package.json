@@ -25,6 +25,7 @@
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.15.0",
+    "react-table": "^7.8.0",
     "redux-persist": "^6.0.0",
     "styled-components": "^6.0.7",
     "yup": "^1.2.0"

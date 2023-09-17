@@ -96,7 +96,7 @@ const Home = () => {
             <CustomNavLink text={'Sign in'} to={'/signin'} />
           </li>
         </LinkList>
-        <DayDiary products={nodes}/>
+        <DayDiary products={nodes} isDayProducts={'true'}/>
       </Wrapper>
     </>
   );

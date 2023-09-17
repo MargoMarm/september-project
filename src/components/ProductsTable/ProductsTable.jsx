@@ -1,8 +1,10 @@
 import sprite from '../../assets/sprite.svg';
 import {
+  BASELINE_THEME,
+  ColumnName,
   DeleteBtn,
   DeleteIcon,
-  ScrollBarContainer,
+  HeaderCont,
 } from './ProductsTable.styled';
 import {
   Table,
@@ -15,8 +17,6 @@ import {
 } from '@table-library/react-table-library/table';
 
 import PropTypes from 'prop-types';
-
-import { colors } from '../../utils';
 
 const nodes = [
   {
@@ -99,62 +99,15 @@ const nodes = [
 const ProductsTable = ({ products }) => {
   const data = { nodes };
 
-  const BASELINE_THEME = {
-    Table: `
-      --data-table-library_grid-template-columns:  210px 134px 96px 96px 87px 24px;
-      margin-top: 19px; 
-      height: 178px`,
-    Body: ``,
-    Header: '',
-    BaseRow: ``,
-    Row: `
-      font-size: 16px;    
-      background-color: inherit;
-      color: ${colors.white};
-    `,
-    HeaderRow: `
-      background-color: inherit;`,
-    BaseCell: ``,
-    HeaderCell: `
-      color: ${colors.orangeSecondary};
-      margin-bottom: 8px; 
-      font-size: 12px;
-      line-heigth: 1.5;
-
-      svg,
-      path {
-        fill: currentColor;
-      }
-    `,
-    Cell: `
-      padding: 8px 4px 8px 14px;
-      margin: 0 8px 8px 0;
-      border-radius: 12px;
-      border: 1px solid ${colors.textWhite03};
-
-      :nth-of-type(5) {
-        margin-right: 12px;
-      }
-
-      :nth-of-type(6) {
-        margin-right: 0;
-        border: none;
-        padding: 0
-      }
-
-      :nth-of-type(5)::before {
-        content: '';
-        width: 14px;
-        height: 14px;
-        border-radius: 10px;
-        background: #419B09;
-        margin-right: 8px;
-      }
-    `,
-  };
-
   return (
-    <ScrollBarContainer>
+    <>
+      <HeaderCont>
+        <ColumnName>Title</ColumnName>
+        <ColumnName>Category</ColumnName>
+        <ColumnName>Calories</ColumnName>
+        <ColumnName>Weight</ColumnName>
+        <ColumnName>Recommend</ColumnName>
+      </HeaderCont>
       <Table data={data} theme={BASELINE_THEME} layout={{ custom: true }}>
         {tableList => (
           <>
@@ -190,7 +143,7 @@ const ProductsTable = ({ products }) => {
           </>
         )}
       </Table>
-    </ScrollBarContainer>
+    </>
   );
 };
 
