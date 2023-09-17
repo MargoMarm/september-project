@@ -7,7 +7,7 @@ export const Item = styled.li`
   box-sizing: border-box;
   display: inline-block;
   width: 100%;
-  height: 141px;
+  height: auto;
   padding: 16px;
   align-items: flex-start;
 
@@ -33,17 +33,18 @@ export const Item = styled.li`
 `;
 
 export const SubDiv = styled.div`
-  display: inline-flex;
+  display: flex;
   align-items: flex-start;
 `;
 
 export const TextDiet = styled.p`
   display: inline-flex;
-  width: 41px;
+  width: auto;
   height: 24px;
   justify-content: center;
   align-items: center;
-  margin-right: 94px;
+  margin-right: auto;
+  padding: 0 7.5px;
 
   font-size: 12px;
   font-weight: 700;
@@ -51,14 +52,6 @@ export const TextDiet = styled.p`
   background-color: ${colors.textWhite005};
   border-radius: 4px;
   color: #fff;
-
-  ${mq.tablet} {
-    margin-right: 90px;
-  }
-
-  ${mq.desktop} {
-    margin-right: 160px;
-  }
 `;
 
 export const TextRecommended = styled.p`
@@ -112,7 +105,7 @@ export const ArrowRight = styled.svg`
 
 export const NameProduct = styled.p`
   display: inline-flex;
-  margin-top: 35px;
+  margin-top: 30px;
   align-items: center;
 
   font-size: 20px;
@@ -123,7 +116,7 @@ export const NameProduct = styled.p`
   ${mq.tablet} {
     font-size: 24px;
     line-height: 1.33;
-    margin-top: 27px;
+    margin-top: 21px;
   }
 `;
 
@@ -144,7 +137,7 @@ export const RunningMan = styled.svg`
 `;
 
 export const SubTypeDiv = styled.div`
-  display: flex;
+  display: inline-block;
   align-items: center;
   margin-top: 8px;
 
@@ -154,15 +147,21 @@ export const SubTypeDiv = styled.div`
 `;
 
 export const SubType = styled.p`
+  display: inline-flex;
+  margin-right: 16px;
+
   font-size: 12px;
   line-height: 1.5;
-  margin-right: 4px;
 
   color: ${colors.textWhite04};
+
+  &:last-child {
+    margin-right: 0;
+  }
 `;
 
 export const SubTypeValue = styled.p`
-  margin-right: 16px;
+  margin-left: 4px;
 
   color: ${colors.white};
 `;

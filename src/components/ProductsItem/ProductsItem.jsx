@@ -12,28 +12,12 @@ import {
   TextDiet,
   TextRecommended,
 } from './ProductsItem.styled';
-
-import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import sprite from '../../assets/sprite.svg';
+import { useEffect, useState } from 'react';
 
-const product = {
-  _id: {
-    $oid: '5d51694902b2373622ff5773',
-  },
-  weight: 100,
-  calories: 340,
-  category: 'dairy',
-  title: 'Salads Belaya Dacha Delicate root',
-  groupBloodNotAllowed: {
-    1: true,
-    2: true,
-    3: false,
-    4: false,
-  },
-};
-
-const ProductsItem = () => {
+const ProductsItem = ({ product, exercise }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -48,23 +32,59 @@ const ProductsItem = () => {
     setWindowWidth(window.innerWidth);
   };
 
-  const textLength = productName => {
+  const textLength = name => {
+    let maxLength = 24;
+
     if (windowWidth < 768) {
-      return productName.substring(0, 25) + '...';
+      maxLength = 23;
+    } else if (windowWidth < 1440) {
+      maxLength = 19;
     }
-    if (windowWidth < 1440) {
-      return productName.substring(0, 20) + '...';
-    }
-    return productName.substring(0, 27) + '...';
+
+    return name.length <= maxLength
+      ? name
+      : name.substring(0, maxLength) + '...';
   };
 
+  let contentToRender;
+
+  if (product) {
+    contentToRender = {
+      key: product._id.$oid,
+      subtitle: 'DIET',
+      title: product.title,
+      button: 'Add',
+      text1: 'Calories:',
+      text2: 'Category:',
+      text3: 'Weight:',
+      subText1: product.calories,
+      subText2: product.category,
+      subText3: product.weight,
+    };
+  }
+
+  if (exercise) {
+    contentToRender = {
+      key: exercise.title,
+      subtitle: 'WORKOUT',
+      title: exercise.name,
+      button: 'Start',
+      text1: 'Burned calories:',
+      text2: 'Body part:',
+      text3: 'Target:',
+      subText1: exercise.burnedCalories,
+      subText2: exercise.bodyPart,
+      subText3: exercise.target,
+    };
+  }
+
   return (
-    <Item key={product._id.$oid}>
+    <Item key={contentToRender.key}>
       <SubDiv>
-        <TextDiet>DIET</TextDiet>
-        <TextRecommended>Recommended</TextRecommended>
+        <TextDiet>{contentToRender.subtitle}</TextDiet>
+        {product && <TextRecommended>Recommended</TextRecommended>}
         <AddBtn>
-          Add
+          {contentToRender.button}
           <ArrowRight>
             <use href={sprite + `#arrow-right`}></use>
           </ArrowRight>
@@ -76,18 +96,31 @@ const ProductsItem = () => {
             <use href={sprite + `#runningMan`}></use>
           </RunningMan>
         </IconContainer>
-        {textLength(product.title)}
+        {textLength(contentToRender.title)}
       </NameProduct>
       <SubTypeDiv>
-        <SubType>Calories: </SubType>
-        <SubTypeValue>{product.calories}</SubTypeValue>
-        <SubType>Category: </SubType>
-        <SubTypeValue>{product.category}</SubTypeValue>
-        <SubType>Weight: </SubType>
-        <SubTypeValue>{product.weight}</SubTypeValue>
+        <SubType>
+          {contentToRender.text1}
+          <SubTypeValue>{contentToRender.subText1}</SubTypeValue>
+        </SubType>
+
+        <SubType>
+          {contentToRender.text2}
+          <SubTypeValue>{contentToRender.subText2}</SubTypeValue>
+        </SubType>
+
+        <SubType>
+          {contentToRender.text3}
+          <SubTypeValue>{contentToRender.subText3}</SubTypeValue>
+        </SubType>
       </SubTypeDiv>
     </Item>
   );
+};
+
+ProductsItem.propTypes = {
+  product: PropTypes.object,
+  exercise: PropTypes.object,
 };
 
 export default ProductsItem;
