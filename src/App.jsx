@@ -8,6 +8,8 @@ const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
 const SignUp = lazy(() => import('../src/pages/SignUp/SignUp'));
 const Products = lazy(() => import('../src/pages/Products/Products'));
+const Profile = lazy(() => import('./pages/Profile/Profile'));
+
 
 const test = import.meta.env.VITE_API_TEST;
 
@@ -20,6 +22,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
     </Routes>
   );
