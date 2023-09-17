@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
 import imgPrmsForm from '../../assets/images/imgParamsForm';
-import { mq, colors } from '../../utils';
+import { mq } from '../../utils';
 
 export const ParamsPageWrapper = styled.div`
   ${mq.smallMobile} {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
 
     background-color: black;
     background:
@@ -67,7 +67,7 @@ export const ParamsPageWrapper = styled.div`
   }
 
   ${mq.tablet} {
-    padding: 32px;
+    padding: 0 32px 32px 32px;
     background-size: 488px 835px;
 
     background-image: url(${props => {
@@ -122,7 +122,7 @@ export const ParamsPageWrapper = styled.div`
   }
 
   ${mq.desktop} {
-    padding: 32px 32px 32px 96px;
+    padding: 0 32px 32px 96px;
 
     background-size: 670px 800px;
 
@@ -175,23 +175,5 @@ export const ParamsPageWrapper = styled.div`
         }});
       }
     }
-  }
-`;
-
-export const LogoWrapper = styled.div`
-  ${mq.smallMobile} {
-    width: 100px;
-    height: 17px;
-    margin-bottom: 90px;
-
-    color: ${colors.white};
-  }
-
-  ${mq.tablet} {
-    margin-bottom: 140px;
-  }
-
-  ${mq.desktop} {
-    margin-bottom: 151px;
   }
 `;

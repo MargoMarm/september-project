@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import Logo from '../../components/headersComp/Logo/Logo';
+import Header from '../../components/headersComp/Header/Header';
 import ParamsForm from '../../components/ParamsForm/ParamsForm';
 import ParamsBar from '../../components/ParamsBar/ParamsBar';
-import { ParamsPageWrapper, LogoWrapper } from './Params.styled';
+import { ParamsPageWrapper } from './Params.styled';
 
 const Params = () => {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -18,9 +18,7 @@ const Params = () => {
 
   return (
     <ParamsPageWrapper steps={steps}>
-      <LogoWrapper>
-        <Logo />
-      </LogoWrapper>
+      <Header />
 
       <ParamsForm setSwiperRef={setSwiperRef} setSteps={setSteps} />
 

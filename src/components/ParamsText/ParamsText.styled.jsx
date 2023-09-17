@@ -7,7 +7,7 @@ export const Text = styled.p`
 
     font-size: 14px;
     font-weight: 400;
-    line-height: 128.571%; /* 128.571% */
+    line-height: 128.571%;
 
     color: ${colors.textWhite03};
   }
@@ -17,7 +17,7 @@ export const Text = styled.p`
     margin-bottom: ${props => props.mb_t};
 
     font-size: 16px;
-    line-height: 150%; /* 150% */
+    line-height: 150%;
   }
 
   ${mq.desktop} {

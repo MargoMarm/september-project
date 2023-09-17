@@ -2,25 +2,6 @@ import styled from '@emotion/styled';
 import { Field } from 'formik';
 import { colors, mq } from '../../utils';
 
-export const Title = styled.h1`
-  ${mq.smallMobile} {
-    margin-bottom: 14px;
-
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 116.667%;
-
-    color: ${colors.white};
-  }
-
-  ${mq.tablet} {
-    margin-bottom: 16px;
-
-    font-size: 32px;
-    line-height: 137.5%;
-  }
-`;
-
 export const InputGroup = styled.div`
   ${mq.smallMobile} {
     display: flex;
@@ -62,37 +43,6 @@ export const FormikField = styled(Field)`
 
     &:focus-within {
       border-color: ${colors.orange};
-    }
-  }
-
-  ${mq.tablet} {
-    font-size: 16px;
-    line-height: 150%;
-  }
-`;
-
-export const BtnNav = styled.button`
-  ${mq.smallMobile} {
-    padding-top: 0;
-    padding-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 128%;
-
-    color: ${colors.white};
-    background: transparent;
-
-    border: none;
-    outline: none;
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    &:hover {
-      color: ${colors.orange};
-    }
-
-    &:focus {
-      color: ${colors.orange};
     }
   }
 

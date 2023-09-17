@@ -15,13 +15,13 @@ import {
 
 import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
 import ParamsText from '../ParamsText/ParamsText';
+import Title from '../Title/Title';
+import ParamsBtn from '../ParamsBtn/ParamsBtn';
 
 import {
   FormikField,
-  Title,
   InputGroup,
   FormRadioBtnGroupWrapper,
-  BtnNav,
   BtnsAndBlock,
   BtnSubmit,
 } from './ParamsForm.styled';
@@ -52,7 +52,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
             onSwiper={setSwiperRef}
           >
             <SwiperSlide>
-              <Title>Get closer to your goals!</Title>
+              <Title text={'Get closer to your goals!'} margin={14} />
 
               <ParamsText mb_m={'50px'} mb_t={'54px'}>
                 To ensure a personalized user experience and the proper
@@ -84,14 +84,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                 />
               </InputGroup>
 
-              <BtnNav
-                type="button"
-                onClick={() => {
-                  setSteps(2);
-                }}
-              >
-                Next
-              </BtnNav>
+              <ParamsBtn setSteps={setSteps} type={'next'} step={2} />
 
               <ParamsBlockCard
                 type={'grey'}
@@ -117,9 +110,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
             </SwiperSlide>
 
             <SwiperSlide>
-              <Title style={{ marginBottom: '28px' }}>
-                Get closer to your goals!
-              </Title>
+              <Title text={'Get closer to your goals!'} margin={28} />
 
               <FormControl style={{ marginBottom: '28px' }}>
                 <FormRadioBtnGroupWrapper>
@@ -393,24 +384,8 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
               </FormControl>
 
               <BtnsAndBlock>
-                <BtnNav
-                  type="button"
-                  style={{ color: `${palette.textWhite06}` }}
-                  onClick={() => {
-                    setSteps(1);
-                  }}
-                >
-                  Back
-                </BtnNav>
-
-                <BtnNav
-                  type="button"
-                  onClick={() => {
-                    setSteps(3);
-                  }}
-                >
-                  Next
-                </BtnNav>
+                <ParamsBtn setSteps={setSteps} type={'back'} step={1} />
+                <ParamsBtn setSteps={setSteps} type={'next'} step={3} />
 
                 <ParamsBlockCard
                   data={350}
@@ -435,7 +410,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
               />
             </SwiperSlide>
             <SwiperSlide>
-              <Title>Dear user</Title>
+              <Title text={'Dear user'} margin={14} />
 
               <ParamsText mb_m={'28px'} mb_t={'64px'}>
                 Thank you for filling in all the required data. We greatly
@@ -446,15 +421,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
 
               <BtnSubmit>Go</BtnSubmit>
 
-              <BtnNav
-                type="button"
-                style={{ color: `${palette.textWhite06}` }}
-                onClick={() => {
-                  setSteps(2);
-                }}
-              >
-                Back
-              </BtnNav>
+              <ParamsBtn setSteps={setSteps} type={'back'} step={2} />
 
               <ParamsBlockCard
                 data={350}
