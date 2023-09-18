@@ -1,4 +1,4 @@
-import{n as Fr,m as it,j as $r,g as wr,r as m,h as wn}from"./index-52385d79.js";import{c as Or,P as at}from"./index-c81e5c13.js";const _l={top:{desk:116,tab:105},bt:{tab:16,mob:14}},On=Fr.h2`
+import{n as Fr,m as it,j as $r,g as wr,r as m,h as wn}from"./index-ff757372.js";import{c as Or,P as at}from"./index-f4d215ad.js";const _l={top:{desk:116,tab:105,mob:66},bt:{tab:16,mob:14}},On=Fr.h2`
   color: ${Or.white};
 
   font-family: Roboto;
@@ -8,6 +8,7 @@ import{n as Fr,m as it,j as $r,g as wr,r as m,h as wn}from"./index-52385d79.js";
   line-height: 1.05;
   letter-spacing: 0.38px;
   margin-bottom: ${e=>e.margin.bt.mob}px;
+  margin-top: ${e=>e.margin.top.mob}px;
 
   ${it.tablet} {
     margin-bottom: ${e=>e.margin.bt.tab}px;
