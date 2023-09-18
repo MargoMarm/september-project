@@ -13,7 +13,7 @@ import {
   OrangeTextWrapper,
   OrangeDynamicText,
   OrangeStaticText,
-} from './ParamsBlocks.styled';
+} from './ParamsBlockCard.styled';
 
 const ParamsBlockCard = ({ data, measure, type, step }) => {
   if (type === 'grey') {

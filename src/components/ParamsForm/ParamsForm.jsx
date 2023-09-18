@@ -14,10 +14,10 @@ import {
   colors,
 } from '@mui/material';
 
-import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
+import ParamsBlockCard from '../ParamsBlockСard';
+import ParamsBtn from '../ParamsBtn';
 import Title from '../Title/Title';
 import SubTitle from '../SubTitle/SubTitle';
-import ParamsBtn from '../ParamsBtn/ParamsBtn';
 
 import {
   FormikField,
