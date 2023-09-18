@@ -2,15 +2,13 @@ import styled from '@emotion/styled';
 import { mq, colors } from '../../utils';
 
 export const GreyCard = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   ${mq.smallMobile} {
+    position: absolute;
     top: ${props => (props.step === '2' ? 534 : 474)}px;
     left: ${props => (props.step === '2' ? 154 : 101)}px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 146px;
     height: 66px;
 
