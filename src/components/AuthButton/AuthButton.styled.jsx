@@ -10,7 +10,8 @@ export const AuthBtn = styled.button`
   background-color: ${colors.orange};
   border-radius: 12px;
   border: none;
-  width: 136px;
+  min-width: 136px;
+  margin: ${props => props.margin};
 
   color: ${colors.white};
   font-size: 16px;
@@ -19,9 +20,11 @@ export const AuthBtn = styled.button`
 
   ${mq.tablet} {
     padding: 16px 60px;
-    font-size: 20px;
+    font-size: ${props => {
+      return props.fontTablet || '20px';
+    }};
     line-height: 120%;
 
-    width: 190px;
+    min-width: 190px;
   }
 `;
