@@ -6,6 +6,7 @@ import {
   KeyValue,
   Label,
 } from './DailyStatsCards.styled';
+import sprite from '../../assets/sprite.svg';
 
 const DailyStatsCards = ({
   icon,
@@ -18,7 +19,7 @@ const DailyStatsCards = ({
     <CardWrap fill={fill} border={border}>
       <KeyWrap>
         <Svg>
-          <use href={`/src/assets/sprite.svg#${icon}`}></use>
+          <use href={sprite + `#${icon}`}></use>
         </Svg>
 
         <Label>{label}</Label>
