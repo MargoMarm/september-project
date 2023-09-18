@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 import { colors, mq } from '../../utils';
 
 export const Item = styled.li`
+  display: grid;
   position: relative;
   box-sizing: border-box;
-  display: inline-block;
   width: 100%;
   height: auto;
   padding: 16px;
