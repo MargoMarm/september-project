@@ -9,7 +9,7 @@ const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
 const SignUp = lazy(() => import('../src/pages/SignUp/SignUp'));
 const Products = lazy(() => import('../src/pages/Products/Products'));
 
-const Params = lazy(() => import('../src/pages/Params/Params'));
+const Params = lazy(() => import('../src/pages/Params'));
 
 const Exercises = lazy(() => import('../src/pages/Exercises/Exercises'));
 
@@ -19,7 +19,6 @@ const Diary = lazy(() => import('../src/pages/Diary/Diary'));
 const test = import.meta.env.VITE_API_TEST;
 
 function App() {
-
   console.log(test);
 
   return (

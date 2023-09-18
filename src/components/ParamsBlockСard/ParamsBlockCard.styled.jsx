@@ -2,38 +2,32 @@ import styled from '@emotion/styled';
 import { mq, colors } from '../../utils';
 
 export const GreyCard = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   ${mq.smallMobile} {
+    position: absolute;
+    top: ${props => (props.step === '2' ? 534 : 474)}px;
+    left: ${props => (props.step === '2' ? 154 : 101)}px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 146px;
     height: 66px;
 
-    margin-top: ${props => props.mt_m};
-    margin-right: ${props => props.mr_m};
-    margin-bottom: ${props => props.mb_m};
-    margin-left: ${props => props.ml_m};
     background: #303030;
 
     border-radius: 12px;
   }
 
   ${mq.tablet} {
-    margin-top: ${props => props.mt_t};
-    margin-right: ${props => props.mr_t};
-    margin-bottom: ${props => props.mb_t};
-    margin-left: ${props => props.ml_t};
+    top: 630px;
+    left: 297px;
 
     width: 206px;
     height: 96px;
   }
 
   ${mq.desktop} {
-    margin-top: ${props => props.mt_d};
-    margin-right: ${props => props.mr_d};
-    margin-bottom: ${props => props.mb_d};
-    margin-left: ${props => props.ml_d};
+    left: 674px;
+    top: 300px;
   }
 `;
 
@@ -109,33 +103,25 @@ export const GreyStaticText = styled.p`
 
 export const OrangeCard = styled.div`
   ${mq.smallMobile} {
-    padding: 14px 18px;
+    position: absolute;
+    top: 625px;
+    right: 0;
     width: 119px;
     height: 76px;
-
-    margin-top: ${props => props.mt_m};
-    margin-right: ${props => props.mr_m};
-    margin-bottom: ${props => props.mb_m};
-    margin-left: ${props => props.ml_m};
+    padding: 14px 18px;
 
     border-radius: 12px;
     background: ${colors.orangeSecondary};
   }
   ${mq.tablet} {
+    top: 782px;
+
     width: 180px;
     height: 110px;
-
-    margin-top: ${props => props.mt_t};
-    margin-right: ${props => props.mr_t};
-    margin-bottom: ${props => props.mb_t};
-    margin-left: ${props => props.ml_t};
   }
 
   ${mq.desktop} {
-    margin-top: ${props => props.mt_d};
-    margin-right: ${props => props.mr_d};
-    margin-bottom: ${props => props.mb_d};
-    margin-left: ${props => props.ml_d};
+    top: 430px;
   }
 `;
 

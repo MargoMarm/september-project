@@ -10,11 +10,12 @@ export const StyledTitle = styled.h2`
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: 0.38px;
-  margin-bottom: ${props => props.margin}px;
+  margin-bottom: ${props => props.margin.bt.mob}px;
+  margin-top: ${props => props.margin.top.mob}px;
 
   ${mq.tablet} {
-    margin-bottom: ${props => props.margin + 2}px;
-    margin-top: 105px;
+    margin-bottom: ${props => props.margin.bt.tab}px;
+    margin-top: ${props => props.margin.top.tab}px;
     font-size: 32px;
 
     line-height: 1.11;
@@ -22,6 +23,6 @@ export const StyledTitle = styled.h2`
   }
 
   ${mq.desktop} {
-	margin-top: 116px;
+    margin-top: ${props => props.margin.top.desk}px;
   }
 `;
