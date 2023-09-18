@@ -1,5 +1,4 @@
 import CustomNavLink from '../../components/CustomNavLink/CustomNavLink';
-import DayDiaryProductsOrExercises from '../../components/DayDiaryProductsOrExercises/DayDiaryProductsOrExercises';
 import MainTitle from '../../components/MainTitle/MainTitle';
 import Header from '../../components/headersComp/Header/Header';
 import { LinkList, Wrapper } from './Home.styled';
