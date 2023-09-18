@@ -18,7 +18,8 @@ import sprite from '../../assets/sprite.svg';
 const MobMenu = () => {
   const [mobMenu, setMobMenu] = useState(false);
 
-  const toggleMobMenu = () => setMobMenu(!mobMenu);
+	const toggleMobMenu = () => setMobMenu(!mobMenu);
+	
 
   useEffect(() => {
     const handleKeyDown = e => {
@@ -52,8 +53,8 @@ const MobMenu = () => {
             <use href={sprite + `#menu`}></use>
           </Svg>
         </ButtonMenu>
-		  </MenuBars>
-		  
+      </MenuBars>
+
       {mobMenu && <Overlay onClick={toggleMobMenu}></Overlay>}
       <ContainerMenu className={mobMenu === true ? 'active' : ''}>
         <NavMenuItems>
@@ -63,9 +64,15 @@ const MobMenu = () => {
             </Svg>
           </ButtonMenuExit>
           <ContainerLink>
-            <CustomNavLink to={'/dairy'} text="Diary" />
-            <CustomNavLink to={'/products'} text="Products" />
-            <CustomNavLink to={'/exercises'} text="Exercises" />
+            <li onClick={toggleMobMenu}>
+              <CustomNavLink to={'/dairy'} text="Diary" />
+            </li>
+            <li onClick={toggleMobMenu}>
+              <CustomNavLink to={'/products'} text="Products" />
+            </li>
+            <li onClick={toggleMobMenu}>
+              <CustomNavLink to={'/exercises'} text="Exercises" />
+            </li>
           </ContainerLink>
 
           <NavbarToggle>

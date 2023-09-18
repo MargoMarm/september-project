@@ -96,7 +96,7 @@ position: relative;
   }
 `;
 
-export const ContainerLink = styled.div`
+export const ContainerLink = styled.ul`
   display: flex;
   align-items: center;
   flex-direction: column;
