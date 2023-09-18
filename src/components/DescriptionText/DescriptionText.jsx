@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
-import { Container, Text, Icon } from './DescriptionText.styled';
+import { ExclamationIcon, ExclamationText } from './DescriptionText.styled';
 import sprite from '../../assets/sprite.svg';
 
 const DescriptionText = ({ text, width }) => {
   return (
-    <Container width={width}>
-      <Icon>
+    <ExclamationText width={width}>
+      <ExclamationIcon>
         <use href={sprite + `#icon-exclamation-mark`}></use>
-      </Icon>
-      <Text>{text}</Text>;
-    </Container>
+      </ExclamationIcon>
+      {text}
+    </ExclamationText>
   );
 };
 
