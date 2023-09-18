@@ -9,6 +9,7 @@ const colors = {
   red: '#E9101D',
   green: '#3CBF61',
   textWhite005: 'rgba(239, 237, 232, 0.05)',
+  textWhite02: 'rgba(239, 237, 232, 0.20)',
   textWhite03: 'rgba(239, 237, 232, 0.30)',
   textWhite05: 'rgba(239, 237, 232, 0.50)',
   textWhite06: 'rgba(239, 237, 232, 0.60)',
@@ -16,5 +17,3 @@ const colors = {
 };
 
 export default colors;
-
-

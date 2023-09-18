@@ -28,5 +28,11 @@
 <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M12 4h-1.6c-2.24 0-3.36 0-4.216 0.436-0.753 0.383-1.365 0.995-1.748 1.748-0.436 0.856-0.436 1.976-0.436 4.216v11.2c0 2.24 0 3.36 0.436 4.216 0.383 0.753 0.995 1.364 1.748 1.748 0.856 0.436 1.976 0.436 4.216 0.436h1.6"></path>
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M21.333 22.667l6.667-6.667M28 16l-6.667-6.667M28 16h-16"></path>
 </symbol>
+
+<symbol id="icon-exclamation-mark" viewBox="0 0 32 32">
+<path fill="#efa082" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+<path fill="none" stroke="#efede8" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 25.333v0.013M16 20v-13.333"></path>
+</symbol>
+
   </defs>
 </svg>

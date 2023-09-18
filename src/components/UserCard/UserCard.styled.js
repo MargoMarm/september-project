@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-import { mq, colors, button } from '../../utils';
+import { colors, button, mq } from '../../utils';
 
 export const Section = styled.section`
-  outline: 1px solid green;
+  flex-shrink: 0;
+  max-width: 439px;
+  margin: 0 auto;
 `;
 
 export const AvatarWrapper = styled.div`
@@ -13,9 +14,15 @@ export const AvatarWrapper = styled.div`
   align-items: center;
   width: 90px;
   height: 90px;
+  margin: 0 auto 32px;
   border: 1px solid ${colors.orange};
   border-radius: 50%;
-  margin: 0 auto 32px;
+
+  ${mq.tablet} {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 34px;
+  }
 `;
 
 export const UserSVG = styled.svg`
@@ -23,6 +30,11 @@ export const UserSVG = styled.svg`
   height: 62px;
   fill: ${colors.grey};
   fill-opacity: 0.1;
+
+  ${mq.tablet} {
+    width: 102px;
+    height: 102px;
+  }
 `;
 
 export const ImgWrap = styled.div`
@@ -30,7 +42,12 @@ export const ImgWrap = styled.div`
   height: 90px;
   border-radius: 50%;
   overflow: hidden;
-`
+
+  ${mq.tablet} {
+    width: 150px;
+    height: 150px;
+  }
+`;
 
 export const Avatar = styled.img`
   width: 100%;
@@ -46,11 +63,11 @@ export const AddUserBtn = styled.label`
   transform: translateX(-50%);
 
   & input {
-    opacity: 0;
-    visibility: hidden;
     position: absolute;
     width: 0;
     height: 0;
+    opacity: 0;
+    visibility: hidden;
   }
 
   & svg {
@@ -58,37 +75,85 @@ export const AddUserBtn = styled.label`
     height: 24px;
     fill: ${colors.orange};
     stroke: ${colors.white};
+    transition: fill 0.3s;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: ${colors.orangeSecondary};
+  }
+
+  ${mq.tablet} {
+    bottom: -16px;
+    width: 32px;
+    height: 32px;
+
+    & svg {
+      width: 32px;
+      height: 32px;
+    }
   }
 `;
 
 export const H3 = styled.h3`
-  color: ${colors.grey};
-  font-size: 18px;
-  line-height: 1.1;
-  font-weight: 400;
-  text-align: center;
   margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: ${colors.grey};
+  text-align: center;
+
+  ${mq.tablet} {
+    margin-bottom: 32px;
+  }
 `;
 
-export const CardWrap =  styled.div`
+export const CardsWrap = styled.div`
   display: flex;
   justify-content: center;
   gap: 0 14px;
+  margin-bottom: 40px;
+
+  ${mq.tablet} {
+    margin-bottom: 32px;
+  }
+`;
+
+export const DailyStatsWrap = styled.div`
+  width: 100%;
 `;
 
 export const Button = styled.button`
   ${button};
   display: flex;
-  margin-left: auto;
   gap: 0 8px;
+  margin-top: 40px;
+  margin-left: auto;
+  transition: color 0.3s;
+
   & span {
-    color: ${colors.grey};
     font-size: 14px;
-    line-height: 1.3; 
+    line-height: 1.3;
+    color: ${colors.grey};
+    transition: color 0.3s;
   }
+
   & svg {
-    stroke: ${colors.orange};
     width: 20px;
     height: 20px;
+    stroke: ${colors.orange};
+    transition: stroke 0.3s;
+  }
+
+  &:hover span,
+  &:hover svg,
+  &:focus span,
+  &:focus svg {
+    color: ${colors.textWhite08};
+    stroke: ${colors.orangeSecondary};
+  }
+
+  ${mq.tablet} {
+    margin-top: 32px;
   }
 `;

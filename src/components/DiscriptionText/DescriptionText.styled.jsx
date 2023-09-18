@@ -4,7 +4,7 @@ import { colors, mq } from '../../utils';
 export const Container = styled.div`
   display: flex;
   gap: 8px;
-  width: 335px;
+  width: 100%
 
   ${mq.tablet} {
     width: 439px;
@@ -14,6 +14,7 @@ export const Container = styled.div`
 export const Icon = styled.svg`
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
 `;
 
 export const Text = styled.p`
