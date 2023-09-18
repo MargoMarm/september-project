@@ -5,6 +5,9 @@ export const Section = styled.section`
   flex-shrink: 0;
   max-width: 439px;
   margin: 0 auto;
+  ${mq.desktop} {
+    margin: 0;
+  }
 `;
 
 export const AvatarWrapper = styled.div`

@@ -1,8 +1,8 @@
 import DailyStatsCards from "../DailyStatsCards/DailyStatsCards";
 import { AddUserBtn, Avatar, ImgWrap, AvatarWrapper, CardsWrap, DailyStatsWrap, H3, Section, UserSVG, Button } from "./UserCard.styled";
-import sprite from '../../assets/sprite2.svg';
+import sprite from '../../assets/sprite.svg';
 import img from '../../assets/11.png'
-import DescriptionText from "../DiscriptionText/DescriptionText";
+import DescriptionText from "../DescriptionText/DescriptionText";
 
 export default function UserCard() {
   return (
@@ -30,11 +30,11 @@ export default function UserCard() {
         </DailyStatsWrap>
       </CardsWrap>
 
-      <DescriptionText  text="We understand that each individual is unique, so the entire approach to diet is relative and tailored to your unique body and goals." />
+      <DescriptionText  text="We understand that each individual is unique, so the entire approach to diet is relative and tailored to your unique body and goals." width={{tablet:439, desktop:439}} />
       
       <Button type="button">
         <span>Logout</span>
-        <svg><use href={`${sprite}#logout`} ></use></svg>
+        <svg><use href={`${sprite}#logout_`} ></use></svg>
       </Button>
     </Section>
   )

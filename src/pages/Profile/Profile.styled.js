@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import { mq, colors } from '../../utils';
 
+export const Section = styled.section`
+  padding: 0 20px;
+`;
+
 export const BlockWrapper = styled.div`
   margin-top: 40px;
 
@@ -13,6 +17,7 @@ export const BlockWrapper = styled.div`
     flex-direction: row-reverse;
     gap: 0 49px;
     margin-top: 32px;
+    justify-content: center;
   }
 `;
 

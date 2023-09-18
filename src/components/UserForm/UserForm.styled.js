@@ -35,6 +35,7 @@ export const Label = styled.label`
   display: block;
   max-width: 345px;
   width: 100%;
+  margin-bottom: 14px;
   font-size: 12px;
   line-height: 1.5;
   color: ${colors.textWhite05};
@@ -52,7 +53,6 @@ export const HalfLabel = styled(Label)`
 export const Input = styled.input`
   width: 100%;
   height: 46px;
-  margin-bottom: 14px;
   padding: 14px;
   color: ${colors.grey};
   background-color: inherit;

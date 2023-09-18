@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import sprite from '../../assets/sprite2.svg';
+import sprite from '../../assets/sprite.svg';
 import {
   KeyWrap,
   CardWrap,
@@ -7,7 +7,6 @@ import {
   KeyValue,
   Label,
 } from './DailyStatsCards.styled';
-import sprite from '../../assets/sprite.svg';
 
 const DailyStatsCards = ({
   icon,
