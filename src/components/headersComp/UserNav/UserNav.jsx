@@ -1,13 +1,20 @@
 import CustomNavLink from '../../CustomNavLink/CustomNavLink';
-import { WrapUserNav, Button, Svg,SvgUser, ButtonWrap ,Span} from './UserNav.styled';
+import {
+  WrapUserNav,
+  Button,
+  Svg,
+  SvgUser,
+  ButtonWrap,
+  Span,
+} from './UserNav.styled';
 import sprite from '../../../assets/sprite.svg';
 
 export const UserNav = () => {
   return (
     <WrapUserNav>
-      <CustomNavLink text="Diary" isinheader={'true'} />
-      <CustomNavLink text="Products" isinheader={'true'} />
-      <CustomNavLink text="Exercises" isinheader={'true'} />
+      <CustomNavLink to="/dairy" text="Diary" isinheader={'true'} />
+      <CustomNavLink to="/products" text="Products" isinheader={'true'} />
+      <CustomNavLink to="/exercises" text="Exercises" isinheader={'true'} />
       <ButtonWrap>
         <Button>
           <Svg>

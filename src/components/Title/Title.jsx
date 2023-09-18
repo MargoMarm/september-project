@@ -7,7 +7,7 @@ const Title = ({ text, margin }) => {
 
 Title.propTypes = {
   text: PropTypes.string,
-  margin: PropTypes.number,
+  margin: PropTypes.object,
 };
 
 export default Title;
