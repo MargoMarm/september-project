@@ -1,4 +1,4 @@
-import { useState , useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import CustomNavLink from '../CustomNavLink/CustomNavLink';
 import {
   MenuBars,
@@ -11,27 +11,28 @@ import {
   Span,
   Svg,
   SvgUser,
+  Overlay,
 } from './MobMenu.styled';
 import sprite from '../../assets/sprite.svg';
 
 const MobMenu = () => {
   const [mobMenu, setMobMenu] = useState(false);
 
-	const toggleMobMenu = () => setMobMenu(!mobMenu);
-	
- useEffect(() => {
-   const handleKeyDown = e => {
-     if (e.code === 'Escape') {
-       toggleMobMenu();
-     }
-   };
+  const toggleMobMenu = () => setMobMenu(!mobMenu);
 
-   window.addEventListener('keydown', handleKeyDown);
+  useEffect(() => {
+    const handleKeyDown = e => {
+      if (e.code === 'Escape') {
+        toggleMobMenu();
+      }
+    };
 
-   return () => {
-     window.removeEventListener('keydown', handleKeyDown);
-   };
- }, [toggleMobMenu]);
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [toggleMobMenu]);
 
   return (
     <>
@@ -51,10 +52,11 @@ const MobMenu = () => {
             <use href={sprite + `#menu`}></use>
           </Svg>
         </ButtonMenu>
-      </MenuBars>
-
+		  </MenuBars>
+		  
+      {mobMenu && <Overlay onClick={toggleMobMenu}></Overlay>}
       <ContainerMenu className={mobMenu === true ? 'active' : ''}>
-        <NavMenuItems onClick={toggleMobMenu}>
+        <NavMenuItems>
           <ButtonMenuExit type="button" onClick={toggleMobMenu}>
             <Svg>
               <use href={sprite + `#close`}></use>
