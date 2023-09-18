@@ -1,12 +1,12 @@
 import DailyStatsCards from "../DailyStatsCards/DailyStatsCards";
-import { AddUserBtn, Avatar, ImgWrap, AvatarWrapper, CardsWrap, DailyStatsWrap, H3, Section, UserSVG, Button } from "./UserCard.styled";
+import { AddUserBtn, Avatar, ImgWrap, AvatarWrapper, CardsWrap, DailyStatsWrap, H3, Container, UserSVG, Button } from "./UserCard.styled";
 import sprite from '../../assets/sprite.svg';
 import img from '../../assets/11.png'
 import DescriptionText from "../DescriptionText/DescriptionText";
 
 export default function UserCard() {
   return (
-    <Section>
+    <Container>
       <AvatarWrapper>
         {true
           ? <UserSVG><use href={`${sprite}#icon-gridicons_user`} ></use></UserSVG>
@@ -36,6 +36,6 @@ export default function UserCard() {
         <span>Logout</span>
         <svg><use href={`${sprite}#logout_`} ></use></svg>
       </Button>
-    </Section>
+    </Container>
   )
 }

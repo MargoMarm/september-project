@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { colors, button, mq } from '../../utils';
 
-export const Section = styled.section`
+export const Container = styled.div`
   flex-shrink: 0;
   max-width: 439px;
   margin: 0 auto;
