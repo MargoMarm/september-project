@@ -1,4 +1,4 @@
-import{n as t,m as s,j as e,r as j}from"./index-43ac5c71.js";import{c as n}from"./index-cb35df29.js";import{C as r}from"./CustomNavLink-7fe787f0.js";import{s as i}from"./sprite-4ff87bc4.js";const c={margin:"0",padding:"0",border:"none",backgroundColor:" rgba(0, 0, 0, 0)"},g={width:"46px",height:"46px",fill:"rgba(48, 48, 48, 0.3)",strokeWidth:"1px",stroke:" #e6533c"},f=t.div`
+import{n as t,m as s,j as e,r as j}from"./index-4535f9f1.js";import{c as n}from"./index-56ab578e.js";import{C as r}from"./CustomNavLink-ef1566e5.js";import{b as c}from"./customBtn-d4ff7805.js";import{s as i}from"./sprite-57a4f95b.js";const g={width:"46px",height:"46px",fill:"rgba(48, 48, 48, 0.3)",strokeWidth:"1px",stroke:" #e6533c"},f=t.div`
   background-color: ${n.black};
   height: 61px;
   display: flex;
@@ -49,9 +49,9 @@ import{n as t,m as s,j as e,r as j}from"./index-43ac5c71.js";import{c as n}from"
   ${s.desktop} {
     gap: 8px;
   }
-`,$=()=>e.jsxs(m,{children:[e.jsx(r,{to:"/dairy",text:"Diary",isinheader:"true"}),e.jsx(r,{to:"/products",text:"Products",isinheader:"true"}),e.jsx(r,{to:"/exercises",text:"Exercises",isinheader:"true"}),e.jsxs(y,{children:[e.jsxs(a,{children:[e.jsx(p,{children:e.jsx("use",{href:i+"#settings"})})," "]}),e.jsxs(a,{children:[e.jsx(b,{children:e.jsx("use",{href:i+"#ecllipse"})})," "]}),e.jsxs(a,{children:[e.jsx(v,{children:"Logout"}),e.jsx(p,{children:e.jsx("use",{href:i+"#logout"})})," "]})]})]}),k=t.button`
+`,$=()=>e.jsxs(m,{children:[e.jsx(r,{to:"/dairy",text:"Diary",isinheader:"true"}),e.jsx(r,{to:"/products",text:"Products",isinheader:"true"}),e.jsx(r,{to:"/exercises",text:"Exercises",isinheader:"true"}),e.jsxs(y,{children:[e.jsxs(a,{children:[e.jsx(p,{children:e.jsx("use",{href:i+"#settings"})})," "]}),e.jsxs(a,{children:[e.jsx(b,{children:e.jsx("use",{href:i+"#ecllipse"})})," "]}),e.jsxs(a,{children:[e.jsx(v,{children:"Logout"}),e.jsx(p,{children:e.jsx("use",{href:i+"#logout"})})," "]})]})]}),w=t.button`
   ${c}
-`,w=t.div`
+`,k=t.div`
   display: flex;
   align-items: flex-end;
   gap: 5px;
@@ -62,7 +62,7 @@ import{n as t,m as s,j as e,r as j}from"./index-43ac5c71.js";import{c as n}from"
     width: 152px;
     height: 17px;
   }
-`,C=()=>e.jsx(e.Fragment,{children:e.jsx(w,{children:e.jsxs(k,{type:"button",children:[e.jsx(S,{children:e.jsx("use",{href:i+"#logo-big"})})," "]})})}),h=t.div`
+`,C=()=>e.jsx(e.Fragment,{children:e.jsx(k,{children:e.jsxs(w,{type:"button",children:[e.jsx(S,{children:e.jsx("use",{href:i+"#logo-big"})})," "]})})}),h=t.div`
   display: flex;
   margin-right: 20px;
   gap: 14px;
@@ -145,4 +145,4 @@ import{n as t,m as s,j as e,r as j}from"./index-43ac5c71.js";import{c as n}from"
   align-items: center;
   flex-direction: column;
   gap: 20px;
-`,z=()=>{const[d,u]=j.useState(!1),o=()=>u(!d);return e.jsxs(e.Fragment,{children:[e.jsxs(h,{to:"#",children:[e.jsx(x,{type:"button",children:e.jsx(l,{children:e.jsx("use",{href:i+"#settings"})})}),e.jsx(x,{type:"button",children:e.jsx(N,{children:e.jsx("use",{href:i+"#ecllipse"})})}),e.jsx(x,{type:"button",onClick:o,children:e.jsx(l,{children:e.jsx("use",{href:i+"#menu"})})})]}),e.jsx(U,{className:d===!0?"active":"",children:e.jsxs(M,{onClick:o,children:[e.jsx(B,{type:"button",onClick:o,children:e.jsx(l,{children:e.jsx("use",{href:i+"#close"})})}),e.jsxs(W,{children:[e.jsx(r,{to:"/dairy",text:"Diary"}),e.jsx(r,{to:"/products",text:"Products"}),e.jsx(r,{to:"/exercises",text:"Exercises"})]}),e.jsx(E,{children:e.jsx(h,{to:"#",children:e.jsxs(x,{type:"button",onClick:o,children:[e.jsx(L,{children:" Logout"}),e.jsx(l,{children:e.jsx("use",{href:i+"#logout"})})]})})})]})})]})},R=()=>e.jsxs(f,{children:[e.jsx(C,{}),e.jsx($,{}),e.jsx(z,{})]});export{R as H};
+`,z=()=>{const[d,u]=j.useState(!1),o=()=>u(!d);return e.jsxs(e.Fragment,{children:[e.jsxs(h,{to:"#",children:[e.jsx(x,{type:"button",children:e.jsx(l,{children:e.jsx("use",{href:i+"#settings"})})}),e.jsx(x,{type:"button",children:e.jsx(N,{children:e.jsx("use",{href:i+"#ecllipse"})})}),e.jsx(x,{type:"button",onClick:o,children:e.jsx(l,{children:e.jsx("use",{href:i+"#menu"})})})]}),e.jsx(U,{className:d===!0?"active":"",children:e.jsxs(M,{onClick:o,children:[e.jsx(B,{type:"button",onClick:o,children:e.jsx(l,{children:e.jsx("use",{href:i+"#close"})})}),e.jsxs(W,{children:[e.jsx(r,{to:"/dairy",text:"Diary"}),e.jsx(r,{to:"/products",text:"Products"}),e.jsx(r,{to:"/exercises",text:"Exercises"})]}),e.jsx(E,{children:e.jsx(h,{to:"#",children:e.jsxs(x,{type:"button",onClick:o,children:[e.jsx(L,{children:" Logout"}),e.jsx(l,{children:e.jsx("use",{href:i+"#logout"})})]})})})]})})]})},q=()=>e.jsxs(f,{children:[e.jsx(C,{}),e.jsx($,{}),e.jsx(z,{})]});export{q as H};
