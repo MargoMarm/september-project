@@ -1,7 +1,7 @@
 import Title from "../../components/Title/Title";
 import UserCard from "../../components/UserCard";
 import UserForm from "../../components/UserForm";
-import { BlockWrapper, FormWrap, Section } from "./Profile.styled";
+import { BlockWrapper, FormWrap, Container } from "./Profile.styled";
 
 export default function Profile() {
   const mgUserPage = {
@@ -10,7 +10,7 @@ export default function Profile() {
   }
 
   return (
-    <Section>
+    <Container>
       <Title text="Profile Settings" margin={mgUserPage} />
 
       <BlockWrapper>
@@ -20,6 +20,6 @@ export default function Profile() {
           <UserForm />
         </FormWrap>
       </BlockWrapper>
-    </Section>
+    </Container>
   )
 }

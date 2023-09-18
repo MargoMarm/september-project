@@ -4,8 +4,7 @@ import { mq, colors, button } from '../../utils';
 export const Form = styled.form`
   flex-shrink: 0;
   max-width: 704px;
-  margin-top: 18px;
-  margin-bottom: 50px;
+  margin: 18px auto 0;
 `;
 
 export const InputGroup = styled.div`
