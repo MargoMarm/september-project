@@ -1,4 +1,4 @@
-import{n as e,m as t,j as o}from"./index-4860e1c9.js";import{c as i,C as n}from"./CustomNavLink-f03817f0.js";const a=e.div`
+import{n as e,m as t,j as o}from"./index-514d82eb.js";import{C as n}from"./CustomNavLink-c97f0f76.js";import{c as i}from"./index-ea091eae.js";const a=e.div`
   display: flex;
 
   ${t.mobile} {
@@ -12,7 +12,7 @@ import{n as e,m as t,j as o}from"./index-4860e1c9.js";import{c as i,C as n}from"
   ${t.desktop} {
     width: 1440px;
   }
-`,s=e.div`
+`,r=e.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +35,7 @@ import{n as e,m as t,j as o}from"./index-4860e1c9.js";import{c as i,C as n}from"
     width: 670px;
     padding: 96px;
   }
-`,r=e.h1`
+`,s=e.h1`
   margin-bottom: 14px;
 
   color: ${i.white};
@@ -75,4 +75,4 @@ import{n as e,m as t,j as o}from"./index-4860e1c9.js";import{c as i,C as n}from"
   ${t.desktop} {
     width: 447px;
   }
-`,h=()=>o.jsx(a,{children:o.jsxs(s,{children:[o.jsx(r,{children:"404"}),o.jsx(p,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),o.jsx(n,{type:"button",text:"Go Home",isorange:"true",to:"/"})]})});export{h as default};
+`,x=()=>o.jsx(a,{children:o.jsxs(r,{children:[o.jsx(s,{children:"404"}),o.jsx(p,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),o.jsx(n,{type:"button",text:"Go Home",isorange:"true",to:"/"})]})});export{x as default};
