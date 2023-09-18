@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { ExclamationIcon, ExclamationText } from './DescriptionText.styled';
 import sprite from '../../assets/sprite.svg';
 
-const DescriptionText = ({ text, width }) => {
+const DescriptionText = ({ text, width, margin }) => {
   return (
-    <ExclamationText width={width}>
+    <ExclamationText width={width} margin={margin}>
       <ExclamationIcon>
         <use href={sprite + `#icon-exclamation-mark`}></use>
       </ExclamationIcon>
@@ -16,6 +16,7 @@ const DescriptionText = ({ text, width }) => {
 DescriptionText.propTypes = {
   text: PropTypes.string,
   width: PropTypes.object,
+  margin: PropTypes.object,
 };
 
 export default DescriptionText;
