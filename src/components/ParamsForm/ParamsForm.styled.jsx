@@ -9,12 +9,14 @@ export const InputGroup = styled.div`
     flex-wrap: wrap;
 
     margin: -7px;
+    margin-top: 50px;
     margin-bottom: 30px;
   }
 
   ${mq.tablet} {
     justify-content: flex-start;
     width: 527px;
+    margin-top: 54px;
     margin-bottom: 32px;
   }
 `;
@@ -76,6 +78,7 @@ export const BtnsAndBlock = styled.div`
 
 export const BtnSubmit = styled.button`
   ${mq.smallMobile} {
+    margin-top: 28px;
     margin-right: 16px;
     padding: 12px 40px;
 
@@ -101,6 +104,7 @@ export const BtnSubmit = styled.button`
   }
 
   ${mq.tablet} {
+    margin-top: 64px;
     padding: 16px 75px;
 
     font-size: 20px;

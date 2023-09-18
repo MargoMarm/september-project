@@ -2,6 +2,13 @@ import styled from '@emotion/styled';
 
 import { mq, colors } from '../../utils';
 
+export const Div = styled.div`\
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const BtnNav = styled.button`
   ${mq.smallMobile} {
     padding-top: 0;
@@ -31,4 +38,10 @@ export const BtnNav = styled.button`
     font-size: 16px;
     line-height: 150%;
   }
+`;
+
+export const Svg = styled.svg`
+  width: 20px;
+  height: 20px;
+  stroke: ${colors.orange};
 `;

@@ -14,8 +14,8 @@ import {
 } from '@mui/material';
 
 import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
-import ParamsText from '../ParamsText/ParamsText';
 import Title from '../Title/Title';
+import SubTitle from '../SubTitle/SubTitle';
 import ParamsBtn from '../ParamsBtn/ParamsBtn';
 
 import {
@@ -54,11 +54,11 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
             <SwiperSlide>
               <Title text={'Get closer to your goals!'} margin={14} />
 
-              <ParamsText mb_m={'50px'} mb_t={'54px'}>
-                To ensure a personalized user experience and the proper
-                functioning of our platform, we ask you to provide the following
-                information about your weight, height and other relevant data:
-              </ParamsText>
+              <SubTitle
+                text={
+                  'To ensure a personalized user experience and the proper functioning of our platform, we ask you to provide the following information about your weight, height and other relevant data: '
+                }
+              />
 
               <InputGroup>
                 <FormikField
@@ -412,13 +412,11 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
             <SwiperSlide>
               <Title text={'Dear user'} margin={14} />
 
-              <ParamsText mb_m={'28px'} mb_t={'64px'}>
-                Thank you for filling in all the required data. We greatly
-                appreciate your cooperation and commitment to a healthy
-                lifestyle. The collected information will allow us to provide
-                you with a more individual and personalized approach.
-              </ParamsText>
-
+              <SubTitle
+                text={
+                  ' Thank you for filling in all the required data. We greatl appreciate your cooperation and commitment to a health lifestyle. The collected information will allow us to provide you with a more individual and personalized approach.'
+                }
+              />
               <BtnSubmit>Go</BtnSubmit>
 
               <ParamsBtn setSteps={setSteps} type={'back'} step={2} />
