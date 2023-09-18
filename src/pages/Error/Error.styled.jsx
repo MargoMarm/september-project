@@ -58,10 +58,8 @@ export const Title = styled.h1`
   }
 
   ${mq.tablet} {
+    font-size: 160px;
     margin-bottom: 28px;
-  }
-
-  ${mq.desktop} {
   }
 `;
 
@@ -81,6 +79,7 @@ export const Text = styled.p`
 
   ${mq.tablet} {
     width: 356px;
+    font-size: 16px;
   }
 
   ${mq.desktop} {
