@@ -1,4 +1,4 @@
-import{n as t,N as a,m as p,j as d}from"./index-888b93d2.js";import{c as i,P as e}from"./index-c6a239c9.js";const x=t(a)`
+import{n as t,N as a,m as p,j as d}from"./index-3f06b336.js";import{c as i,P as e}from"./index-e7937559.js";const x=t(a)`
   box-sizing: border-box;
   padding: ${r=>r.isinheader==="true"?"10px 27px":"12px 40px"};
   display: inline-block;
