@@ -1,4 +1,4 @@
-import{n,c as i,m as r,j as e,s as l,P as o}from"./index-6973b331.js";const h=n.div`
+import{n,c as i,m as r,j as e,s as l,P as o}from"./index-7a007fa8.js";const h=n.div`
   box-sizing: border-box;
   border: 1px solid;
 
@@ -89,4 +89,4 @@ import{n,c as i,m as r,j as e,s as l,P as o}from"./index-6973b331.js";const h=n.
   max-width: 24px;
   max-height: 24px;
   margin-right: 8px;
-`,x=({text:t,width:s,margin:a})=>e.jsxs($,{width:s,margin:a,children:[e.jsx(u,{children:e.jsx("use",{href:l+"#icon-exclamation-mark"})}),t]});x.propTypes={text:o.string,width:o.object,margin:o.object};const w=x;export{j as D,w as a};
+`,x=({text:t,width:s,margin:a})=>e.jsxs($,{width:s,margin:a,children:[e.jsx(u,{children:e.jsx("use",{href:l+"#icon-exclamation-mark"})}),t]});x.propTypes={text:o.string,width:o.object,margin:o.object};const w=x,k={top:{mobile:20,tablet:32,desktop:48},bottom:{mobile:40,tablet:0,desktop:0}};export{j as D,w as a,k as m};
