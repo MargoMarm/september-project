@@ -7,6 +7,9 @@ import { authUser } from '../../redux/auth/operation';
 import BtnSubtitle from '../../components/BtnSubtitle/BtnSubtitle';
 import { Wrapper } from '../Home/Home.styled';
 
+import { mg } from '../../utils';
+
+
 const SignUp = () => {
   const dispatch = useDispatch();
   const handleSubmit = (user, { resetForm }) => {
@@ -14,11 +17,13 @@ const SignUp = () => {
     dispatch(authUser(user));
     resetForm();
   };
+	
+
 
   return (
     <Wrapper>
       <Header />
-      <Title text={'Sign Up'} margin={14} />
+      <Title text={'Sign Up'} margin={mg} />
       <SubTitle
         text={
           'Thank you for your interest in our platform. To complete the registration process, please provide us with the following information.'
