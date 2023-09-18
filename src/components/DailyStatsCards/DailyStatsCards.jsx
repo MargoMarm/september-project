@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import sprite from '../../assets/sprite.svg';
 import {
   KeyWrap,
   CardWrap,
@@ -6,7 +7,6 @@ import {
   KeyValue,
   Label,
 } from './DailyStatsCards.styled';
-import sprite from '../../assets/sprite.svg';
 
 const DailyStatsCards = ({
   icon,
@@ -19,6 +19,7 @@ const DailyStatsCards = ({
     <CardWrap fill={fill} border={border}>
       <KeyWrap>
         <Svg>
+          <use href={`${sprite}#${icon}`}></use>
           <use href={sprite + `#${icon}`}></use>
         </Svg>
 
