@@ -15,6 +15,7 @@ const Exercises = lazy(() => import('../src/pages/Exercises/Exercises'));
 
 const Error = lazy(() => import('../src/pages/Error/Error'));
 const Diary = lazy(() => import('../src/pages/Diary/Diary'));
+const Profile = lazy(() => import('./pages/Profile/Profile'));
 
 const test = import.meta.env.VITE_API_TEST;
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/params" element={<Params />} />
         <Route path="/exercises" element={<Exercises />} />
         <Route path="/diary" element={<Diary />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/error" element={<Error />} />
       </Route>
     </Routes>
