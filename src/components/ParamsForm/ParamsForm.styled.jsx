@@ -55,10 +55,10 @@ export const FormikField = styled(Field)`
 `;
 
 export const FormRadioBtnGroupWrapper = styled.div`
-  padding-left 2px;
   ${mq.smallMobile} {
     display: flex;
     margin-bottom: 28px;
+    padding-left: 2px;
   }
 
   ${mq.tablet} {
