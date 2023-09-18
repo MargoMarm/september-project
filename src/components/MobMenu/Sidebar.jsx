@@ -10,7 +10,7 @@ import {
   ContainerLink,
   Span,
   Svg,
-  SvgUser
+  SvgUser,
 } from './Sidebar.styled';
 import sprite from '../../assets/sprite.svg';
 
@@ -47,9 +47,9 @@ export const Navbar = () => {
             </Svg>
           </ButtonMenuExit>
           <ContainerLink>
-            <CustomNavLink text="Diary" />
-            <CustomNavLink text="Products" />
-            <CustomNavLink text="Exercises" />
+            <CustomNavLink to={'/dairy'} text="Diary" />
+            <CustomNavLink to={'/products'} text="Products" />
+            <CustomNavLink to={'/exercises'} text="Exercises" />
           </ContainerLink>
 
           <NavbarToggle>

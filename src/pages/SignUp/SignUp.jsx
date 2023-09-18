@@ -9,7 +9,6 @@ import { Wrapper } from '../Home/Home.styled';
 
 import { mg } from '../../utils';
 
-
 const SignUp = () => {
   const dispatch = useDispatch();
   const handleSubmit = (user, { resetForm }) => {
@@ -17,8 +16,6 @@ const SignUp = () => {
     dispatch(authUser(user));
     resetForm();
   };
-	
-
 
   return (
     <Wrapper>
