@@ -1,4 +1,4 @@
-import{n as e,m as t,j as o}from"./index-4535f9f1.js";import{C as n}from"./CustomNavLink-ef1566e5.js";import{c as i}from"./index-56ab578e.js";const a=e.div`
+import{n as o,m as t,c as i,j as e,C as n}from"./index-2d0f13de.js";const a=o.div`
   display: flex;
 
   ${t.mobile} {
@@ -12,7 +12,7 @@ import{n as e,m as t,j as o}from"./index-4535f9f1.js";import{C as n}from"./Custo
   ${t.desktop} {
     width: 1440px;
   }
-`,r=e.div`
+`,s=o.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +35,7 @@ import{n as e,m as t,j as o}from"./index-4535f9f1.js";import{C as n}from"./Custo
     width: 670px;
     padding: 96px;
   }
-`,s=e.h1`
+`,r=o.h1`
   margin-bottom: 14px;
 
   color: ${i.white};
@@ -53,7 +53,7 @@ import{n as e,m as t,j as o}from"./index-4535f9f1.js";import{C as n}from"./Custo
     font-size: 160px;
     margin-bottom: 28px;
   }
-`,p=e.p`
+`,l=o.p`
   margin-bottom: 28px;
 
   color: ${i.white};
@@ -75,4 +75,4 @@ import{n as e,m as t,j as o}from"./index-4535f9f1.js";import{C as n}from"./Custo
   ${t.desktop} {
     width: 447px;
   }
-`,x=()=>o.jsx(a,{children:o.jsxs(r,{children:[o.jsx(s,{children:"404"}),o.jsx(p,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),o.jsx(n,{type:"button",text:"Go Home",isorange:"true",to:"/"})]})});export{x as default};
+`,d=()=>e.jsx(a,{children:e.jsxs(s,{children:[e.jsx(r,{children:"404"}),e.jsx(l,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),e.jsx(n,{type:"button",text:"Go Home",isorange:"true",to:"/"})]})});export{d as default};

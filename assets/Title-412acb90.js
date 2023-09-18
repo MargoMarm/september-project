@@ -1,5 +1,5 @@
-import{n as r,m as o,j as p}from"./index-4535f9f1.js";import{c as a,P as e}from"./index-56ab578e.js";const m=r.h2`
-  color: ${a.white};
+import{n as p,c as r,m as o,j as a,P as e}from"./index-2d0f13de.js";const s=p.h2`
+  color: ${r.white};
 
   font-family: Roboto;
   font-size: 24px;
@@ -22,4 +22,4 @@ import{n as r,m as o,j as p}from"./index-4535f9f1.js";import{c as a,P as e}from"
   ${o.desktop} {
     margin-top: ${t=>t.margin.top.desk}px;
   }
-`,i=({text:t,margin:n})=>p.jsx(m,{margin:n,children:t});i.propTypes={text:e.string,margin:e.object};const l=i;export{l as T};
+`,n=({text:t,margin:i})=>a.jsx(s,{margin:i,children:t});n.propTypes={text:e.string,margin:e.object};const g=n;export{g as T};
