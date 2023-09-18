@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { colors, mq } from '../../utils';
 
-export const AuthBtn = styled.button`
+export const ButtonSubmit = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +10,12 @@ export const AuthBtn = styled.button`
   background-color: ${colors.orange};
   border-radius: 12px;
   border: none;
-  width: 136px;
+  margin-top: ${margin => {
+    return margin.top?.mob || 0;
+  }};
+  margin-bottom: : ${margin => {
+    return margin.bot?.mob || 0;
+  }};
 
   color: ${colors.white};
   font-size: 16px;
@@ -19,9 +24,9 @@ export const AuthBtn = styled.button`
 
   ${mq.tablet} {
     padding: 16px 60px;
-    font-size: 20px;
+    font-size: ${fontSize => fontSize};
     line-height: 120%;
-
-    width: 190px;
+    margin-top: ${margin => margin.top?.tab || 0};
+    margin-bottom: : ${margin => margin.bot?.tab || 0} ;
   }
 `;

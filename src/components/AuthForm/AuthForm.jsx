@@ -13,7 +13,8 @@ import {
   HidePasswordbtn,
   Warning,
 } from './AuthForm.styled';
-import AuthButton from '../AuthButton';
+
+import BtnSubmit from '../BtnSubmit';
 
 const emailLyout = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 const passwordLayout = /^(?=.*[a-zA-Z]{6,})(?=.*\d)[a-zA-Z\d]{7,}$/;
@@ -137,7 +138,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
             </Warning>
           </InputWrapper>
         </InputContainer>
-        <AuthButton title={btnTitle} />
+        <BtnSubmit title={btnTitle} fontSize="20px" />
       </FormContainer>
     </Formik>
   );
