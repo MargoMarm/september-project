@@ -6,11 +6,13 @@ const DairyStatisticList = () => {
     <List>
       <DailyStatsCards
         icon="fork-and-knife"
+        fill="true"
         label="Daily calorie intake"
         keyValue={'2200'}
       ></DailyStatsCards>
       <DailyStatsCards
         icon="barbell"
+        fill="true"
         label="Daily norm of sports"
         keyValue={'110 min'}
       ></DailyStatsCards>
