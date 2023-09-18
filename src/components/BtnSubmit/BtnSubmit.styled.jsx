@@ -11,10 +11,10 @@ export const ButtonSubmit = styled.button`
   border-radius: 12px;
   border: none;
   margin-top: ${({ margin }) => {
-    return margin.top?.mob || 0;
+    return margin?.top.mob || 0;
   }};
   margin-bottom: : ${({ margin }) => {
-    return margin.bot?.mob || 0;
+    return margin?.bot.mob || 0;
   }};
 
   color: ${colors.white};
@@ -26,7 +26,7 @@ export const ButtonSubmit = styled.button`
     padding: 16px 60px;
     font-size: ${fontSize => fontSize};
     line-height: 120%;
-    margin-top: ${({ margin }) => margin.top?.tab || 0};
-    margin-bottom: : ${({ margin }) => margin.bot?.tab || 0} ;
+    margin-top: ${({ margin }) => margin?.top.tab || 0};
+    margin-bottom: : ${({ margin }) => margin?.bot.tab || 0} ;
   }
 `;
