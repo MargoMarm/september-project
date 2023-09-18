@@ -2,6 +2,7 @@ import { Formik, Form } from 'formik';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { colors as palette } from '../../utils';
+import { mg } from '../../utils';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -37,6 +38,7 @@ let paramsSchema = Yup.object({
   levelActivity: Yup.string().required(),
 });
 
+
 const ParamsForm = ({ setSteps, setSwiperRef }) => {
   return (
     <Formik
@@ -64,7 +66,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
             onSwiper={setSwiperRef}
           >
             <SwiperSlide>
-              <Title text={'Get closer to your goals!'} margin={14} />
+              <Title text={'Get closer to your goals!'} margin={mg} />
 
               <SubTitle
                 text={
@@ -122,7 +124,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
             </SwiperSlide>
 
             <SwiperSlide>
-              <Title text={'Get closer to your goals!'} margin={28} />
+              <Title text={'Get closer to your goals!'} margin={mg} />
 
               <FormControl style={{ marginBottom: '28px' }}>
                 <FormRadioBtnGroupWrapper>
@@ -422,7 +424,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
               />
             </SwiperSlide>
             <SwiperSlide>
-              <Title text={'Dear user'} margin={14} />
+              <Title text={'Dear user'} margin={mg} />
 
               <SubTitle
                 text={
