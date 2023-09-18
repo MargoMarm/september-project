@@ -4,10 +4,14 @@ import { colors, mq } from '../../utils';
 export const Container = styled.div`
   display: flex;
   gap: 8px;
-  width: 335px;
+  width: auto;
 
   ${mq.tablet} {
-    width: 439px;
+    width: ${props => props.width.tablet}px;
+  }
+
+  ${mq.desktop} {
+    width: ${props => props.width.desktop}px;
   }
 `;
 
