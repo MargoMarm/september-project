@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import CustomNavLink from '../CustomNavLink/CustomNavLink';
 import {
   MenuBars,
@@ -11,13 +11,27 @@ import {
   Span,
   Svg,
   SvgUser,
-} from './Sidebar.styled';
+} from './MobMenu.styled';
 import sprite from '../../assets/sprite.svg';
 
-export const Navbar = () => {
-  const [sidebar, setSidebar] = useState(false);
+const MobMenu = () => {
+  const [mobMenu, setMobMenu] = useState(false);
 
-  const showSidebar = () => setSidebar(!sidebar);
+	const toggleMobMenu = () => setMobMenu(!mobMenu);
+	
+ useEffect(() => {
+   const handleKeyDown = e => {
+     if (e.code === 'Escape') {
+       toggleMobMenu();
+     }
+   };
+
+   window.addEventListener('keydown', handleKeyDown);
+
+   return () => {
+     window.removeEventListener('keydown', handleKeyDown);
+   };
+ }, [toggleMobMenu]);
 
   return (
     <>
@@ -32,16 +46,16 @@ export const Navbar = () => {
             <use href={sprite + `#ecllipse`}></use>
           </SvgUser>
         </ButtonMenu>
-        <ButtonMenu type="button" onClick={showSidebar}>
+        <ButtonMenu type="button" onClick={toggleMobMenu}>
           <Svg>
             <use href={sprite + `#menu`}></use>
           </Svg>
         </ButtonMenu>
       </MenuBars>
 
-      <ContainerMenu className={sidebar === true ? 'active' : ''}>
-        <NavMenuItems onClick={showSidebar}>
-          <ButtonMenuExit type="button" onClick={showSidebar}>
+      <ContainerMenu className={mobMenu === true ? 'active' : ''}>
+        <NavMenuItems onClick={toggleMobMenu}>
+          <ButtonMenuExit type="button" onClick={toggleMobMenu}>
             <Svg>
               <use href={sprite + `#close`}></use>
             </Svg>
@@ -54,7 +68,7 @@ export const Navbar = () => {
 
           <NavbarToggle>
             <MenuBars to="#">
-              <ButtonMenu type="button" onClick={showSidebar}>
+              <ButtonMenu type="button" onClick={toggleMobMenu}>
                 <Span> Logout</Span>
                 <Svg>
                   <use href={sprite + `#logout`}></use>
@@ -68,4 +82,4 @@ export const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MobMenu;
