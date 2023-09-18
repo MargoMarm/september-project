@@ -35,12 +35,12 @@ export const SvgUser = styled.svg`
   ${svgUser}
 `;
 
-export const ButtonMenuExit = styled.button`
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
-  ${button}
-`;
+// export const ButtonMenuExit = styled.button`
+//   display: flex;
+//   align-items: center;
+//   flex-direction: row-reverse;
+//   ${button}
+// `;
 
 export const Span = styled.span`
   display: flex;
@@ -59,9 +59,10 @@ export const Span = styled.span`
 
 export const NavMenuItems = styled.div`
   display: flex;
-  width: 100%;
+  height: 100vh;
   background-color: ${colors.orange};
-  padding: 20px 20px 0px 20px;
+  /* padding: 20px 20px 0px 20px; */
+  padding: 245px 43px 421px 43px;
   flex-direction: column;
   justify-content: space-between;
 `;
@@ -74,7 +75,7 @@ export const NavbarToggle = styled.div`
 `;
 
 export const ContainerMenu = styled.div`
-  width: 100%;
+  /* width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -82,7 +83,7 @@ export const ContainerMenu = styled.div`
   top: 0;
   right: -100%;
   transition: 850ms;
-  z-index: 1;
+  z-index: 1; */
 
   ${mq.tablet} {
     width: 350px;
