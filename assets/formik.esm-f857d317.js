@@ -1,4 +1,4 @@
-import{n as Fr,m as it,j as $r,g as wr,r as m,h as wn}from"./index-3f06b336.js";import{c as Or,P as at}from"./index-e7937559.js";const _l={top:{desk:116,tab:105},bt:{tab:16,mob:14}},On=Fr.h2`
+import{n as Fr,m as it,j as $r,g as wr,r as m,h as wn}from"./index-52385d79.js";import{c as Or,P as at}from"./index-c81e5c13.js";const _l={top:{desk:116,tab:105},bt:{tab:16,mob:14}},On=Fr.h2`
   color: ${Or.white};
 
   font-family: Roboto;
