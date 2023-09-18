@@ -9,9 +9,9 @@ export const DayDiaryContainer = styled.div`
   display: block;
   width: 100%;
   height: 335px;
-  margin: 0 20px;
   padding: 16px;
   align-items: flex-start;
+  margin-bottom: ${props => props.marginBottom}px;
 
   font-size: 14px;
   line-heigth: 1.29;
