@@ -11,7 +11,7 @@ export const StyledTitle = styled.h2`
   line-height: 1.05;
   letter-spacing: 0.38px;
   margin-bottom: ${props => props.margin}px;
-
+  margin-top: 60px;
   ${mq.tablet} {
     margin-bottom: ${props => props.margin + 2}px;
     margin-top: 105px;
@@ -22,6 +22,6 @@ export const StyledTitle = styled.h2`
   }
 
   ${mq.desktop} {
-	margin-top: 116px;
+    margin-top: 116px;
   }
 `;
