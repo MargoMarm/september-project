@@ -46,6 +46,12 @@ export const AddLink = styled(NavLink)`
   align-items: center;
 
   color: ${colors.orange};
+
+  transition: scale 250ms ease-in-out;
+
+  &:hover {
+    scale: 1.1;
+  }
 `;
 
 export const DayNoContentText = styled.p`
