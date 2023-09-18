@@ -1,7 +1,7 @@
 import { HeaderContainer } from './Header.styled';
 import UserNav from '../UserNav/UserNav';
 import Logo from '../Logo/Logo';
-import { MobMenu } from '../../MobMenu/Sidebar';
+import { MobMenu } from '../../MobMenu/MobMenu';
 
 export const Header = () => {
   return (
