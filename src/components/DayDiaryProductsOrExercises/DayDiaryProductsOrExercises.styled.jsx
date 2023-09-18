@@ -20,17 +20,13 @@ export const DayDiaryContainer = styled.div`
   border: 1px solid ${colors.textWhite02};
   background: rgba(239, 237, 232, 0.05);
 
-  ${mq.mobile} {
-    width: 335px;
-  }
-
   ${mq.tablet} {
-    width: 704px;
+    width: auto;
     height: 234px;
   }
 
   ${mq.desktop} {
-    width: 826px;
+    width: auto;
   }
 `;
 

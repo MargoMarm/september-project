@@ -1,7 +1,6 @@
 import CustomNavLink from '../../components/CustomNavLink/CustomNavLink';
 import MainTitle from '../../components/MainTitle/MainTitle';
 import Header from '../../components/headersComp/Header/Header';
-import Diary from '../Diary/Diary';
 import { LinkList, Wrapper } from './Home.styled';
 
 const Home = () => {
@@ -9,8 +8,7 @@ const Home = () => {
     <>
       <Wrapper>
         <Header />
-        <Diary />
-        {/* <MainTitle />
+        <MainTitle />
         <LinkList>
           <li>
             <CustomNavLink isorange={'true'} text={'Sign up'} to={'/signup'} />
@@ -18,7 +16,7 @@ const Home = () => {
           <li>
             <CustomNavLink text={'Sign in'} to={'/signin'} />
           </li>
-        </LinkList> */}
+        </LinkList>
       </Wrapper>
     </>
   );
