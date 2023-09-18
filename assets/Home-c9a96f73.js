@@ -1,4 +1,4 @@
-import{n as s,m as i,j as t}from"./index-ff757372.js";import{C as e}from"./CustomNavLink-708d35c6.js";import{c as o}from"./index-f4d215ad.js";import{s as n}from"./sprite-4ff87bc4.js";import{H as r}from"./Header-1f6e74a9.js";import{W as p,L as x}from"./Home.styled-3a9b3fc4.js";const a={color:o.white,fontFamily:"Roboto",fontWeight:500,wordWrap:"break-word"},l=s.h1`
+import{n as s,m as i,j as t}from"./index-5700ee21.js";import{C as e}from"./CustomNavLink-47e62dab.js";import{c as o}from"./index-7c4e2aed.js";import{s as n}from"./sprite-4ff87bc4.js";import{H as r}from"./Header-fe848698.js";import{W as p,L as x}from"./Home.styled-b41ade0f.js";const a={color:o.white,fontFamily:"Roboto",fontWeight:500,wordWrap:"break-word"},l=s.h1`
   letter-spacing: 0.38px;
   ${a}
 
