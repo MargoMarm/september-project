@@ -11,6 +11,7 @@ export const StyledTitle = styled.h2`
   line-height: 1.05;
   letter-spacing: 0.38px;
   margin-bottom: ${props => props.margin.bt.mob}px;
+  margin-top: ${props => props.margin.top.mob}px;
 
   ${mq.tablet} {
     margin-bottom: ${props => props.margin.bt.tab}px;

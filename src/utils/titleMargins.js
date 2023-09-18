@@ -2,6 +2,7 @@ const mg = {
   top: {
     desk: 116,
     tab: 105,
+    mob: 66,
   },
   bt: {
     tab: 16,
@@ -9,4 +10,4 @@ const mg = {
   },
 };
 
-export default mg
+export default mg;
