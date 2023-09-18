@@ -1,5 +1,6 @@
 import { Formik, Form } from 'formik';
 import PropTypes from 'prop-types';
+import * as Yup from 'yup';
 import { colors as palette } from '../../utils';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -26,6 +27,16 @@ import {
   BtnSubmit,
 } from './ParamsForm.styled';
 
+let paramsSchema = Yup.object({
+  height: Yup.string().required(),
+  currentWeight: Yup.string().required(),
+  desiredWeight: Yup.string().required(),
+  birthday: Yup.string().required(),
+  blood: Yup.string().required(),
+  sex: Yup.string().required(),
+  levelActivity: Yup.string().required(),
+});
+
 const ParamsForm = ({ setSteps, setSwiperRef }) => {
   return (
     <Formik
@@ -43,8 +54,9 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
         Formik.resetForm();
         setSteps(1);
       }}
+      validationSchema={paramsSchema}
     >
-      {({ handleChange, values }) => (
+      {({ handleChange, values, errors }) => (
         <Form>
           <Swiper
             spaceBetween={10}
@@ -417,7 +429,8 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                   ' Thank you for filling in all the required data. We greatl appreciate your cooperation and commitment to a health lifestyle. The collected information will allow us to provide you with a more individual and personalized approach.'
                 }
               />
-              <BtnSubmit>Go</BtnSubmit>
+
+              <BtnSubmit>Go </BtnSubmit>
 
               <ParamsBtn setSteps={setSteps} type={'back'} step={2} />
 
