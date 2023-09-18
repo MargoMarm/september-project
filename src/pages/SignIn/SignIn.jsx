@@ -1,6 +1,5 @@
 import Title from '../../components/Title/Title';
 import SubTitle from '../../components/SubTitle/SubTitle';
-import Header from '../../components/headersComp/Header/Header';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import BtnSubtitle from '../../components/BtnSubtitle/BtnSubtitle';
 import { Wrapper } from '../Home/Home.styled';
@@ -18,7 +17,6 @@ const SignIn = () => {
 
   return (
     <Wrapper>
-      <Header />
       <Title text={'Sign In'} margin={mg} />
       <SubTitle
         text={

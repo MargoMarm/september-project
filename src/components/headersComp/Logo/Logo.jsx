@@ -5,11 +5,11 @@ export const Logo = () => {
   return (
     <>
       <WrapLogo>
-        <Button type="button">
+        <a href='/'>
           <Svg>
             <use href={sprite + `#logo-big`}></use>
           </Svg>{' '}
-        </Button>
+        </a>
       </WrapLogo>
     </>
   );
