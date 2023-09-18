@@ -58,6 +58,7 @@ export const FormRadioBtnGroupWrapper = styled.div`
   ${mq.smallMobile} {
     display: flex;
     margin-bottom: 28px;
+    padding-left: 2px;
   }
 
   ${mq.tablet} {
@@ -69,10 +70,13 @@ export const BtnsAndBlock = styled.div`
   ${mq.smallMobile} {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 25px;
+    margin-bottom: 159px;
   }
   ${mq.tablet} {
-    margin-bottom: 56px;
+    margin-bottom: 283px;
+  }
+  ${mq.desktop} {
+    margin-bottom: 48px;
   }
 `;
 

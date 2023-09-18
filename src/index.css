@@ -64,7 +64,7 @@ button {
   color: #efede8;
   font-size: 14px;
   font-weight: 400;
-  line-height: 128%; /* 128.571% */
+  line-height: 128%; 
   letter-spacing: normal;
 
   @media screen and (min-width: 768px) {
