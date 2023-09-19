@@ -54,7 +54,7 @@ ParamsBlockCard.propTypes = {
   data: PropTypes.number,
   type: PropTypes.string,
   measure: PropTypes.string,
-  steps: PropTypes.string,
+  step: PropTypes.string,
 };
 
 export default ParamsBlockCard;
