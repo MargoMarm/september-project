@@ -5,24 +5,33 @@ import img from '../../assets/11.png'
 import DescriptionText from "../DescriptionText/DescriptionText";
 
 import { mgForDiary } from '../../utils/descriptionTextMargin';
+import { useState } from "react";
 
 export default function UserCard() {
+  const [imgURL, setImgUrl] = useState(null);
+  const [imgFile, setImgFile] = useState(null);
+  const handleChange = (e) => {
+    setImgUrl(URL.createObjectURL(e.target.files[0]));
+    setImgFile(e.target.files[0]);
+    console.log(imgURL);
+    console.log(imgFile);
+  }
 
 	
   return (
     <Container>
       <AvatarWrapper>
-        {true ? (
+        {imgURL ? (
+          <ImgWrap>
+            <Avatar src={imgURL} />
+          </ImgWrap>
+        ) : (
           <UserSVG>
             <use href={`${sprite}#icon-gridicons_user`}></use>
           </UserSVG>
-        ) : (
-          <ImgWrap>
-            <Avatar src={img} />
-          </ImgWrap>
         )}
         <AddUserBtn>
-          <input type="file" />
+          <input type="file" onChange={handleChange} />
           <svg>
             <use href={`${sprite}#icon-check-mark`}></use>
           </svg>
