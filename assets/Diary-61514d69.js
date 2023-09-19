@@ -1,4 +1,4 @@
-import{n as t,m as i,j as e,c as a,N as p,P as o,s as x}from"./index-e661b445.js";import{D as s,a as m,m as u}from"./descriptionTextMargin-1041c874.js";import{T as h}from"./Title-cb20c32b.js";const b=t.ul`
+import{n as t,m as i,j as e,c as s,N as p,P as a,s as x}from"./index-34184c64.js";import{D as r,a as m,m as u}from"./descriptionTextMargin-e05727df.js";import{T as h}from"./Title-aa4b35c9.js";const b=t.ul`
   display: grid;
   width: 335px;
   gap: 13px;
@@ -15,7 +15,7 @@ import{n as t,m as i,j as e,c as a,N as p,P as o,s as x}from"./index-e661b445.js
     grid-template-columns: repeat(2, 1fr);
     width: 390px;
   }
-`,y=()=>e.jsxs(b,{children:[e.jsx(s,{icon:"fork-and-knife",fill:"true",label:"Daily calorie intake",keyValue:"2200"}),e.jsx(s,{icon:"barbell",fill:"true",label:"Daily norm of sports",keyValue:"110 min"}),e.jsx(s,{icon:"apple",label:"Сalories consumed",keyValue:"0"}),e.jsx(s,{icon:"fire",label:"Сalories burned",keyValue:"0"}),e.jsx(s,{icon:"bubble",label:"The rest of the calories",keyValue:"2200"}),e.jsx(s,{icon:"runningMan",label:"The rest of sports",keyValue:"110 min"})]}),g=t.div`
+`,y=()=>e.jsxs(b,{children:[e.jsx(r,{icon:"fork-and-knife",fill:"true",label:"Daily calorie intake",keyValue:"2200"}),e.jsx(r,{icon:"barbell",fill:"true",label:"Daily norm of sports",keyValue:"110 min"}),e.jsx(r,{icon:"apple",label:"Сalories consumed",keyValue:"0"}),e.jsx(r,{icon:"fire",label:"Сalories burned",keyValue:"0"}),e.jsx(r,{icon:"bubble",label:"The rest of the calories",keyValue:"2200"}),e.jsx(r,{icon:"runningMan",label:"The rest of sports",keyValue:"110 min"})]}),g=t.div`
   position: relative;
   box-sizing: border-box;
   display: block;
@@ -23,13 +23,13 @@ import{n as t,m as i,j as e,c as a,N as p,P as o,s as x}from"./index-e661b445.js
   height: 335px;
   padding: 16px;
   align-items: flex-start;
-  margin-bottom: ${r=>r.marginBottom}px;
+  margin-bottom: ${o=>o.marginBottom}px;
 
   font-size: 14px;
-  line-heigth: 1.29;
+  line-height: 1.29;
 
   border-radius: 12px;
-  border: 1px solid ${a.textWhite02};
+  border: 1px solid ${s.textWhite02};
   background: rgba(239, 237, 232, 0.05);
 
   ${i.tablet} {
@@ -46,30 +46,31 @@ import{n as t,m as i,j as e,c as a,N as p,P as o,s as x}from"./index-e661b445.js
 `,j=t.p`
   margin: 0;
 
-  color: ${a.textWhite05};
-`,D=t(p)`
+  color: ${s.textWhite05};
+`,k=t(p)`
   display: flex;
   align-items: center;
 
-  color: ${a.orange};
+  color: ${s.orange};
 
   transition: scale 250ms ease-in-out;
 
   &:hover {
     scale: 1.1;
   }
-`,k=t.p`
+`,D=t.p`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  color: ${a.textWhite05};
+  color: ${s.textWhite05};
 `,w=t.svg`
   width: 16px;
   height: 16px;
   margin-left: 8px;
-`,l=({products:r,to:d,isDayProducts:n,marginBottom:c})=>e.jsxs(g,{marginBottom:c,children:[e.jsxs(f,{children:[e.jsx(j,{children:n?"Products":"Exercises"}),e.jsxs(D,{to:d,children:["Add ",n?"product":"exercise",e.jsx(w,{children:e.jsx("use",{href:x+"#arrow-right"})})]})]}),r.length!==0?e.jsx(ProductsTable,{products:r}):e.jsxs(k,{children:["Not found ",n?"products":"exercises"]})]});l.propTypes={to:o.string,isDayProducts:o.bool,products:o.array,marginBottom:o.number};const $=t.div`
+  stroke: ${s.orange};
+`,l=({products:o,to:d,isDayProducts:n,marginBottom:c})=>e.jsxs(g,{marginBottom:c,children:[e.jsxs(f,{children:[e.jsx(j,{children:n?"Products":"Exercises"}),e.jsxs(k,{to:d,children:["Add ",n?"product":"exercise",e.jsx(w,{children:e.jsx("use",{href:x+"#arrow-right"})})]})]}),o.length!==0?e.jsx(ProductsTable,{products:o}):e.jsxs(D,{children:["Not found ",n?"products":"exercises"]})]});l.propTypes={to:a.string,isDayProducts:a.bool,products:a.array,marginBottom:a.number};const $=t.div`
   width: auto;
   display: flex;
   flex-direction: column;
