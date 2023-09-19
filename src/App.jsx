@@ -24,7 +24,6 @@ const test = import.meta.env.VITE_API_TEST;
 function App() {
   console.log(test);
   return (
-   
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
@@ -38,7 +37,10 @@ function App() {
             <PublicRoute component={<SignUp />} redirectTo={'/params'} />
           }
         />
-        <Route path="/products" element={<Products />} />
+        <Route
+          path="/products"
+          element={<PrivateRoute component={<Products />} redirectTo="/" />}
+        />
         <Route
           path="/params"
           element={<PrivateRoute component={<Params />} redirectTo="/" />}
