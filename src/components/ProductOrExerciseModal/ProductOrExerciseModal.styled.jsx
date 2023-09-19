@@ -12,7 +12,7 @@ export const Img = styled.img`
   width: 120px;
   height: 97px;
   margin: 0 auto;
-  margin-bottom: 3px;
+  margin-bottom: 19px;
 `;
 
 export const WellDone = styled.strong`
@@ -28,13 +28,14 @@ export const WellDone = styled.strong`
 `;
 
 export const DataList = styled.ul`
- margin: 0 auto;
+  margin: 0 auto;
   margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 `;
 
 export const Key = styled.p`
- 
-
   color: ${color.textWhite03};
   font-family: Roboto;
   font-size: 14px;

@@ -7,20 +7,26 @@ export const Backdrop = styled.div`
   height: 100%;
   left: 0;
   top: 0;
-  background-color: rgba(22, 22, 22, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-color: ${colors.backdrop};
 `;
 
 export const ModalWrap = styled.div`
-  border: 1px solid var(--modal-border);
+  border: 1px solid ${colors.textWhite02};
   box-sizing: border-box;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   max-width: 400px;
   min-width: 300px;
+  padding: 48px 32px;
   border-radius: 8px;
-  background-color: var(--bg-modal);
+  background-color: ${colors.modalBlack};
   z-index: 1;
 `;
 

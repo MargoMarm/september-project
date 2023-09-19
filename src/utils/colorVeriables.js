@@ -1,5 +1,6 @@
 const colors = {
   black: '#040404',
+  modalBlack: '#10100F',
   white: '#EFEDE8',
   orange: '#E6533C',
   grey: '#efede8',
@@ -8,6 +9,7 @@ const colors = {
   textError: '#D80027',
   red: '#E9101D',
   green: '#3CBF61',
+  backdrop: 'rgba(22, 22, 22, 0.5)',
   textWhite005: 'rgba(239, 237, 232, 0.05)',
   textWhite02: 'rgba(239, 237, 232, 0.20)',
   textWhite03: 'rgba(239, 237, 232, 0.30)',
