@@ -1,4 +1,4 @@
-import{n as t,m as i,j as e,c as s,N as p,P as a,s as x}from"./index-24d5f11e.js";import{D as r,a as m,m as u}from"./descriptionTextMargin-0adc271a.js";import{T as h}from"./Title-a99db6df.js";const b=t.ul`
+import{n as t,m as i,j as e,c as s,N as p,P as a,s as x}from"./index-1e86908d.js";import{D as r,a as m,m as u}from"./descriptionTextMargin-6833aa16.js";import{T as h}from"./Title-50e2f23d.js";const b=t.ul`
   display: grid;
   width: 335px;
   gap: 13px;
