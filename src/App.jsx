@@ -3,7 +3,7 @@ import { lazy } from 'react';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
-import { PrivateRoute } from './components/Routes';
+import { PrivateRoute, PublicRoute } from './components/Routes';
 
 const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
@@ -27,16 +27,33 @@ function App() {
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/signin"
+          element={<PublicRoute component={<SignIn />} redirectTo={'/diary'} />}
+        />
+        <Route
+          path="/signup"
+          element={
+            <PublicRoute component={<SignUp />} redirectTo={'/params'} />
+          }
+        />
         <Route path="/products" element={<Products />} />
         <Route
           path="/params"
           element={<PrivateRoute component={<Params />} redirectTo="/" />}
         />
-        <Route path="/exercises" element={<Exercises />} />
-        <Route path="/diary" element={<Diary />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/exercises"
+          element={<PrivateRoute component={<Exercises />} redirectTo="/" />}
+        />
+        <Route
+          path="/diary"
+          element={<PrivateRoute component={<Diary />} redirectTo="/" />}
+        />
+        <Route
+          path="/profile"
+          element={<PrivateRoute component={<Profile />} redirectTo="/" />}
+        />
         <Route path="/error" element={<Error />} />
       </Route>
     </Routes>
