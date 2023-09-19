@@ -74,6 +74,8 @@ export const NavbarToggle = styled.div`
 `;
 
 export const ContainerMenu = styled.div`
+position: relative;
+
   width: 100%;
   height: 100vh;
   display: flex;
@@ -82,7 +84,7 @@ export const ContainerMenu = styled.div`
   top: 0;
   right: -100%;
   transition: 850ms;
-  z-index: 1;
+  z-index: 999;
 
   ${mq.tablet} {
     width: 350px;
@@ -94,9 +96,19 @@ export const ContainerMenu = styled.div`
   }
 `;
 
-export const ContainerLink = styled.div`
+export const ContainerLink = styled.ul`
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 20px;
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
 `;

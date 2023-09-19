@@ -1,6 +1,5 @@
 import Title from '../../components/Title/Title';
 import SubTitle from '../../components/SubTitle/SubTitle';
-import Header from '../../components/headersComp/Header/Header';
 import AuthForm from '../../components/AuthForm';
 import { useDispatch } from 'react-redux';
 import { authUser } from '../../redux/auth/operation';
@@ -19,7 +18,6 @@ const SignUp = () => {
 
   return (
     <Wrapper>
-      <Header />
       <Title text={'Sign Up'} margin={mg} />
       <SubTitle
         text={
