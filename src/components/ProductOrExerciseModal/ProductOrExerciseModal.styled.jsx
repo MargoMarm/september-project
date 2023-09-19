@@ -73,7 +73,7 @@ export const ToDiary = styled(NavLink)`
 `;
 
 export const Svg = styled.svg`
-  fill: currentColor;
+  stroke: currentColor;
   width: 16px;
   height: 16px;
 `;

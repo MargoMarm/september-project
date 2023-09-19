@@ -12,7 +12,7 @@ import {
 } from './ProductOrExerciseModal.styled';
 import { nanoid } from '@reduxjs/toolkit';
 
-function ProductModal({ modalType, data }) {
+function ProductOrExerciseModal({ modalType, data }) {
   const transformKey = key => {
     if (key === 'yourTime') {
       return 'Your  time: ';
@@ -65,9 +65,9 @@ function ProductModal({ modalType, data }) {
   );
 }
 
-ProductModal.propTypes = {
+ProductOrExerciseModal.propTypes = {
   modalType: PropTypes.oneOf(['product', 'exercise']),
   data: PropTypes.object.isRequired,
 };
 
-export default ProductModal;
+export default ProductOrExerciseModal;
