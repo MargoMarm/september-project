@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { handleLogout } from '../../utils';
 import CustomNavLink from '../CustomNavLink/CustomNavLink';
 import {
   MenuBars,
@@ -15,11 +17,13 @@ import {
 } from './MobMenu.styled';
 import sprite from '../../assets/sprite.svg';
 
+
 const MobMenu = () => {
   const [mobMenu, setMobMenu] = useState(false);
 
-	const toggleMobMenu = () => setMobMenu(!mobMenu);
-	
+  const dispatch = useDispatch();
+
+  const toggleMobMenu = () => setMobMenu(!mobMenu);
 
   useEffect(() => {
     const handleKeyDown = e => {
@@ -77,7 +81,13 @@ const MobMenu = () => {
 
           <NavbarToggle>
             <MenuBars to="#">
-              <ButtonMenu type="button" onClick={toggleMobMenu}>
+              <ButtonMenu
+                type="button"
+                onClick={() => {
+                  toggleMobMenu();
+                  handleLogout(dispatch);
+                }}
+              >
                 <Span> Logout</Span>
                 <Svg>
                   <use href={sprite + `#logout`}></use>
