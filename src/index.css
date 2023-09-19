@@ -60,10 +60,7 @@ button {
   cursor: pointer;
 }
 
-.MuiTypography-root
-  .MuiTypography-body1
-  .MuiFormControlLabel-label
-  .css-9l3uo3 {
+.css-9l3uo3 {
   color: #efede8;
   font-size: 14px;
   font-weight: 400;
