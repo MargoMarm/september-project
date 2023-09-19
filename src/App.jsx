@@ -9,17 +9,17 @@ const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
 const SignUp = lazy(() => import('../src/pages/SignUp/SignUp'));
 const Products = lazy(() => import('../src/pages/Products/Products'));
 
-const Params = lazy(() => import('../src/pages/Params/Params'));
+const Params = lazy(() => import('../src/pages/Params'));
 
 const Exercises = lazy(() => import('../src/pages/Exercises/Exercises'));
 
 const Error = lazy(() => import('../src/pages/Error/Error'));
-const Dairy = lazy(() => import('../src/pages/Diary/Dairy'));
+const Diary = lazy(() => import('../src/pages/Diary/Diary'));
+const Profile = lazy(() => import('./pages/Profile/Profile'));
 
 const test = import.meta.env.VITE_API_TEST;
 
 function App() {
-
   console.log(test);
 
   return (
@@ -31,7 +31,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/params" element={<Params />} />
         <Route path="/exercises" element={<Exercises />} />
-        <Route path="/dairy" element={<Dairy />} />
+        <Route path="/diary" element={<Diary />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/error" element={<Error />} />
       </Route>
     </Routes>

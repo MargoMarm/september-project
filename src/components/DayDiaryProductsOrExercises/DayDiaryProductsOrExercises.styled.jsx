@@ -9,9 +9,9 @@ export const DayDiaryContainer = styled.div`
   display: block;
   width: 100%;
   height: 335px;
-  margin: 0 20px;
   padding: 16px;
   align-items: flex-start;
+  margin-bottom: ${props => props.marginBottom}px;
 
   font-size: 14px;
   line-heigth: 1.29;
@@ -20,17 +20,13 @@ export const DayDiaryContainer = styled.div`
   border: 1px solid ${colors.textWhite02};
   background: rgba(239, 237, 232, 0.05);
 
-  ${mq.mobile} {
-    width: 335px;
-  }
-
   ${mq.tablet} {
-    width: 704px;
+    width: auto;
     height: 234px;
   }
 
   ${mq.desktop} {
-    width: 826px;
+    width: auto;
   }
 `;
 
@@ -50,6 +46,12 @@ export const AddLink = styled(NavLink)`
   align-items: center;
 
   color: ${colors.orange};
+
+  transition: scale 250ms ease-in-out;
+
+  &:hover {
+    scale: 1.1;
+  }
 `;
 
 export const DayNoContentText = styled.p`

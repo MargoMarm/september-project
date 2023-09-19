@@ -2,6 +2,7 @@ import { Formik, Form } from 'formik';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { colors as palette } from '../../utils';
+import { mg } from '../../utils';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -14,10 +15,10 @@ import {
   colors,
 } from '@mui/material';
 
-import ParamsBlockCard from '../ParamsBlocks/ParamsBlocks';
+import ParamsBlockCard from '../ParamsBlockСard';
+import ParamsBtn from '../ParamsBtn';
 import Title from '../Title/Title';
 import SubTitle from '../SubTitle/SubTitle';
-import ParamsBtn from '../ParamsBtn/ParamsBtn';
 
 import {
   FormikField,
@@ -36,6 +37,7 @@ let paramsSchema = Yup.object({
   sex: Yup.string().required(),
   levelActivity: Yup.string().required(),
 });
+
 
 const ParamsForm = ({ setSteps, setSwiperRef }) => {
   return (
@@ -64,7 +66,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
             onSwiper={setSwiperRef}
           >
             <SwiperSlide>
-              <Title text={'Get closer to your goals!'} margin={14} />
+              <Title text={'Get closer to your goals!'} margin={mg} />
 
               <SubTitle
                 text={
@@ -98,31 +100,13 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
 
               <ParamsBtn setSteps={setSteps} type={'next'} step={2} />
 
-              <ParamsBlockCard
-                type={'grey'}
-                data={350}
-                mt_m={'100px'}
-                ml_m={'101px'}
-                mb_m={'75px'}
-                mt_t={'165px'}
-                ml_t={'311px'}
-                mb_t={'56px'}
-                mt_d={'-200px'}
-                ml_d={'674px'}
-              />
+              <ParamsBlockCard type={'grey'} data={350} />
 
-              <ParamsBlockCard
-                data={100}
-                measure={'users'}
-                type={'orange'}
-                ml_m={'auto'}
-                mb_m={'16px'}
-                mb_t={'12px'}
-              />
+              <ParamsBlockCard data={100} measure={'users'} type={'orange'} />
             </SwiperSlide>
 
             <SwiperSlide>
-              <Title text={'Get closer to your goals!'} margin={28} />
+              <Title text={'Get closer to your goals!'} margin={mg} />
 
               <FormControl style={{ marginBottom: '28px' }}>
                 <FormRadioBtnGroupWrapper>
@@ -278,6 +262,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                 <RadioGroup
                   aria-labelledby="demo-radio-buttons-group-label"
                   name="radio-buttons-group3"
+                  style={{ padding: '2px' }}
                 >
                   <FormLabel
                     style={{
@@ -399,30 +384,13 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                 <ParamsBtn setSteps={setSteps} type={'back'} step={1} />
                 <ParamsBtn setSteps={setSteps} type={'next'} step={3} />
 
-                <ParamsBlockCard
-                  data={350}
-                  type={'grey'}
-                  ml_m={'20px'}
-                  mt_t={'40px'}
-                  ml_t={'165px'}
-                  ml_d={'580px'}
-                  mt_d={'-310px'}
-                />
+                <ParamsBlockCard data={350} type={'grey'} step={'2'} />
               </BtnsAndBlock>
 
-              <ParamsBlockCard
-                type={'orange'}
-                data={24}
-                measure={'hours'}
-                ml_m={'auto'}
-                mb_m={'16px'}
-                mb_t={'12px'}
-                mt_d={'-260px'}
-                mb_d={'142px'}
-              />
+              <ParamsBlockCard type={'orange'} data={24} measure={'hours'} />
             </SwiperSlide>
             <SwiperSlide>
-              <Title text={'Dear user'} margin={14} />
+              <Title text={'Dear user'} margin={mg} />
 
               <SubTitle
                 text={
@@ -434,25 +402,8 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
 
               <ParamsBtn setSteps={setSteps} type={'back'} step={2} />
 
-              <ParamsBlockCard
-                data={350}
-                type={'grey'}
-                mt_m={'276px'}
-                ml_m={'101px'}
-                mb_m={'25px'}
-                mt_t={'249px'}
-                ml_t={'297px'}
-                mb_t={'56px'}
-                mt_d={'-80px'}
-                mb_d={'40px'}
-                ml_d={'674px'}
-              />
-              <ParamsBlockCard
-                data={300}
-                measure={'ex'}
-                type={'orange'}
-                ml_m={'auto'}
-              />
+              <ParamsBlockCard data={350} type={'grey'} />
+              <ParamsBlockCard data={300} measure={'ex'} type={'orange'} />
             </SwiperSlide>
           </Swiper>
         </Form>

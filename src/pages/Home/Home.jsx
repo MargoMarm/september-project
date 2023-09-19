@@ -1,7 +1,6 @@
 import CustomNavLink from '../../components/CustomNavLink/CustomNavLink';
 import DayDiary from '../../components/DayDiary/DayDiary';
 import MainTitle from '../../components/MainTitle/MainTitle';
-import Header from '../../components/headersComp/Header/Header';
 import { LinkList, Wrapper } from './Home.styled';
 
 const nodes = [
@@ -86,7 +85,6 @@ const Home = () => {
   return (
     <>
       <Wrapper>
-        <Header />
         <MainTitle />
         <LinkList>
           <li>

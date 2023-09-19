@@ -1,11 +1,12 @@
 import Title from '../../components/Title/Title';
 import SubTitle from '../../components/SubTitle/SubTitle';
-import Header from '../../components/headersComp/Header/Header';
 import AuthForm from '../../components/AuthForm';
 import { useDispatch } from 'react-redux';
 import { authUser } from '../../redux/auth/operation';
 import BtnSubtitle from '../../components/BtnSubtitle/BtnSubtitle';
 import { Wrapper } from '../Home/Home.styled';
+
+import { mg } from '../../utils';
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -17,8 +18,7 @@ const SignUp = () => {
 
   return (
     <Wrapper>
-      <Header />
-      <Title text={'Sign Up'} margin={14} />
+      <Title text={'Sign Up'} margin={mg} />
       <SubTitle
         text={
           'Thank you for your interest in our platform. To complete the registration process, please provide us with the following information.'
