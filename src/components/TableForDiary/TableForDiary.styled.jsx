@@ -137,7 +137,7 @@ export const BASELINE_THEME_EXERCISES = {
     };
 
     ${mq.desktop} {
-      --data-table-library_grid-template-columns:  123px 165px 139px 114px 99px 102px 29px;
+      --data-table-library_grid-template-columns:  123px 165px 139px 114px 99px 102px 28px;
       margin-left: 16px;
     }
   `,
@@ -175,7 +175,7 @@ export const BASELINE_THEME = {
     };
 
     ${mq.desktop} {
-      --data-table-library_grid-template-columns:  220px 174px 113px 113px 122px 29px;
+      --data-table-library_grid-template-columns:  220px 174px 113px 113px 122px 28px;
       margin-left: 16px;
     }
     `,
