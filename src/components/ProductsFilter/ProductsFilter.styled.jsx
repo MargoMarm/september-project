@@ -55,23 +55,6 @@ export const Svg = styled.svg`
   height: 18px;
 `;
 
-export const ButtonIcon = styled.button`
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  padding: 0;
-  border: none;
-  outline: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  fill: ${colors.white};
-  background-color: transparent;
-`;
-
 export const Select = styled.select`
   height: 46px;
   width: 100%;
