@@ -10,11 +10,11 @@ import {
   Error,
   InputContainer,
   InputWrapper,
-  HidePasswordbtn,
   Warning,
 } from './AuthForm.styled';
 
 import BtnSubmit from '../BtnSubmit';
+import ButtonIconForInput from '../ButtonIconForInput';
 
 const emailLyout = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 const passwordLayout = /^(?=.*[a-zA-Z]{6,})(?=.*\d)[a-zA-Z\d]{7,}$/;
@@ -114,7 +114,11 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
               placeholder="password"
               name="password"
             />
-            <HidePasswordbtn onClick={toglePassword} type="button">
+            <ButtonIconForInput
+              type="button"
+              right="16px"
+              onClick={toglePassword}
+            >
               <svg width="20" height="20">
                 <use
                   href={
@@ -123,7 +127,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
                   }
                 ></use>
               </svg>
-            </HidePasswordbtn>
+            </ButtonIconForInput>
             <Warning>
               <ErrorMessage name="password">
                 {msg => (

@@ -2,15 +2,11 @@ import styled from '@emotion/styled';
 
 import { mq, colors } from '../../utils';
 
-export const Div = styled.div`\
-
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const BtnNav = styled.button`
   ${mq.smallMobile} {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 0;
     padding-bottom: 0;
     font-size: 14px;
@@ -23,20 +19,23 @@ export const BtnNav = styled.button`
     border: none;
     outline: none;
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
       color: ${colors.orange};
+      transform: scale(1.1);
     }
 
     &:focus {
       color: ${colors.orange};
+      transform: scale(1.1);
     }
-  }
-
-  ${mq.tablet} {
-    font-size: 16px;
-    line-height: 150%;
+    ${mq.tablet} {
+      font-size: 16px;
+      line-height: 150%;
+    }
   }
 `;
 

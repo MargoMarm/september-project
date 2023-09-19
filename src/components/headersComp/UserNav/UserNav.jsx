@@ -7,20 +7,22 @@ import {
   ButtonWrap,
   Span,
 } from './UserNav.styled';
+import { NavLink } from 'react-router-dom';
+
 import sprite from '../../../assets/sprite.svg';
 
 export const UserNav = () => {
   return (
     <WrapUserNav>
-      <CustomNavLink to="/dairy" text="Diary" isinheader={'true'} />
+      <CustomNavLink to="/diary" text="Diary" isinheader={'true'} />
       <CustomNavLink to="/products" text="Products" isinheader={'true'} />
       <CustomNavLink to="/exercises" text="Exercises" isinheader={'true'} />
       <ButtonWrap>
-        <Button>
+        <NavLink to={'/profile'}>
           <Svg>
             <use href={sprite + `#settings`}></use>
           </Svg>{' '}
-        </Button>
+        </NavLink>
         <Button>
           <SvgUser>
             <use href={sprite + `#ecllipse`}></use>
