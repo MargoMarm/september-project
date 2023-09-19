@@ -9,32 +9,37 @@ import {
   DayDiarySubDiv,
 } from './DayDiaryProductsOrExercises.styled';
 import sprite from '../../assets/sprite.svg';
-// import ProductsTable from '../ProductsTable/ProductsTable';
+import TableForDiary from '../TableForDiary/TableForDiary';
 
 const DayDiaryProductsOrExercises = ({
-  products,
   to,
-  isDayProducts,
   marginBottom,
+  list,
+  productTable,
+  exerciseTable,
 }) => {
   return (
     <DayDiaryContainer marginBottom={marginBottom}>
       <DayDiarySubDiv>
         <DayDiarySubTitle>
-          {isDayProducts ? 'Products' : 'Exercises'}
+          {productTable ? 'Products' : 'Exercises'}
         </DayDiarySubTitle>
         <AddLink to={to}>
-          Add {isDayProducts ? 'product' : 'exercise'}
+          Add {productTable ? 'product' : 'exercise'}
           <ArrowRight>
             <use href={sprite + `#arrow-right`}></use>
           </ArrowRight>
         </AddLink>
       </DayDiarySubDiv>
-      {products.length !== 0 ? (
-        <ProductsTable products={products} />
+      {list.length !== 0 ? (
+        <TableForDiary
+          list={list}
+          productTable={productTable}
+          exerciseTable={exerciseTable}
+        />
       ) : (
         <DayNoContentText>
-          Not found {isDayProducts ? 'products' : 'exercises'}
+          Not found {productTable ? 'products' : 'exercises'}
         </DayNoContentText>
       )}
     </DayDiaryContainer>
@@ -43,9 +48,10 @@ const DayDiaryProductsOrExercises = ({
 
 DayDiaryProductsOrExercises.propTypes = {
   to: PropTypes.string,
-  isDayProducts: PropTypes.bool,
-  products: PropTypes.array,
   marginBottom: PropTypes.number,
+  list: PropTypes.array,
+  productTable: PropTypes.bool,
+  exerciseTable: PropTypes.bool,
 };
 
 export default DayDiaryProductsOrExercises;

@@ -5,6 +5,7 @@ import SharedLayout from './components/SharedLayout/SharedLayout';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
 import { PrivateRoute, PublicRoute } from './components/Routes';
 
+
 const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
 const SignUp = lazy(() => import('../src/pages/SignUp/SignUp'));
@@ -22,8 +23,8 @@ const test = import.meta.env.VITE_API_TEST;
 
 function App() {
   console.log(test);
-
   return (
+   
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
