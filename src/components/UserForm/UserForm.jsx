@@ -1,6 +1,7 @@
 import { Button, Caption, CheckboxList, Form, HalfLabel, Input, InputGroup, InputSecondGroup,InputThirdGroup, Label } from "./UserForm.styled";
 
 import Checkbox from "../Checkbox";
+import Calendar from "../Calendar/Calendar";
 
 export default function UserForm() {
   const handleSubmit = (e) => {
@@ -43,7 +44,7 @@ export default function UserForm() {
           </HalfLabel>
 
           <HalfLabel>
-            <Input type="text"/>
+            <Calendar name="birthday"/>
           </HalfLabel>
         </InputSecondGroup>
       </InputGroup>

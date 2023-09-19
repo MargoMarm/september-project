@@ -1,14 +1,28 @@
-import DailyStatsCards from "../DailyStatsCards/DailyStatsCards";
-import { AddUserBtn, Avatar, ImgWrap, AvatarWrapper, CardsWrap, DailyStatsWrap, H3, Container, UserSVG, Button } from "./UserCard.styled";
+import { useDispatch } from 'react-redux';
+import { handleLogout } from '../../utils';
+
+import DailyStatsCards from '../DailyStatsCards/DailyStatsCards';
+import {
+  AddUserBtn,
+  Avatar,
+  ImgWrap,
+  AvatarWrapper,
+  CardsWrap,
+  DailyStatsWrap,
+  H3,
+  Container,
+  UserSVG,
+  Button,
+} from './UserCard.styled';
 import sprite from '../../assets/sprite.svg';
-import img from '../../assets/11.png'
-import DescriptionText from "../DescriptionText/DescriptionText";
+import img from '../../assets/11.png';
+import DescriptionText from '../DescriptionText/DescriptionText';
 
 import { mgForDiary } from '../../utils/descriptionTextMargin';
 
 export default function UserCard() {
+  const dispatch = useDispatch();
 
-	
   return (
     <Container>
       <AvatarWrapper>
@@ -57,7 +71,12 @@ export default function UserCard() {
         width={{ tablet: 439, desktop: 439 }}
       />
 
-      <Button type="button">
+      <Button
+        type="button"
+        onClick={() => {
+          handleLogout(dispatch);
+        }}
+      >
         <span>Logout</span>
         <svg>
           <use href={`${sprite}#logout_`}></use>
