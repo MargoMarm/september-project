@@ -9,6 +9,7 @@ const colors = {
   red: '#E9101D',
   green: '#3CBF61',
   textWhite005: 'rgba(239, 237, 232, 0.05)',
+  textWhite01: 'rgba(239, 237, 232, 0.10)',
   textWhite02: 'rgba(239, 237, 232, 0.20)',
   textWhite03: 'rgba(239, 237, 232, 0.30)',
   textWhite04: 'rgba(239, 237, 232, 0.40)',
