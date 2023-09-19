@@ -65,7 +65,7 @@ const MobMenu = () => {
           </ButtonMenuExit>
           <ContainerLink>
             <li onClick={toggleMobMenu}>
-              <CustomNavLink to={'/dairy'} text="Diary" />
+              <CustomNavLink to={'/diary'} text="Diary" />
             </li>
             <li onClick={toggleMobMenu}>
               <CustomNavLink to={'/products'} text="Products" />
