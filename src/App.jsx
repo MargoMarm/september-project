@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
-import ProductOrExerciseModal from './components/ProductOrExerciseModal/ProductOrExerciseModal';
 
 const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
@@ -22,23 +21,20 @@ const test = import.meta.env.VITE_API_TEST;
 function App() {
   console.log(test);
   return (
-    <ProductOrExerciseModal
-      modalType={'exercise'}
-      data={{ yourTime: 110, burnedCalories :123}}
-    />
-    // <Routes>
-    //   <Route path="/" element={<SharedLayout />}>
-    //     <Route index element={<Home />} />
-    //     <Route path="/signin" element={<SignIn />} />
-    //     <Route path="/signup" element={<SignUp />} />
-    //     <Route path="/products" element={<Products />} />
-    //     <Route path="/params" element={<Params />} />
-    //     <Route path="/exercises" element={<Exercises />} />
-    //     <Route path="/diary" element={<Diary />} />
-    //     <Route path="/profile" element={<Profile />} />
-    //     <Route path="/error" element={<Error />} />
-    //   </Route>
-    // </Routes>
+   
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/params" element={<Params />} />
+        <Route path="/exercises" element={<Exercises />} />
+        <Route path="/diary" element={<Diary />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/error" element={<Error />} />
+      </Route>
+    </Routes>
   );
 }
 export default App;
