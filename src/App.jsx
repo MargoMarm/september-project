@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
-import ProductOrExersiseModal from './components/ProductOrExerciseModal/ProductOrExerciseModal';
 
 const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
@@ -23,11 +22,6 @@ function App() {
   console.log(test);
   return (
     <>
-      <ProductOrExersiseModal
-        modalType="exercise"
-        data={{ yourTime: '3 minutes', burnedCalories: 150 }}
-      />
-
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
