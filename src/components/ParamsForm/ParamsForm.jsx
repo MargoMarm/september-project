@@ -58,7 +58,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
       }}
       validationSchema={paramsSchema}
     >
-      {({ handleChange, values, errors }) => (
+      {({ handleChange, values }) => (
         <Form>
           <Swiper
             spaceBetween={10}
