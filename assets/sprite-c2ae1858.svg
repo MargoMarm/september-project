@@ -252,6 +252,11 @@
       </path>
     </symbol>
 
+<symbol id="icon-search" viewBox="0 0 32 32">
+<path fill="none" stroke="#efede8" style="stroke: var(--color1, #efede8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667c-5.891 0-10.667 4.776-10.667 10.667s4.776 10.667 10.667 10.667z"></path>
+<path fill="none" stroke="#efede8" style="stroke: var(--color1, #efede8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M28.001 28l-5.8-5.8"></path>
+</symbol>
+
     <symbol id="icon-gridicons_user" viewBox="0 0 32 32">
       <path
         d="M15.743 5.333c1.392 0 2.726 0.562 3.71 1.562s1.537 2.357 1.537 3.771-0.553 2.771-1.537 3.771c-0.984 1-2.319 1.562-3.71 1.562s-2.726-0.562-3.71-1.562c-0.984-1-1.537-2.357-1.537-3.771s0.553-2.771 1.537-3.771c0.984-1 2.319-1.562 3.71-1.562zM15.743 26.667c0 0 10.495 0 10.495-2.667 0-3.2-5.116-6.667-10.495-6.667s-10.495 3.467-10.495 6.667c0 2.667 10.495 2.667 10.495 2.667z">
