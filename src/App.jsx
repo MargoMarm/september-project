@@ -3,6 +3,7 @@ import { lazy } from 'react';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
+import { PrivateRoute } from './components/Routes';
 
 const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
@@ -29,7 +30,10 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/params" element={<Params />} />
+        <Route
+          path="/params"
+          element={<PrivateRoute component={<Params />} redirectTo="/" />}
+        />
         <Route path="/exercises" element={<Exercises />} />
         <Route path="/diary" element={<Diary />} />
         <Route path="/profile" element={<Profile />} />
