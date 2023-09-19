@@ -2,7 +2,6 @@ const pageContentToRender = (page, data) => {
   const content =
     page === 'product'
       ? {
-          key: data._id.$oid,
           subtitle: 'DIET',
           title: data.title,
           button: 'Add',
@@ -14,7 +13,6 @@ const pageContentToRender = (page, data) => {
           subText3: data.weight,
         }
       : {
-          key: data.title,
           subtitle: 'WORKOUT',
           title: data.name,
           button: 'Start',

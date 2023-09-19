@@ -49,10 +49,10 @@ const ProductsOrExercisesItem = ({ page, data }) => {
   };
 
   const contentToRender = pageContentToRender(page, data);
-  console.log(contentToRender);
+//   console.log(contentToRender);
 
   return (
-    <Item key={contentToRender.key}>
+    <Item>
       <SubDiv>
         <TextDiet>{contentToRender.subtitle}</TextDiet>
         {page === 'product' && <TextRecommended>Recommended</TextRecommended>}
