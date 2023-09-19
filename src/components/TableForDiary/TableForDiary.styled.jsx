@@ -8,6 +8,12 @@ export const DeleteBtn = styled.button`
   background-color: inherit;
   border: none;
   display: flex;
+
+  transition: scale 250ms ease-in-out;
+
+  &:hover {
+    scale: 1.1;
+  }
 `;
 
 export const DeleteIcon = styled.svg`

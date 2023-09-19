@@ -53,10 +53,17 @@ export const AddLink = styled(NavLink)`
 
   color: ${colors.orange};
 
-  transition: scale 250ms ease-in-out;
+  transition:
+    scale 250ms ease-in-out,
+    color 250ms ease-in-out;
 
   &:hover {
     scale: 1.1;
+    color: ${colors.orangeSecondary};
+
+    svg {
+      stroke: ${colors.orangeSecondary};
+    }
   }
 `;
 
@@ -70,8 +77,11 @@ export const DayNoContentText = styled.p`
 `;
 
 export const ArrowRight = styled.svg`
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   margin-left: 8px;
+
   stroke: ${colors.orange};
+
+  transition: stroke 250ms ease-in-out;
 `;
