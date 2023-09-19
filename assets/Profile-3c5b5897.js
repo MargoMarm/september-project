@@ -1,4 +1,4 @@
-import{n as t,m as o,c as i,f as u,j as e,s as d}from"./index-f73ea04a.js";import{T as b}from"./Title-96b5e9e7.js";import{D as c,a as y,m as f}from"./descriptionTextMargin-3a4e05ea.js";const j=t.div`
+import{n as t,m as o,c as i,f as u,j as e,s as d}from"./index-d8c8fb30.js";import{T as b}from"./Title-9d24f48e.js";import{D as c,a as y,m as f}from"./descriptionTextMargin-02902964.js";const j=t.div`
   flex-shrink: 0;
   max-width: 439px;
   margin: 0 auto;
