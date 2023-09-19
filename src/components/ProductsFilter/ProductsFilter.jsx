@@ -9,11 +9,13 @@ import {
   Select,
   InputWrapper,
   Svg,
+  FilterTitle,
 } from './ProductsFilter.styled';
 
 export default function ProductsFilter() {
   return (
     <FilterContainer>
+      <FilterTitle>Filters</FilterTitle>
       <InputWrapper>
         <TextInput type="text" autoComplete="off" />
         <ButtonIconForInput
