@@ -65,23 +65,3 @@ export const Error = styled.div`
   font-size: 12px;
   color: ${colors.textError};
 `;
-
-export const HidePasswordbtn = styled.button`
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  border: none;
-  outline: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  ${mq.tablet} {
-    right: 14px;
-  }
-  background-color: transparent;
-  stroke: ${colors.white};
-`;

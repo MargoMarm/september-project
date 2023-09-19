@@ -9,11 +9,16 @@ import {
   DayDiarySubDiv,
 } from './DayDiaryProductsOrExercises.styled';
 import sprite from '../../assets/sprite.svg';
-import ProductsTable from '../ProductsTable/ProductsTable';
+// import ProductsTable from '../ProductsTable/ProductsTable';
 
-const DayDiaryProductsOrExercises = ({ products, to, isDayProducts }) => {
+const DayDiaryProductsOrExercises = ({
+  products,
+  to,
+  isDayProducts,
+  marginBottom,
+}) => {
   return (
-    <DayDiaryContainer>
+    <DayDiaryContainer marginBottom={marginBottom}>
       <DayDiarySubDiv>
         <DayDiarySubTitle>
           {isDayProducts ? 'Products' : 'Exercises'}
@@ -40,6 +45,7 @@ DayDiaryProductsOrExercises.propTypes = {
   to: PropTypes.string,
   isDayProducts: PropTypes.bool,
   products: PropTypes.array,
+  marginBottom: PropTypes.number,
 };
 
 export default DayDiaryProductsOrExercises;
