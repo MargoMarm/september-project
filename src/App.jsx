@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
+import ProductModal from './components/ProductOrExersiseModal/ProductOrExersiseModal';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
 
 const Home = lazy(() => import('../src/pages/Home/Home'));
@@ -21,21 +22,24 @@ const test = import.meta.env.VITE_API_TEST;
 
 function App() {
   console.log(test);
-
   return (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/params" element={<Params />} />
-        <Route path="/exercises" element={<Exercises />} />
-        <Route path="/dairy" element={<Dairy />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/error" element={<Error />} />
-      </Route>
-    </Routes>
+    <>
+      <ProductModal />
+
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/params" element={<Params />} />
+          <Route path="/exercises" element={<Exercises />} />
+          <Route path="/dairy" element={<Dairy />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/error" element={<Error />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 export default App;
