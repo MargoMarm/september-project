@@ -17,13 +17,12 @@ import {
 } from './MobMenu.styled';
 import sprite from '../../assets/sprite.svg';
 
-
 const MobMenu = () => {
   const [mobMenu, setMobMenu] = useState(false);
 
-  const dispatch = useDispatch();
-
   const toggleMobMenu = () => setMobMenu(!mobMenu);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleKeyDown = e => {
