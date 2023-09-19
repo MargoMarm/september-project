@@ -22,6 +22,7 @@ export const SvgUser = styled.svg`
 `;
 export const ButtonWrap = styled.div`
   display: flex;
+  align-items: center;
   margin-left: 30px;
   gap: 16px;
 `;

@@ -1,11 +1,11 @@
 import Title from '../../components/Title/Title';
 import SubTitle from '../../components/SubTitle/SubTitle';
-import Header from '../../components/headersComp/Header/Header';
 import AuthForm from '../../components/AuthForm/AuthForm';
 import BtnSubtitle from '../../components/BtnSubtitle/BtnSubtitle';
 import { Wrapper } from '../Home/Home.styled';
 import { useDispatch } from 'react-redux';
 import { logInUser } from '../../redux/auth/operation';
+import {mg} from '../../utils'
 
 const SignIn = () => {
   const dispatch = useDispatch();
@@ -17,8 +17,7 @@ const SignIn = () => {
 
   return (
     <Wrapper>
-      <Header />
-      <Title text={'Sign In'} margin={14} />
+      <Title text={'Sign In'} margin={mg} />
       <SubTitle
         text={
           'Welcome! Please enter your credentials to login to the platform:'

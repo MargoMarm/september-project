@@ -12,7 +12,7 @@ export const Item = styled.li`
   align-items: flex-start;
 
   font-size: 14px;
-  line-heigth: 1.29;
+  line-height: 1.29;
 
   border-radius: 12px;
   border: 1px solid ${colors.textWhite02};
@@ -96,7 +96,7 @@ export const ArrowRight = styled.svg`
   width: 16px;
   height: 16px;
   margin-left: 8px;
-
+  stroke: ${colors.orange};
   ${mq.tablet} {
     width: 20px;
     height: 20px;

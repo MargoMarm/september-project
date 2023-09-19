@@ -22,6 +22,7 @@
     url('assets/fonts/roboto-bold-webfont.woff2') format('woff2'),
     url('assets/fonts/roboto-bold-webfont.woff') format('woff');
 }
+
 body {
   background-color: rgb(0, 0, 0);
   background-size: auto 100%;
@@ -57,4 +58,16 @@ img {
 }
 button {
   cursor: pointer;
+}
+
+.css-9l3uo3 {
+  color: #efede8;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 128%;
+  letter-spacing: normal;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 }
