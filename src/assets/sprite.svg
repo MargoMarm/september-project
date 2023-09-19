@@ -237,8 +237,8 @@
         stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 25.333v0.013M16 20v-13.333"></path>
     </symbol>
 
-    <symbol id="arrow-right" viewBox="0 0 42 32">
-      <path fill="none" stroke="#e6533c" style="stroke: var(--color1, #e6533c)" stroke-linejoin="round"
+   <symbol id="arrow-right" viewBox="0 0 42 32">
+      <path stroke-linejoin="round"
         stroke-linecap="round" stroke-miterlimit="4" stroke-width="4.8"
         d="M23.467 29.333l13.333-13.333M36.8 16l-13.333-13.333M36.8 16h-32"></path>
     </symbol>
