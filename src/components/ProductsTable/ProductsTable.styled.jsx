@@ -37,7 +37,7 @@ export const ColumnName = styled.p`
   :nth-of-type(2) {
     margin-right: 87px;
 
-    ${mq.tablet} {
+    ${mq.desktop} {
       margin-right: 125px;
     }
   }
@@ -45,7 +45,7 @@ export const ColumnName = styled.p`
   :nth-of-type(3) {
     margin-right: 54px;
 
-    ${mq.tablet} {
+    ${mq.desktop} {
       margin-right: 69px;
     }
   }
@@ -53,7 +53,7 @@ export const ColumnName = styled.p`
   :nth-of-type(4) {
     margin-right: 60px;
 
-    ${mq.tablet} {
+    ${mq.desktop} {
       margin-right: 75px;
     }
   }
@@ -75,7 +75,7 @@ export const BASELINE_THEME = {
     ::-webkit-scrollbar-thumb {
       background-color: ${colors.textWhite01};
       border-radius: 12px;
-    }
+    };
 
     ${mq.desktop} {
       --data-table-library_grid-template-columns:  220px 174px 113px 113px 122px 44px;

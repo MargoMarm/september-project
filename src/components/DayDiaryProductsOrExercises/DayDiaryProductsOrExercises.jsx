@@ -9,13 +9,13 @@ import {
   DayDiarySubDiv,
 } from './DayDiaryProductsOrExercises.styled';
 import sprite from '../../assets/sprite.svg';
-// import ProductsTable from '../ProductsTable/ProductsTable';
+import ProductsTable from '../ProductsTable/ProductsTable';
 
 const DayDiaryProductsOrExercises = ({
-  products,
   to,
   isDayProducts,
   marginBottom,
+  list,
 }) => {
   return (
     <DayDiaryContainer marginBottom={marginBottom}>
@@ -30,8 +30,8 @@ const DayDiaryProductsOrExercises = ({
           </ArrowRight>
         </AddLink>
       </DayDiarySubDiv>
-      {products.length !== 0 ? (
-        <ProductsTable products={products} />
+      {list.length !== 0 ? (
+        <ProductsTable list={list} />
       ) : (
         <DayNoContentText>
           Not found {isDayProducts ? 'products' : 'exercises'}
@@ -44,8 +44,8 @@ const DayDiaryProductsOrExercises = ({
 DayDiaryProductsOrExercises.propTypes = {
   to: PropTypes.string,
   isDayProducts: PropTypes.bool,
-  products: PropTypes.array,
   marginBottom: PropTypes.number,
+  list: PropTypes.array,
 };
 
 export default DayDiaryProductsOrExercises;
