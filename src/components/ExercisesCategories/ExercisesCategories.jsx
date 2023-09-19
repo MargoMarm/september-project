@@ -1,4 +1,6 @@
-// import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import {
   CategoriesList,
   CategoriesListItem,
@@ -6,44 +8,55 @@ import {
 } from './ExercisesCategories.styled'; // Імпорт стилів
 
 const ExercisesCategories = () => {
-  // const [selectedCategory, setSelectedCategory] = useState('Body parts');
+  const [selectedCategory, setSelectedCategory] = useState('Body parts');
   // const [subcategories, setSubcategories] = useState([]);
   // const [isFetching, setIsFetching] = useState(false);
 
-  // useEffect(() => {
-  //   Сюди вставте логіку для відправлення запиту на сервер
-  //   і отримання списку підкатегорій на основі обраної категорії (selectedCategory)
-  //   Приклад:
-  //   const fetchSubcategories = async () => {
-  //     setIsFetching(true);
-  //     try {
-  //       const response = await fetch(`/api/categories/${selectedCategory}/subcategories`);
-  //       const data = await response.json();
-  //       setSubcategories(data);
-  //     } catch (error) {
-  //       console.error('Error fetching subcategories:', error);
-  //     } finally {
-  //       setIsFetching(false);
-  //     }
-  //   };
-  //   fetchSubcategories();
-  // }, [selectedCategory]);
+  console.log(selectedCategory);
 
-  // const handleCategoryChange = category => {
-  //   setSelectedCategory(category);
-  // };
+  useEffect(() => {
+    const fetchSubcategories = async () => {
+      // setIsFetching(true);
+      try {
+        const response = await axios.get(
+          `/api/filter?filter=${selectedCategory}`,
+        );
+
+        console.log(response);
+        // setSubcategories(data);
+      } catch (error) {
+        console.error('Error fetching subcategories:', error);
+      } finally {
+        // setIsFetching(false);
+      }
+    };
+    fetchSubcategories();
+  }, [selectedCategory]);
+
+  const handleCategoryChange = event => {
+    const textContent = event.target.childNodes[0].textContent;
+    console.log(textContent);
+
+    setSelectedCategory(textContent);
+  };
 
   return (
     <>
       <CategoriesList>
         <CategoriesListItem>
-          <CategoriesLink to="bodyparts">Body parts</CategoriesLink>
+          <CategoriesLink type="button" onClick={handleCategoryChange}>
+            Body parts
+          </CategoriesLink>
         </CategoriesListItem>
         <CategoriesListItem>
-          <CategoriesLink to="muscles">Muscles</CategoriesLink>
+          <CategoriesLink type="button" onClick={handleCategoryChange}>
+            Muscles
+          </CategoriesLink>
         </CategoriesListItem>
         <CategoriesListItem>
-          <CategoriesLink to="equipment">Equipment</CategoriesLink>
+          <CategoriesLink type="button" onClick={handleCategoryChange}>
+            Equipment
+          </CategoriesLink>
         </CategoriesListItem>
       </CategoriesList>
     </>
