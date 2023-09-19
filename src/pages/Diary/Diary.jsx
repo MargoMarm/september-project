@@ -10,6 +10,7 @@ import {
 } from './Diary.styled';
 
 import { mgForDiary } from '../../utils/descriptionTextMargin';
+import { mgForTitle } from '../../utils/titleMarginForDairyPage';
 
 const listProducts = [
   {
@@ -162,18 +163,6 @@ const listExercises = [
   },
 ];
 
-const mgForTitle = {
-  top: {
-    desk: 72,
-    tab: 72,
-    mob: 40,
-  },
-  bt: {
-    tab: 32,
-    mob: 40,
-  },
-};
-
 const Diary = () => {
   return (
     <>
@@ -195,7 +184,7 @@ const Diary = () => {
             list={listProducts}
             productTable
           />
-          <DayDiaryProductsOrExercises list={listProducts} exerciseTable />
+          <DayDiaryProductsOrExercises list={listExercises} exerciseTable />
         </CustomDivForTables>{' '}
       </DiaryPageContainer>
     </>

@@ -1,10 +1,12 @@
 import sprite from '../../assets/sprite.svg';
 import {
+  BASELINE_THEME_EXERCISES,
   BASELINE_THEME,
-  ColumnName,
   DeleteBtn,
   DeleteIcon,
   HeaderCont,
+  ColumnNameProducts,
+  ColumnNameExercises,
 } from './TableForDiary.styled';
 import {
   Table,
@@ -18,6 +20,8 @@ import {
 
 import PropTypes from 'prop-types';
 
+const stylesForExercises = { ...BASELINE_THEME, ...BASELINE_THEME_EXERCISES };
+
 const TableForDiary = ({ list, productTable, exerciseTable }) => {
   const data = { nodes: list };
 
@@ -26,11 +30,11 @@ const TableForDiary = ({ list, productTable, exerciseTable }) => {
       {productTable && (
         <>
           <HeaderCont>
-            <ColumnName>Title</ColumnName>
-            <ColumnName>Category</ColumnName>
-            <ColumnName>Calories</ColumnName>
-            <ColumnName>Weight</ColumnName>
-            <ColumnName>Recommend</ColumnName>
+            <ColumnNameProducts>Title</ColumnNameProducts>
+            <ColumnNameProducts>Category</ColumnNameProducts>
+            <ColumnNameProducts>Calories</ColumnNameProducts>
+            <ColumnNameProducts>Weight</ColumnNameProducts>
+            <ColumnNameProducts>Recommend</ColumnNameProducts>
           </HeaderCont>
           <Table data={data} theme={BASELINE_THEME} layout={{ custom: true }}>
             {tableList => (
@@ -73,34 +77,42 @@ const TableForDiary = ({ list, productTable, exerciseTable }) => {
       {exerciseTable && (
         <>
           <HeaderCont>
-            <ColumnName>Title</ColumnName>
-            <ColumnName>Category</ColumnName>
-            <ColumnName>Calories</ColumnName>
-            <ColumnName>Weight</ColumnName>
-            <ColumnName>Recommend</ColumnName>
+            <ColumnNameExercises>Body Part</ColumnNameExercises>
+            <ColumnNameExercises>Equipment</ColumnNameExercises>
+            <ColumnNameExercises>Name</ColumnNameExercises>
+            <ColumnNameExercises>Target</ColumnNameExercises>
+            <ColumnNameExercises></ColumnNameExercises>
+            <ColumnNameExercises>Time</ColumnNameExercises>
+            <ColumnNameExercises>{''}</ColumnNameExercises>
           </HeaderCont>
-          <Table data={data} theme={BASELINE_THEME} layout={{ custom: true }}>
+          <Table
+            data={data}
+            theme={stylesForExercises}
+            layout={{ custom: true }}
+          >
             {tableList => (
               <>
                 <Header>
                   <HeaderRow>
-                    <HeaderCell>Title</HeaderCell>
-                    <HeaderCell>Category</HeaderCell>
-                    <HeaderCell>Calories</HeaderCell>
-                    <HeaderCell>Weight</HeaderCell>
-                    <HeaderCell>Recommend</HeaderCell>
+                    <HeaderCell>Body Part</HeaderCell>
+                    <HeaderCell>Equipment</HeaderCell>
+                    <HeaderCell>Name</HeaderCell>
+                    <HeaderCell>Target</HeaderCell>
+                    <HeaderCell>Burned Cal...</HeaderCell>
+                    <HeaderCell>Time</HeaderCell>
                     <HeaderCell>{''}</HeaderCell>
                   </HeaderRow>
                 </Header>
 
                 <Body>
                   {tableList.map(item => (
-                    <Row key={item._id.$oid} item={item}>
-                      <Cell>{item.title}</Cell>
-                      <Cell>{item.category}</Cell>
-                      <Cell>{item.calories}</Cell>
-                      <Cell>{item.weight}</Cell>
-                      <Cell>{item.groupBloodNotAllowed ? 'Yes' : 'No'}</Cell>
+                    <Row key={item.name} item={item}>
+                      <Cell>{item.bodyPart}</Cell>
+                      <Cell>{item.equipment}</Cell>
+                      <Cell>{item.name}</Cell>
+                      <Cell>{item.target}</Cell>
+                      <Cell>{item.burnedCalories}</Cell>
+                      <Cell>{item.time}</Cell>
                       <Cell>
                         <DeleteBtn>
                           <DeleteIcon>

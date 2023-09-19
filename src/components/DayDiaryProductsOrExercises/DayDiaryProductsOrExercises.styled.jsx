@@ -38,12 +38,18 @@ export const DayDiarySubDiv = styled.div`
 export const DayDiarySubTitle = styled.p`
   margin: 0;
 
+  font-size: 14px;
+  line-height: 1.29;
+
   color: ${colors.textWhite05};
 `;
 
 export const AddLink = styled(NavLink)`
   display: flex;
   align-items: center;
+
+  font-size: 16px;
+  line-height: 1.5;
 
   color: ${colors.orange};
 
