@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectFilters } from '../../redux/exerciseFilters/selectors'
+import {  useDispatch } from 'react-redux';
+
 import { fetchFilters } from '../../redux/exerciseFilters/operations';
 
 import {
@@ -12,15 +11,14 @@ import {
 
 const ExercisesCategories = () => {
   const dispatch = useDispatch();
-  let filters = useSelector(selectFilters);
-
 
   const [selectedCategory, setSelectedCategory] = useState('Body parts');
+
+  
   useEffect(() => {
     dispatch(fetchFilters(selectedCategory));
   }, [dispatch, selectedCategory]);
-  console.log("FILTERS", filters);
-  console.log(selectedCategory);
+
 
   
 

@@ -14,7 +14,6 @@ export const filterSlice = createSlice({
   extraReducers: builder => {
     builder.addCase(fetchFilters.fulfilled, (state, action) => {
       state.items = action.payload;
-      state.isLogedIn = true;
       state.error = null;
     });
     builder.addCase(fetchFilters.rejected, (state, action) => {
