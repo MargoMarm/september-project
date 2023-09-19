@@ -9,18 +9,18 @@ const initialState = {
   },
   error: null,
   token: null,
-  isLogedIn: false,
+  isLoggedIn: false,
   isRefreshing: false,
 };
 
 export const authSlice = createSlice({
-  name: 'authorization',
+  name: 'auth',
   initialState,
   reducers: {},
   extraReducers: builder => {
     builder.addCase(authUser.fulfilled, (state, action) => {
       state.token = action.payload.token;
-      state.isLogedIn = true;
+      state.isLoggedIn = true;
       state.error = null;
     });
     builder.addCase(authUser.rejected, (state, action) => {
@@ -35,7 +35,7 @@ export const authSlice = createSlice({
       state.user.email = action.payload.email;
       state.user.avatarURL = action.payload.avatarURL;
       state.token = action.payload.token;
-      state.isLogedIn = true;
+      state.isLoggedIn = true;
       state.error = null;
     });
     builder.addCase(logInUser.rejected, (state, action) => {
@@ -50,7 +50,7 @@ export const authSlice = createSlice({
       state.user.email = null;
       state.user.avatarURL = null;
       state.token = null;
-      state.isLogedIn = false;
+      state.isLoggedIn= false;
     });
     builder.addCase(logOutUser.rejected, (state, action) => {
       state.error = action.payload;
@@ -58,7 +58,7 @@ export const authSlice = createSlice({
       state.user.email = null;
       state.user.avatarURL = null;
       state.token = null;
-      state.isLogedIn = false;
+      state.isLoggedIn= false;
     });
     builder.addCase(logOutUser.pending, state => {
       state.isRefreshing = true;
@@ -69,7 +69,7 @@ export const authSlice = createSlice({
       state.user.email = action.payload.email;
       state.user.avatarURL = action.payload.avatarURL;
       state.token = action.payload.token;
-      state.isLogedIn = true;
+      state.isLoggedIn = true;
       state.isRefreshing = false;
     });
     builder.addCase(fetchCurrentUser.rejected, state => {
