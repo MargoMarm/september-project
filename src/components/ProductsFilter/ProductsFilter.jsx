@@ -44,9 +44,6 @@ export default function ProductsFilter() {
               </option>
             );
           })}
-          <option value="Alcoholic drinks">Alcoholic drinks</option>
-          <option value="Berries">Berries</option>
-          <option value="Cereals">Cereals</option>
         </Select>
         <Select>
           <option value="All">All</option>
