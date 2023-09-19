@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectFilters } from '../../redux/exerciseFilters/selectors'
+import { fetchFilters } from '../../redux/exerciseFilters/operations';
 
 import {
   CategoriesList,
@@ -8,30 +11,18 @@ import {
 } from './ExercisesCategories.styled'; // Імпорт стилів
 
 const ExercisesCategories = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Body parts');
-  // const [subcategories, setSubcategories] = useState([]);
-  // const [isFetching, setIsFetching] = useState(false);
+  const dispatch = useDispatch();
+  let filters = useSelector(selectFilters);
 
+
+  const [selectedCategory, setSelectedCategory] = useState('Body parts');
+  useEffect(() => {
+    dispatch(fetchFilters(selectedCategory));
+  }, [dispatch, selectedCategory]);
+  console.log("FILTERS", filters);
   console.log(selectedCategory);
 
-  useEffect(() => {
-    const fetchSubcategories = async () => {
-      // setIsFetching(true);
-      try {
-        const response = await axios.get(
-          `/api/filter?filter=${selectedCategory}`,
-        );
-
-        console.log(response);
-        // setSubcategories(data);
-      } catch (error) {
-        console.error('Error fetching subcategories:', error);
-      } finally {
-        // setIsFetching(false);
-      }
-    };
-    fetchSubcategories();
-  }, [selectedCategory]);
+  
 
   const handleCategoryChange = event => {
     const textContent = event.target.childNodes[0].textContent;

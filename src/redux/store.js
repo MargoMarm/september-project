@@ -12,6 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { authSlice } from './auth/slice';
+import  filterSlice  from "./exerciseFilters/slice";
 
 const persistConfig = {
   key: 'token',
@@ -21,6 +22,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   user: persistReducer(persistConfig, authSlice.reducer),
+  filter: filterSlice,
 });
 
 export const store = configureStore({
