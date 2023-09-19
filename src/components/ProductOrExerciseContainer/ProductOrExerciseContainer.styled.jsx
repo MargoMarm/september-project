@@ -16,7 +16,6 @@ export const Container = styled.ul`
     flex-wrap: wrap;
     row-gap: 16px;
     column-gap: 32px;
-    margin-top: 32px;
   }
   ${mq.desktop} {
     width: 858px;

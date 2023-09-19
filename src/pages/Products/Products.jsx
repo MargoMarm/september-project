@@ -2,25 +2,17 @@ import ProductsOrExercisesContainer from '../../components/ProductOrExerciseCont
 import ProductsOrExercisesItem from '../../components/ProductsOrExercisesItem/ProductsOrExercisesItem';
 import Title from '../../components/Title/Title';
 import products from '../../data/products.json';
+import ProductsFilter from '../../components/ProductsFilter/ProductsFilter';
+import { FlexWrapper, ProductPageContainer } from './Products.styled';
 
 const Products = () => {
   return (
-    <>
-      <Title
-        margin={{
-          top: {
-            desk: 72,
-            tab: 72,
-            mob: 40,
-          },
-          bt: {
-            tab: 32,
-            mob: 40,
-          },
-        }}
-        text="Products"
-      ></Title>
-      <ProductsOrExercisesContainer marginTop="40px">
+    <ProductPageContainer>
+      <FlexWrapper>
+        <Title text="Products" />
+        <ProductsFilter />
+      </FlexWrapper>
+      <ProductsOrExercisesContainer>
         {products.map((product, i) => {
           if (i < 20) {
             return (
@@ -34,7 +26,7 @@ const Products = () => {
           return null;
         })}
       </ProductsOrExercisesContainer>
-    </>
+    </ProductPageContainer>
   );
 };
 
