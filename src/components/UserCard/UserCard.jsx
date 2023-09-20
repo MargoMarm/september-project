@@ -1,23 +1,24 @@
 import DailyStatsCards from "../DailyStatsCards/DailyStatsCards";
 import { AddUserBtn, Avatar, ImgWrap, AvatarWrapper, CardsWrap, DailyStatsWrap, H3, Container, UserSVG, Button } from "./UserCard.styled";
 import sprite from '../../assets/sprite.svg';
-import img from '../../assets/11.png'
 import DescriptionText from "../DescriptionText/DescriptionText";
+import PropTypes from "prop-types";
 
 import { mgForDiary } from '../../utils/descriptionTextMargin';
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/auth/selectors";
 
-export default function UserCard() {
-  const [imgURL, setImgUrl] = useState(null);
-  const [imgFile, setImgFile] = useState(null);
+export default function UserCard({setAvatar}) {
+  const {name, avatarURL, dailyСalories, dailyTime} = useSelector(selectUser);
+  const [imgURL, setImgUrl] = useState(avatarURL || null);
+
   const handleChange = (e) => {
     setImgUrl(URL.createObjectURL(e.target.files[0]));
-    setImgFile(e.target.files[0]);
-    console.log(imgURL);
-    console.log(imgFile);
+    setAvatar(e.target.files[0]);
+    URL.revokeObjectURL(imgURL);
   }
 
-	
   return (
     <Container>
       <AvatarWrapper>
@@ -30,6 +31,7 @@ export default function UserCard() {
             <use href={`${sprite}#icon-gridicons_user`}></use>
           </UserSVG>
         )}
+
         <AddUserBtn>
           <input type="file" onChange={handleChange} />
           <svg>
@@ -38,13 +40,13 @@ export default function UserCard() {
         </AddUserBtn>
       </AvatarWrapper>
 
-      <H3>Anna Rybachok</H3>
+      <H3>{name ? name : 'user' }</H3>
 
       <CardsWrap>
         <DailyStatsWrap>
           <DailyStatsCards
             icon="fork-and-knife"
-            keyValue="2200"
+            keyValue={dailyСalories || '0'}
             label="Daily calorie intake"
             fill="true"
           />
@@ -53,7 +55,7 @@ export default function UserCard() {
         <DailyStatsWrap>
           <DailyStatsCards
             icon="dumbbell"
-            keyValue="110 min"
+            keyValue={ dailyTime || 0 + ' min'}
             label="Daily norm of sports"
             fill="true"
           />
@@ -74,4 +76,8 @@ export default function UserCard() {
       </Button>
     </Container>
   );
+}
+
+UserCard.propTypes = {
+  setAvatar: PropTypes.func.isRequired
 }
