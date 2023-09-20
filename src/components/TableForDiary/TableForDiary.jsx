@@ -7,6 +7,7 @@ import {
   HeaderCont,
   ColumnNameProducts,
   ColumnNameExercises,
+  BeforeForCell,
 } from './TableForDiary.styled';
 import {
   Table,
@@ -52,12 +53,17 @@ const TableForDiary = ({ list, productTable, exerciseTable }) => {
 
                 <Body>
                   {tableList.map(item => (
-                    <Row key={item._id.$oid} item={item}>
+                    <Row key={item._id} item={item}>
                       <Cell>{item.title}</Cell>
                       <Cell>{item.category}</Cell>
                       <Cell>{item.calories}</Cell>
-                      <Cell>{item.weight}</Cell>
-                      <Cell>{item.groupBloodNotAllowed ? 'Yes' : 'No'}</Cell>
+                      <Cell>{item.amount}</Cell>
+                      <Cell>
+                        <BeforeForCell
+                          bgColor={item.recommend ? '#419B09' : '#E9101D'}
+                        />
+                        {item.recommend ? 'Yes' : 'No'}
+                      </Cell>
                       <Cell>
                         <DeleteBtn>
                           <DeleteIcon>
@@ -106,7 +112,7 @@ const TableForDiary = ({ list, productTable, exerciseTable }) => {
 
                 <Body>
                   {tableList.map(item => (
-                    <Row key={item.name} item={item}>
+                    <Row key={item._id} item={item}>
                       <Cell>{item.bodyPart}</Cell>
                       <Cell>{item.equipment}</Cell>
                       <Cell>{item.name}</Cell>

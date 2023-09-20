@@ -17,7 +17,7 @@ const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
       {productTable && (
         <CustomContainer>
           {list.map(item => (
-            <ContainerForTable key={item._id.$oid}>
+            <ContainerForTable key={item._id}>
               <Cell>
                 Title<CellValue>{item.title}</CellValue>
               </Cell>
@@ -32,15 +32,17 @@ const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
                 </Cell>
 
                 <Cell>
-                  Weight <CellValue>{item.weight}</CellValue>
+                  Weight <CellValue>{item.amount}</CellValue>
                 </Cell>
 
                 <Cell>
-                  Recommend <CellValue before>{'YES'}</CellValue>
+                  Recommend
+                  <CellValue before colorBefore={item.recommend}>
+                    {item.recommend ? 'Yes' : 'No'}
+                  </CellValue>
                 </Cell>
 
                 <Cell>
-                  {' '}
                   <CellValue>
                     <DeleteBtn>
                       <DeleteIcon>
@@ -58,7 +60,7 @@ const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
       {exerciseTable && (
         <CustomContainer>
           {list.map(item => (
-            <ContainerForTable key={item.name}>
+            <ContainerForTable key={item._id}>
               <Cell>
                 Body Part<CellValue>{item.bodyPart}</CellValue>
               </Cell>

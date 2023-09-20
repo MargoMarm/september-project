@@ -1,10 +1,19 @@
 import styled from '@emotion/styled';
-import { colors, mq } from '../../utils';
+import { colors } from '../../utils';
 
 export const CustomContainer = styled.div`
   overflow: auto;
   margin-top: 22px;
   height: 254px;
+
+  ::-webkit-scrollbar {
+    width: 6px; 
+    height: 90px;
+  }; 
+  ::-webkit-scrollbar-thumb {
+    background-color: ${colors.textWhite01};
+    border-radius: 12px;
+  };
 `;
 
 export const ContainerForTable = styled.div`
@@ -13,7 +22,7 @@ export const ContainerForTable = styled.div`
   height: auto;
 
   &:last-child {
-    margin-bottom: 0;
+    margin-bottom: 8px;
   }
 `;
 
@@ -59,18 +68,14 @@ export const BottomContainer = styled.div`
 
   & > div {
     &:nth-of-type(4) {
-      
-
       & > p {
         padding: 0;
         margin-top: 35px;
-        
+
         border: none;
-        }
       }
     }
-  
-
+  }
 `;
 
 export const Cell = styled.div`
@@ -103,7 +108,7 @@ export const CellValue = styled.p`
       width: 14px;
       height: 14px;
       border-radius: 10px;
-      background: #419b09;
+      background: ${props.colorBefore ? '#419B09' : '#E9101D'};
       margin-right: 8px;
     `}
   }

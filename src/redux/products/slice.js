@@ -28,7 +28,7 @@ const products = createSlice({
   initialState: contactsInitialValue,
   extraReducers: builder => {
     builder.addCase(getDiaryList.pending, handlePending);
-    builder.addCase(getDiaryList.fulfilled, (state, payload) => {
+    builder.addCase(getDiaryList.fulfilled, (state, { payload }) => {
       handleFullfield(state);
       state.products = payload.products;
       state.exercises = payload.exercises;
@@ -38,7 +38,7 @@ const products = createSlice({
     builder.addCase(addProduct.pending, handlePending);
     builder.addCase(addProduct.fulfilled, handleFullfield);
     builder.addCase(addProduct.rejected, handleRejected);
-    
+
     builder.addCase(deleteProduct.pending, handlePending);
     builder.addCase(deleteProduct.fulfilled, handleFullfield);
     builder.addCase(deleteProduct.rejected, handleRejected);

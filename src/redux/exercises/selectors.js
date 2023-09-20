@@ -1,4 +1,3 @@
-export const getIsLoadingExercises = state => state.isLoading;
+export const getIsLoadingExercises = state => state.exercises.isLoading;
 
-export const getErrorExercises = state => state.error;
-
+export const getErrorExercises = state => state.exercises.error;

@@ -12,6 +12,12 @@ import {
 import { mgForDiary } from '../../utils/descriptionTextMargin';
 import { mgForTitle } from '../../utils/titleMarginForDairyPage';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getDiaryList } from '../../redux/products/operations';
+import {
+  getDiaryExercises,
+  getDiaryProducts,
+} from '../../redux/products/selectors';
 
 const listProducts = [
   {
@@ -44,21 +50,21 @@ const listProducts = [
       4: false,
     },
   },
-  {
-    _id: {
-      $oid: '5d51694902b2373622ff5e13',
-    },
-    weight: 100,
-    calories: 17,
-    category: 'vegetables and herbs',
-    title: 'Salads Belaya Dacha Delicate root',
-    groupBloodNotAllowed: {
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-    },
-  },
+  // {
+  //   _id: {
+  //     $oid: '5d51694902b2373622ff5e13',
+  //   },
+  //   weight: 100,
+  //   calories: 17,
+  //   category: 'vegetables and herbs',
+  //   title: 'Salads Belaya Dacha Delicate root',
+  //   groupBloodNotAllowed: {
+  //     1: false,
+  //     2: false,
+  //     3: false,
+  //     4: false,
+  //   },
+  // },
 ];
 
 const listExercises = [
@@ -137,7 +143,14 @@ const listExercises = [
 const Diary = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  const productsList = useSelector(getDiaryProducts);
+  const exercisesList = useSelector(getDiaryExercises);
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
+    dispatch(getDiaryList({ date: '19-09-2023' }));
+
     window.addEventListener('resize', updateWindowWidth);
 
     return () => {
@@ -165,13 +178,13 @@ const Diary = () => {
         <CustomDivForTables>
           <DayDiaryProductsOrExercises
             marginBottom={40}
-            list={listProducts}
+            list={productsList}
             productTable
             windowWidth={windowWidth}
           />
 
           <DayDiaryProductsOrExercises
-            list={listExercises}
+            list={exercisesList}
             exerciseTable
             windowWidth={windowWidth}
           />

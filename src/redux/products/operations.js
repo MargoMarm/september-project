@@ -6,12 +6,13 @@ axios.defaults.baseURL = 'https://power-pulse-rest-api.onrender.com';
 
 export const getDiaryList = createAsyncThunk(
   'getDiaryList',
-  async (data, { rejectWithValue }) => {
+  async (date, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get('/api/diary', data);
+      const { data } = await axios.get('/api/diary', date);
       console.log(data);
       return data;
     } catch (error) {
+      console.log(error);
       toast.error('Oops... Something went wrong! Try again!');
       return rejectWithValue('Oops... Something went wrong!');
     }

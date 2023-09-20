@@ -122,6 +122,14 @@ export const ColumnNameExercises = styled.p`
   }
 `;
 
+export const BeforeForCell = styled.div`
+  width: 14px;
+  height: 14px;
+  border-radius: 10px;
+  margin-right: 8px;
+  background: ${props => props.bgColor};
+`;
+
 export const BASELINE_THEME_EXERCISES = {
   Table: `
     --data-table-library_grid-template-columns:  98px 140px 136px 92px 86px 84px 28px;
@@ -217,13 +225,8 @@ export const BASELINE_THEME = {
       padding: 0
     }  
 
-    :nth-of-type(5)::before {
-      content: '';
-      width: 14px;
-      height: 14px;
-      border-radius: 10px;
-      background: #419B09;
-      margin-right: 8px;
-    }
+    >div {
+      display: flex;
+      align-items: center;}
   `,
 };

@@ -11,6 +11,9 @@ import {
 import sprite from '../../assets/sprite.svg';
 import TableForDiary from '../TableForDiary/TableForDiary';
 import TableForDiaryOnMobile from '../TableForDiaryOnMobile/TableForDiaryOnMobile';
+import { useSelector } from 'react-redux';
+import { getErrorProductsOrExercises } from '../../redux/products/selectors';
+import { useEffect } from 'react';
 
 const DayDiaryProductsOrExercises = ({
   to,
@@ -20,6 +23,8 @@ const DayDiaryProductsOrExercises = ({
   exerciseTable,
   windowWidth,
 }) => {
+  const error = useSelector(getErrorProductsOrExercises);
+
   return (
     <DayDiaryContainer marginBottom={marginBottom}>
       <DayDiarySubDiv>
@@ -33,7 +38,7 @@ const DayDiaryProductsOrExercises = ({
           </ArrowRight>
         </AddLink>
       </DayDiarySubDiv>
-      {list.length !== 0 ? (
+      {error?.message !== 'Rejected' || list.length === 0 ? (
         <>
           {windowWidth >= 768 && (
             <TableForDiary
