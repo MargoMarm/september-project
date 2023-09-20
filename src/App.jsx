@@ -28,9 +28,8 @@ function App() {
 
   const { isRefreshing, isLoggedIn } = UseAuth();
   const { pathname } = useLocation();
-  console.log(pathname);
 
-  if (isLoggedIn && pathname !== '/') {
+  if (isLoggedIn) {
     localStorage.setItem('location', pathname);
   }
 
