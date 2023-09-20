@@ -1,10 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchCurrentUser } from './redux/auth/operation';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
 import { PrivateRoute, PublicRoute } from './components/Routes';
-
 
 const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
@@ -22,6 +23,12 @@ const Profile = lazy(() => import('./pages/Profile/Profile'));
 const test = import.meta.env.VITE_API_TEST;
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
+
   console.log(test);
   return (
     <Routes>

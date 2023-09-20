@@ -48,19 +48,19 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
         levelActivity: '',
       }}
       onSubmit={async (values, Formik) => {
-        const newParamsUser = {
-          ...values,
-          blood: Number(values.blood),
-          levelActivity: Number(values.levelActivity),
-          birthday: format(date, 'yyyy-MM-dd'),
-        };
+        // const newParamsUser = {
+        //   ...values,
+        //   blood: Number(values.blood),
+        //   levelActivity: Number(values.levelActivity),
+        //   birthday: format(date, 'yyyy-MM-dd'),
+        // };
 
-        await axios.post(
-          'https://power-pulse-rest-api.onrender.com/api/users/create',
-          newParamsUser,
-        );
+        // await axios.post(
+        //   'https://power-pulse-rest-api.onrender.com/api/users/create',
+        //   newParamsUser,
+        // );
 
-        navigate('/diary');
+        // navigate('/diary');
 
         Formik.resetForm();
 
@@ -103,14 +103,14 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                   placeholder="Desired Weight"
                   autoComplete="off"
                 />
-                <div style={{ width: '155px', height: '52px', margin: '7px' }}>
+                {/* <div style={{ width: '155px', height: '52px', margin: '7px' }}>
                   <Calendar
                     name="birthday"
                     onChange={handleChange}
                     date={date}
                     setDate={setDate}
                   />
-                </div>
+                </div> */}
               </InputGroup>
 
               <ParamsBtn setSteps={setSteps} type={'next'} step={2} />

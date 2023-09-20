@@ -51,14 +51,14 @@ export const HalfLabel = styled(Label)`
 
 export const Input = styled.input`
   width: 100%;
-  height: 100%;
+  height: 46px;
   padding: 14px;
   color: ${colors.grey};
   background-color: inherit;
   border: 1px solid ${colors.textWhite03};
   border-radius: 12px;
   transition: border-color 0.3s;
-  outline: none;
+
   &:disabled {
     color: ${colors.textWhite06};
   }
@@ -66,9 +66,6 @@ export const Input = styled.input`
   &:hover,
   &:focus {
     border-color: ${colors.orange};
-  }
-  &::placeholder {
-    color: ${colors.textWhite06};
   }
 `;
 
