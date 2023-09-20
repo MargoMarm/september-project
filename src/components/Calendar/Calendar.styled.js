@@ -149,8 +149,8 @@ export const GlobalStyles = css`
     right: 40px;
   }
 
-  .react-datepicker__month-read-view--selected-month
-    .react-datepicker__year-read-view--selected-year {
+  .react-datepicker__month-read-view--selected-month,
+  .react-datepicker__year-read-view--selected-year {
     display: none;
   }
 
