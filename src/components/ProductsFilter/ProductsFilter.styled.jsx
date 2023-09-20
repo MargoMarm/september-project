@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colors, mq } from '../../utils';
 
 export const FilterContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -9,6 +10,19 @@ export const FilterContainer = styled.div`
   ${mq.tablet} {
     flex-direction: row;
     width: 664px;
+  }
+`;
+
+export const FilterTitle = styled.div`
+  display: none;
+  ${mq.desktop} {
+    display: block;
+    position: absolute;
+    top: -24px;
+    right: 12px;
+    font-size: 14px;
+    line-height: 128%;
+    color: ${colors.textWhite05};
   }
 `;
 

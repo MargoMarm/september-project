@@ -8,7 +8,7 @@ export default function Checkbox({styleWrapper, styleCheckbox, styleText, name, 
       <Chkbx style={styleCheckbox || null}></Chkbx>
       <CheckboxText style={styleText || null}>{children}</CheckboxText>
     </CheckboxWrap>
-  )
+  );
 }
 
 Checkbox.propTypes = {

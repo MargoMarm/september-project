@@ -1,23 +1,30 @@
-import DailyStatsCards from "../DailyStatsCards/DailyStatsCards";
-import { AddUserBtn, Avatar, ImgWrap, AvatarWrapper, CardsWrap, DailyStatsWrap, H3, Container, UserSVG, Button } from "./UserCard.styled";
+import { useDispatch } from 'react-redux';
+import { handleLogout } from '../../utils';
+
+import DailyStatsCards from '../DailyStatsCards/DailyStatsCards';
+import {
+  AddUserBtn,
+  Avatar,
+  ImgWrap,
+  AvatarWrapper,
+  CardsWrap,
+  DailyStatsWrap,
+  H3,
+  Container,
+  UserSVG,
+  Button,
+} from './UserCard.styled';
 import sprite from '../../assets/sprite.svg';
-import DescriptionText from "../DescriptionText/DescriptionText";
-import PropTypes from "prop-types";
+import img from '../../assets/11.png';
+import DescriptionText from '../DescriptionText/DescriptionText';
 
 import { mgForDiary } from '../../utils/descriptionTextMargin';
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../redux/auth/selectors";
 
-export default function UserCard({setAvatar}) {
-  const {name, avatarURL, dailyСalories, dailyTime} = useSelector(selectUser);
-  const [imgURL, setImgUrl] = useState(avatarURL || null);
-
-  const handleChange = (e) => {
-    setImgUrl(URL.createObjectURL(e.target.files[0]));
-    setAvatar(e.target.files[0]);
-    URL.revokeObjectURL(imgURL);
-  }
+export default function UserCard() {
+  const dispatch = useDispatch();
 
   return (
     <Container>
@@ -68,7 +75,12 @@ export default function UserCard({setAvatar}) {
         width={{ tablet: 439, desktop: 439 }}
       />
 
-      <Button type="button">
+      <Button
+        type="button"
+        onClick={() => {
+          handleLogout(dispatch);
+        }}
+      >
         <span>Logout</span>
         <svg>
           <use href={`${sprite}#logout_`}></use>
@@ -76,8 +88,4 @@ export default function UserCard({setAvatar}) {
       </Button>
     </Container>
   );
-}
-
-UserCard.propTypes = {
-  setAvatar: PropTypes.func.isRequired
 }

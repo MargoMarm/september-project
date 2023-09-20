@@ -11,22 +11,25 @@ export const DayDiaryContainer = styled.div`
   height: 335px;
   padding: 16px;
   align-items: flex-start;
-  margin-bottom: ${props => props.marginBottom}px;
 
   font-size: 14px;
-  line-height: 1.29;
+  line-heigth: 1.29;
 
   border-radius: 12px;
   border: 1px solid ${colors.textWhite02};
   background: rgba(239, 237, 232, 0.05);
 
+  ${mq.mobile} {
+    width: 335px;
+  }
+
   ${mq.tablet} {
-    width: auto;
+    width: 704px;
     height: 234px;
   }
 
   ${mq.desktop} {
-    width: auto;
+    width: 826px;
   }
 `;
 
@@ -38,7 +41,6 @@ export const DayDiarySubDiv = styled.div`
 export const DayDiarySubTitle = styled.p`
   margin: 0;
 
-  font-size: 14px;
   line-height: 1.29;
 
   color: ${colors.textWhite05};
@@ -48,22 +50,12 @@ export const AddLink = styled(NavLink)`
   display: flex;
   align-items: center;
 
-  font-size: 16px;
-  line-height: 1.5;
-
   color: ${colors.orange};
 
-  transition:
-    scale 250ms ease-in-out,
-    color 250ms ease-in-out;
-
-  &:hover {
-    scale: 1.1;
-    color: ${colors.orangeSecondary};
-
-    svg {
-      stroke: ${colors.orangeSecondary};
-    }
+  ${mq.tablet} {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
   }
 `;
 
@@ -80,8 +72,4 @@ export const ArrowRight = styled.svg`
   width: 20px;
   height: 20px;
   margin-left: 8px;
-
-  stroke: ${colors.orange};
-
-  transition: stroke 250ms ease-in-out;
 `;
