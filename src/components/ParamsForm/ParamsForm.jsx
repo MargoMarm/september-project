@@ -435,8 +435,8 @@ const paramsSchema = Yup.object({
   height: Yup.number().min(150).required(),
   currentWeight: Yup.number().min(35).required(),
   desiredWeight: Yup.number().min(35).required(),
-  birthday: Yup.string(),
-  blood: Yup.number().required(),
+  birthday: Yup.string().required(),
+  blood: Yup.string().required(),
   sex: Yup.string().required(),
   levelActivity: Yup.number().required(),
 });
