@@ -52,7 +52,6 @@ export const logOutUser = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       await axios.post('/api/users/logout');
-      console.log('qwe');
       token.unSet();
     } catch (error) {
       toast.error('Oops, something went wrong((( Try again, please!');
@@ -67,7 +66,7 @@ export const fetchCurrentUser = createAsyncThunk(
   'refreshUser',
   async (_, { rejectWithValue, getState }) => {
     const state = getState();
-    const persistedToken = state.user.token;
+    const persistedToken = state.auth.token;
     if (!persistedToken) {
       return rejectWithValue();
     }
