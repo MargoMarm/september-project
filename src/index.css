@@ -78,15 +78,8 @@ button {
   width: 8px;
   --os-track-border-radius: 12px;
   --os-handle-bg: #ef8964;
+  --os-handle-bg-active: #ef8964;
+  --os-handle-bg-hover: #ef8964;
   --os-handle-min-size: 33px;
   --os-handle-max-size: 153px;
-}
-
-.os-scrollbar-track {
-  background-color: #ef8964;
-  color: #ef8964;
-}
-
-.os-scrollbar-handle {
-  height: 30px;
 }
