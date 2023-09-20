@@ -9,8 +9,15 @@ export const filterSlice = createSlice({
     items: [],
     error: null,
     isLoading: false,
+    filter: "Body parts"
   },
-  reducers: {},
+  
+  reducers: {
+    setStatusFilter: (state, action) => {
+      console.log("PAYLOAD",action.payload);
+      state.filter = action.payload
+    },
+  },
   extraReducers: builder => {
     builder.addCase(fetchFilters.fulfilled, (state, action) => {
       state.items = action.payload;
@@ -26,3 +33,4 @@ export const filterSlice = createSlice({
 });
 
 export default filterSlice.reducer;
+export const { setStatusFilter } = filterSlice.actions;

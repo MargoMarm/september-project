@@ -5,15 +5,25 @@ import axios from 'axios';
 
 export const fetchFilters = createAsyncThunk(
     'filters/getFilters',
-    async (filter, thunkAPI) => {
-        console.log("OPERATIONS-LOG", filter, thunkAPI);
+    async (_, thunkAPI) => {
       try {
-        const response = await axios.get(`api/filter?filter=${filter}`);
+        const response = await axios.get(`api/filter`);
         return response.data;
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
       }
+    }, 
+    {
+      condition: (_, { getState, extra }) => {
+        const { filter } = getState()
+      
+        if (filter.items.lenght < 1) {
+          // Already fetched or in progress, don't need to re-fetch
+          return false
+        }
+      }
     }
+    
   );
 
 

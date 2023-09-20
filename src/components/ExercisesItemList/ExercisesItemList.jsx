@@ -3,14 +3,15 @@ import ExercisesItem from '../ExercisesItem/ExercisesItem';
 import { ExercisesItemList } from './ExercisesItemList.styled';
 import { capitalizeWord } from '../../utils/capitalizeWord';
 import { useSelector } from 'react-redux';
-import { selectFilters } from '../../redux/exerciseFilters/selectors'
+import { selectItems, selectFilter } from '../../redux/exerciseFilters/selectors'
 
 export const ExercisesList = ({ bodyParts }) => {
-  
-  let filters = useSelector(selectFilters);
+
+  let category = useSelector(selectFilter);
+  let filters = useSelector(selectItems);
   return (
     <ExercisesItemList>
-      {filters
+      {filters.filter(item => item.filter === category)
         .map(({ filter, name, imgURL, _id }) => (
           <ExercisesItem
             key={_id}

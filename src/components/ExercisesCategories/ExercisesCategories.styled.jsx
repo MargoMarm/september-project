@@ -15,6 +15,7 @@ export const CategoriesList = styled.ul`
 export const CategoriesListItem = styled.li``;
 
 export const CategoriesLink = styled.button`
+
   position: relative;
   padding: 0;
 
@@ -27,28 +28,25 @@ export const CategoriesLink = styled.button`
   background-color: transparent;
   outline: none;
   border: none;
-
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 68px;
-    height: 4px;
-
-    bottom: -4px;
-    left: 0;
-    background-color: #ef8964;
-    border-radius: 2px;
-  }
+ 
+    &:after {
+      content: '';
+      display: ${props => (props.isactive === true ?  "block" : "none")};
+      position: absolute;
+      width: 100%;
+      height: 4px;
+  
+      bottom: -4px;
+      left: 0;
+      background-color: #ef8964;
+      border-radius: 2px;
+    }
+  
+  
 
   ${mq.tablet} {
     font-size: 16px;
 
     line-height: 1.5;
-
-    &:after {
-      width: 77px;
-      height: 4px;
-    }
   }
 `;
