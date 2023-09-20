@@ -1,20 +1,24 @@
-import { List } from './DiaryStatisticsList.styled';
+import * as DiaryStatisticsListStyled from './DiaryStatisticsList.styled';
 import DailyStatsCards from '../DailyStatsCards/DailyStatsCards';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../redux/auth/selectors';
 
 const DairyStatisticList = () => {
+  let shouldDailyNorm = useSelector(selectUser);
+
   return (
-    <List>
+    <DiaryStatisticsListStyled.List>
       <DailyStatsCards
         icon="fork-and-knife"
         fill="true"
         label="Daily calorie intake"
-        keyValue={'2200'}
+        keyValue={shouldDailyNorm.dailyTime}
       ></DailyStatsCards>
       <DailyStatsCards
         icon="barbell"
         fill="true"
         label="Daily norm of sports"
-        keyValue={'110 min'}
+        keyValue={shouldDailyNorm.dailyСalories}
       ></DailyStatsCards>
       <DailyStatsCards
         icon="apple"
@@ -36,7 +40,7 @@ const DairyStatisticList = () => {
         label="The rest of sports"
         keyValue={'110 min'}
       ></DailyStatsCards>
-    </List>
+    </DiaryStatisticsListStyled.List>
   );
 };
 
