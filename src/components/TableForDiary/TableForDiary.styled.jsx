@@ -140,6 +140,10 @@ export const BASELINE_THEME_EXERCISES = {
       --data-table-library_grid-template-columns:  123px 165px 139px 114px 99px 102px 28px;
       margin-left: 16px;
     }
+
+    @media (max-width: 767) {
+      --data-table-library_grid-template-columns:  0 0 0 0 0 0 0;
+    }
   `,
   Cell: `
     height: 40px;

@@ -42,23 +42,25 @@ export const Image = styled.img`
 
 export const WrapSpan = styled.div`
   position: absolute;
-  top: 115px;
-  left: 78px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   width: 137px;
+  text-align: center;
 
   ${mq.mobile} {
-    top: 149px;
-    left: 100px;
+    top: 50%;
+    left: 50%;
   }
 
   ${mq.tablet} {
-    top: 77px;
-    left: 50px;
+    top: 50%;
+    left: 50%;
   }
 `;
 

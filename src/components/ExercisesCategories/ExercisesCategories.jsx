@@ -1,4 +1,10 @@
-// import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import {  useDispatch, useSelector } from 'react-redux';
+
+import { fetchFilters } from '../../redux/exerciseFilters/operations';
+import {setStatusFilter} from '../../redux/exerciseFilters/slice'
+import { selectFilter } from '../../redux/exerciseFilters/selectors'
+
 import {
   CategoriesList,
   CategoriesListItem,
@@ -6,44 +12,42 @@ import {
 } from './ExercisesCategories.styled'; // Імпорт стилів
 
 const ExercisesCategories = () => {
-  // const [selectedCategory, setSelectedCategory] = useState('Body parts');
-  // const [subcategories, setSubcategories] = useState([]);
-  // const [isFetching, setIsFetching] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  let filter = useSelector(selectFilter);
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+   setIsActive(!isActive)
+  }, [filter]);
+  
+  useEffect(() => {
+    dispatch(fetchFilters());
+  }, [dispatch]);
 
-  // useEffect(() => {
-  //   Сюди вставте логіку для відправлення запиту на сервер
-  //   і отримання списку підкатегорій на основі обраної категорії (selectedCategory)
-  //   Приклад:
-  //   const fetchSubcategories = async () => {
-  //     setIsFetching(true);
-  //     try {
-  //       const response = await fetch(`/api/categories/${selectedCategory}/subcategories`);
-  //       const data = await response.json();
-  //       setSubcategories(data);
-  //     } catch (error) {
-  //       console.error('Error fetching subcategories:', error);
-  //     } finally {
-  //       setIsFetching(false);
-  //     }
-  //   };
-  //   fetchSubcategories();
-  // }, [selectedCategory]);
 
-  // const handleCategoryChange = category => {
-  //   setSelectedCategory(category);
-  // };
+  
+
+  const handleCategoryChange = event => {
+    dispatch(setStatusFilter(event.target.childNodes[0].textContent));
+  };
 
   return (
     <>
       <CategoriesList>
         <CategoriesListItem>
-          <CategoriesLink to="bodyparts">Body parts</CategoriesLink>
+          <CategoriesLink type="button"  onClick={handleCategoryChange}>
+            Body parts
+          </CategoriesLink>
         </CategoriesListItem>
         <CategoriesListItem>
-          <CategoriesLink to="muscles">Muscles</CategoriesLink>
+          <CategoriesLink type="button"  onClick={handleCategoryChange}>
+            Muscles
+          </CategoriesLink>
         </CategoriesListItem>
         <CategoriesListItem>
-          <CategoriesLink to="equipment">Equipment</CategoriesLink>
+          <CategoriesLink type="button" onClick={handleCategoryChange}>
+            Equipment
+          </CategoriesLink>
         </CategoriesListItem>
       </CategoriesList>
     </>
