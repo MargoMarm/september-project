@@ -1,4 +1,4 @@
-import{n as l,m as a,j as e,c as t,P as h,r as b,s}from"./index-a0cb364e.js";import{T as $}from"./Title-fa13282e.js";import{B as y}from"./ButtonIconForInput-18f55a2b.js";const _=(o,i)=>o==="product"?{subtitle:"DIET",title:i.title,button:"Add",text1:"Calories:",text2:"Category:",text3:"Weight:",subText1:i.calories,subText2:i.category,subText3:i.weight}:{subtitle:"WORKOUT",title:i.name,button:"Start",text1:"Burned calories:",text2:"Body part:",text3:"Target:",subText1:i.burnedCalories,subText2:i.bodyPart,subText3:i.target},m=l.ul`
+import{n as l,m as a,j as e,c as t,P as h,r as b,s}from"./index-1ba10215.js";import{T as $}from"./Title-9b69457a.js";import{B as y}from"./ButtonIconForInput-1891217c.js";const _=(o,i)=>o==="product"?{subtitle:"DIET",title:i.title,button:"Add",text1:"Calories:",text2:"Category:",text3:"Weight:",subText1:i.calories,subText2:i.category,subText3:i.weight}:{subtitle:"WORKOUT",title:i.name,button:"Start",text1:"Burned calories:",text2:"Body part:",text3:"Target:",subText1:i.burnedCalories,subText2:i.bodyPart,subText3:i.target},m=l.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
