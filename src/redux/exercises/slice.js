@@ -21,13 +21,13 @@ const handleRejected = (state, payload) => {
 const exercises = createSlice({
   name: 'exercises',
   initialState: contactsInitialValue,
-  extraReducers: {
-    [addExercise.pending]: handlePending,
-    [addExercise.fulfilled]: handleFullfield,
-    [addExercise.rejected]: handleRejected,
-    [deleteExercise.pending]: handlePending,
-    [deleteExercise.fulfilled]: handleFullfield,
-    [deleteExercise.rejected]: handleRejected,
+  extraReducers: builder => {
+    builder.addCase(addExercise.pending, handlePending);
+    builder.addCase(addExercise.fulfilled, handleFullfield);
+    builder.addCase(addExercise.rejected, handleRejected);
+    builder.addCase(deleteExercise.pending, handlePending);
+    builder.addCase(deleteExercise.fulfilled, handleFullfield);
+    builder.addCase(deleteExercise.rejected, handleRejected);
   },
 });
 

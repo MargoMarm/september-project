@@ -26,20 +26,22 @@ const handleRejected = (state, payload) => {
 const products = createSlice({
   name: 'products',
   initialState: contactsInitialValue,
-  extraReducers: {
-    [getDiaryList.pending]: handlePending,
-    [getDiaryList.fulfilled](state, payload) {
+  extraReducers: builder => {
+    builder.addCase(getDiaryList.pending, handlePending);
+    builder.addCase(getDiaryList.fulfilled, (state, payload) => {
       handleFullfield(state);
       state.products = payload.products;
       state.exercises = payload.exercises;
-    },
-    [getDiaryList.rejected]: handleRejected,
-    [addProduct.pending]: handlePending,
-    [addProduct.fulfilled]: handleFullfield,
-    [addProduct.rejected]: handleRejected,
-    [deleteProduct.pending]: handlePending,
-    [deleteProduct.fulfilled]: handleFullfield,
-    [deleteProduct.rejected]: handleRejected,
+    });
+    builder.addCase(getDiaryList.rejected, handleRejected);
+
+    builder.addCase(addProduct.pending, handlePending);
+    builder.addCase(addProduct.fulfilled, handleFullfield);
+    builder.addCase(addProduct.rejected, handleRejected);
+    
+    builder.addCase(deleteProduct.pending, handlePending);
+    builder.addCase(deleteProduct.fulfilled, handleFullfield);
+    builder.addCase(deleteProduct.rejected, handleRejected);
   },
 });
 
