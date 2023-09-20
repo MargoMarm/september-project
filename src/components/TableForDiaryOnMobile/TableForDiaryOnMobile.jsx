@@ -11,7 +11,13 @@ import {
   CustomContainer,
 } from './TableForDiaryOnMobile.styled';
 
-const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
+const TableForDiaryOnMobile = ({
+  list,
+  productTable,
+  exerciseTable,
+  onDelete,
+  date,
+}) => {
   return (
     <>
       {productTable && (
@@ -44,7 +50,7 @@ const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
 
                 <Cell>
                   <CellValue>
-                    <DeleteBtn>
+                    <DeleteBtn onClick={() => onDelete({ date, id: item._id })}>
                       <DeleteIcon>
                         <use href={sprite + `#icon-trash`}></use>
                       </DeleteIcon>
@@ -89,7 +95,9 @@ const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
                 <Cell>
                   {' '}
                   <CellValue>
-                    <DeleteBtn>
+                    <DeleteBtn
+                      onClick={() => onDelete({ date, id: item._id })}
+                    >
                       <DeleteIcon>
                         <use href={sprite + `#icon-trash`}></use>
                       </DeleteIcon>
@@ -109,6 +117,8 @@ TableForDiaryOnMobile.propTypes = {
   list: PropTypes.array,
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
+  onDelete: PropTypes.func,
+  date: PropTypes.string,
 };
 
 export default TableForDiaryOnMobile;

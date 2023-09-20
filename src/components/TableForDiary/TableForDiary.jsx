@@ -23,7 +23,13 @@ import PropTypes from 'prop-types';
 
 const stylesForExercises = { ...BASELINE_THEME, ...BASELINE_THEME_EXERCISES };
 
-const TableForDiary = ({ list, productTable, exerciseTable }) => {
+const TableForDiary = ({
+  list,
+  productTable,
+  exerciseTable,
+  onDelete,
+  date,
+}) => {
   const data = { nodes: list };
 
   return (
@@ -65,7 +71,9 @@ const TableForDiary = ({ list, productTable, exerciseTable }) => {
                         {item.recommend ? 'Yes' : 'No'}
                       </Cell>
                       <Cell>
-                        <DeleteBtn>
+                        <DeleteBtn
+                          onClick={() => onDelete({ date, id: item._id })}
+                        >
                           <DeleteIcon>
                             <use href={sprite + `#icon-trash`}></use>
                           </DeleteIcon>
@@ -120,7 +128,9 @@ const TableForDiary = ({ list, productTable, exerciseTable }) => {
                       <Cell>{item.burnedCalories}</Cell>
                       <Cell>{item.time}</Cell>
                       <Cell>
-                        <DeleteBtn>
+                        <DeleteBtn
+                          onClick={() => onDelete({ date, id: item._id })}
+                        >
                           <DeleteIcon>
                             <use href={sprite + `#icon-trash`}></use>
                           </DeleteIcon>
@@ -142,6 +152,8 @@ TableForDiary.propTypes = {
   list: PropTypes.array,
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
+  onDelete: PropTypes.func,
+  date: PropTypes.string,
 };
 
 export default TableForDiary;

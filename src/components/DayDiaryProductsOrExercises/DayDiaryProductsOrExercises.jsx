@@ -11,9 +11,10 @@ import {
 import sprite from '../../assets/sprite.svg';
 import TableForDiary from '../TableForDiary/TableForDiary';
 import TableForDiaryOnMobile from '../TableForDiaryOnMobile/TableForDiaryOnMobile';
-import { useSelector } from 'react-redux';
-import { getErrorProductsOrExercises } from '../../redux/products/selectors';
-import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getErrorProductsAndExercisesError } from '../../redux/products/selectors';
+import { deleteProduct } from '../../redux/products/operations';
+import { deleteExercise } from '../../redux/exercises/operations';
 
 const DayDiaryProductsOrExercises = ({
   to,
@@ -22,8 +23,20 @@ const DayDiaryProductsOrExercises = ({
   productTable,
   exerciseTable,
   windowWidth,
+  date,
 }) => {
-  const error = useSelector(getErrorProductsOrExercises);
+  const dispatch = useDispatch();
+
+  const error = useSelector(getErrorProductsAndExercisesError);
+
+  const handleDelete = ({ date, id }) => {
+    if (productTable) {
+      dispatch(deleteProduct({ productId: id, date }));
+    }
+    if (exerciseTable) {
+      dispatch(deleteExercise({ productId: id, date }));
+    }
+  };
 
   return (
     <DayDiaryContainer marginBottom={marginBottom}>
@@ -45,6 +58,8 @@ const DayDiaryProductsOrExercises = ({
               list={list}
               productTable={productTable}
               exerciseTable={exerciseTable}
+              onDelete={handleDelete}
+              date={date}
             />
           )}
           {windowWidth < 768 && (
@@ -52,6 +67,8 @@ const DayDiaryProductsOrExercises = ({
               list={list}
               productTable={productTable}
               exerciseTable={exerciseTable}
+              onDelete={handleDelete}
+              date={date}
             />
           )}
         </>
@@ -71,6 +88,7 @@ DayDiaryProductsOrExercises.propTypes = {
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
   windowWidth: PropTypes.number,
+  date: PropTypes.string,
 };
 
 export default DayDiaryProductsOrExercises;

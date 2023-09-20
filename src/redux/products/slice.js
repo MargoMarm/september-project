@@ -4,6 +4,7 @@ import { getDiaryList, addProduct, deleteProduct } from './operations';
 const contactsInitialValue = {
   isLoading: false,
   error: null,
+  productsAndExercisesError: null,
   products: [],
   exercises: [],
 };
@@ -19,7 +20,7 @@ const handleFullfield = state => {
 };
 
 const handleRejected = (state, payload) => {
-  state.isLoading = true;
+  state.isLoading = false;
   state.error = payload.error;
 };
 
@@ -29,11 +30,14 @@ const products = createSlice({
   extraReducers: builder => {
     builder.addCase(getDiaryList.pending, handlePending);
     builder.addCase(getDiaryList.fulfilled, (state, { payload }) => {
-      handleFullfield(state);
+      state.isLoading = false;
       state.products = payload.products;
       state.exercises = payload.exercises;
     });
-    builder.addCase(getDiaryList.rejected, handleRejected);
+    builder.addCase(getDiaryList.rejected, (state, { payload }) => {
+      state.productsAndExercisesError = payload.error;
+      state.isLoading = false;
+    });
 
     builder.addCase(addProduct.pending, handlePending);
     builder.addCase(addProduct.fulfilled, handleFullfield);

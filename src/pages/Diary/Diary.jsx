@@ -19,127 +19,6 @@ import {
   getDiaryProducts,
 } from '../../redux/products/selectors';
 
-const listProducts = [
-  {
-    _id: {
-      $oid: '5d51694902b2373622ff5773',
-    },
-    weight: 100,
-    calories: 340,
-    category: 'dairy',
-    title: 'Danbo cheese',
-    groupBloodNotAllowed: {
-      1: true,
-      2: true,
-      3: false,
-      4: false,
-    },
-  },
-  {
-    _id: {
-      $oid: '5d51694902b2373622ff5b7f',
-    },
-    weight: 100,
-    calories: 112,
-    category: 'fish',
-    title: 'marlin',
-    groupBloodNotAllowed: {
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-    },
-  },
-  // {
-  //   _id: {
-  //     $oid: '5d51694902b2373622ff5e13',
-  //   },
-  //   weight: 100,
-  //   calories: 17,
-  //   category: 'vegetables and herbs',
-  //   title: 'Salads Belaya Dacha Delicate root',
-  //   groupBloodNotAllowed: {
-  //     1: false,
-  //     2: false,
-  //     3: false,
-  //     4: false,
-  //   },
-  // },
-];
-
-const listExercises = [
-  {
-    bodyPart: 'waist',
-    equipment: 'body weight',
-    gifUrl:
-      'https://res.cloudinary.com/ditdqzoio/image/upload/v1687127066/exercises/0001.gif',
-    name: '3/4 sit-up',
-    target: 'abs',
-    burnedCalories: 220,
-    time: 3,
-  },
-  {
-    bodyPart: 'waist',
-    equipment: 'body weight',
-    gifUrl:
-      'https://res.cloudinary.com/ditdqzoio/image/upload/v1687127066/exercises/0002.gif',
-    name: '45° side bend',
-    target: 'abs',
-    burnedCalories: 323,
-    time: 3,
-  },
-  {
-    bodyPart: 'waist',
-    equipment: 'body weight',
-    gifUrl:
-      'https://res.cloudinary.com/ditdqzoio/image/upload/v1687127066/exercises/0003.gif',
-    name: 'air bike',
-    target: 'abs',
-    burnedCalories: 312,
-    time: 3,
-  },
-  {
-    bodyPart: 'waist',
-    equipment: 'body weight',
-    gifUrl:
-      'https://res.cloudinary.com/ditdqzoio/image/upload/v1687127066/exercises/0006.gif',
-    name: 'alternate heel touchers',
-    target: 'abs',
-    burnedCalories: 116,
-    time: 3,
-  },
-  {
-    bodyPart: 'back',
-    equipment: 'cable',
-    gifUrl:
-      'https://res.cloudinary.com/ditdqzoio/image/upload/v1687127066/exercises/0007.gif',
-    name: 'alternate lateral pulldown',
-    target: 'lats',
-    burnedCalories: 70,
-    time: 3,
-  },
-  {
-    bodyPart: 'chest',
-    equipment: 'leverage machine',
-    gifUrl:
-      'https://res.cloudinary.com/ditdqzoio/image/upload/v1687127066/exercises/0009.gif',
-    name: 'assisted chest dip (kneeling)',
-    target: 'pectorals',
-    burnedCalories: 329,
-    time: 3,
-  },
-  {
-    bodyPart: 'waist',
-    equipment: 'assisted',
-    gifUrl:
-      'https://res.cloudinary.com/ditdqzoio/image/upload/v1687127066/exercises/0010.gif',
-    name: 'assisted hanging knee raise with throw down',
-    target: 'abs',
-    burnedCalories: 216,
-    time: 3,
-  },
-];
-
 const Diary = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -149,14 +28,19 @@ const Diary = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getDiaryList({ date: '19-09-2023' }));
-
     window.addEventListener('resize', updateWindowWidth);
 
     return () => {
       window.removeEventListener('resize', updateWindowWidth);
     };
   }, []);
+
+  // заглушка для дати, яка буде вибрана на календарі
+  const date = '20-09-2023';
+
+  useEffect(() => {
+    dispatch(getDiaryList({ date }));
+  }, [dispatch]);
 
   const updateWindowWidth = () => {
     setWindowWidth(window.innerWidth);
@@ -181,12 +65,14 @@ const Diary = () => {
             list={productsList}
             productTable
             windowWidth={windowWidth}
+            date={date}
           />
 
           <DayDiaryProductsOrExercises
             list={exercisesList}
             exerciseTable
             windowWidth={windowWidth}
+            date={date}
           />
         </CustomDivForTables>{' '}
       </DiaryPageContainer>

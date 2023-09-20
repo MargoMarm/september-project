@@ -8,8 +8,8 @@ export const getDiaryList = createAsyncThunk(
   'getDiaryList',
   async (date, { rejectWithValue }) => {
     try {
+      console.log(date);
       const { data } = await axios.get('/api/diary', date);
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);
