@@ -1,21 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getExercises } from './operations';
 
-
-
 export const exercisesSlice = createSlice({
   name: 'filters',
   initialState: {
     items: [],
     error: null,
     isLoading: false,
-    getFilters: true
+    getFilters: true,
   },
-  
+
   reducers: {
-    setStatusFilter: (state, action) => {
-        state.getFilters = action.payload
-      },
+    changeStatusFilter: (state, action) => {
+      state.getFilters = action.payload;
+    },
   },
   extraReducers: builder => {
     builder.addCase(getExercises.fulfilled, (state, action) => {
@@ -31,6 +29,6 @@ export const exercisesSlice = createSlice({
     });
   },
 });
-export const { setStatusFilter } = exercisesSlice.actions;
+export const { changeStatusFilter } = exercisesSlice.actions;
 
 export default exercisesSlice.reducer;
