@@ -1,3 +1,4 @@
+import 'overlayscrollbars/overlayscrollbars.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
