@@ -46,5 +46,5 @@ export default function Calendar({ name }) {
 
 Calendar.propTypes = {
   name: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+  onClick:PropTypes.func,
 };
