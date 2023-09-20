@@ -12,6 +12,8 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { authSlice } from './auth/slice';
+import { exercisesReducer } from './exercises/slice';
+import { productsReducer } from './products/slice';
 
 const persistConfig = {
   key: 'token',
@@ -21,6 +23,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   auth: persistReducer(persistConfig, authSlice.reducer),
+  exercises: exercisesReducer,
+  products: productsReducer,
 });
 
 export const store = configureStore({
