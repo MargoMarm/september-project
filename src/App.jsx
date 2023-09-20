@@ -26,10 +26,11 @@ const Profile = lazy(() => import('./pages/Profile/Profile'));
 function App() {
   const dispatch = useDispatch();
 
+  const { isRefreshing, isLoggedIn } = UseAuth();
   const { pathname } = useLocation();
   console.log(pathname);
 
-  if (pathname !== '/') {
+  if (isLoggedIn && pathname !== '/') {
     localStorage.setItem('location', pathname);
   }
 
@@ -41,8 +42,6 @@ function App() {
 
   // console.log(test);
 
-  const { isRefreshing } = UseAuth();
-
   return (
     !isRefreshing && (
       <Routes>
@@ -53,7 +52,9 @@ function App() {
           />
           <Route
             path="/signin"
-            element={<PublicRoute component={<SignIn />} redirectTo={'/'} />}
+            element={
+              <PublicRoute component={<SignIn />} redirectTo={'/diary'} />
+            }
           />
           <Route
             path="/signup"
