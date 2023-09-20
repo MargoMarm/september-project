@@ -1,7 +1,7 @@
 import { Formik, Form } from 'formik';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import {
@@ -32,7 +32,7 @@ import SubTitle from '../SubTitle/SubTitle';
 // import Calendar from '../Calendar/Calendar';
 
 const ParamsForm = ({ setSteps, setSwiperRef }) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <Formik
@@ -57,8 +57,9 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
         //   'https://power-pulse-rest-api.onrender.com/api/users/create',
         //   newParamsUser,
         // );
+        console.log(values);
 
-        // navigate('/diary');
+        navigate('/diary');
 
         Formik.resetForm();
 
