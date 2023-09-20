@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from './redux/auth/operation';
@@ -7,6 +7,7 @@ import SharedLayout from './components/SharedLayout/SharedLayout';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
 import { PrivateRoute, PublicRoute } from './components/Routes';
 import { UseAuth } from './hooks/useAuth';
+
 const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
 const SignUp = lazy(() => import('../src/pages/SignUp/SignUp'));
@@ -20,32 +21,38 @@ const Error = lazy(() => import('../src/pages/Error/Error'));
 const Diary = lazy(() => import('../src/pages/Diary/Diary'));
 const Profile = lazy(() => import('./pages/Profile/Profile'));
 
-const test = import.meta.env.VITE_API_TEST;
+// const test = import.meta.env.VITE_API_TEST;
 
 function App() {
   const dispatch = useDispatch();
+
+  const { pathname } = useLocation();
+
+  if (pathname !== '/') {
+    localStorage.setItem('location', pathname);
+  }
+
+  const location = localStorage.getItem('location');
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
 
-  console.log(test);
+  // console.log(test);
 
   const { isRefreshing } = UseAuth();
 
   return (
     !isRefreshing && (
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
+        <Route path={'/'} element={<SharedLayout />}>
           <Route
             index
-            element={<PublicRoute component={<Home />} redirectTo={'/diary'} />}
+            element={<PublicRoute component={<Home />} redirectTo={location} />}
           />
           <Route
             path="/signin"
-            element={
-              <PublicRoute component={<SignIn />} redirectTo={'/diary'} />
-            }
+            element={<PublicRoute component={<SignIn />} redirectTo={'/'} />}
           />
           <Route
             path="/signup"
