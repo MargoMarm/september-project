@@ -1,7 +1,7 @@
 import { Formik, Form } from 'formik';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import {
@@ -12,8 +12,8 @@ import {
   Radio,
   colors,
 } from '@mui/material';
-import { format } from 'date-fns';
-import axios from 'axios';
+// import { format } from 'date-fns';
+// import axios from 'axios';
 
 import {
   FormikField,
@@ -29,12 +29,10 @@ import ParamsBlockCard from '../ParamsBlockСard';
 import ParamsBtn from '../ParamsBtn';
 import Title from '../Title/Title';
 import SubTitle from '../SubTitle/SubTitle';
-import Calendar from '../Calendar/Calendar';
-import { useState } from 'react';
+// import Calendar from '../Calendar/Calendar';
 
 const ParamsForm = ({ setSteps, setSwiperRef }) => {
-  const [date, setDate] = useState();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <Formik
