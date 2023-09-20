@@ -71,3 +71,22 @@ button {
     font-size: 16px;
   }
 }
+
+.os-scrollbar-vertical {
+  background-color: rgba(239, 237, 232, 0.1);
+  border-radius: 12px;
+  width: 8px;
+  --os-track-border-radius: 12px;
+  --os-handle-bg: #ef8964;
+  --os-handle-min-size: 33px;
+  --os-handle-max-size: 153px;
+}
+
+.os-scrollbar-track {
+  background-color: #ef8964;
+  color: #ef8964;
+}
+
+.os-scrollbar-handle {
+  height: 30px;
+}

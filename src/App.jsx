@@ -1,10 +1,10 @@
+import 'overlayscrollbars/overlayscrollbars.css';
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
 import { PrivateRoute, PublicRoute } from './components/Routes';
-
 
 const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
