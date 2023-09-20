@@ -6,7 +6,11 @@ const initialState = {
     name: null,
     email: null,
     avatarURL: null,
+    dailyTime: null,
+    dailyСalories: null,
   },
+  bodyParameters: {},
+
   error: null,
   token: null,
   isLoggedIn: false,
@@ -32,6 +36,10 @@ export const authSlice = createSlice({
       state.user.email = action.payload.email;
       state.user.avatarURL = action.payload.avatarURL;
       state.token = action.payload.token;
+      state.user.dailyTime = action.payload.dailyTime;
+      state.user.dailyСalories = action.payload.dailyСalories;
+      state.bodyParameters = { ...action.payload.bodyParameters };
+
       state.isLoggedIn = true;
       state.error = null;
     });
