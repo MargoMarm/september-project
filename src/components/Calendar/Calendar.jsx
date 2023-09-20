@@ -9,14 +9,14 @@ import sprite from '../../assets/sprite.svg';
 import { Global } from '@emotion/react';
 registerLocale('uk', uk);
 
-export default function Calendar({ name }) {
+export default function Calendar({ name, date, setDate }) {
   const maxDate = sub(new Date(), { years: 18 });
   const minDate = sub(new Date(), { years: 70 });
-  const [date, setDate] = useState(maxDate);
+  // const [date, setDate] = useState(maxDate);
 
   const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
     <Label>
-      <Ipt onClick={onClick} ref={ref} value={value} name={name} readOnly />
+      <Ipt onClick={onClick} ref={ref} value={value} name={name} readOnly placeholder='Birthday'/>
       <Icon>
         <use href={`${sprite}#calendar`}></use>
       </Icon>

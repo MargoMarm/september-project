@@ -12,6 +12,8 @@ import {
   Radio,
   colors,
 } from '@mui/material';
+import { format } from 'date-fns';
+import axios from 'axios';
 
 import {
   FormikField,
@@ -27,8 +29,11 @@ import ParamsBlockCard from '../ParamsBlockСard';
 import ParamsBtn from '../ParamsBtn';
 import Title from '../Title/Title';
 import SubTitle from '../SubTitle/SubTitle';
+import Calendar from '../Calendar/Calendar';
+import { useState } from 'react';
 
 const ParamsForm = ({ setSteps, setSwiperRef }) => {
+  const [date, setDate] = useState();
   const navigate = useNavigate();
 
   return (
@@ -42,15 +47,28 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
         sex: '',
         levelActivity: '',
       }}
-      onSubmit={(values, Formik) => {
-        console.log(values);
+      onSubmit={async (values, Formik) => {
+        const newParamsUser = {
+          ...values,
+          blood: Number(values.blood),
+          levelActivity: Number(values.levelActivity),
+          birthday: format(date, 'yyyy-MM-dd'),
+        };
+
+        await axios.post(
+          'https://power-pulse-rest-api.onrender.com/api/users/create',
+          newParamsUser,
+        );
+
         navigate('/diary');
+
         Formik.resetForm();
+
         setSteps(1);
       }}
       validationSchema={paramsSchema}
     >
-      {({ handleChange, values }) => (
+      {({ handleChange }) => (
         <Form>
           <Swiper
             spaceBetween={10}
@@ -68,26 +86,31 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
 
               <InputGroup>
                 <FormikField
+                  type="number"
                   name="height"
                   placeholder="Height"
                   autoComplete="off"
-                  value={values.height}
                 />
                 <FormikField
+                  type="number"
                   name="currentWeight"
                   placeholder="Current Weight"
                   autoComplete="off"
                 />
                 <FormikField
+                  type="number"
                   name="desiredWeight"
                   placeholder="Desired Weight"
                   autoComplete="off"
                 />
-                <FormikField
-                  name="birthday"
-                  placeholder="Birthday"
-                  autoComplete="off"
-                />
+                <div style={{ width: '155px', height: '52px', margin: '7px' }}>
+                  <Calendar
+                    name="birthday"
+                    onChange={handleChange}
+                    date={date}
+                    setDate={setDate}
+                  />
+                </div>
               </InputGroup>
 
               <ParamsBtn setSteps={setSteps} type={'next'} step={2} />
@@ -410,13 +433,13 @@ ParamsForm.propTypes = {
 };
 
 const paramsSchema = Yup.object({
-  height: Yup.string().required(),
-  currentWeight: Yup.string().required(),
-  desiredWeight: Yup.string().required(),
-  birthday: Yup.string().required(),
-  blood: Yup.string().required(),
+  height: Yup.number().min(150).required(),
+  currentWeight: Yup.number().min(35).required(),
+  desiredWeight: Yup.number().min(35).required(),
+  birthday: Yup.string(),
+  blood: Yup.number().required(),
   sex: Yup.string().required(),
-  levelActivity: Yup.string().required(),
+  levelActivity: Yup.number().required(),
 });
 
 export default ParamsForm;
