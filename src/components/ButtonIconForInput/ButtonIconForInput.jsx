@@ -13,5 +13,5 @@ ButtonIconForInput.propTypes = {
   onClick: PropTypes.func.isRequired,
   right: PropTypes.string,
   type: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.object.isRequired,
 };
