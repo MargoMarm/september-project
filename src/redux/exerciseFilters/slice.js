@@ -14,7 +14,6 @@ export const filterSlice = createSlice({
   
   reducers: {
     setStatusFilter: (state, action) => {
-    
       state.filter = action.payload
     },
   },
@@ -31,6 +30,5 @@ export const filterSlice = createSlice({
     });
   },
 });
-
-export default filterSlice.reducer;
 export const { setStatusFilter } = filterSlice.actions;
+export default filterSlice.reducer;

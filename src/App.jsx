@@ -57,6 +57,12 @@ function App() {
           path="/profile"
           element={<PrivateRoute component={<Profile />} redirectTo="/" />}
         />
+        <Route path="/exercises/:exersisesFilter" element={<Exercises/>}>
+          <Route path="bodyparts" element={<p>BODYPARTS</p>} /> 
+          <Route path="muscules" element={<p>MUSCULES</p>} />
+          <Route path="equipment" element={<p>EQUIPMENT</p>} />
+        </Route>
+
         <Route path="/error" element={<Error />} />
       </Route>
     </Routes>
