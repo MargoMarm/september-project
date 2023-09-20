@@ -5,6 +5,7 @@ import SharedLayout from './components/SharedLayout/SharedLayout';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
 import { PrivateRoute, PublicRoute } from './components/Routes';
 
+
 const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
 const SignUp = lazy(() => import('../src/pages/SignUp/SignUp'));
@@ -40,11 +41,10 @@ function App() {
           path="/products"
           element={<PrivateRoute component={<Products />} redirectTo="/" />}
         />
-        {/* <Route
+        <Route
           path="/params"
           element={<PrivateRoute component={<Params />} redirectTo="/" />}
-        /> */}
-        <Route path="/params" element={<Params />} />
+        />
         <Route
           path="/exercises"
           element={<PrivateRoute component={<Exercises />} redirectTo="/" />}
@@ -53,11 +53,10 @@ function App() {
           path="/diary"
           element={<PrivateRoute component={<Diary />} redirectTo="/" />}
         />
-        {/* <Route
+        <Route
           path="/profile"
           element={<PrivateRoute component={<Profile />} redirectTo="/" />}
-        /> */}
-        <Route path="/profile" element={<Profile />} />
+        />
         <Route path="/error" element={<Error />} />
       </Route>
     </Routes>
