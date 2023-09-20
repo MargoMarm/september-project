@@ -27,14 +27,15 @@ function App() {
   const dispatch = useDispatch();
 
   const { pathname } = useLocation();
-
-  if (pathname !== '/') {
-    localStorage.setItem('location', pathname);
-  }
+  console.log(pathname);
 
   const location = localStorage.getItem('location');
 
   useEffect(() => {
+    if (pathname !== '/') {
+      localStorage.setItem('location', pathname);
+    }
+
     dispatch(fetchCurrentUser());
   }, [dispatch]);
 
