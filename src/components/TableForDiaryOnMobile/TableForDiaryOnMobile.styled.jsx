@@ -69,7 +69,8 @@ export const BottomContainer = styled.div`
         }
       }
     }
-  }
+  
+
 `;
 
 export const Cell = styled.div`
