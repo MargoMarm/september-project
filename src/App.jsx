@@ -6,7 +6,7 @@ import { fetchCurrentUser } from './redux/auth/operation';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
 import { PrivateRoute, PublicRoute } from './components/Routes';
-
+import { UseAuth } from './hooks/useAuth';
 const Home = lazy(() => import('../src/pages/Home/Home'));
 const SignIn = lazy(() => import('../src/pages/SignIn/SignIn'));
 const SignUp = lazy(() => import('../src/pages/SignUp/SignUp'));
@@ -30,43 +30,53 @@ function App() {
   }, [dispatch]);
 
   console.log(test);
+
+  const { isRefreshing } = UseAuth();
+
   return (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Home />} />
-        <Route
-          path="/signin"
-          element={<PublicRoute component={<SignIn />} redirectTo={'/diary'} />}
-        />
-        <Route
-          path="/signup"
-          element={
-            <PublicRoute component={<SignUp />} redirectTo={'/params'} />
-          }
-        />
-        <Route
-          path="/products"
-          element={<PrivateRoute component={<Products />} redirectTo="/" />}
-        />
-        <Route
-          path="/params"
-          element={<PrivateRoute component={<Params />} redirectTo="/" />}
-        />
-        <Route
-          path="/exercises"
-          element={<PrivateRoute component={<Exercises />} redirectTo="/" />}
-        />
-        <Route
-          path="/diary"
-          element={<PrivateRoute component={<Diary />} redirectTo="/" />}
-        />
-        <Route
-          path="/profile"
-          element={<PrivateRoute component={<Profile />} redirectTo="/" />}
-        />
-        <Route path="/error" element={<Error />} />
-      </Route>
-    </Routes>
+    !isRefreshing && (
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route
+            index
+            element={<PublicRoute component={<Home />} redirectTo={'/diary'} />}
+          />
+          <Route
+            path="/signin"
+            element={
+              <PublicRoute component={<SignIn />} redirectTo={'/diary'} />
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <PublicRoute component={<SignUp />} redirectTo={'/params'} />
+            }
+          />
+          <Route
+            path="/products"
+            element={<PrivateRoute component={<Products />} redirectTo="/" />}
+          />
+          <Route
+            path="/params"
+            element={<PrivateRoute component={<Params />} redirectTo="/" />}
+          />
+          <Route
+            path="/exercises"
+            element={<PrivateRoute component={<Exercises />} redirectTo="/" />}
+          />
+          <Route
+            path="/diary"
+            element={<PrivateRoute component={<Diary />} redirectTo="/" />}
+          />
+          <Route
+            path="/profile"
+            element={<PrivateRoute component={<Profile />} redirectTo="/" />}
+          />
+          <Route path="/error" element={<Error />} />
+        </Route>
+      </Routes>
+    )
   );
 }
 export default App;
