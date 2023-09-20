@@ -4,12 +4,14 @@ import { NavLink } from 'react-router-dom';
 import { colors, mq } from '../../utils';
 
 export const DayDiaryContainer = styled.div`
+  overflow: auto;
+
   position: relative;
   box-sizing: border-box;
   display: block;
   width: 100%;
   height: 335px;
-  padding: 16px;
+  padding: 15px;
   align-items: flex-start;
   margin-bottom: ${props => props.marginBottom}px;
 

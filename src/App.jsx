@@ -55,7 +55,7 @@ function App() {
         />
         <Route
           path="/profile"
-          element={<PrivateRoute component={<Profile/>} redirectTo="/" />}
+          element={<PrivateRoute component={<Profile />} redirectTo="/" />}
         />
         <Route path="/error" element={<Error />} />
       </Route>

@@ -1,4 +1,6 @@
-import DailyStatsCards from "../DailyStatsCards/DailyStatsCards";
+import { useDispatch } from 'react-redux';
+import { handleLogout } from '../../utils';
+import DailyStatsCards from '../DailyStatsCards/DailyStatsCards';
 import {
   AddUserBtn,
   Avatar,
@@ -23,6 +25,7 @@ import { selectUser } from "../../redux/auth/selectors";
 export default function UserCard({ setAvatar }) {
   const { name, avatarURL, dailyСalories, dailyTime } = useSelector(selectUser);
   const [imgURL, setImgUrl] = useState(avatarURL || null);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setImgUrl(URL.createObjectURL(e.target.files[0]));
@@ -79,7 +82,12 @@ export default function UserCard({ setAvatar }) {
         width={{ tablet: 439, desktop: 439 }}
       />
 
-      <Button type="button">
+      <Button
+        type="button"
+        onClick={() => {
+          handleLogout(dispatch);
+        }}
+      >
         <span>Logout</span>
         <svg>
           <use href={`${sprite}#logout_`}></use>
