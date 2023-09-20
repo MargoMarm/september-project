@@ -175,6 +175,7 @@ const Diary = () => {
             list={listExercises}
             exerciseTable
             windowWidth={windowWidth}
+            to={'/exercises'}
           />
         </CustomDivForTables>{' '}
       </DiaryPageContainer>
