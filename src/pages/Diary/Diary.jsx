@@ -168,6 +168,7 @@ const Diary = () => {
             list={listProducts}
             productTable
             windowWidth={windowWidth}
+            to={'/products'}
           />
 
           <DayDiaryProductsOrExercises
