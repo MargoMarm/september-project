@@ -10,6 +10,7 @@ import {
 } from './DayDiaryProductsOrExercises.styled';
 import sprite from '../../assets/sprite.svg';
 import TableForDiary from '../TableForDiary/TableForDiary';
+import TableForDiaryOnMobile from '../TableForDiaryOnMobile/TableForDiaryOnMobile';
 
 const DayDiaryProductsOrExercises = ({
   to,
@@ -17,6 +18,7 @@ const DayDiaryProductsOrExercises = ({
   list,
   productTable,
   exerciseTable,
+  windowWidth,
 }) => {
   return (
     <DayDiaryContainer marginBottom={marginBottom}>
@@ -32,11 +34,22 @@ const DayDiaryProductsOrExercises = ({
         </AddLink>
       </DayDiarySubDiv>
       {list.length !== 0 ? (
-        <TableForDiary
-          list={list}
-          productTable={productTable}
-          exerciseTable={exerciseTable}
-        />
+        <>
+          {windowWidth >= 768 && (
+            <TableForDiary
+              list={list}
+              productTable={productTable}
+              exerciseTable={exerciseTable}
+            />
+          )}
+          {windowWidth < 768 && (
+            <TableForDiaryOnMobile
+              list={list}
+              productTable={productTable}
+              exerciseTable={exerciseTable}
+            />
+          )}
+        </>
       ) : (
         <DayNoContentText>
           Not found {productTable ? 'products' : 'exercises'}
@@ -52,6 +65,7 @@ DayDiaryProductsOrExercises.propTypes = {
   list: PropTypes.array,
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
+  windowWidth: PropTypes.number,
 };
 
 export default DayDiaryProductsOrExercises;
