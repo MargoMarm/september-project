@@ -168,12 +168,14 @@ const Diary = () => {
             list={listProducts}
             productTable
             windowWidth={windowWidth}
+            to={'/products'}
           />
 
           <DayDiaryProductsOrExercises
             list={listExercises}
             exerciseTable
             windowWidth={windowWidth}
+            to={'/exercises'}
           />
         </CustomDivForTables>{' '}
       </DiaryPageContainer>
