@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import { handleLogout } from '../../../utils';
 import CustomNavLink from '../../CustomNavLink/CustomNavLink';
 import {
   WrapUserNav,
@@ -12,6 +14,8 @@ import { NavLink } from 'react-router-dom';
 import sprite from '../../../assets/sprite.svg';
 
 export const UserNav = () => {
+  const dispatch = useDispatch();
+
   return (
     <WrapUserNav>
       <CustomNavLink to="/diary" text="Diary" isinheader={'true'} />
@@ -28,7 +32,11 @@ export const UserNav = () => {
             <use href={sprite + `#ecllipse`}></use>
           </SvgUser>{' '}
         </Button>
-        <Button>
+        <Button
+          onClick={() => {
+            handleLogout(dispatch);
+          }}
+        >
           <Span>Logout</Span>
           <Svg>
             <use href={sprite + `#logout`}></use>

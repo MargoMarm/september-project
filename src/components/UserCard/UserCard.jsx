@@ -1,23 +1,34 @@
 import DailyStatsCards from "../DailyStatsCards/DailyStatsCards";
-import { AddUserBtn, Avatar, ImgWrap, AvatarWrapper, CardsWrap, DailyStatsWrap, H3, Container, UserSVG, Button } from "./UserCard.styled";
-import sprite from '../../assets/sprite.svg';
+import {
+  AddUserBtn,
+  Avatar,
+  ImgWrap,
+  AvatarWrapper,
+  CardsWrap,
+  DailyStatsWrap,
+  H3,
+  Container,
+  UserSVG,
+  Button,
+} from "./UserCard.styled";
+import sprite from "../../assets/sprite.svg";
 import DescriptionText from "../DescriptionText/DescriptionText";
 import PropTypes from "prop-types";
 
-import { mgForDiary } from '../../utils/descriptionTextMargin';
+import { mgForDiary } from "../../utils/descriptionTextMargin";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../redux/auth/selectors";
 
-export default function UserCard({setAvatar}) {
-  const {name, avatarURL, dailyСalories, dailyTime} = useSelector(selectUser);
+export default function UserCard({ setAvatar }) {
+  const { name, avatarURL, dailyСalories, dailyTime } = useSelector(selectUser);
   const [imgURL, setImgUrl] = useState(avatarURL || null);
 
   const handleChange = (e) => {
     setImgUrl(URL.createObjectURL(e.target.files[0]));
     setAvatar(e.target.files[0]);
     URL.revokeObjectURL(imgURL);
-  }
+  };
 
   return (
     <Container>
@@ -40,13 +51,13 @@ export default function UserCard({setAvatar}) {
         </AddUserBtn>
       </AvatarWrapper>
 
-      <H3>{name ? name : 'user' }</H3>
+      <H3>{name ? name : "user"}</H3>
 
       <CardsWrap>
         <DailyStatsWrap>
           <DailyStatsCards
             icon="fork-and-knife"
-            keyValue={dailyСalories || '0'}
+            keyValue={dailyСalories || "0"}
             label="Daily calorie intake"
             fill="true"
           />
@@ -55,7 +66,7 @@ export default function UserCard({setAvatar}) {
         <DailyStatsWrap>
           <DailyStatsCards
             icon="dumbbell"
-            keyValue={ dailyTime || 0 + ' min'}
+            keyValue={dailyTime || 0 + " min"}
             label="Daily norm of sports"
             fill="true"
           />
@@ -79,5 +90,5 @@ export default function UserCard({setAvatar}) {
 }
 
 UserCard.propTypes = {
-  setAvatar: PropTypes.func.isRequired
-}
+  setAvatar: PropTypes.func.isRequired,
+};

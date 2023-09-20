@@ -8,17 +8,15 @@ import { fetchCurrentUser } from "../../redux/auth/operation";
 import { selectUser } from "../../redux/auth/selectors";
 
 const mgUserPage = {
-    top: {tab: 72, mob: 40},
-    bt: {desk: 32, tab: 64, mob: 40}
-  }
+  top: { tab: 72, mob: 40 },
+  bt: { desk: 32, tab: 64, mob: 40 },
+};
 export default function Profile() {
   const [avatarFile, setAvatarFile] = useState();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchCurrentUser())
-  }, [dispatch]);
   
-  const user = useSelector(selectUser);
+  const handleSubmit = (data) => {
+     console.log(data);
+  }
 
   return (
     <Container>
@@ -28,9 +26,9 @@ export default function Profile() {
         <UserCard setAvatar={setAvatarFile} />
 
         <FormWrap>
-          <UserForm />
+          <UserForm submit={handleSubmit} />
         </FormWrap>
       </BlockWrapper>
     </Container>
-  )
+  );
 }

@@ -6,8 +6,7 @@ axios.defaults.baseURL = 'https://power-pulse-rest-api.onrender.com';
 
 const token = {
   set: token => {
-    //axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-    axios.defaults.headers.common.Authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDllNDExOTkxZmM4NjRkNGJlNTA1MiIsImlhdCI6MTY5NTE0ODA1MiwiZXhwIjoxNjk1MjMwODUyfQ.5nTGwaUatCW7r-tVbTRnWFeB4Nkq4DpfKM8Pwy856ns`;
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
   unSet: () => {
     axios.defaults.headers.common.Authorization = '';

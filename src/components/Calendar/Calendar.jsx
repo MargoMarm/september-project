@@ -1,39 +1,59 @@
-import React, { forwardRef, useState } from "react";
-import DatePicker, {registerLocale} from "react-datepicker";
-import "react-datepicker/dist/react-datepicker-cssmodules.css";
+import PropTypes from 'prop-types';
+import { forwardRef} from 'react';
+import DatePicker, { registerLocale } from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import uk from 'date-fns/locale/uk';
-import sub from 'date-fns/sub';
-import { Icon, Ipt, Label, GlobalStyles } from "./Calendar.styled";
+import { format } from 'date-fns';
+import { Icon, Ipt, Label, GlobalStyles } from './Calendar.styled';
 import sprite from '../../assets/sprite.svg';
-import { Global } from "@emotion/react";
-registerLocale('uk', uk)
+import { Global } from '@emotion/react';
+registerLocale('uk', uk);
 
-export default function Calendar({name}) {
-  const maxDate = sub(new Date(), { years: 18 });
-  const minDate = sub(new Date(), { years: 70 });
-  const [date, setDate] = useState(maxDate);
-  const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
-    <Label>
-      <Ipt onClick={onClick} ref={ref} value={value} name={name} readOnly />
-      <Icon><use href={`${sprite}#calendar`} ></use></Icon>
-    </Label>
-   
-  ));
+export default function Calendar({ name, value, onChange, maxDate, minDate, showYearDropdown, dateFormat, withoutВorder }) {
+  const ExampleCustomInput = forwardRef((dd, ref) => {
+    const { onClick } = dd;
+    return(
+      <Label onClick={onClick} ref={ref}>
+        <Ipt value={value ? format(value, dateFormat || "dd.MM.yyyy") : ''} name="name" readOnly withoutВorder={withoutВorder} />
+        <Icon>
+          <use href={`${sprite}#calendar`}></use>
+        </Icon>
+      </Label>
+    )
+  });
+
+  ExampleCustomInput.displayName = 'Label';
+
   return (
     <>
       <DatePicker
+        name={name}
         locale="uk"
-        selected={date}
-        onChange={(date) => setDate(date)}
+        selected={value}
+        onChange={date => { onChange(name, date) }}
         maxDate={maxDate}
         minDate={minDate}
-        dateFormat="yyyy-MM-dd"
         yearDropdownItemNumber={40}
         customInput={<ExampleCustomInput />}
         scrollableYearDropdown
-        showYearDropdown
+        showYearDropdown={showYearDropdown}
       />
-      <Global styles={GlobalStyles}/> 
+      <Global styles={GlobalStyles} />
     </>
   );
+}
+
+Calendar.propTypes = {
+  onClick: PropTypes.func,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Date)
+  ]).isRequired,
+  onChange: PropTypes.func.isRequired,
+  maxDate: PropTypes.instanceOf(Date),
+  minDate: PropTypes.instanceOf(Date),
+  showYearDropdown: PropTypes.bool,
+  dateFormat: PropTypes.string,
+  withoutВorder: PropTypes.bool,
 };

@@ -142,12 +142,6 @@ export const GlobalStyles = css`
     color: inherit !important;
   }
 
-  /*
-
-
-
-
-  */
   .react-datepicker__header__dropdown {
     width: 13px;
     position: absolute;
@@ -155,8 +149,8 @@ export const GlobalStyles = css`
     right: 40px;
   }
 
-  /*.react-datepicker__month-read-view--selected-month*/
-  .react-datepicker__year-read-view--selected-year {
+  .react-datepicker__month-read-view--selected-month
+    .react-datepicker__year-read-view--selected-year {
     display: none;
   }
 
@@ -247,6 +241,8 @@ export const Label = styled.label`
 
 export const Ipt = styled(Input)`
   padding-right: 34px;
+  ${props => props.withoutВorder && 'border: none;'}
+
   &:focus + svg {
     stroke: ${colors.orange};
   }
