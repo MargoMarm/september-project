@@ -1,4 +1,4 @@
-import{n as a,m as r,c as n,P as p,r as h,j as e,u as b,d as x,g as E,f as w,h as q,i as y,k as B}from"./index-0635abcb.js";import{c as S,S as T,P as F,a as z}from"./ProductsOrExercisesItem-ee18d295.js";import{s as u}from"./styled-components.browser.esm-b28d4268.js";import{T as j}from"./Title-cb100dd0.js";const I=a.li`
+import{n as a,m as r,c as n,P as p,r as h,j as e,u as b,d as x,g as E,f as w,h as q,i as y,k as B}from"./index-d61bca6e.js";import{c as S}from"./capitalizeWord-85339af4.js";import{s as u}from"./styled-components.browser.esm-a6975683.js";import{T as j}from"./Title-004d8b71.js";import{S as T,P as F,a as z}from"./ProductsOrExercisesItem-dab41137.js";const I=a.li`
   margin-bottom: 20px;
 
   &:last-child {
@@ -185,4 +185,4 @@ line-height: 1.5;
   transition:
     scale 250ms ease-in-out,
     fill 250ms ease-in-out;
-`,J=()=>{const t=b(),s=()=>{t(y(!0))};return e.jsxs(_,{type:"button",onClick:s,children:[e.jsx(H,{children:e.jsx("use",{href:"/src/assets/sprite.svg#icon-arrow-left"})}),"Back"]})},Z=()=>{let t=x(C),s=x(A),c=x(O);return e.jsxs(e.Fragment,{children:[t?null:e.jsx(J,{}),e.jsxs(U,{children:[t?e.jsx(j,{text:"Exercises",margin:{top:{desk:72,tab:72,mob:40},bt:{tab:32,mob:40}}}):e.jsx(j,{text:c,margin:{top:{desk:16,tab:16,mob:12},bt:{tab:32,mob:40}}}),e.jsx(Q,{})]}),t?e.jsx(v,{}):e.jsx(T,{width:{dt:"868"},children:e.jsx(F,{children:s.map((l,i)=>i<20?e.jsx(z,{page:"exercise",data:l},l._id):null)})}),";"]})};export{Z as default};
+`,J=()=>{const t=b(),s=()=>{t(y(!0))};return e.jsxs(_,{type:"button",onClick:s,children:[e.jsx(H,{children:e.jsx("use",{href:"/src/assets/sprite.svg#icon-arrow-left"})}),"Back"]})},ee=()=>{let t=x(C),s=x(A),c=x(O);return e.jsxs(e.Fragment,{children:[t?null:e.jsx(J,{}),e.jsxs(U,{children:[t?e.jsx(j,{text:"Exercises",margin:{top:{desk:72,tab:72,mob:40},bt:{tab:32,mob:40}}}):e.jsx(j,{text:c,margin:{top:{desk:16,tab:16,mob:12},bt:{tab:32,mob:40}}}),e.jsx(Q,{})]}),t?e.jsx(v,{}):e.jsx(T,{width:{dt:"868"},children:e.jsx(F,{children:s.map((l,i)=>i<20?e.jsx(z,{page:"exercise",data:l},l._id):null)})}),";"]})};export{ee as default};
