@@ -1,4 +1,5 @@
 import sprite from '../../assets/sprite.svg';
+import { capitalizeWord } from '../../utils/capitalizeWord';
 import {
   BASELINE_THEME_EXERCISES,
   BASELINE_THEME,
@@ -61,10 +62,10 @@ const TableForDiary = ({
                 <Body>
                   {tableList.map(item => (
                     <Row key={item._id} item={item}>
-                      <Cell>{item.title}</Cell>
-                      <Cell>{item.category}</Cell>
-                      <Cell>{item.calories}</Cell>
-                      <Cell>{item.amount}</Cell>
+                      <Cell>{capitalizeWord(item.title)}</Cell>
+                      <Cell>{capitalizeWord(item.category)}</Cell>
+                      <Cell>{capitalizeWord(item.calories)}</Cell>
+                      <Cell>{capitalizeWord(item.amount)}</Cell>
                       <Cell>
                         <BeforeForCell
                           bgColor={item.recommend ? '#419B09' : '#E9101D'}
@@ -122,10 +123,10 @@ const TableForDiary = ({
                 <Body>
                   {tableList.map(item => (
                     <Row key={item._id} item={item}>
-                      <Cell>{item.bodyPart}</Cell>
-                      <Cell>{item.equipment}</Cell>
-                      <Cell>{item.name}</Cell>
-                      <Cell>{item.target}</Cell>
+                      <Cell>{capitalizeWord(item.bodyPart)}</Cell>
+                      <Cell>{capitalizeWord(item.equipment)}</Cell>
+                      <Cell>{capitalizeWord(item.name)}</Cell>
+                      <Cell>{capitalizeWord(item.target)}</Cell>
                       <Cell>{item.burnedCalories}</Cell>
                       <Cell>{item.time}</Cell>
                       <Cell>

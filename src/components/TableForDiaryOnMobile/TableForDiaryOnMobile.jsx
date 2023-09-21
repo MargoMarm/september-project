@@ -10,6 +10,7 @@ import {
   ContainerForTable,
   CustomContainer,
 } from './TableForDiaryOnMobile.styled';
+import { capitalizeWord } from '../../utils/capitalizeWord';
 
 const TableForDiaryOnMobile = ({
   list,
@@ -25,20 +26,21 @@ const TableForDiaryOnMobile = ({
           {list.map(item => (
             <ContainerForTable key={item._id}>
               <Cell>
-                Title<CellValue>{item.title}</CellValue>
+                Title<CellValue>{capitalizeWord(item.title)}</CellValue>
               </Cell>
 
               <Cell>
-                Category<CellValue>{item.category}</CellValue>
+                Category<CellValue>{capitalizeWord(item.category)}</CellValue>
               </Cell>
 
               <BottomContainer>
                 <Cell>
-                  Calories <CellValue>{item.calories}</CellValue>
+                  Calories
+                  <CellValue>{capitalizeWord(item.calories)}</CellValue>
                 </Cell>
 
                 <Cell>
-                  Weight <CellValue>{item.amount}</CellValue>
+                  Weight <CellValue>{capitalizeWord(item.amount)}</CellValue>
                 </Cell>
 
                 <Cell>
@@ -68,24 +70,25 @@ const TableForDiaryOnMobile = ({
           {list.map(item => (
             <ContainerForTable key={item._id}>
               <Cell>
-                Body Part<CellValue>{item.bodyPart}</CellValue>
+                Body Part<CellValue>{capitalizeWord(item.bodyPart)}</CellValue>
               </Cell>
 
               <Cell>
-                Equipment<CellValue>{item.equipment}</CellValue>
+                Equipment<CellValue>{capitalizeWord(item.equipment)}</CellValue>
               </Cell>
 
               <Cell>
-                Name<CellValue>{item.name}</CellValue>
+                Name<CellValue>{capitalizeWord(item.name)}</CellValue>
               </Cell>
 
               <BottomContainer>
                 <Cell>
-                  Target <CellValue>{item.burnedCalories}</CellValue>
+                  Target <CellValue>{capitalizeWord(item.target)}</CellValue>
                 </Cell>
 
                 <Cell>
-                  Burned Calor..<CellValue>{item.time}</CellValue>
+                  Burned Calor..
+                  <CellValue>{item.burnedCalories}</CellValue>
                 </Cell>
 
                 <Cell>
@@ -95,9 +98,7 @@ const TableForDiaryOnMobile = ({
                 <Cell>
                   {' '}
                   <CellValue>
-                    <DeleteBtn
-                      onClick={() => onDelete({ date, id: item._id })}
-                    >
+                    <DeleteBtn onClick={() => onDelete({ date, id: item._id })}>
                       <DeleteIcon>
                         <use href={sprite + `#icon-trash`}></use>
                       </DeleteIcon>
