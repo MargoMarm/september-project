@@ -35,6 +35,8 @@ export const Text = styled.h1`
 
   ${mq.mobile} {
     width: 335px;
+    margin-top: 66px;
+    margin-bottom: 40px;
     line-height: 105.26%;
   }
 
@@ -44,7 +46,7 @@ export const Text = styled.h1`
     line-height: 111.43%;
     letter-spacing: 0.7px;
 
-    padding-top: 116px;
+    margin-top: 116px;
     margin-bottom: 64px;
   }
 `;
