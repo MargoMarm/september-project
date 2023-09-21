@@ -1,4 +1,4 @@
-import{n as o,m as t,c as i,j as e,C as n}from"./index-674a463e.js";const a=o.div`
+import{n as o,m as t,c as i,j as e,C as n}from"./index-0635abcb.js";const a=o.div`
   display: flex;
 
   ${t.mobile} {
