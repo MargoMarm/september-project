@@ -35,16 +35,30 @@ const diary = createSlice({
       state.exercises = payload.exercises;
     });
     builder.addCase(getDiaryList.rejected, (state, { payload }) => {
-      state.productsAndExercisesError = payload.error;
+      state.productsAndExercisesError = payload;
       state.isLoading = false;
+      state.products = [];
+      state.exercises = [];
     });
 
     builder.addCase(deleteProduct.pending, handlePending);
-    builder.addCase(deleteProduct.fulfilled, handleFullfield);
+    builder.addCase(deleteProduct.fulfilled, (state, { payload }) => {
+      handleFullfield(state);
+      const newProductsList = state.products.filter(
+        product => product._id !== payload,
+      );
+      state.products = newProductsList;
+    });
     builder.addCase(deleteProduct.rejected, handleRejected);
 
     builder.addCase(deleteExercise.pending, handlePending);
-    builder.addCase(deleteExercise.fulfilled, handleFullfield);
+    builder.addCase(deleteExercise.fulfilled, (state, { payload }) => {
+      handleFullfield(state);
+      const newExercisesList = state.exercises.filter(
+        exercise => exercise._id !== payload,
+      );
+      state.exercises = newExercisesList;
+    });
     builder.addCase(deleteExercise.rejected, handleRejected);
   },
 });

@@ -11,10 +11,8 @@ import {
 import sprite from '../../assets/sprite.svg';
 import TableForDiary from '../TableForDiary/TableForDiary';
 import TableForDiaryOnMobile from '../TableForDiaryOnMobile/TableForDiaryOnMobile';
-import { useDispatch, useSelector } from 'react-redux';
-import { getErrorProductsAndExercisesError } from '../../redux/products/selectors';
-import { deleteProduct } from '../../redux/products/operations';
-import { deleteExercise } from '../../redux/exercises/operations';
+import { useDispatch } from 'react-redux';
+import { deleteExercise, deleteProduct } from '../../redux/diary/operations';
 
 const DayDiaryProductsOrExercises = ({
   to,
@@ -26,14 +24,12 @@ const DayDiaryProductsOrExercises = ({
 }) => {
   const dispatch = useDispatch();
 
-  const error = useSelector(getErrorProductsAndExercisesError);
-
   const handleDelete = ({ date, id }) => {
     if (productTable) {
       dispatch(deleteProduct({ productId: id, date }));
     }
     if (exerciseTable) {
-      dispatch(deleteExercise({ productId: id, date }));
+      dispatch(deleteExercise({ exerciseId: id, date }));
     }
   };
 
@@ -50,7 +46,7 @@ const DayDiaryProductsOrExercises = ({
           </ArrowRight>
         </AddLink>
       </DayDiarySubDiv>
-      {error?.message !== 'Rejected' || list.length === 0 ? (
+      {list.length !== 0 ? (
         <>
           <TableForDiary
             list={list}

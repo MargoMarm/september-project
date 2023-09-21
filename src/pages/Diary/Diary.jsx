@@ -13,11 +13,12 @@ import { mgForDiary } from '../../utils/descriptionTextMargin';
 import { mgForTitle } from '../../utils/titleMarginForDairyPage';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDiaryList } from '../../redux/products/operations';
+
+import { getDiaryList } from '../../redux/diary/operations';
 import {
   getDiaryExercises,
   getDiaryProducts,
-} from '../../redux/products/selectors';
+} from '../../redux/diary/selectors';
 
 const Diary = () => {
   const productsList = useSelector(getDiaryProducts);
@@ -26,10 +27,10 @@ const Diary = () => {
   const dispatch = useDispatch();
 
   // заглушка для дати, яка буде вибрана на календарі
-  const date = '20-09-2023';
+  const date = '19-09-2023';
 
   useEffect(() => {
-    dispatch(getDiaryList({ date }));
+    dispatch(getDiaryList(date));
   }, [dispatch]);
 
   return (

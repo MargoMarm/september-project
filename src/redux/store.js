@@ -24,7 +24,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   auth: persistReducer(persistConfig, authSlice.reducer),
   filter: filterSlice,
-  dairy: diaryReducer,
+  diary: diaryReducer,
 });
 
 export const store = configureStore({
