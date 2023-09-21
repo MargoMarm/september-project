@@ -119,7 +119,7 @@ export const CalendarPlaceholder = styled.p`
   position: absolute;
   pointer-events: none;
   color: ${colors.textWhite06};
-  top: 25%;
+  ${'' /* top: 25%; */}
   left: 10%;
 
   font-size: 14px;

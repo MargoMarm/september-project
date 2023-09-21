@@ -46,7 +46,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
         height: '',
         currentWeight: '',
         desiredWeight: '',
-        birthday: '',
+        birthday: '2004-11-15',
         blood: '',
         sex: '',
         levelActivity: '',
@@ -109,7 +109,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                   placeholder="Desired Weight"
                   autoComplete="off"
                 />
-                {/* <CalendarWrapper>
+                <CalendarWrapper>
                   <Calendar
                     name="birthday"
                     value={values.birthday}
@@ -119,12 +119,12 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                     showYearDropdown
                     onChange={setFieldValue}
                   />
-                  {values.birthday ? (
+                  {values.birthday !== '2004-11-15' ? (
                     ''
                   ) : (
                     <CalendarPlaceholder>Birthday</CalendarPlaceholder>
                   )}
-                </CalendarWrapper> */}
+                </CalendarWrapper>
               </InputGroup>
 
               <ParamsBtn setSteps={setSteps} type={'next'} step={2} />
