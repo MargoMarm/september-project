@@ -1,4 +1,4 @@
-import{n as o,m as i}from"./index-2c7cc994.js";const t="/september-project/assets/home-page_desktop_1x-2dc737d6.jpg",p="/september-project/assets/home-page_desktop_2x-2c5d358c.jpg",m="/september-project/assets/home-page_desktop_3x-30837f7d.jpg",a="/september-project/assets/home-page_tablet_1x-3f850f85.jpg",r="/september-project/assets/home-page_tablet_2x-16fa8106.jpg",s="/september-project/assets/home-page_tablet_3x-96c27aa0.jpg",n="/september-project/assets/home-page_mobile_1x-516df911.jpg",g="/september-project/assets/home-page_mobile_2x-1e729053.jpg",d="/september-project/assets/home-page_mobile_3x-10fc07f4.jpg",e={imgDx1:t,imgDx2:p,imgDx3:m,imgTx1:a,imgTx2:r,imgTx3:s,imgMx1:n,imgMx2:g,imgMx3:d},c=o.ul`
+import{n as o,m as i}from"./index-a5a063f8.js";const t="/september-project/assets/home-page_desktop_1x-2dc737d6.jpg",p="/september-project/assets/home-page_desktop_2x-2c5d358c.jpg",m="/september-project/assets/home-page_desktop_3x-30837f7d.jpg",s="/september-project/assets/home-page_tablet_1x-3f850f85.jpg",a="/september-project/assets/home-page_tablet_2x-16fa8106.jpg",r="/september-project/assets/home-page_tablet_3x-96c27aa0.jpg",n="/september-project/assets/home-page_mobile_1x-516df911.jpg",g="/september-project/assets/home-page_mobile_2x-1e729053.jpg",d="/september-project/assets/home-page_mobile_3x-10fc07f4.jpg",e={imgDx1:t,imgDx2:p,imgDx3:m,imgTx1:s,imgTx2:a,imgTx3:r,imgMx1:n,imgMx2:g,imgMx3:d},c=o.ul`
   display: flex;
   gap: 20px;
 `,l=o.div`
@@ -49,6 +49,18 @@ import{n as o,m as i}from"./index-2c7cc994.js";const t="/september-project/asset
     }
   }
   ${i.desktop} {
+    height: 0;
+    background: none;
+  }
+`,b=o.div`
+  ${i.desktop} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 670px;
+    height: 800px;
+    pointer-events: none;
+
     background-image: url(${e.imgDx1});
     background-size: 670px 800px;
 
@@ -69,4 +81,4 @@ import{n as o,m as i}from"./index-2c7cc994.js";const t="/september-project/asset
       }
     }
   }
-`;export{c as L,l as W};
+`;export{c as L,b as W,l as a};
