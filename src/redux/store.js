@@ -12,7 +12,8 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { authSlice } from './auth/slice';
-import filterSlice from './exerciseFilters/slice';
+import  filterSlice  from "./exerciseFilters/slice";
+import  exercisesSlice  from "./exercises/slice";
 import { diaryReducer } from './diary/slice';
 
 const persistConfig = {
@@ -24,6 +25,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   auth: persistReducer(persistConfig, authSlice.reducer),
   filter: filterSlice,
+  exercises: exercisesSlice,
   diary: diaryReducer,
 });
 
