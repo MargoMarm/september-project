@@ -13,15 +13,30 @@ export const ProductPageContainer = styled.div`
     gap: 32px;
     padding: 72px 32px 48px 32px;
   }
+
   ${mq.desktop} {
     padding: 68px 81px 81px 96px;
-    background: linear-gradient(89deg, #040404 1.1%, rgba(4, 4, 4, 0) 70.79%),
-      url(${imgProducts.imgDx1});
-
-    background-repeat: no-repeat;
-    background-position: 100% 0;
 
     gap: 28px;
+
+    background: linear-gradient(89deg, #040404 1.1%, rgba(4, 4, 4, 0) 70.79%);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: 428px 716px;
+    background-image: url(${imgProducts.imgDx1});
+
+    ${
+      '' /* @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      & {
+        background-image: url(${imgProducts.imgDx2});
+      }
+
+      
+    } */
+    }
   }
 `;
 
