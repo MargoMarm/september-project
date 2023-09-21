@@ -24,6 +24,7 @@ export const InputGroup = styled.div`
 export const FormikField = styled(Field)`
   ${mq.smallMobile} {
     width: 155px;
+    height: 52px;
     padding: 14px 0 14px 14px;
     margin: 7px;
 

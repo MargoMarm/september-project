@@ -9,7 +9,7 @@ export const Container = styled.ul`
   gap: 20px;
   height: 100vh;
   width: 100%;
-  overflow-y: scroll;
+
   margin-top: ${props => props.marginTop};
   ${mq.tablet} {
     flex-direction: row;
@@ -18,6 +18,6 @@ export const Container = styled.ul`
     column-gap: 32px;
   }
   ${mq.desktop} {
-    width: 858px;
+    width: 868px;
   }
 `;

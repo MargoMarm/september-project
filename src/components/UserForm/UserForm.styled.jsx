@@ -38,6 +38,7 @@ export const Label = styled.label`
   font-size: 12px;
   line-height: 1.5;
   color: ${colors.textWhite05};
+  position: relative;
 
   & p {
     margin-bottom: 4px;
@@ -59,6 +60,11 @@ export const Input = styled.input`
   border-radius: 12px;
   transition: border-color 0.3s;
 
+  &[aria-invalid] {
+    border-color:${colors.textError}!important;
+    color:${colors.textError}!important;
+  }
+
   &:disabled {
     color: ${colors.textWhite06};
   }
@@ -66,7 +72,18 @@ export const Input = styled.input`
   &:hover,
   &:focus {
     border-color: ${colors.orange};
+    outline: none;
   }
+`;
+
+export const ErrorField = styled.span`
+position: absolute;
+top: 100%;
+left: 5px;
+max-width: calc(100% - 10px);
+font-size: 12px;
+line-height: 1;
+color: ${colors.textError};
 `;
 
 export const Caption = styled.p`
@@ -76,7 +93,12 @@ export const Caption = styled.p`
   color: ${colors.textWhite05};
 `;
 
+export const CheckboxListLine = styled.div`
+  position: relative;
+`;
+
 export const CheckboxList = styled.div`
+  position: relative;
   margin: 42px 0 40px;
 
   ${mq.tablet} {

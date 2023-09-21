@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import { handleLogout } from '../../utils';
-
 import DailyStatsCards from '../DailyStatsCards/DailyStatsCards';
 import {
   AddUserBtn,
@@ -13,43 +12,55 @@ import {
   Container,
   UserSVG,
   Button,
-} from './UserCard.styled';
-import sprite from '../../assets/sprite.svg';
-import img from '../../assets/11.png';
-import DescriptionText from '../DescriptionText/DescriptionText';
+} from "./UserCard.styled";
+import sprite from "../../assets/sprite.svg";
+import DescriptionText from "../DescriptionText/DescriptionText";
+import PropTypes from "prop-types";
 
-import { mgForDiary } from '../../utils/descriptionTextMargin';
+import { mgForDiary } from "../../utils/descriptionTextMargin";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/auth/selectors";
 
-export default function UserCard() {
+export default function UserCard({ setAvatar }) {
+  const { name, avatarURL, dailyСalories, dailyTime } = useSelector(selectUser);
+  const [imgURL, setImgUrl] = useState(avatarURL || null);
   const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    setImgUrl(URL.createObjectURL(e.target.files[0]));
+    setAvatar(e.target.files[0]);
+    URL.revokeObjectURL(imgURL);
+  };
 
   return (
     <Container>
       <AvatarWrapper>
-        {true ? (
+        {imgURL ? (
+          <ImgWrap>
+            <Avatar src={imgURL} />
+          </ImgWrap>
+        ) : (
           <UserSVG>
             <use href={`${sprite}#icon-gridicons_user`}></use>
           </UserSVG>
-        ) : (
-          <ImgWrap>
-            <Avatar src={img} />
-          </ImgWrap>
         )}
+
         <AddUserBtn>
-          <input type="file" />
+          <input type="file" onChange={handleChange} />
           <svg>
             <use href={`${sprite}#icon-check-mark`}></use>
           </svg>
         </AddUserBtn>
       </AvatarWrapper>
 
-      <H3>Anna Rybachok</H3>
+      <H3>{name ? name : "user"}</H3>
 
       <CardsWrap>
         <DailyStatsWrap>
           <DailyStatsCards
             icon="fork-and-knife"
-            keyValue="2200"
+            keyValue={dailyСalories || "0"}
             label="Daily calorie intake"
             fill="true"
           />
@@ -58,7 +69,7 @@ export default function UserCard() {
         <DailyStatsWrap>
           <DailyStatsCards
             icon="dumbbell"
-            keyValue="110 min"
+            keyValue={dailyTime || 0 + " min"}
             label="Daily norm of sports"
             fill="true"
           />
@@ -85,3 +96,7 @@ export default function UserCard() {
     </Container>
   );
 }
+
+UserCard.propTypes = {
+  setAvatar: PropTypes.func.isRequired,
+};
