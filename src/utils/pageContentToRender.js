@@ -1,27 +1,28 @@
+import { capitalizeWord } from './capitalizeWord';
 const pageContentToRender = (page, data) => {
   const content =
     page === 'product'
       ? {
           subtitle: 'DIET',
-          title: data.title,
+          title: capitalizeWord(data.title),
           button: 'Add',
           text1: 'Calories:',
           text2: 'Category:',
           text3: 'Weight:',
           subText1: data.calories,
-          subText2: data.category,
+          subText2: capitalizeWord(data.category),
           subText3: data.weight,
         }
       : {
           subtitle: 'WORKOUT',
-          title: data.name,
+          title: capitalizeWord(data.name),
           button: 'Start',
           text1: 'Burned calories:',
           text2: 'Body part:',
           text3: 'Target:',
           subText1: data.burnedCalories,
-          subText2: data.bodyPart,
-          subText3: data.target,
+          subText2: capitalizeWord(data.bodyPart),
+          subText3: capitalizeWord(data.target),
         };
 
   return content;
