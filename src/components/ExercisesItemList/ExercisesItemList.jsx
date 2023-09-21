@@ -15,9 +15,6 @@ export const ExercisesList = () => {
   const dispatch = useDispatch();
 
   const handleGetExercises = (params, name) => {
-    console.log('PARAMS', params);
-    console.log(name);
-
     dispatch(getExercises(params));
 
     dispatch(setCurrentTitle(name));
@@ -26,7 +23,6 @@ export const ExercisesList = () => {
   let category = useSelector(selectFilter);
   let filters = useSelector(selectItems);
 
-  console.log(filters);
   return (
     <ExercisesItemList>
       {filters
