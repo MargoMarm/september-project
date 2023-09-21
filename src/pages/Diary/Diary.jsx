@@ -11,6 +11,7 @@ import {
 
 import { mgForDiary } from '../../utils/descriptionTextMargin';
 import { mgForTitle } from '../../utils/titleMarginForDairyPage';
+import { useEffect, useState } from 'react';
 
 const listProducts = [
   {
@@ -51,36 +52,6 @@ const listProducts = [
     calories: 17,
     category: 'vegetables and herbs',
     title: 'Salads Belaya Dacha Delicate root',
-    groupBloodNotAllowed: {
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-    },
-  },
-  {
-    _id: {
-      $oid: '5d51694902b2373622ff5b6f',
-    },
-    weight: 100,
-    calories: 160,
-    category: 'fish',
-    title: 'Cold smoked bream',
-    groupBloodNotAllowed: {
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-    },
-  },
-  {
-    _id: {
-      $oid: '5d51694902b2373622ff5b8d',
-    },
-    weight: 100,
-    calories: 281,
-    category: 'fish',
-    title: 'Pollock in batter',
     groupBloodNotAllowed: {
       1: false,
       2: false,
@@ -166,7 +137,6 @@ const listExercises = [
 const Diary = () => {
   return (
     <>
-      {' '}
       <Title text={'Diary'} margin={mgForTitle} />
       <DiaryPageContainer>
         <CustomDivForCards>
@@ -183,8 +153,14 @@ const Diary = () => {
             marginBottom={40}
             list={listProducts}
             productTable
+            to={'/products'}
           />
-          <DayDiaryProductsOrExercises list={listExercises} exerciseTable />
+
+          <DayDiaryProductsOrExercises
+            list={listExercises}
+            exerciseTable
+            to={'/exercises'}
+          />
         </CustomDivForTables>{' '}
       </DiaryPageContainer>
     </>

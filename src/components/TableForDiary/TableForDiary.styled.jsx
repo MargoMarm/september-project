@@ -2,6 +2,13 @@ import styled from '@emotion/styled';
 
 import { colors, mq } from '../../utils';
 
+export const CustomContainer = styled.div`
+  display: none;
+  
+  ${mq.tablet} {
+    display: block;
+  }`
+
 export const DeleteBtn = styled.button`
   padding: 0;
   margin: 0;
@@ -139,6 +146,10 @@ export const BASELINE_THEME_EXERCISES = {
     ${mq.desktop} {
       --data-table-library_grid-template-columns:  123px 165px 139px 114px 99px 102px 28px;
       margin-left: 16px;
+    }
+
+    @media (max-width: 767) {
+      --data-table-library_grid-template-columns:  0 0 0 0 0 0 0;
     }
   `,
   Cell: `

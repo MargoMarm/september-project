@@ -1,12 +1,21 @@
+import { useEffect, useState } from "react";
 import Title from "../../components/Title/Title";
 import UserCard from "../../components/UserCard";
 import UserForm from "../../components/UserForm";
 import { BlockWrapper, FormWrap, Container } from "./Profile.styled";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCurrentUser } from "../../redux/auth/operation";
+import { selectUser } from "../../redux/auth/selectors";
 
+const mgUserPage = {
+  top: { tab: 72, mob: 40 },
+  bt: { desk: 32, tab: 64, mob: 40 },
+};
 export default function Profile() {
-  const mgUserPage = {
-    top: {tab: 72, mob: 40},
-    bt: {desk: 32, tab: 64, mob: 40}
+  const [avatarFile, setAvatarFile] = useState();
+  
+  const handleSubmit = (data) => {
+     console.log(data);
   }
 
   return (
@@ -14,12 +23,12 @@ export default function Profile() {
       <Title text="Profile Settings" margin={mgUserPage} />
 
       <BlockWrapper>
-        <UserCard />
+        <UserCard setAvatar={setAvatarFile} />
 
         <FormWrap>
-          <UserForm />
+          <UserForm submit={handleSubmit} />
         </FormWrap>
       </BlockWrapper>
     </Container>
-  )
+  );
 }

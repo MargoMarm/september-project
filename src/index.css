@@ -71,3 +71,19 @@ button {
     font-size: 16px;
   }
 }
+
+.os-scrollbar-vertical {
+  background-color: rgba(239, 237, 232, 0.1);
+  border-radius: 12px;
+  /* width: 8px; */
+  --os-size: 8px;
+  --os-track-border-radius: 12px;
+  --os-handle-bg: #ef8964;
+  --os-handle-bg-active: #ef8964;
+  --os-handle-bg-hover: #ef8964;
+  --os-handle-min-size: 33px;
+  --os-handle-max-size: 153px;
+  --os-handle-perpendicular-size: 8px;
+  --os-handle-perpendicular-size-active: 8px;
+  --os-handle-perpendicular-size-hover: 8px;
+}

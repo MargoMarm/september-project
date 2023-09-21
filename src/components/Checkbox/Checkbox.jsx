@@ -3,16 +3,17 @@ import {
   InputHidden,
   Chkbx,
   CheckboxText,
-} from './Checkbox.styled';
-import PropTypes from 'prop-types';
+} from "./Checkbox.styled";
+import PropTypes from "prop-types";
 
 export default function Checkbox({
   styleWrapper,
+  styleCheckbox,
+  styleText,
   name,
   value,
   checked,
-  styleCheckbox,
-  styleText,
+  onChange,
   children,
 }) {
   return (
@@ -21,20 +22,24 @@ export default function Checkbox({
         type="radio"
         name={name}
         value={value}
-        defaultChecked={checked ? true : false}
+        checked={checked || false}
+        onChange={onChange || null}
       />
+
       <Chkbx style={styleCheckbox || null}></Chkbx>
+      
       <CheckboxText style={styleText || null}>{children}</CheckboxText>
     </CheckboxWrap>
   );
 }
 
 Checkbox.propTypes = {
-  name: PropTypes.string,
-  value: PropTypes.string,
-  children: PropTypes.string,
   styleWrapper: PropTypes.object,
   styleCheckbox: PropTypes.object,
   styleText: PropTypes.object,
-  checked: PropTypes.oneOf([true,  false]),
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  checked: PropTypes.oneOf([true, false]),
+  onChange: PropTypes.func,
+  children: PropTypes.string,
 };

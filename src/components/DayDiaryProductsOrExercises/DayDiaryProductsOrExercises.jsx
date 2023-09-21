@@ -10,6 +10,7 @@ import {
 } from './DayDiaryProductsOrExercises.styled';
 import sprite from '../../assets/sprite.svg';
 import TableForDiary from '../TableForDiary/TableForDiary';
+import TableForDiaryOnMobile from '../TableForDiaryOnMobile/TableForDiaryOnMobile';
 
 const DayDiaryProductsOrExercises = ({
   to,
@@ -32,11 +33,18 @@ const DayDiaryProductsOrExercises = ({
         </AddLink>
       </DayDiarySubDiv>
       {list.length !== 0 ? (
-        <TableForDiary
-          list={list}
-          productTable={productTable}
-          exerciseTable={exerciseTable}
-        />
+        <>
+          <TableForDiary
+            list={list}
+            productTable={productTable}
+            exerciseTable={exerciseTable}
+          />
+          <TableForDiaryOnMobile
+            list={list}
+            productTable={productTable}
+            exerciseTable={exerciseTable}
+          />
+        </>
       ) : (
         <DayNoContentText>
           Not found {productTable ? 'products' : 'exercises'}
