@@ -10,7 +10,9 @@ export const Logo = () => {
   return (
     <>
       <WrapLogo>
-        <a href={isLoggedIn ? '/diary' : '/'}>
+        <a
+          href={isLoggedIn ? '/september-project/diary' : '/september-project/'}
+        >
           <Svg>
             <use href={sprite + `#logo-big`}></use>
           </Svg>{' '}
