@@ -11,13 +11,19 @@ import {
   CustomContainer,
 } from './TableForDiaryOnMobile.styled';
 
-const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
+const TableForDiaryOnMobile = ({
+  list,
+  productTable,
+  exerciseTable,
+  onDelete,
+  date,
+}) => {
   return (
     <>
       {productTable && (
         <CustomContainer>
           {list.map(item => (
-            <ContainerForTable key={item._id.$oid}>
+            <ContainerForTable key={item._id}>
               <Cell>
                 Title<CellValue>{item.title}</CellValue>
               </Cell>
@@ -32,17 +38,19 @@ const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
                 </Cell>
 
                 <Cell>
-                  Weight <CellValue>{item.weight}</CellValue>
+                  Weight <CellValue>{item.amount}</CellValue>
                 </Cell>
 
                 <Cell>
-                  Recommend <CellValue before>{'YES'}</CellValue>
+                  Recommend
+                  <CellValue before colorBefore={item.recommend}>
+                    {item.recommend ? 'Yes' : 'No'}
+                  </CellValue>
                 </Cell>
 
                 <Cell>
-                  {' '}
                   <CellValue>
-                    <DeleteBtn>
+                    <DeleteBtn onClick={() => onDelete({ date, id: item._id })}>
                       <DeleteIcon>
                         <use href={sprite + `#icon-trash`}></use>
                       </DeleteIcon>
@@ -58,7 +66,7 @@ const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
       {exerciseTable && (
         <CustomContainer>
           {list.map(item => (
-            <ContainerForTable key={item.name}>
+            <ContainerForTable key={item._id}>
               <Cell>
                 Body Part<CellValue>{item.bodyPart}</CellValue>
               </Cell>
@@ -87,7 +95,9 @@ const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
                 <Cell>
                   {' '}
                   <CellValue>
-                    <DeleteBtn>
+                    <DeleteBtn
+                      onClick={() => onDelete({ date, id: item._id })}
+                    >
                       <DeleteIcon>
                         <use href={sprite + `#icon-trash`}></use>
                       </DeleteIcon>
@@ -107,6 +117,8 @@ TableForDiaryOnMobile.propTypes = {
   list: PropTypes.array,
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
+  onDelete: PropTypes.func,
+  date: PropTypes.string,
 };
 
 export default TableForDiaryOnMobile;

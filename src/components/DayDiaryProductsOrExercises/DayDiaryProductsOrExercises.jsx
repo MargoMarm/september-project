@@ -11,6 +11,8 @@ import {
 import sprite from '../../assets/sprite.svg';
 import TableForDiary from '../TableForDiary/TableForDiary';
 import TableForDiaryOnMobile from '../TableForDiaryOnMobile/TableForDiaryOnMobile';
+import { useDispatch } from 'react-redux';
+import { deleteExercise, deleteProduct } from '../../redux/diary/operations';
 
 const DayDiaryProductsOrExercises = ({
   to,
@@ -18,8 +20,19 @@ const DayDiaryProductsOrExercises = ({
   list,
   productTable,
   exerciseTable,
-  windowWidth,
+  date,
 }) => {
+  const dispatch = useDispatch();
+
+  const handleDelete = ({ date, id }) => {
+    if (productTable) {
+      dispatch(deleteProduct({ productId: id, date }));
+    }
+    if (exerciseTable) {
+      dispatch(deleteExercise({ exerciseId: id, date }));
+    }
+  };
+
   return (
     <DayDiaryContainer marginBottom={marginBottom}>
       <DayDiarySubDiv>
@@ -35,20 +48,20 @@ const DayDiaryProductsOrExercises = ({
       </DayDiarySubDiv>
       {list.length !== 0 ? (
         <>
-          {windowWidth >= 768 && (
-            <TableForDiary
-              list={list}
-              productTable={productTable}
-              exerciseTable={exerciseTable}
-            />
-          )}
-          {windowWidth < 768 && (
-            <TableForDiaryOnMobile
-              list={list}
-              productTable={productTable}
-              exerciseTable={exerciseTable}
-            />
-          )}
+          <TableForDiary
+            list={list}
+            productTable={productTable}
+            exerciseTable={exerciseTable}
+            onDelete={handleDelete}
+            date={date}
+          />
+          <TableForDiaryOnMobile
+            list={list}
+            productTable={productTable}
+            exerciseTable={exerciseTable}
+            onDelete={handleDelete}
+            date={date}
+          />
         </>
       ) : (
         <DayNoContentText>
@@ -65,7 +78,7 @@ DayDiaryProductsOrExercises.propTypes = {
   list: PropTypes.array,
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
-  windowWidth: PropTypes.number,
+  date: PropTypes.string,
 };
 
 export default DayDiaryProductsOrExercises;

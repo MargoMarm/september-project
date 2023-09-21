@@ -2,20 +2,18 @@ import styled from '@emotion/styled';
 import { mq, colors } from '../../utils';
 
 export const GreyCard = styled.div`
-  ${mq.smallMobile} {
-    position: absolute;
-    top: ${props => (props.step === '2' ? 534 : 474)}px;
-    left: ${props => (props.step === '2' ? 154 : 101)}px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 146px;
-    height: 66px;
+  position: absolute;
+  top: ${props => (props.step === '2' ? 534 : 474)}px;
+  left: ${props => (props.step === '2' ? 154 : 101)}px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 146px;
+  height: 66px;
 
-    background: #303030;
+  background: #303030;
 
-    border-radius: 12px;
-  }
+  border-radius: 12px;
 
   ${mq.tablet} {
     top: 630px;
@@ -32,18 +30,16 @@ export const GreyCard = styled.div`
 `;
 
 export const GreySvgWrapper = styled.div`
-  ${mq.smallMobile} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
 
-    background: ${colors.orangeSecondary};
+  background: ${colors.orangeSecondary};
 
-    border-radius: 50%;
-  }
+  border-radius: 50%;
 
   ${mq.tablet} {
     width: 40px;
@@ -53,11 +49,9 @@ export const GreySvgWrapper = styled.div`
 `;
 
 export const GreySvg = styled.svg`
-  ${mq.smallMobile} {
-    width: 12px;
-    height: 12px;
-    fill: ${colors.white};
-  }
+  width: 12px;
+  height: 12px;
+  fill: ${colors.white};
 
   ${mq.tablet} {
     width: 20px;
@@ -68,15 +62,13 @@ export const GreySvg = styled.svg`
 export const GreyTextWrapper = styled.div``;
 
 export const GreyDynamicText = styled.p`
-  ${mq.smallMobile} {
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 112.5%;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 112.5%;
 
-    color: ${colors.white};
-  }
+  color: ${colors.white};
 
   ${mq.tablet} {
     margin-bottom: 8px;
@@ -86,13 +78,11 @@ export const GreyDynamicText = styled.p`
 `;
 
 export const GreyStaticText = styled.p`
-  ${mq.smallMobile} {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 133.3%;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 133.3%;
 
-    color: rgba(239, 237, 232, 0.65);
-  }
+  color: rgba(239, 237, 232, 0.65);
 
   ${mq.tablet} {
     font-size: 16px;
@@ -102,17 +92,16 @@ export const GreyStaticText = styled.p`
 `;
 
 export const OrangeCard = styled.div`
-  ${mq.smallMobile} {
-    position: absolute;
-    top: 625px;
-    right: 0;
-    width: 119px;
-    height: 76px;
-    padding: 14px 18px;
+  position: absolute;
+  top: 625px;
+  right: 0;
+  width: 119px;
+  height: 76px;
+  padding: 14px 18px;
 
-    border-radius: 12px;
-    background: ${colors.orangeSecondary};
-  }
+  border-radius: 12px;
+  background: ${colors.orangeSecondary};
+
   ${mq.tablet} {
     top: 782px;
 
@@ -126,19 +115,17 @@ export const OrangeCard = styled.div`
 `;
 
 export const OrangeSvgWrapper = styled.div`
-  ${mq.smallMobile} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 20px;
-    height: 20px;
-    margin-bottom: 4px;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 4px;
 
-    background-color: #efa082;
+  background-color: #efa082;
 
-    border-radius: 50%;
-  }
+  border-radius: 50%;
 
   ${mq.tablet} {
     margin-bottom: 8px;
@@ -149,11 +136,9 @@ export const OrangeSvgWrapper = styled.div`
 `;
 
 export const OrangeSvg = styled.svg`
-  ${mq.smallMobile} {
-    width: 12px;
-    height: 12px;
-    fill: ${colors.white};
-  }
+  width: 12px;
+  height: 12px;
+  fill: ${colors.white};
 
   ${mq.tablet} {
     width: 16px;
@@ -167,18 +152,16 @@ export const OrangeTextWrapper = styled.div`
 `;
 
 export const OrangeDynamicText = styled.p`
-  ${mq.smallMobile} {
-    margin-right: 8px;
+  margin-right: 8px;
 
-    font-size: 24px;
+  font-size: 24px;
 
-    font-weight: 700;
-    line-height: 100%;
-    letter-spacing: -1px;
-    text-transform: uppercase;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -1px;
+  text-transform: uppercase;
 
-    color: ${colors.white};
-  }
+  color: ${colors.white};
 
   ${mq.tablet} {
     margin-right: 11px;
@@ -189,13 +172,11 @@ export const OrangeDynamicText = styled.p`
 `;
 
 export const OrangeStaticText = styled.p`
-  ${mq.mobile} {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 133.33%;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 133.33%;
 
-    color: rgba(239, 237, 232, 0.65);
-  }
+  color: rgba(239, 237, 232, 0.65);
 
   ${mq.tablet} {
     font-size: 16px;
