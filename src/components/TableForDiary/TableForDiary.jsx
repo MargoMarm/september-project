@@ -7,6 +7,7 @@ import {
   HeaderCont,
   ColumnNameProducts,
   ColumnNameExercises,
+  BeforeForCell,
   CustomContainer,
 } from './TableForDiary.styled';
 import {
@@ -23,7 +24,13 @@ import PropTypes from 'prop-types';
 
 const stylesForExercises = { ...BASELINE_THEME, ...BASELINE_THEME_EXERCISES };
 
-const TableForDiary = ({ list, productTable, exerciseTable }) => {
+const TableForDiary = ({
+  list,
+  productTable,
+  exerciseTable,
+  onDelete,
+  date,
+}) => {
   const data = { nodes: list };
 
   return (
@@ -53,14 +60,21 @@ const TableForDiary = ({ list, productTable, exerciseTable }) => {
 
                 <Body>
                   {tableList.map(item => (
-                    <Row key={item._id.$oid} item={item}>
+                    <Row key={item._id} item={item}>
                       <Cell>{item.title}</Cell>
                       <Cell>{item.category}</Cell>
                       <Cell>{item.calories}</Cell>
-                      <Cell>{item.weight}</Cell>
-                      <Cell>{item.groupBloodNotAllowed ? 'Yes' : 'No'}</Cell>
+                      <Cell>{item.amount}</Cell>
                       <Cell>
-                        <DeleteBtn>
+                        <BeforeForCell
+                          bgColor={item.recommend ? '#419B09' : '#E9101D'}
+                        />
+                        {item.recommend ? 'Yes' : 'No'}
+                      </Cell>
+                      <Cell>
+                        <DeleteBtn
+                          onClick={() => onDelete({ date, id: item._id })}
+                        >
                           <DeleteIcon>
                             <use href={sprite + `#icon-trash`}></use>
                           </DeleteIcon>
@@ -107,7 +121,7 @@ const TableForDiary = ({ list, productTable, exerciseTable }) => {
 
                 <Body>
                   {tableList.map(item => (
-                    <Row key={item.name} item={item}>
+                    <Row key={item._id} item={item}>
                       <Cell>{item.bodyPart}</Cell>
                       <Cell>{item.equipment}</Cell>
                       <Cell>{item.name}</Cell>
@@ -115,7 +129,9 @@ const TableForDiary = ({ list, productTable, exerciseTable }) => {
                       <Cell>{item.burnedCalories}</Cell>
                       <Cell>{item.time}</Cell>
                       <Cell>
-                        <DeleteBtn>
+                        <DeleteBtn
+                          onClick={() => onDelete({ date, id: item._id })}
+                        >
                           <DeleteIcon>
                             <use href={sprite + `#icon-trash`}></use>
                           </DeleteIcon>
@@ -137,6 +153,8 @@ TableForDiary.propTypes = {
   list: PropTypes.array,
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
+  onDelete: PropTypes.func,
+  date: PropTypes.string,
 };
 
 export default TableForDiary;
