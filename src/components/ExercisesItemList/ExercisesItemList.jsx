@@ -9,17 +9,24 @@ import {
 } from '../../redux/exerciseFilters/selectors';
 import { getExercises } from '../../redux/exercises/operations';
 
+import { setCurrentTitle } from '../../redux/exerciseFilters/slice';
+
 export const ExercisesList = () => {
   const dispatch = useDispatch();
 
-  const handleGetExercises = params => {
+  const handleGetExercises = (params, name) => {
     console.log('PARAMS', params);
+    console.log(name);
+
     dispatch(getExercises(params));
-    dispatch(getExercises(params));
+
+    dispatch(setCurrentTitle(name));
   };
 
   let category = useSelector(selectFilter);
   let filters = useSelector(selectItems);
+
+  console.log(filters);
   return (
     <ExercisesItemList>
       {filters

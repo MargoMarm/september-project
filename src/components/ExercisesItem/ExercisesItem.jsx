@@ -10,25 +10,25 @@ import {
 import { useEffect, useState } from 'react';
 
 export const ExercisesItem = ({ filter, name, imgURL, handleGetExercises }) => {
-  const [query, setQuery] = useState(filter); 
- 
+  const [query, setQuery] = useState(filter);
+
   useEffect(() => {
     switch (filter) {
       case 'Body parts':
-        return setQuery("bodyPart");
+        return setQuery('bodyPart');
       case 'Muscles':
-        return setQuery("target");
+        return setQuery('target');
       case 'Equipment':
-        return setQuery("equipment");
+        return setQuery('equipment');
       default:
         return;
     }
-  }, [filter])
+  }, [filter]);
 
-  const requestString = `${query}=${name.toLowerCase()}`
+  const requestString = `${query}=${name.toLowerCase()}`;
 
   return (
-    <Item onClick={() => handleGetExercises(requestString)}>
+    <Item onClick={() => handleGetExercises(requestString, name)}>
       <WrapCard>
         <Image src={imgURL} alt={name} />
         <WrapSpan>
@@ -46,4 +46,5 @@ ExercisesItem.propTypes = {
   filter: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   imgURL: PropTypes.string.isRequired,
+  handleGetExercises: PropTypes.func.isRequired,
 };

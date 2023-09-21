@@ -7,10 +7,10 @@ import { TitleThumb } from './Exercises.styled';
 import ProductsOrExercisesContainer from '../../components/ProductOrExerciseContainer/ProductOrExerciseContainer';
 import ProductsOrExercisesItem from '../../components/ProductsOrExercisesItem/ProductsOrExercisesItem';
 // import products from '../../data/products.json';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectGetFilters } from '../../redux/exercises/selectors';
 // import {  useLocation } from 'react-router-dom';
-// import { setStatusFilter } from '../../redux/exercises/slice';
+import { selectCurrentTitle } from '../../redux/exerciseFilters/selectors';
 import { selectItems } from '../../redux/exercises/selectors';
 import ExercisesBtnBack from '../../components/ExercisesBtnBack/ExercisesBtnBack';
 import Scrollbar from '../../components/Scrollbar';
@@ -20,10 +20,9 @@ const Exercises = () => {
   // const location = useLocation();
   let shouldGetFilters = useSelector(selectGetFilters);
   let items = useSelector(selectItems);
+  let currentTitle = useSelector(selectCurrentTitle);
 
-  // if (location.pathname !== "/exercises") {
-  //   dispatch(setStatusFilter(true))
-  // }
+  console.log(currentTitle);
 
   return (
     <>
@@ -46,7 +45,7 @@ const Exercises = () => {
           />
         ) : (
           <Title
-            text={'TestText'}
+            text={currentTitle}
             margin={{
               top: {
                 desk: 16,
@@ -67,20 +66,20 @@ const Exercises = () => {
         <ExercisesItemList />
       ) : (
         <Scrollbar width={{ dt: '868' }}>
-        <ProductsOrExercisesContainer>
-          {items.map((item, i) => {
-            if (i < 20) {
-              return (
-                <ProductsOrExercisesItem
-                  key={item._id}
-                  page="exercise"
-                  data={item}
-                />
-              );
-            }
-            return null;
-          })}
-        </ProductsOrExercisesContainer>
+          <ProductsOrExercisesContainer>
+            {items.map((item, i) => {
+              if (i < 20) {
+                return (
+                  <ProductsOrExercisesItem
+                    key={item._id}
+                    page="exercise"
+                    data={item}
+                  />
+                );
+              }
+              return null;
+            })}
+          </ProductsOrExercisesContainer>
         </Scrollbar>
       )}
       ;
