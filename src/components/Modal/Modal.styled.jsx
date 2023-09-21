@@ -22,8 +22,8 @@ export const ModalWrap = styled.div`
   justify-content: center;
   align-items: center;
 
-  max-width: 400px;
-  min-width: 300px;
+  // max-width: 400px;
+  // min-width: 300px;
   padding: 48px 32px;
   border-radius: 8px;
   background-color: ${colors.modalBlack};

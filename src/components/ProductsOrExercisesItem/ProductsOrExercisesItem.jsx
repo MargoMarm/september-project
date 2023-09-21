@@ -19,7 +19,7 @@ import { useEffect, useState } from 'react';
 
 import { pageContentToRender } from '../../utils';
 
-const ProductsOrExercisesItem = ({ page, data }) => {
+const ProductsOrExercisesItem = ({ page, data, openModal }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -49,14 +49,15 @@ const ProductsOrExercisesItem = ({ page, data }) => {
   };
 
   const contentToRender = pageContentToRender(page, data);
-//   console.log(contentToRender);
+  //   console.log(contentToRender);
 
   return (
     <Item>
       <SubDiv>
         <TextDiet>{contentToRender.subtitle}</TextDiet>
         {page === 'product' && <TextRecommended>Recommended</TextRecommended>}
-        <AddBtn>
+
+        <AddBtn onClick={() => openModal()}>
           {contentToRender.button}
           <ArrowRight>
             <use href={sprite + `#arrow-right`}></use>
@@ -94,6 +95,7 @@ const ProductsOrExercisesItem = ({ page, data }) => {
 ProductsOrExercisesItem.propTypes = {
   page: PropTypes.string,
   data: PropTypes.object,
+  openModal: PropTypes.func,
 };
 
 export default ProductsOrExercisesItem;
