@@ -58,6 +58,7 @@ export const Wrapper = styled.div`
   ${mq.desktop} {
     height: 0;
     background: none;
+    padding: 0 0 0 96px;
   }
 `;
 
