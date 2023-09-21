@@ -2,6 +2,13 @@ import styled from '@emotion/styled';
 
 import { colors, mq } from '../../utils';
 
+export const CustomContainer = styled.div`
+  display: none;
+  
+  ${mq.tablet} {
+    display: block;
+  }`
+
 export const DeleteBtn = styled.button`
   padding: 0;
   margin: 0;

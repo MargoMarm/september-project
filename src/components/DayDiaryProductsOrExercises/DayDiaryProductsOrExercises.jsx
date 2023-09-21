@@ -22,7 +22,6 @@ const DayDiaryProductsOrExercises = ({
   list,
   productTable,
   exerciseTable,
-  windowWidth,
   date,
 }) => {
   const dispatch = useDispatch();
@@ -53,24 +52,20 @@ const DayDiaryProductsOrExercises = ({
       </DayDiarySubDiv>
       {error?.message !== 'Rejected' || list.length === 0 ? (
         <>
-          {windowWidth >= 768 && (
-            <TableForDiary
-              list={list}
-              productTable={productTable}
-              exerciseTable={exerciseTable}
-              onDelete={handleDelete}
-              date={date}
-            />
-          )}
-          {windowWidth < 768 && (
-            <TableForDiaryOnMobile
-              list={list}
-              productTable={productTable}
-              exerciseTable={exerciseTable}
-              onDelete={handleDelete}
-              date={date}
-            />
-          )}
+          <TableForDiary
+            list={list}
+            productTable={productTable}
+            exerciseTable={exerciseTable}
+            onDelete={handleDelete}
+            date={date}
+          />
+          <TableForDiaryOnMobile
+            list={list}
+            productTable={productTable}
+            exerciseTable={exerciseTable}
+            onDelete={handleDelete}
+            date={date}
+          />
         </>
       ) : (
         <DayNoContentText>
@@ -87,7 +82,6 @@ DayDiaryProductsOrExercises.propTypes = {
   list: PropTypes.array,
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
-  windowWidth: PropTypes.number,
   date: PropTypes.string,
 };
 

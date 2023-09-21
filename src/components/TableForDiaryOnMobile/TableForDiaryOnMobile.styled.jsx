@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '../../utils';
+import { colors, mq } from '../../utils';
 
 export const CustomContainer = styled.div`
   overflow: auto;
@@ -7,13 +7,17 @@ export const CustomContainer = styled.div`
   height: 254px;
 
   ::-webkit-scrollbar {
-    width: 6px; 
+    width: 6px;
     height: 90px;
-  }; 
+  }
   ::-webkit-scrollbar-thumb {
     background-color: ${colors.textWhite01};
     border-radius: 12px;
-  };
+  }
+
+  ${mq.tablet} {
+    display: none;
+  }
 `;
 
 export const ContainerForTable = styled.div`

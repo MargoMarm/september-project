@@ -18,6 +18,6 @@ export default function Scrollbar({ children, width }) {
   );
 }
 
-ScrollContainer.propTypes = {
+Scrollbar.propTypes = {
   width: PropTypes.object,
 };

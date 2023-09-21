@@ -11,7 +11,7 @@ import {
 
 import { mgForDiary } from '../../utils/descriptionTextMargin';
 import { mgForTitle } from '../../utils/titleMarginForDairyPage';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDiaryList } from '../../redux/products/operations';
 import {
@@ -20,20 +20,10 @@ import {
 } from '../../redux/products/selectors';
 
 const Diary = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
   const productsList = useSelector(getDiaryProducts);
   const exercisesList = useSelector(getDiaryExercises);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    window.addEventListener('resize', updateWindowWidth);
-
-    return () => {
-      window.removeEventListener('resize', updateWindowWidth);
-    };
-  }, []);
 
   // заглушка для дати, яка буде вибрана на календарі
   const date = '20-09-2023';
@@ -41,10 +31,6 @@ const Diary = () => {
   useEffect(() => {
     dispatch(getDiaryList({ date }));
   }, [dispatch]);
-
-  const updateWindowWidth = () => {
-    setWindowWidth(window.innerWidth);
-  };
 
   return (
     <>
@@ -64,7 +50,6 @@ const Diary = () => {
             marginBottom={40}
             list={productsList}
             productTable
-            windowWidth={windowWidth}
             date={date}
             to={'/products'}
           />
@@ -72,7 +57,6 @@ const Diary = () => {
           <DayDiaryProductsOrExercises
             list={exercisesList}
             exerciseTable
-            windowWidth={windowWidth}
             date={date}
             to={'/exercises'}
           />

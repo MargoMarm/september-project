@@ -8,6 +8,7 @@ import {
   ColumnNameProducts,
   ColumnNameExercises,
   BeforeForCell,
+  CustomContainer,
 } from './TableForDiary.styled';
 import {
   Table,
@@ -35,7 +36,7 @@ const TableForDiary = ({
   return (
     <>
       {productTable && (
-        <>
+        <CustomContainer>
           <HeaderCont>
             <ColumnNameProducts>Title</ColumnNameProducts>
             <ColumnNameProducts>Category</ColumnNameProducts>
@@ -85,11 +86,11 @@ const TableForDiary = ({
               </>
             )}
           </Table>
-        </>
+        </CustomContainer>
       )}
 
       {exerciseTable && (
-        <>
+        <CustomContainer>
           <HeaderCont>
             <ColumnNameExercises>Body Part</ColumnNameExercises>
             <ColumnNameExercises>Equipment</ColumnNameExercises>
@@ -142,7 +143,7 @@ const TableForDiary = ({
               </>
             )}
           </Table>
-        </>
+        </CustomContainer>
       )}
     </>
   );
