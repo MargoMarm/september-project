@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { authUser, fetchCurrentUser, logInUser, logOutUser } from './operation';
+import {
+  authUser,
+  fetchCurrentUser,
+  logInUser,
+  logOutUser,
+  updateUserData,
+} from './operation';
 
 const initialState = {
   user: {
@@ -8,8 +14,8 @@ const initialState = {
     avatarURL: null,
     dailyTime: null,
     dailyСalories: null,
+    bodyParameters: {},
   },
-  bodyParameters: {},
 
   error: null,
   token: null,
@@ -38,7 +44,7 @@ export const authSlice = createSlice({
       state.token = action.payload.token;
       state.user.dailyTime = action.payload.dailyTime;
       state.user.dailyСalories = action.payload.dailyСalories;
-      state.bodyParameters = { ...action.payload.bodyParameters };
+      state.user.bodyParameters = { ...action.payload.bodyParameters };
 
       state.isLoggedIn = true;
       state.error = null;
@@ -69,6 +75,9 @@ export const authSlice = createSlice({
       state.user.email = action.payload.email;
       state.user.avatarURL = action.payload.avatarURL;
       state.token = action.payload.token;
+      state.user.dailyTime = action.payload.dailyTime;
+      state.user.dailyСalories = action.payload.dailyСalories;
+      state.user.bodyParameters = { ...action.payload.bodyParameters };
       state.isLoggedIn = true;
       state.isRefreshing = false;
     });
@@ -77,6 +86,21 @@ export const authSlice = createSlice({
     });
     builder.addCase(fetchCurrentUser.pending, state => {
       state.isRefreshing = true;
+    });
+
+    //Update user data
+    builder.addCase(updateUserData.fulfilled, (state, { payload }) => {
+      console.log('fulfield', payload.name);
+      state.user.name = payload.name;
+      state.user.avatarURL = payload.avatarURL;
+      state.user.dailyTime = payload.dailyTime;
+      state.user.dailyСalories = payload.dailyСalories;
+      state.bodyParameters = { ...payload.bodyParameters };
+      state.error = null;
+    });
+    builder.addCase(updateUserData.rejected, (state, action) => {
+      console.log('rejected', action);
+      //state.error = action.payload;
     });
   },
 });

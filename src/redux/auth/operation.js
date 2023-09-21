@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'https://power-pulse-rest-api.onrender.com';
+axios.defaults.baseURL = 'http://localhost:3000/';
 
 const token = {
   set: token => {
@@ -78,6 +78,18 @@ export const fetchCurrentUser = createAsyncThunk(
       return data;
     } catch (error) {
       return rejectWithValue(error);
+    }
+  },
+);
+
+export const updateUserData = createAsyncThunk(
+  'auth/updateUser',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const result = await axios.patch('/api/users/update', userData);
+      return result.data;
+    } catch (e) {
+      return rejectWithValue(e.message);
     }
   },
 );
