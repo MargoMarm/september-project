@@ -5,6 +5,10 @@ export const CustomContainer = styled.div`
   overflow: auto;
   margin-top: 22px;
   height: 254px;
+
+  ${mq.tablet} {
+    display: none;
+  }
 `;
 
 export const ContainerForTable = styled.div`
@@ -59,18 +63,14 @@ export const BottomContainer = styled.div`
 
   & > div {
     &:nth-of-type(4) {
-      
-
       & > p {
         padding: 0;
         margin-top: 35px;
-        
+
         border: none;
-        }
       }
     }
-  
-
+  }
 `;
 
 export const Cell = styled.div`

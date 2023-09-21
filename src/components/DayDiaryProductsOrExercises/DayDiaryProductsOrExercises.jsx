@@ -18,7 +18,6 @@ const DayDiaryProductsOrExercises = ({
   list,
   productTable,
   exerciseTable,
-  windowWidth,
 }) => {
   return (
     <DayDiaryContainer marginBottom={marginBottom}>
@@ -35,20 +34,16 @@ const DayDiaryProductsOrExercises = ({
       </DayDiarySubDiv>
       {list.length !== 0 ? (
         <>
-          {windowWidth >= 768 && (
-            <TableForDiary
-              list={list}
-              productTable={productTable}
-              exerciseTable={exerciseTable}
-            />
-          )}
-          {windowWidth < 768 && (
-            <TableForDiaryOnMobile
-              list={list}
-              productTable={productTable}
-              exerciseTable={exerciseTable}
-            />
-          )}
+          <TableForDiary
+            list={list}
+            productTable={productTable}
+            exerciseTable={exerciseTable}
+          />
+          <TableForDiaryOnMobile
+            list={list}
+            productTable={productTable}
+            exerciseTable={exerciseTable}
+          />
         </>
       ) : (
         <DayNoContentText>
@@ -65,7 +60,6 @@ DayDiaryProductsOrExercises.propTypes = {
   list: PropTypes.array,
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
-  windowWidth: PropTypes.number,
 };
 
 export default DayDiaryProductsOrExercises;
