@@ -36,11 +36,11 @@ const TableForDiaryOnMobile = ({
               <BottomContainer>
                 <Cell>
                   Calories
-                  <CellValue>{capitalizeWord(item.calories)}</CellValue>
+                  <CellValue>{(item.calories)}</CellValue>
                 </Cell>
 
                 <Cell>
-                  Weight <CellValue>{capitalizeWord(item.amount)}</CellValue>
+                  Weight <CellValue>{(item.amount)}</CellValue>
                 </Cell>
 
                 <Cell>
