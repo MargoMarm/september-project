@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types';
 import { forwardRef} from 'react';
-import DatePicker, { registerLocale } from 'react-datepicker';
+import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-import uk from 'date-fns/locale/uk';
-import { format, parseISO  } from 'date-fns';
+import { parseISO  } from 'date-fns';
 import { Icon, Ipt, Label, GlobalStyles } from './Calendar.styled';
 import sprite from '../../assets/sprite.svg';
 import { Global } from '@emotion/react';
-registerLocale('uk', uk);
 
 export default function Calendar({ name, value, onChange, maxDate, minDate, showYearDropdown, dateFormat, withoutВorder }) {
   const ExampleCustomInput = forwardRef((dd, ref) => {
@@ -28,7 +26,6 @@ export default function Calendar({ name, value, onChange, maxDate, minDate, show
     <>
       <DatePicker
         name={name}
-        locale="uk"
         selected={typeof value == "string" ? parseISO(value) : value}
         onChange={date => { onChange(name, date) }}
         maxDate={maxDate}

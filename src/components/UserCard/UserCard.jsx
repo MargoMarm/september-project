@@ -60,7 +60,7 @@ export default function UserCard({ setAvatar }) {
         <DailyStatsWrap>
           <DailyStatsCards
             icon="fork-and-knife"
-            keyValue={dailyСalories+" " || "0"}
+            keyValue={(dailyСalories || "0") + ''}
             label="Daily calorie intake"
             fill="true"
           />
