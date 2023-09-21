@@ -29,18 +29,19 @@ export default function UserForm({submit}) {
   const {
     name,
     email,
-    height,
-    currentWeight,
-    desiredWeight,
-    birthday,
-    blood,
-    sex,
-    levelActivity,
+    bodyParameters: {
+      height,
+      currentWeight,
+      desiredWeight,
+      birthday,
+      blood,
+      sex,
+      levelActivity, 
+    }
   } = useSelector(selectUser);
 
   const initialValues = {
     name: name || "",
-    email: email || "",
     height: height || "",
     currentWeight: currentWeight || "",
     desiredWeight: desiredWeight || "",
@@ -81,7 +82,7 @@ export default function UserForm({submit}) {
           <Input
             type="text"
             name="email"
-            defaultValue={formik.values.email}
+            defaultValue={email}
             disabled
           />
         </Label>
@@ -162,7 +163,7 @@ export default function UserForm({submit}) {
             type="radio"
             name="blood"
             value="1"
-            checked={formik.values.blood === "1"}
+            checked={formik.values.blood == "1"}
             onChange={formik.handleChange}
           >
             1
@@ -171,7 +172,7 @@ export default function UserForm({submit}) {
             type="radio"
             name="blood"
             value="2"
-            checked={formik.values.blood === "2"}
+            checked={formik.values.blood == "2"}
             onChange={formik.handleChange}
           >
             2
@@ -180,7 +181,7 @@ export default function UserForm({submit}) {
             type="radio"
             name="blood"
             value="3"
-            checked={formik.values.blood === "3"}
+            checked={formik.values.blood == "3"}
             onChange={formik.handleChange}
           >
             3
@@ -189,7 +190,7 @@ export default function UserForm({submit}) {
             type="radio"
             name="blood"
             value="4"
-            checked={formik.values.blood === "4"}
+            checked={formik.values.blood == "4"}
             onChange={formik.handleChange}
           >
             4
@@ -233,7 +234,7 @@ export default function UserForm({submit}) {
           type="radio"
           name="levelActivity"
           value="1"
-          checked={formik.values.levelActivity === "1"}
+          checked={formik.values.levelActivity == "1"}
           onChange={formik.handleChange}
           styleWrapper={{ marginBottom: "9px", display: "flex" }}
         >
@@ -244,7 +245,7 @@ export default function UserForm({submit}) {
           type="radio"
           name="levelActivity"
           value="2"
-          checked={formik.values.levelActivity === "2"}
+          checked={formik.values.levelActivity == "2"}
           onChange={formik.handleChange}
           styleWrapper={{ marginBottom: "9px", display: "flex" }}
         >
@@ -255,7 +256,7 @@ export default function UserForm({submit}) {
           type="radio"
           name="levelActivity"
           value="3"
-          checked={formik.values.levelActivity === "3"}
+          checked={formik.values.levelActivity == "3"}
           onChange={formik.handleChange}
           styleWrapper={{ marginBottom: "9px", display: "flex" }}
         >
@@ -266,7 +267,7 @@ export default function UserForm({submit}) {
           type="radio"
           name="levelActivity"
           value="4"
-          checked={formik.values.levelActivity === "4"}
+          checked={formik.values.levelActivity == "4"}
           onChange={formik.handleChange}
           styleWrapper={{ marginBottom: "9px", display: "flex" }}
         >
@@ -277,7 +278,7 @@ export default function UserForm({submit}) {
           type="radio"
           name="levelActivity"
           value="5"
-          checked={formik.values.levelActivity === "5"}
+          checked={formik.values.levelActivity == "5"}
           onChange={formik.handleChange}
           styleWrapper={{ display: "flex" }}
         >

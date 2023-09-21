@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { authUser, fetchCurrentUser, logInUser, logOutUser } from './operation';
+import {
+  authUser,
+  fetchCurrentUser,
+  logInUser,
+  logOutUser,
+  updateUserData,
+} from './operation';
 
 const initialState = {
   user: {
@@ -8,13 +14,22 @@ const initialState = {
     avatarURL: null,
     dailyTime: null,
     dailyСalories: null,
+    bodyParameters: {},
   },
-  bodyParameters: {},
 
   error: null,
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+};
+
+const replaceUserState = (state, payload) => {
+  state.user.name = payload.name;
+  state.user.email = payload.email;
+  state.user.avatarURL = payload.avatarURL;
+  state.user.dailyTime = payload.dailyTime;
+  state.user.dailyСalories = payload.dailyСalories;
+  state.user.bodyParameters = { ...payload.bodyParameters };
 };
 
 export const authSlice = createSlice({
@@ -31,15 +46,9 @@ export const authSlice = createSlice({
       state.error = action.payload;
     });
 
-    builder.addCase(logInUser.fulfilled, (state, action) => {
-      state.user.name = action.payload.name;
-      state.user.email = action.payload.email;
-      state.user.avatarURL = action.payload.avatarURL;
-      state.token = action.payload.token;
-      state.user.dailyTime = action.payload.dailyTime;
-      state.user.dailyСalories = action.payload.dailyСalories;
-      state.bodyParameters = { ...action.payload.bodyParameters };
-
+    builder.addCase(logInUser.fulfilled, (state, { payload }) => {
+      replaceUserState(state, payload);
+      state.token = payload.token;
       state.isLoggedIn = true;
       state.error = null;
     });
@@ -64,12 +73,11 @@ export const authSlice = createSlice({
       state.isLoggedIn = false;
     });
 
-    builder.addCase(fetchCurrentUser.fulfilled, (state, action) => {
-      state.user.name = action.payload.name;
-      state.user.email = action.payload.email;
-      state.user.avatarURL = action.payload.avatarURL;
-      state.token = action.payload.token;
+    builder.addCase(fetchCurrentUser.fulfilled, (state, { payload }) => {
+      replaceUserState(state, payload);
+      state.token = payload.token;
       state.isLoggedIn = true;
+      state.error = null;
       state.isRefreshing = false;
     });
     builder.addCase(fetchCurrentUser.rejected, state => {
@@ -77,6 +85,15 @@ export const authSlice = createSlice({
     });
     builder.addCase(fetchCurrentUser.pending, state => {
       state.isRefreshing = true;
+    });
+
+    //Update user data
+    builder.addCase(updateUserData.fulfilled, (state, { payload }) => {
+      replaceUserState(state, payload);
+      state.error = null;
+    });
+    builder.addCase(updateUserData.rejected, (state, action) => {
+      state.error = action.payload;
     });
   },
 });
