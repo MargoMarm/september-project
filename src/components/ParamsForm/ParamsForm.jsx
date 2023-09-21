@@ -46,7 +46,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
         height: '',
         currentWeight: '',
         desiredWeight: '',
-        birthday: '',
+        birthday: maxDate,
         blood: '',
         sex: '',
         levelActivity: '',
@@ -56,7 +56,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
           ...values,
           blood: Number(values.blood),
           levelActivity: Number(values.levelActivity),
-          birthday: format(values.birthday, 'yyyy-MM-dd'),
+          birthday: values.birthday,
         };
 
         console.log(newParamsUser);
@@ -109,7 +109,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                   placeholder="Desired Weight"
                   autoComplete="off"
                 />
-                {/* <CalendarWrapper>
+                <CalendarWrapper>
                   <Calendar
                     name="birthday"
                     value={values.birthday}
@@ -124,7 +124,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                   ) : (
                     <CalendarPlaceholder>Birthday</CalendarPlaceholder>
                   )}
-                </CalendarWrapper> */}
+                </CalendarWrapper>
               </InputGroup>
 
               <ParamsBtn setSteps={setSteps} type={'next'} step={2} />
