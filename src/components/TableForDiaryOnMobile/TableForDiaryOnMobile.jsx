@@ -10,39 +10,49 @@ import {
   ContainerForTable,
   CustomContainer,
 } from './TableForDiaryOnMobile.styled';
+import { capitalizeWord } from '../../utils/capitalizeWord';
 
-const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
+const TableForDiaryOnMobile = ({
+  list,
+  productTable,
+  exerciseTable,
+  onDelete,
+  date,
+}) => {
   return (
     <>
       {productTable && (
         <CustomContainer>
           {list.map(item => (
-            <ContainerForTable key={item._id.$oid}>
+            <ContainerForTable key={item._id}>
               <Cell>
-                Title<CellValue>{item.title}</CellValue>
+                Title<CellValue>{capitalizeWord(item.title)}</CellValue>
               </Cell>
 
               <Cell>
-                Category<CellValue>{item.category}</CellValue>
+                Category<CellValue>{capitalizeWord(item.category)}</CellValue>
               </Cell>
 
               <BottomContainer>
                 <Cell>
-                  Calories <CellValue>{item.calories}</CellValue>
+                  Calories
+                  <CellValue>{(item.calories)}</CellValue>
                 </Cell>
 
                 <Cell>
-                  Weight <CellValue>{item.weight}</CellValue>
+                  Weight <CellValue>{(item.amount)}</CellValue>
                 </Cell>
 
                 <Cell>
-                  Recommend <CellValue before>{'YES'}</CellValue>
+                  Recommend
+                  <CellValue before colorBefore={item.recommend}>
+                    {item.recommend ? 'Yes' : 'No'}
+                  </CellValue>
                 </Cell>
 
                 <Cell>
-                  {' '}
                   <CellValue>
-                    <DeleteBtn>
+                    <DeleteBtn onClick={() => onDelete({ date, id: item._id })}>
                       <DeleteIcon>
                         <use href={sprite + `#icon-trash`}></use>
                       </DeleteIcon>
@@ -58,26 +68,27 @@ const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
       {exerciseTable && (
         <CustomContainer>
           {list.map(item => (
-            <ContainerForTable key={item.name}>
+            <ContainerForTable key={item._id}>
               <Cell>
-                Body Part<CellValue>{item.bodyPart}</CellValue>
+                Body Part<CellValue>{capitalizeWord(item.bodyPart)}</CellValue>
               </Cell>
 
               <Cell>
-                Equipment<CellValue>{item.equipment}</CellValue>
+                Equipment<CellValue>{capitalizeWord(item.equipment)}</CellValue>
               </Cell>
 
               <Cell>
-                Name<CellValue>{item.name}</CellValue>
+                Name<CellValue>{capitalizeWord(item.name)}</CellValue>
               </Cell>
 
               <BottomContainer>
                 <Cell>
-                  Target <CellValue>{item.burnedCalories}</CellValue>
+                  Target <CellValue>{capitalizeWord(item.target)}</CellValue>
                 </Cell>
 
                 <Cell>
-                  Burned Calor..<CellValue>{item.time}</CellValue>
+                  Burned Calor..
+                  <CellValue>{item.burnedCalories}</CellValue>
                 </Cell>
 
                 <Cell>
@@ -87,7 +98,7 @@ const TableForDiaryOnMobile = ({ list, productTable, exerciseTable }) => {
                 <Cell>
                   {' '}
                   <CellValue>
-                    <DeleteBtn>
+                    <DeleteBtn onClick={() => onDelete({ date, id: item._id })}>
                       <DeleteIcon>
                         <use href={sprite + `#icon-trash`}></use>
                       </DeleteIcon>
@@ -107,6 +118,8 @@ TableForDiaryOnMobile.propTypes = {
   list: PropTypes.array,
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
+  onDelete: PropTypes.func,
+  date: PropTypes.string,
 };
 
 export default TableForDiaryOnMobile;

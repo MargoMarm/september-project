@@ -1,6 +1,16 @@
 import styled from '@emotion/styled';
 import { mq } from '../../utils';
 
+export const DiaryWrapper = styled.div`
+  padding: 40px 20px 80px 20px;
+  ${mq.tablet} {
+    padding: 72px 32px 64px 32px;
+  }
+  ${mq.desktop} {
+    padding: 72px 96px 68px 96px;
+  }
+`;
+
 export const DiaryPageContainer = styled.div`
   width: auto;
   display: flex;

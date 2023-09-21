@@ -26,7 +26,7 @@ export default function Profile() {
 
   return (
     <Container>
-      <Title text="Profile Settings" margin={mgUserPage} />
+      <Title text="Profile Settings" />
 
       <BlockWrapper>
         <UserCard setAvatar={setAvatarFile} />

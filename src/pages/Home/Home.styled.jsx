@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-position: right;
   background-size: 298px 571px;
+  padding: 0 20px;
 
   @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
@@ -37,6 +38,7 @@ export const Wrapper = styled.div`
     height: 768px;
     background-image: url(${imgForHome.imgTx1});
     background-size: 437px 893px;
+    padding: 0 32px;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -56,6 +58,21 @@ export const Wrapper = styled.div`
     }
   }
   ${mq.desktop} {
+    height: 0;
+    background: none;
+    padding: 0 0 0 96px;
+  }
+`;
+
+export const WrapperDesktop = styled.div`
+  ${mq.desktop} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 670px;
+    height: 800px;
+    pointer-events: none;
+
     background-image: url(${imgForHome.imgDx1});
     background-size: 670px 800px;
 

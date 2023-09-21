@@ -1,21 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchFilters } from './operations';
 
-
-
 export const filterSlice = createSlice({
   name: 'filters',
   initialState: {
     items: [],
     error: null,
     isLoading: false,
-    filter: "Body parts"
+    filter: 'Body parts',
+    currentTitle: 'Exersises',
   },
-  
+
   reducers: {
     setStatusFilter: (state, action) => {
-    
-      state.filter = action.payload
+      state.filter = action.payload;
+    },
+    setCurrentTitle: (state, action) => {
+      state.currentTitle = action.payload;
     },
   },
   extraReducers: builder => {
@@ -31,6 +32,5 @@ export const filterSlice = createSlice({
     });
   },
 });
-
+export const { setStatusFilter, setCurrentTitle } = filterSlice.actions;
 export default filterSlice.reducer;
-export const { setStatusFilter } = filterSlice.actions;

@@ -1,10 +1,11 @@
 import CustomNavLink from '../../components/CustomNavLink/CustomNavLink';
 import MainTitle from '../../components/MainTitle/MainTitle';
-import { LinkList, Wrapper } from './Home.styled';
+import { LinkList, Wrapper, WrapperDesktop } from './Home.styled';
 
 const Home = () => {
   return (
     <>
+      <WrapperDesktop></WrapperDesktop>
       <Wrapper>
         <MainTitle />
         <LinkList>
