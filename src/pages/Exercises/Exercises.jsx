@@ -13,6 +13,7 @@ import { selectGetFilters } from '../../redux/exercises/selectors';
 // import { setStatusFilter } from '../../redux/exercises/slice';
 import { selectItems } from '../../redux/exercises/selectors';
 import ExercisesBtnBack from '../../components/ExercisesBtnBack/ExercisesBtnBack';
+import Scrollbar from '../../components/Scrollbar';
 
 const Exercises = () => {
   // const dispatch = useDispatch();
@@ -65,6 +66,7 @@ const Exercises = () => {
       {shouldGetFilters ? (
         <ExercisesItemList />
       ) : (
+        <Scrollbar width={{ dt: '868' }}>
         <ProductsOrExercisesContainer>
           {items.map((item, i) => {
             if (i < 20) {
@@ -79,6 +81,7 @@ const Exercises = () => {
             return null;
           })}
         </ProductsOrExercisesContainer>
+        </Scrollbar>
       )}
       ;
     </>
