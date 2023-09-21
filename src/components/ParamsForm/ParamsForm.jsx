@@ -109,7 +109,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                   placeholder="Desired Weight"
                   autoComplete="off"
                 />
-                <CalendarWrapper>
+                {/* <CalendarWrapper>
                   <Calendar
                     name="birthday"
                     value={values.birthday}
@@ -124,7 +124,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                   ) : (
                     <CalendarPlaceholder>Birthday</CalendarPlaceholder>
                   )}
-                </CalendarWrapper>
+                </CalendarWrapper> */}
               </InputGroup>
 
               <ParamsBtn setSteps={setSteps} type={'next'} step={2} />
