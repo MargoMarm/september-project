@@ -56,6 +56,20 @@ export const Wrapper = styled.div`
     }
   }
   ${mq.desktop} {
+    height: 0;
+    background: none;
+  }
+`;
+
+export const WrapperDesktop = styled.div`
+  ${mq.desktop} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 670px;
+    height: 800px;
+    pointer-events: none;
+
     background-image: url(${imgForHome.imgDx1});
     background-size: 670px 800px;
 

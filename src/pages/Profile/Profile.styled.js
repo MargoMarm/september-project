@@ -2,7 +2,13 @@ import styled from '@emotion/styled';
 import { mq, colors } from '../../utils';
 
 export const Container = styled.div`
-  padding: 0 20px 50px;
+  padding: 40px 20px 78px 20px;
+  ${mq.tablet} {
+    padding: 72px 32px 54px 32px;
+  }
+  ${mq.desktop} {
+    padding: 72px 96px 44px 96px;
+  }
 `;
 
 export const BlockWrapper = styled.div`

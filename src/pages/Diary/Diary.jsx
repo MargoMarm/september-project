@@ -4,6 +4,7 @@ import DayDiaryProductsOrExercises from '../../components/DayDiaryProductsOrExer
 import DescriptionText from '../../components/DescriptionText/DescriptionText';
 
 import {
+  DiaryWrapper,
   CustomDivForCards,
   CustomDivForTables,
   DiaryPageContainer,
@@ -34,8 +35,8 @@ const Diary = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <Title text={'Diary'} margin={mgForTitle} />
+    <DiaryWrapper>
+      <Title text={'Diary'} />
       <DiaryPageContainer>
         <CustomDivForCards>
           <DairyStatisticList />
@@ -63,7 +64,7 @@ const Diary = () => {
           />
         </CustomDivForTables>{' '}
       </DiaryPageContainer>
-    </>
+    </DiaryWrapper>
   );
 };
 
