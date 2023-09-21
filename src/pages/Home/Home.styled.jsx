@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-position: right;
   background-size: 298px 571px;
+  padding: 0 20px;
 
   @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
@@ -37,6 +38,7 @@ export const Wrapper = styled.div`
     height: 768px;
     background-image: url(${imgForHome.imgTx1});
     background-size: 437px 893px;
+    padding: 0 32px;
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
