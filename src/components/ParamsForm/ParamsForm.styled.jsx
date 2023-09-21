@@ -107,3 +107,26 @@ export const BtnSubmit = styled.button`
     line-height: 120%;
   }
 `;
+
+export const CalendarWrapper = styled.div`
+  position: relative;
+  width: 155px;
+  height: 52px;
+  margin: 7px;
+`;
+
+export const CalendarPlaceholder = styled.p`
+  position: absolute;
+  pointer-events: none;
+  color: ${colors.textWhite06};
+  top: 25%;
+  left: 10%;
+
+  font-size: 14px;
+  line-height: 128.571%;
+
+  ${mq.tablet} {
+    font-size: 16px;
+    line-height: 150%;
+  }
+`;
