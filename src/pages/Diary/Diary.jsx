@@ -66,6 +66,7 @@ const Diary = () => {
             productTable
             windowWidth={windowWidth}
             date={date}
+            to={'/products'}
           />
 
           <DayDiaryProductsOrExercises
@@ -73,6 +74,7 @@ const Diary = () => {
             exerciseTable
             windowWidth={windowWidth}
             date={date}
+            to={'/exercises'}
           />
         </CustomDivForTables>{' '}
       </DiaryPageContainer>
