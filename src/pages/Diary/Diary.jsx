@@ -135,20 +135,6 @@ const listExercises = [
 ];
 
 const Diary = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    window.addEventListener('resize', updateWindowWidth);
-
-    return () => {
-      window.removeEventListener('resize', updateWindowWidth);
-    };
-  }, []);
-
-  const updateWindowWidth = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
   return (
     <>
       <Title text={'Diary'} margin={mgForTitle} />
@@ -167,13 +153,13 @@ const Diary = () => {
             marginBottom={40}
             list={listProducts}
             productTable
-            windowWidth={windowWidth}
+            to={'/products'}
           />
 
           <DayDiaryProductsOrExercises
             list={listExercises}
             exerciseTable
-            windowWidth={windowWidth}
+            to={'/exercises'}
           />
         </CustomDivForTables>{' '}
       </DiaryPageContainer>

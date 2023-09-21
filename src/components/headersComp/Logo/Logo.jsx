@@ -5,7 +5,7 @@ export const Logo = () => {
   return (
     <>
       <WrapLogo>
-        <a href="/september-project">
+        <a href="/september-project/">
           <Svg>
             <use href={sprite + `#logo-big`}></use>
           </Svg>{' '}
