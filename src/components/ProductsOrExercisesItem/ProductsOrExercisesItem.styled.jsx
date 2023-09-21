@@ -135,6 +135,7 @@ export const NameProduct = styled.div`
 export const IconContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 24px;
   height: 24px;
   border-radius: 24px;
@@ -145,7 +146,9 @@ export const IconContainer = styled.div`
 
 export const RunningMan = styled.svg`
   width: 16px;
-  height: 16x;
+  height: 16px;
+
+  fill: ${colors.white};
 `;
 
 export const SubTypeDiv = styled.div`
