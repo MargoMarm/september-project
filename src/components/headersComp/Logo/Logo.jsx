@@ -5,7 +5,6 @@ import { UseAuth } from '../../../hooks/useAuth';
 
 export const Logo = () => {
   const { isLoggedIn } = UseAuth();
-  console.log(isLoggedIn);
 
   return (
     <>
