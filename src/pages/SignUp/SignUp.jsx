@@ -4,7 +4,7 @@ import AuthForm from '../../components/AuthForm';
 import { useDispatch } from 'react-redux';
 import { authUser } from '../../redux/auth/operation';
 import BtnSubtitle from '../../components/BtnSubtitle/BtnSubtitle';
-import { Wrapper } from '../Home/Home.styled';
+import { Wrapper, WrapperDesktop } from '../Home/Home.styled';
 
 import { mg } from '../../utils';
 
@@ -17,21 +17,28 @@ const SignUp = () => {
   };
 
   return (
-    <Wrapper>
-      <Title text={'Sign Up'} margin={mg} />
-      <SubTitle
-        text={
-          'Thank you for your interest in our platform. To complete the registration process, please provide us with the following information.'
-        }
-      />
-      <AuthForm nameIsShown={true} btnTitle="Sign Up" onSubmit={handleSubmit} />
+    <>
+      <WrapperDesktop></WrapperDesktop>
+      <Wrapper>
+        <Title text={'Sign Up'} margin={mg} />
+        <SubTitle
+          text={
+            'Thank you for your interest in our platform. To complete the registration process, please provide us with the following information.'
+          }
+        />
+        <AuthForm
+          nameIsShown={true}
+          btnTitle="Sign Up"
+          onSubmit={handleSubmit}
+        />
 
-      <BtnSubtitle
-        text={'Already have account?'}
-        to={'/signin'}
-        linkText={'Sign In'}
-      />
-    </Wrapper>
+        <BtnSubtitle
+          text={'Already have account?'}
+          to={'/signin'}
+          linkText={'Sign In'}
+        />
+      </Wrapper>
+    </>
   );
 };
 

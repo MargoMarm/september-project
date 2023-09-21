@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { mq, colors } from '../../../utils';
 
 export const HeaderContainer = styled.div`
+  position: relative;
   background-color: ${colors.black};
   height: 61px;
   display: flex;
@@ -17,6 +18,6 @@ export const HeaderContainer = styled.div`
 
   ${mq.desktop} {
     background-color: transparent;
-	 border: none;
+    border: none;
   }
 `;
