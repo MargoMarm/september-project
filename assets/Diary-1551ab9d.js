@@ -1,4 +1,4 @@
-import{n as C,m as b,j as i,c as $,N as at,r as l,Z as Q,P as H,s as se}from"./index-d20df5df.js";import{D as ie,a as lt,m as st}from"./descriptionTextMargin-ecc6a8c7.js";import{T as ct}from"./Title-234d8e67.js";import{c as _,j as x}from"./emotion-react.browser.esm-e2aed064.js";const ut=C.ul`
+import{n as C,m as b,j as i,c as $,N as at,r as l,Z as Q,P as H,s as se}from"./index-e8b491c1.js";import{D as ie,a as lt,m as st}from"./descriptionTextMargin-972edc1c.js";import{T as ct}from"./Title-143605be.js";import{c as _,j as x}from"./emotion-react.browser.esm-30ca4eac.js";const ut=C.ul`
   display: grid;
   width: 335px;
   gap: 13px;
