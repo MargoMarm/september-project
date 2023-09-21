@@ -1,31 +1,34 @@
-// import { createSlice } from '@reduxjs/toolkit';
-// import { addExercise } from './operations';
+import { createSlice } from '@reduxjs/toolkit';
+import { getExercises } from './operations';
 
-// const contactsInitialValue = { isLoading: false, error: null };
+export const exercisesSlice = createSlice({
+  name: 'filters',
+  initialState: {
+    items: [],
+    error: null,
+    isLoading: false,
+    getFilters: true,
+  },
 
-// const handlePending = state => {
-//   state.isLoading = true;
-//   state.error = null;
-// };
+  reducers: {
+    changeStatusFilter: (state, action) => {
+      state.getFilters = action.payload;
+    },
+  },
+  extraReducers: builder => {
+    builder.addCase(getExercises.fulfilled, (state, action) => {
+      state.items = action.payload;
+      state.getFilters = false;
+      state.error = null;
+    });
+    builder.addCase(getExercises.rejected, (state, action) => {
+      state.error = action.payload;
+    });
+    builder.addCase(getExercises.pending, state => {
+      state.isLoading = true;
+    });
+  },
+});
+export const { changeStatusFilter } = exercisesSlice.actions;
 
-// const handleFullfield = state => {
-//   state.isLoading = false;
-//   state.error = null;
-// };
-
-// const handleRejected = (state, payload) => {
-//   state.isLoading = true;
-//   state.error = payload.error;
-// };
-
-// const exercises = createSlice({
-//   name: 'exercises',
-//   initialState: contactsInitialValue,
-//   extraReducers: builder => {
-//     builder.addCase(addExercise.pending, handlePending);
-//     builder.addCase(addExercise.fulfilled, handleFullfield);
-//     builder.addCase(addExercise.rejected, handleRejected);
-//   },
-// });
-
-// export const exercisesReducer = exercises.reducer;
+export default exercisesSlice.reducer;

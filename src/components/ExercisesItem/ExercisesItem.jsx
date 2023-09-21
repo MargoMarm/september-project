@@ -7,10 +7,28 @@ import {
   Name,
   Filter,
 } from './ExercisesItem.styled';
+import { useEffect, useState } from 'react';
 
-export const ExercisesItem = ({ filter, name, imgURL }) => {
+export const ExercisesItem = ({ filter, name, imgURL, handleGetExercises }) => {
+  const [query, setQuery] = useState(filter);
+
+  useEffect(() => {
+    switch (filter) {
+      case 'Body parts':
+        return setQuery('bodyPart');
+      case 'Muscles':
+        return setQuery('target');
+      case 'Equipment':
+        return setQuery('equipment');
+      default:
+        return;
+    }
+  }, [filter]);
+
+  const requestString = `${query}=${name.toLowerCase()}`;
+
   return (
-    <Item>
+    <Item onClick={() => handleGetExercises(requestString, name)}>
       <WrapCard>
         <Image src={imgURL} alt={name} />
         <WrapSpan>
@@ -28,4 +46,5 @@ ExercisesItem.propTypes = {
   filter: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   imgURL: PropTypes.string.isRequired,
+  handleGetExercises: PropTypes.func.isRequired,
 };
