@@ -8,3 +8,9 @@ export const getError = state => state.diary.error;
 
 export const getErrorProductsAndExercisesError = state =>
   state.diary.productsAndExercisesError;
+
+export const burnedCalories = state => state.diary.burnedCalories;
+
+export const consumedCalories = state => state.diary.consumedCalories;
+
+export const doneExercisesTime = state => state.diary.doneExercisesTime;
