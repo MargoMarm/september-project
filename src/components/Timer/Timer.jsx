@@ -17,8 +17,9 @@ export default function Timer({
   writeTime,
   countCalory,
   remainingTime,
+  time,
 }) {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const toglePlaying = () => {
     setIsPlaying(prevstate => !prevstate);
@@ -50,7 +51,7 @@ export default function Timer({
         <BurntCaloryLabel>
           Burned calories:
           <BurntCaloryInfo>
-            {countCalory(remainingTime, calories)}
+            {countCalory(remainingTime, calories, time)}
           </BurntCaloryInfo>
         </BurntCaloryLabel>
       </FlexContainer>
@@ -63,4 +64,5 @@ Timer.propTypes = {
   writeTime: PropTypes.func.isRequired,
   countCalory: PropTypes.func.isRequired,
   remainingTime: PropTypes.number.isRequired,
+  time: PropTypes.string.isRequired,
 };

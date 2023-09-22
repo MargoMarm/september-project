@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import BtnSubmit from '../BtnSubmit';
 import Timer from '../Timer';
@@ -8,26 +8,28 @@ import {
   ButtonWrapper,
   CardInfo,
   CardTitle,
-  Container,
   GifContainer,
   Img,
   InfoCard,
   InfoCardConteiner,
   TimerContainer,
+  Container,
 } from './AddExercizeForm.styled';
 import { addToDiary } from '../../httpRequests/addToDiary';
 import { getCurrentDate } from '../../utils/getCurrentDate';
 
-export default function AddExerciseForm({
-  exerciseId,
-  calories,
-  name,
-  bodyPart,
-  gifUrl,
-  target,
-  equipment,
-  time = 180,
-}) {
+export default function AddExerciseForm({ data, closeModal }) {
+  const {
+    _id,
+    burnedCalories: calories,
+    name,
+    bodyPart,
+    gifUrl,
+    target,
+    equipment,
+    time,
+  } = data;
+
   const [remainingTime, setremainingTime] = useState(0);
   const [burnedCalory, setBurnedCalory] = useState(0);
 
@@ -50,8 +52,10 @@ export default function AddExerciseForm({
     );
   };
 
-  const countCalory = (remainingTime, calory = 180, time = 180) => {
-    const burnedCalory = Math.floor(((time - remainingTime) * calory) / time);
+  const countCalory = (remainingTime, calory, time) => {
+    const burnedCalory = Math.floor(
+      ((time * 60 - remainingTime) * calory) / (time * 60),
+    );
     setBurnedCalory(burnedCalory);
 
     return burnedCalory;
@@ -59,19 +63,23 @@ export default function AddExerciseForm({
 
   const handleSubmit = () => {
     const date = getCurrentDate();
-    const workTime = time - remainingTime;
+    const workTime = time * 60 - remainingTime;
     const data = {
-      exerciseId,
+      exerciseId: _id,
       date,
       time: workTime,
       calory: burnedCalory,
     };
 
+    if (!data.time || !data.calory) {
+      return;
+    }
+
     addToDiary(data).then(data => {
       if (!data) {
         return;
       }
-      console.log(data);
+      closeModal();
     });
   };
 
@@ -82,8 +90,9 @@ export default function AddExerciseForm({
           <Img src={gifUrl} alt="gif of exercise" />
         </GifContainer>
         <Timer
+          time={time}
           remainingTime={remainingTime}
-          colories={calories}
+          calories={calories}
           countCalory={countCalory}
           writeTime={writeRemainengTime}
         />
@@ -122,12 +131,6 @@ export default function AddExerciseForm({
 }
 
 AddExerciseForm.propTypes = {
-  calories: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  bodyPart: PropTypes.string.isRequired,
-  gifUrl: PropTypes.string.isRequired,
-  target: PropTypes.string.isRequired,
-  equipment: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
-  exerciseId: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
+  closeModal: PropTypes.func.isRequired,
 };

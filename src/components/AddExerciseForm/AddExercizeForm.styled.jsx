@@ -6,16 +6,13 @@ export const Container = styled.div`
   z-index: 100;
   width: 335px;
   height: 100%;
-  padding: 48px 16px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid ${colors.textWhite02};
-  border-radius: 12px;
+  border: transparent;
+
   background-color: ${colors.modalBackground};
   ${mq.tablet} {
     width: 694px;
-    height: 550px;
-    padding: 48px 32px;
     display: flex;
     gap: 15px;
   }

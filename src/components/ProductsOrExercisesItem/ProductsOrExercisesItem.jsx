@@ -21,6 +21,7 @@ import { pageContentToRender } from '../../utils';
 
 import Modal from '../../components/Modal/Modal';
 import AddProductForm from '../../components/AddProductForm/AddProductForm';
+import AddExerciseForm from '../AddExerciseForm';
 
 const ProductsOrExercisesItem = ({ page, data }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -98,6 +99,9 @@ const ProductsOrExercisesItem = ({ page, data }) => {
         <Modal openModal={toggleModal}>
           {page === 'product' && (
             <AddProductForm closeModal={toggleModal} data={data} />
+          )}
+          {page === 'exercise' && (
+            <AddExerciseForm closeModal={toggleModal} data={data} />
           )}
         </Modal>
       )}
