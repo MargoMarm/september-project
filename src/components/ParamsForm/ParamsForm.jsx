@@ -56,7 +56,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
           ...values,
           blood: Number(values.blood),
           levelActivity: Number(values.levelActivity),
-          birthday: format(values.birthday, 'yyyy-MM-dd'),
+          birthday: values.birthday,
         };
 
         console.log(newParamsUser);
