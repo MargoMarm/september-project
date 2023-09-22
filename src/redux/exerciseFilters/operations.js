@@ -15,10 +15,8 @@ export const fetchFilters = createAsyncThunk(
     }, 
     {
       condition: (_, { getState, extra }) => {
-        const { filter } = getState()
-      
-        if (filter.items.lenght < 1) {
-          // Already fetched or in progress, don't need to re-fetch
+        const  state  = getState();
+        if (state.filter.items.length > 1) {
           return false
         }
       }
