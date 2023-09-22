@@ -1,4 +1,4 @@
-import{n,c as i,m as r,j as e,s as l,P as o}from"./index-40bc9a90.js";const h=n.div`
+import{n,c as i,m as r,j as e,s as l,P as o}from"./index-95d477e9.js";const h=n.div`
   box-sizing: border-box;
   border: 1px solid;
 
@@ -60,7 +60,7 @@ import{n,c as i,m as r,j as e,s as l,P as o}from"./index-40bc9a90.js";const h=n.
     font-size: 24px;
     line-height: ${32/24};
   }
-`,p=({icon:t,keyValue:s,label:a,border:d="default",fill:g="false"})=>e.jsxs(h,{fill:g,border:d,children:[e.jsxs(m,{children:[e.jsxs(c,{children:[e.jsx("use",{href:`${l}#${t}`}),e.jsx("use",{href:l+`#${t}`})]}),e.jsx(b,{children:a})]}),e.jsx(f,{children:s})]});p.propTypes={icon:o.string.isRequired,keyValue:o.string.isRequired,label:o.string.isRequired,border:o.oneOf(["green","red","default"]),fill:o.oneOf(["true","false"])};const j=p,$=n.p`
+`,p=({icon:t,keyValue:s,label:a,border:d="default",fill:g="false"})=>e.jsxs(h,{fill:g,border:d,children:[e.jsxs(m,{children:[e.jsxs(c,{children:[e.jsx("use",{href:`${l}#${t}`}),e.jsx("use",{href:l+`#${t}`})]}),e.jsx(b,{children:a})]}),e.jsx(f,{children:s})]});p.propTypes={icon:o.string.isRequired,keyValue:o.any.isRequired,label:o.string.isRequired,border:o.oneOf(["green","red","default"]),fill:o.oneOf(["true","false"])};const j=p,$=n.p`
   width: auto;
   display: flex;
   margin-top: ${t=>t.margin.top.mobile}px;
