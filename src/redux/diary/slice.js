@@ -5,9 +5,9 @@ const contactsInitialValue = {
   isLoading: false,
   error: null,
   productsAndExercisesError: null,
-  burnedCalories: null,
-  consumedCalories: null,
-  doneExercisesTime: null,
+  burnedCalories: 0,
+  consumedCalories: 0,
+  doneExercisesTime: 0,
   products: [],
   exercises: [],
 };
@@ -51,9 +51,13 @@ const diary = createSlice({
     builder.addCase(deleteProduct.fulfilled, (state, { payload }) => {
       handleFullfield(state);
       const newProductsList = state.products.filter(
-        product => product._id !== payload,
+        product => product._id !== payload.productId,
       );
       state.products = newProductsList;
+
+      state.burnedCalories -= payload.calories;
+
+      state.doneExercisesTime -= payload.time;
     });
     builder.addCase(deleteProduct.rejected, handleRejected);
 
@@ -61,9 +65,13 @@ const diary = createSlice({
     builder.addCase(deleteExercise.fulfilled, (state, { payload }) => {
       handleFullfield(state);
       const newExercisesList = state.exercises.filter(
-        exercise => exercise._id !== payload,
+        exercise => exercise._id !== payload.exerciseId,
       );
       state.exercises = newExercisesList;
+
+      state.burnedCalories -= payload.calories;
+
+      state.doneExercisesTime -= payload.time;
     });
     builder.addCase(deleteExercise.rejected, handleRejected);
   },

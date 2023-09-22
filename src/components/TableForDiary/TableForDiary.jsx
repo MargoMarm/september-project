@@ -64,8 +64,8 @@ const TableForDiary = ({
                     <Row key={item._id} item={item}>
                       <Cell>{capitalizeWord(item.title)}</Cell>
                       <Cell>{capitalizeWord(item.category)}</Cell>
-                      <Cell>{(item.calories)}</Cell>
-                      <Cell>{(item.amount)}</Cell>
+                      <Cell>{item.calories}</Cell>
+                      <Cell>{item.amount}</Cell>
                       <Cell>
                         <BeforeForCell
                           bgColor={item.recommend ? '#419B09' : '#E9101D'}
@@ -74,7 +74,14 @@ const TableForDiary = ({
                       </Cell>
                       <Cell>
                         <DeleteBtn
-                          onClick={() => onDelete({ date, id: item._id })}
+                          onClick={() =>
+                            onDelete({
+                              date,
+                              id: item._id,
+                              calories: item.calories,
+                              time: item.amount,
+                            })
+                          }
                         >
                           <DeleteIcon>
                             <use href={sprite + `#icon-trash`}></use>
@@ -131,7 +138,14 @@ const TableForDiary = ({
                       <Cell>{item.time}</Cell>
                       <Cell>
                         <DeleteBtn
-                          onClick={() => onDelete({ date, id: item._id })}
+                          onClick={() =>
+                            onDelete({
+                              date,
+                              id: item._id,
+                              calories: item.calories,
+                              time: item.time,
+                            })
+                          }
                         >
                           <DeleteIcon>
                             <use href={sprite + `#icon-trash`}></use>
