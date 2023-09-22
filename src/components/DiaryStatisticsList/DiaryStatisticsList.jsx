@@ -20,6 +20,7 @@ const DairyStatisticList = () => {
 
   function secondsToMinutesAndSeconds(seconds) {
     const minutes = Math.floor(seconds / 60);
+    console.log(minutes);
     const remainingSeconds = seconds % 60;
 
     return { minutes, seconds: remainingSeconds };
@@ -29,7 +30,7 @@ const DairyStatisticList = () => {
   const result = secondsToMinutesAndSeconds(totalSeconds);
 
   let resultTime = dayliTime - result.minutes;
-  let theRestOfTheСalories = dailyСalories - burnCalories;
+  let theRestOfTheСalories = dailyСalories - consumCalories;
 
   return (
     <List>
@@ -43,7 +44,7 @@ const DairyStatisticList = () => {
         icon="barbell"
         fill="true"
         label="Daily norm of sports"
-        keyValue={dayliTime}
+        keyValue={dayliTime + ' min'}
       ></DailyStatsCards>
       <DailyStatsCards
         icon="apple"
@@ -64,7 +65,7 @@ const DairyStatisticList = () => {
       <DailyStatsCards
         icon="runningMan"
         label="The rest of sports"
-        keyValue={resultTime}
+        keyValue={resultTime + ' min'}
         border={resultTime > dayliTime ? 'green' : 'default'}
       ></DailyStatsCards>
     </List>

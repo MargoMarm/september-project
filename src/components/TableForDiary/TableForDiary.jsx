@@ -142,7 +142,7 @@ const TableForDiary = ({
                             onDelete({
                               date,
                               id: item._id,
-                              calories: item.calories,
+                              calories: item.burnedCalories,
                               time: item.time,
                             })
                           }

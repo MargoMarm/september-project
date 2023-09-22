@@ -55,9 +55,7 @@ const diary = createSlice({
       );
       state.products = newProductsList;
 
-      state.burnedCalories -= payload.calories;
-
-      state.doneExercisesTime -= payload.time;
+      state.consumedCalories -= payload.calories;
     });
     builder.addCase(deleteProduct.rejected, handleRejected);
 
