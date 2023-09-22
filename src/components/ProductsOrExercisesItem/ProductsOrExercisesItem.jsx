@@ -54,7 +54,6 @@ const ProductsOrExercisesItem = ({ page, data }) => {
   };
 
   const contentToRender = pageContentToRender(page, data);
-  //   console.log(contentToRender);
 
   return (
     <Item>

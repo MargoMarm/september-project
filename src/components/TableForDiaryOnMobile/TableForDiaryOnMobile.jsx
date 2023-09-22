@@ -36,11 +36,11 @@ const TableForDiaryOnMobile = ({
               <BottomContainer>
                 <Cell>
                   Calories
-                  <CellValue>{(item.calories)}</CellValue>
+                  <CellValue>{item.calories}</CellValue>
                 </Cell>
 
                 <Cell>
-                  Weight <CellValue>{(item.amount)}</CellValue>
+                  Weight <CellValue>{item.amount}</CellValue>
                 </Cell>
 
                 <Cell>
@@ -52,7 +52,16 @@ const TableForDiaryOnMobile = ({
 
                 <Cell>
                   <CellValue>
-                    <DeleteBtn onClick={() => onDelete({ date, id: item._id })}>
+                    <DeleteBtn
+                      onClick={() =>
+                        onDelete({
+                          date,
+                          id: item._id,
+                          calories: item.calories,
+                          time: item.amount,
+                        })
+                      }
+                    >
                       <DeleteIcon>
                         <use href={sprite + `#icon-trash`}></use>
                       </DeleteIcon>
@@ -98,7 +107,16 @@ const TableForDiaryOnMobile = ({
                 <Cell>
                   {' '}
                   <CellValue>
-                    <DeleteBtn onClick={() => onDelete({ date, id: item._id })}>
+                    <DeleteBtn
+                      onClick={() =>
+                        onDelete({
+                          date,
+                          id: item._id,
+                          calories: item.burnedCalories,
+                          time: item.time,
+                        })
+                      }
+                    >
                       <DeleteIcon>
                         <use href={sprite + `#icon-trash`}></use>
                       </DeleteIcon>
