@@ -3,6 +3,7 @@ import { colors, mq } from '../../utils';
 
 export const Container = styled.div`
   position: relative;
+  z-index: 100;
   width: 335px;
   height: 100%;
   padding: 48px 16px;
@@ -23,8 +24,14 @@ export const Container = styled.div`
 export const GifContainer = styled.div`
   width: 270px;
   height: 226px;
+  overflow: hidden;
   border: 1px solid ${colors.textWhite02};
   border-radius: 12px;
+`;
+
+export const Img = styled.img`
+  width: 270px;
+  height: 226px;
 `;
 
 export const TimerContainer = styled.div`
@@ -37,59 +44,6 @@ export const TimerContainer = styled.div`
   ${mq.tablet} {
     margin-bottom: 0;
   }
-`;
-
-export const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const TimerTitle = styled.div`
-  margin-bottom: 4px;
-  font-size: 10px;
-  line-height: 140%;
-  color: ${colors.textWhite04};
-`;
-
-export const TimerVisualLine = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 124px;
-  height: 124px;
-  border-radius: 50%;
-  border: 4px solid ${colors.orange};
-`;
-
-export const Timer = styled.div`
-  font-size: 16px;
-  line-height: 150%;
-  color: ${colors.white};
-`;
-
-export const PauseButton = styled.button`
-  margin-bottom: 8px;
-  border: none;
-  outline: none;
-  padding: 0;
-  background-color: transparent;
-`;
-
-export const Svg = styled.svg`
-  width: 32px;
-  height: 32px;
-  fill: ${colors.orange};
-`;
-
-export const BurntCaloryLabel = styled.div`
-  font-size: 14px;
-  line-height: 128 %;
-  color: ${colors.textWhite03};
-`;
-
-export const BurntCaloryInfo = styled.span`
-  color: ${colors.orange};
 `;
 
 export const InfoCardConteiner = styled.div`
@@ -139,4 +93,10 @@ export const ButtonWrapper = styled.div`
     bottom: 48px;
     right: 32px;
   }
+`;
+
+export const Watch = styled.span`
+  font-size: 16px;
+  line-height: 150%;
+  color: ${colors.white};
 `;

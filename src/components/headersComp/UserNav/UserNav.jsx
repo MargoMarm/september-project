@@ -1,25 +1,42 @@
+import { useDispatch } from 'react-redux';
+import { handleLogout } from '../../../utils';
 import CustomNavLink from '../../CustomNavLink/CustomNavLink';
-import { WrapUserNav, Button, Svg,SvgUser, ButtonWrap ,Span} from './UserNav.styled';
+import {
+  WrapUserNav,
+  Button,
+  Svg,
+  SvgUser,
+  ButtonWrap,
+  Span,
+} from './UserNav.styled';
+import { NavLink } from 'react-router-dom';
+
 import sprite from '../../../assets/sprite.svg';
 
 export const UserNav = () => {
+  const dispatch = useDispatch();
+
   return (
     <WrapUserNav>
-      <CustomNavLink text="Diary" isinheader={'true'} />
-      <CustomNavLink text="Products" isinheader={'true'} />
-      <CustomNavLink text="Exercises" isinheader={'true'} />
+      <CustomNavLink to="/diary" text="Diary" isinheader={'true'} />
+      <CustomNavLink to="/products" text="Products" isinheader={'true'} />
+      <CustomNavLink to="/exercises" text="Exercises" isinheader={'true'} />
       <ButtonWrap>
-        <Button>
+        <NavLink to={'/profile'}>
           <Svg>
             <use href={sprite + `#settings`}></use>
           </Svg>{' '}
-        </Button>
+        </NavLink>
         <Button>
           <SvgUser>
             <use href={sprite + `#ecllipse`}></use>
           </SvgUser>{' '}
         </Button>
-        <Button>
+        <Button
+          onClick={() => {
+            handleLogout(dispatch);
+          }}
+        >
           <Span>Logout</Span>
           <Svg>
             <use href={sprite + `#logout`}></use>

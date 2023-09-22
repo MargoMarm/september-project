@@ -1,18 +1,24 @@
 import { HeaderContainer } from './Header.styled';
 import UserNav from '../UserNav/UserNav';
 import Logo from '../Logo/Logo';
-import { Navbar } from '../../MobMenu/Sidebar';
+import MobMenu from '../../MobMenu/MobMenu';
+
+import { UseAuth } from '../../../hooks/useAuth';
 
 export const Header = () => {
+  const { isLoggedIn } = UseAuth();
+
   return (
-      <HeaderContainer>
-        <Logo />
-        <UserNav />
-        <Navbar />
-      </HeaderContainer>
+    <HeaderContainer>
+      <Logo />
+      {isLoggedIn && (
+        <>
+          <UserNav />
+          <MobMenu />
+        </>
+      )}
+    </HeaderContainer>
   );
 };
-
-
 
 export default Header;
