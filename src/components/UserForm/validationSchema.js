@@ -2,7 +2,6 @@ import * as yup from 'yup';
 
 export default yup.object({
   name: yup.string().required(),
-  email: yup.string().required(),
   height: yup.number().min(150).required(),
   currentWeight: yup.number().min(35).required(),
   desiredWeight: yup.number().min(35).required(),

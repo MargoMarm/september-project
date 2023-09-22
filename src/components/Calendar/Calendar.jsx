@@ -1,20 +1,18 @@
 import PropTypes from 'prop-types';
 import { forwardRef} from 'react';
-import DatePicker, { registerLocale } from 'react-datepicker';
+import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-import uk from 'date-fns/locale/uk';
-import { format } from 'date-fns';
+import { parseISO  } from 'date-fns';
 import { Icon, Ipt, Label, GlobalStyles } from './Calendar.styled';
 import sprite from '../../assets/sprite.svg';
 import { Global } from '@emotion/react';
-registerLocale('uk', uk);
 
 export default function Calendar({ name, value, onChange, maxDate, minDate, showYearDropdown, dateFormat, withoutВorder }) {
   const ExampleCustomInput = forwardRef((dd, ref) => {
-    const { onClick } = dd;
+    const { value, onClick } = dd;
     return(
       <Label onClick={onClick} ref={ref}>
-        <Ipt value={value ? format(value, dateFormat || "dd.MM.yyyy") : ''} name="name" readOnly withoutВorder={withoutВorder} />
+        <Ipt value={value || ''} name="name" readOnly withoutВorder={withoutВorder} />
         <Icon>
           <use href={`${sprite}#calendar`}></use>
         </Icon>
@@ -28,14 +26,14 @@ export default function Calendar({ name, value, onChange, maxDate, minDate, show
     <>
       <DatePicker
         name={name}
-        locale="uk"
-        selected={value}
+        selected={typeof value == "string" ? parseISO(value) : value}
         onChange={date => { onChange(name, date) }}
         maxDate={maxDate}
         minDate={minDate}
         yearDropdownItemNumber={40}
         customInput={<ExampleCustomInput />}
         scrollableYearDropdown
+        dateFormat={dateFormat || "dd.MM.yyyy"}
         showYearDropdown={showYearDropdown}
       />
       <Global styles={GlobalStyles} />
