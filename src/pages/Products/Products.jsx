@@ -5,6 +5,9 @@ import { FlexWrapper, ProductPageContainer } from './Products.styled';
 import productsList from '../../data/products.json';
 import Scrollbar from '../../components/Scrollbar';
 import ProductsOrExercisesItem from '../../components/ProductsOrExercisesItem/ProductsOrExercisesItem';
+// import Modal from '../../components/Modal/Modal';
+// import AddProductForm from '../../components/AddProductForm/AddProductForm';
+// import { useState } from 'react';
 
 const Products = () => {
   return (
@@ -25,6 +28,7 @@ const Products = () => {
                 />
               );
             }
+
             return null;
           })}
         </ProductsOrExercisesContainer>
