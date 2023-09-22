@@ -33,7 +33,7 @@ const DailyStatsCards = ({
 
 DailyStatsCards.propTypes = {
   icon: PropTypes.string.isRequired,
-  keyValue: PropTypes.string.isRequired,
+  keyValue: PropTypes.any.isRequired,
   label: PropTypes.string.isRequired,
   border: PropTypes.oneOf(['green', 'red', "default"]),
   fill: PropTypes.oneOf(['true', 'false']),

@@ -5,6 +5,9 @@ const contactsInitialValue = {
   isLoading: false,
   error: null,
   productsAndExercisesError: null,
+  burnedCalories: null,
+  consumedCalories: null,
+  doneExercisesTime: null,
   products: [],
   exercises: [],
 };
@@ -33,6 +36,9 @@ const diary = createSlice({
       state.isLoading = false;
       state.products = payload.products;
       state.exercises = payload.exercises;
+      state.burnedCalories = payload.burnedCalories;
+      state.consumedCalories = payload.consumedCalories;
+      state.doneExercisesTime = payload.doneExercisesTime;
     });
     builder.addCase(getDiaryList.rejected, (state, { payload }) => {
       state.productsAndExercisesError = payload;
