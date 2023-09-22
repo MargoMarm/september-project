@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import {
   authUser,
   fetchCurrentUser,
@@ -88,12 +90,18 @@ export const authSlice = createSlice({
     });
 
     //Update user data
+    builder.addCase(updateUserData.pending, state => {
+      Loading.standard({ svgColor: '#E6533C' });
+    });
     builder.addCase(updateUserData.fulfilled, (state, { payload }) => {
       replaceUserState(state, payload);
       state.error = null;
+      Loading.remove();
+      Notify.success('Your details have been updated');
     });
     builder.addCase(updateUserData.rejected, (state, action) => {
       state.error = action.payload;
+      Loading.remove();
     });
   },
 });
