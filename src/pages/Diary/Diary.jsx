@@ -2,6 +2,7 @@ import DairyStatisticList from '../../components/DiaryStatisticsList/DiaryStatis
 import Title from '../../components/Title/Title';
 import DayDiaryProductsOrExercises from '../../components/DayDiaryProductsOrExercises/DayDiaryProductsOrExercises';
 import DescriptionText from '../../components/DescriptionText/DescriptionText';
+import Calendar from '../../components/Calendar/Calendar'
 
 import {
   DiaryWrapper,
@@ -37,6 +38,7 @@ const Diary = () => {
   return (
     <DiaryWrapper>
       <Title text={'Diary'} />
+      <Calendar/>
       <DiaryPageContainer>
         <CustomDivForCards>
           <DairyStatisticList />
