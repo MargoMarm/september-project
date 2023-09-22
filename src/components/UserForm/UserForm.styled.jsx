@@ -52,7 +52,7 @@ export const HalfLabel = styled(Label)`
 
 export const Input = styled.input`
   width: 100%;
-  height: 46px;
+  height: 100%;
   padding: 14px;
   color: ${colors.grey};
   background-color: inherit;

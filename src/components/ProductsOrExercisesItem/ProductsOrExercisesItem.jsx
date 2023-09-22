@@ -19,8 +19,13 @@ import { useEffect, useState } from 'react';
 
 import { pageContentToRender } from '../../utils';
 
+import Modal from '../../components/Modal/Modal';
+import AddProductForm from '../../components/AddProductForm/AddProductForm';
+
 const ProductsOrExercisesItem = ({ page, data }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => setIsModalOpen(state => !state);
 
   useEffect(() => {
     window.addEventListener('resize', updateWindowWidth);
@@ -49,14 +54,15 @@ const ProductsOrExercisesItem = ({ page, data }) => {
   };
 
   const contentToRender = pageContentToRender(page, data);
-//   console.log(contentToRender);
+  //   console.log(contentToRender);
 
   return (
     <Item>
       <SubDiv>
         <TextDiet>{contentToRender.subtitle}</TextDiet>
         {page === 'product' && <TextRecommended>Recommended</TextRecommended>}
-        <AddBtn>
+
+        <AddBtn onClick={toggleModal}>
           {contentToRender.button}
           <ArrowRight>
             <use href={sprite + `#arrow-right`}></use>
@@ -87,6 +93,14 @@ const ProductsOrExercisesItem = ({ page, data }) => {
           <SubTypeValue>{contentToRender.subText3}</SubTypeValue>
         </SubType>
       </SubTypeDiv>
+
+      {isModalOpen && (
+        <Modal openModal={toggleModal}>
+          {page === 'product' && (
+            <AddProductForm closeModal={toggleModal} data={data} />
+          )}
+        </Modal>
+      )}
     </Item>
   );
 };
@@ -94,6 +108,7 @@ const ProductsOrExercisesItem = ({ page, data }) => {
 ProductsOrExercisesItem.propTypes = {
   page: PropTypes.string,
   data: PropTypes.object,
+  openModal: PropTypes.func,
 };
 
 export default ProductsOrExercisesItem;

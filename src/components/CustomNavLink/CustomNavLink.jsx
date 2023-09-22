@@ -2,9 +2,9 @@ import { Link } from './CustomNavLink.styled';
 
 import PropTypes from 'prop-types';
 
-const CustomNavLink = ({ to, isrange, isinheader, text }) => {
+const CustomNavLink = ({ to, isorange, isinheader, text }) => {
   return (
-    <Link isrange={isrange} isinheader={isinheader} to={to}>
+    <Link isorange={isorange} isinheader={isinheader} to={to}>
       {text}
     </Link>
   );
@@ -12,7 +12,7 @@ const CustomNavLink = ({ to, isrange, isinheader, text }) => {
 
 CustomNavLink.propTypes = {
   to: PropTypes.string,
-  isrange: PropTypes.string,
+  isorange: PropTypes.string,
   isinheader: PropTypes.string,
   text: PropTypes.string,
 };

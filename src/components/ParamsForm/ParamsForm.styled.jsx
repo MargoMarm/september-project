@@ -3,15 +3,13 @@ import { Field } from 'formik';
 import { colors, mq } from '../../utils';
 
 export const InputGroup = styled.div`
-  ${mq.smallMobile} {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 
-    margin: -7px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-  }
+  margin: -7px;
+  margin-top: 50px;
+  margin-bottom: 30px;
 
   ${mq.tablet} {
     justify-content: flex-start;
@@ -22,31 +20,29 @@ export const InputGroup = styled.div`
 `;
 
 export const FormikField = styled(Field)`
-  ${mq.smallMobile} {
-    width: 155px;
-    height: 52px;
-    padding: 14px 0 14px 14px;
-    margin: 7px;
+  width: 155px;
+  height: 52px;
+  padding: 14px 0 14px 14px;
+  margin: 7px;
 
-    font-size: 14px;
-    line-height: 128.571%;
+  font-size: 14px;
+  line-height: 128.571%;
 
-    border: 1px solid rgba(239, 237, 232, 0.3);
-    border-radius: 12px;
-    outline: none;
+  border: 1px solid rgba(239, 237, 232, 0.3);
+  border-radius: 12px;
+  outline: none;
 
-    background-color: transparent;
+  background-color: transparent;
+  color: ${colors.textWhite06};
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::placeholder {
     color: ${colors.textWhite06};
+  }
 
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    &::placeholder {
-      color: ${colors.textWhite06};
-    }
-
-    &:focus-within {
-      border-color: ${colors.orange};
-    }
+  &:focus-within {
+    border-color: ${colors.orange};
   }
 
   ${mq.tablet} {
@@ -56,11 +52,9 @@ export const FormikField = styled(Field)`
 `;
 
 export const FormRadioBtnGroupWrapper = styled.div`
-  ${mq.smallMobile} {
-    display: flex;
-    margin-bottom: 28px;
-    padding-left: 2px;
-  }
+  display: flex;
+  margin-bottom: 28px;
+  padding-left: 2px;
 
   ${mq.tablet} {
     margin-bottom: 32px;
@@ -68,11 +62,10 @@ export const FormRadioBtnGroupWrapper = styled.div`
 `;
 
 export const BtnsAndBlock = styled.div`
-  ${mq.smallMobile} {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 159px;
-  }
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 159px;
+
   ${mq.tablet} {
     margin-bottom: 283px;
   }
@@ -82,30 +75,28 @@ export const BtnsAndBlock = styled.div`
 `;
 
 export const BtnSubmit = styled.button`
-  ${mq.smallMobile} {
-    margin-top: 28px;
-    margin-right: 16px;
-    padding: 12px 40px;
+  margin-top: 28px;
+  margin-right: 16px;
+  padding: 12px 40px;
 
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 112.5%;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 112.5%;
 
-    color: ${colors.white};
-    background: ${colors.orange};
+  color: ${colors.white};
+  background: ${colors.orange};
 
-    border: none;
-    border-radius: 12px;
+  border: none;
+  border-radius: 12px;
 
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover {
-      transform: scale(0.99);
-    }
+  &:hover {
+    transform: scale(0.99);
+  }
 
-    &:focus {
-      transform: scale(0.99);
-    }
+  &:focus {
+    transform: scale(0.99);
   }
 
   ${mq.tablet} {
@@ -114,5 +105,28 @@ export const BtnSubmit = styled.button`
 
     font-size: 20px;
     line-height: 120%;
+  }
+`;
+
+export const CalendarWrapper = styled.div`
+  position: relative;
+  width: 155px;
+  height: 52px;
+  margin: 7px;
+`;
+
+export const CalendarPlaceholder = styled.p`
+  position: absolute;
+  pointer-events: none;
+  color: ${colors.textWhite06};
+  top: 25%;
+  left: 10%;
+
+  font-size: 14px;
+  line-height: 128.571%;
+
+  ${mq.tablet} {
+    font-size: 16px;
+    line-height: 150%;
   }
 `;

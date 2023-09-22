@@ -39,6 +39,7 @@ const Products = () => {
                 />
               );
             }
+
             return null;
           })}
         </ProductsOrExercisesContainer>

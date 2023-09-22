@@ -12,8 +12,9 @@ import {
   Radio,
   colors,
 } from '@mui/material';
-// import { format } from 'date-fns';
-// import axios from 'axios';
+import { sub } from 'date-fns';
+import { format } from 'date-fns';
+import axios from 'axios';
 
 import {
   FormikField,
@@ -21,6 +22,8 @@ import {
   FormRadioBtnGroupWrapper,
   BtnsAndBlock,
   BtnSubmit,
+  CalendarWrapper,
+  CalendarPlaceholder,
 } from './ParamsForm.styled';
 import { colors as palette } from '../../utils';
 import { mg } from '../../utils';
@@ -29,10 +32,13 @@ import ParamsBlockCard from '../ParamsBlockСard';
 import ParamsBtn from '../ParamsBtn';
 import Title from '../Title/Title';
 import SubTitle from '../SubTitle/SubTitle';
-// import Calendar from '../Calendar/Calendar';
+import Calendar from '../Calendar/Calendar';
 
 const ParamsForm = ({ setSteps, setSwiperRef }) => {
   const navigate = useNavigate();
+
+  const maxDate = sub(new Date(), { years: 18 });
+  const minDate = sub(new Date(), { years: 70 });
 
   return (
     <Formik
@@ -40,24 +46,25 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
         height: '',
         currentWeight: '',
         desiredWeight: '',
-        birthday: '',
+        birthday: maxDate,
         blood: '',
         sex: '',
         levelActivity: '',
       }}
       onSubmit={async (values, Formik) => {
-        // const newParamsUser = {
-        //   ...values,
-        //   blood: Number(values.blood),
-        //   levelActivity: Number(values.levelActivity),
-        //   birthday: format(date, 'yyyy-MM-dd'),
-        // };
+        const newParamsUser = {
+          ...values,
+          blood: Number(values.blood),
+          levelActivity: Number(values.levelActivity),
+          birthday: values.birthday,
+        };
 
-        // await axios.post(
-        //   'https://power-pulse-rest-api.onrender.com/api/users/create',
-        //   newParamsUser,
-        // );
-        console.log(values);
+        console.log(newParamsUser);
+
+        await axios.post(
+          'https://power-pulse-rest-api.onrender.com/api/users/create',
+          newParamsUser,
+        );
 
         navigate('/diary');
 
@@ -67,7 +74,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
       }}
       validationSchema={paramsSchema}
     >
-      {({ handleChange }) => (
+      {({ handleChange, values, setFieldValue }) => (
         <Form>
           <Swiper
             spaceBetween={10}
@@ -102,14 +109,22 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                   placeholder="Desired Weight"
                   autoComplete="off"
                 />
-                {/* <div style={{ width: '155px', height: '52px', margin: '7px' }}>
+                <CalendarWrapper>
                   <Calendar
                     name="birthday"
-                    onChange={handleChange}
-                    date={date}
-                    setDate={setDate}
+                    value={values.birthday}
+                    maxDate={maxDate}
+                    minDate={minDate}
+                    dateFormat="dd.MM.yyyy"
+                    showYearDropdown
+                    onChange={setFieldValue}
                   />
-                </div> */}
+                  {values.birthday ? (
+                    ''
+                  ) : (
+                    <CalendarPlaceholder>Birthday</CalendarPlaceholder>
+                  )}
+                </CalendarWrapper>
               </InputGroup>
 
               <ParamsBtn setSteps={setSteps} type={'next'} step={2} />

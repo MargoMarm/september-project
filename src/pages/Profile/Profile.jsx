@@ -4,8 +4,7 @@ import UserCard from "../../components/UserCard";
 import UserForm from "../../components/UserForm";
 import { BlockWrapper, FormWrap, Container } from "./Profile.styled";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCurrentUser } from "../../redux/auth/operation";
-import { selectUser } from "../../redux/auth/selectors";
+import { updateUserData } from "../../redux/auth/operation";
 
 const mgUserPage = {
   top: { tab: 72, mob: 40 },
@@ -13,14 +12,21 @@ const mgUserPage = {
 };
 export default function Profile() {
   const [avatarFile, setAvatarFile] = useState();
+  const dispatch = useDispatch()
   
   const handleSubmit = (data) => {
-     console.log(data);
+    const formData = new FormData();
+    Object.entries(data).forEach(value => {
+      formData.append(value[0], value[1])
+    });
+    avatarFile && formData.append('avatar', avatarFile, avatarFile.name)
+    
+    dispatch(updateUserData(formData));
   }
 
   return (
     <Container>
-      <Title text="Profile Settings" margin={mgUserPage} />
+      <Title text="Profile Settings" />
 
       <BlockWrapper>
         <UserCard setAvatar={setAvatarFile} />

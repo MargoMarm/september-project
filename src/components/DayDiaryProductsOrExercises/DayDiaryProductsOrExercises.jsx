@@ -11,6 +11,8 @@ import {
 import sprite from '../../assets/sprite.svg';
 import TableForDiary from '../TableForDiary/TableForDiary';
 import TableForDiaryOnMobile from '../TableForDiaryOnMobile/TableForDiaryOnMobile';
+import { useDispatch } from 'react-redux';
+import { deleteExercise, deleteProduct } from '../../redux/diary/operations';
 
 const DayDiaryProductsOrExercises = ({
   to,
@@ -18,7 +20,19 @@ const DayDiaryProductsOrExercises = ({
   list,
   productTable,
   exerciseTable,
+  date,
 }) => {
+  const dispatch = useDispatch();
+
+  const handleDelete = ({ date, id }) => {
+    if (productTable) {
+      dispatch(deleteProduct({ productId: id, date }));
+    }
+    if (exerciseTable) {
+      dispatch(deleteExercise({ exerciseId: id, date }));
+    }
+  };
+
   return (
     <DayDiaryContainer marginBottom={marginBottom}>
       <DayDiarySubDiv>
@@ -38,11 +52,15 @@ const DayDiaryProductsOrExercises = ({
             list={list}
             productTable={productTable}
             exerciseTable={exerciseTable}
+            onDelete={handleDelete}
+            date={date}
           />
           <TableForDiaryOnMobile
             list={list}
             productTable={productTable}
             exerciseTable={exerciseTable}
+            onDelete={handleDelete}
+            date={date}
           />
         </>
       ) : (
@@ -60,6 +78,7 @@ DayDiaryProductsOrExercises.propTypes = {
   list: PropTypes.array,
   productTable: PropTypes.bool,
   exerciseTable: PropTypes.bool,
+  date: PropTypes.string,
 };
 
 export default DayDiaryProductsOrExercises;
