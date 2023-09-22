@@ -20,7 +20,6 @@ const DairyStatisticList = () => {
 
   function secondsToMinutesAndSeconds(seconds) {
     const minutes = Math.floor(seconds / 60);
-    console.log(minutes);
     const remainingSeconds = seconds % 60;
 
     return { minutes, seconds: remainingSeconds };
