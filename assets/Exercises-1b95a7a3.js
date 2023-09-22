@@ -1,4 +1,4 @@
-import{n as a,m as r,c as n,P as p,r as h,j as e,u as b,f as x,g as E,h as w,i as q,k as y,o as B}from"./index-32125c21.js";import{c as S}from"./capitalizeWord-85339af4.js";import{s as u}from"./styled-components.browser.esm-4c37130d.js";import{T as j}from"./Title-477e2183.js";import{S as T,P as F,a as z}from"./ProductsOrExercisesItem-1c24a42a.js";const I=a.li`
+import{n as a,m as r,c as n,P as p,r as h,j as e,u as b,f as x,g as E,h as w,i as q,k as y,o as B}from"./index-f3b94b2f.js";import{c as S}from"./capitalizeWord-85339af4.js";import{s as u}from"./styled-components.browser.esm-84aedbde.js";import{T as j}from"./Title-240f593b.js";import{S as T,P as F,a as z}from"./ProductsOrExercisesItem-1cde1667.js";const I=a.li`
   margin-bottom: 20px;
 
   &:last-child {
