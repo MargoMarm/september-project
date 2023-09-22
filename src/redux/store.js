@@ -15,6 +15,7 @@ import { authSlice } from './auth/slice';
 import filterSlice from './exerciseFilters/slice';
 import exercisesSlice from './exercises/slice';
 import { diaryReducer } from './diary/slice';
+import productsSlice  from './productsFilter/slice';
 
 const persistConfig = {
   key: 'token',
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   filter: filterSlice,
   exercises: exercisesSlice,
   diary: diaryReducer,
+  products: productsSlice,
 });
 
 export const store = configureStore({

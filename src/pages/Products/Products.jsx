@@ -14,12 +14,12 @@ const Products = () => {
   // const [category, setCategory] = useState();
   // const [recomended, setRecomended] = useState();
 
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
   const products = useSelector(getProducts);
 
   useEffect(() => {
-    dispath(fetchProducts());
-  }, [dispath]);
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   return (
     <ProductPageContainer>
@@ -39,7 +39,6 @@ const Products = () => {
                 />
               );
             }
-
             return null;
           })}
         </ProductsOrExercisesContainer>
