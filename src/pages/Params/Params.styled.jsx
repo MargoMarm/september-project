@@ -122,6 +122,7 @@ export const ParamsPageWrapper = styled.div`
 
     ${mq.desktop} {
       background: none;
+      padding: 0 32px 32px 96px;
     }
   }
 `;
@@ -133,8 +134,6 @@ export const ParamsPageWrapperDesktop = styled.div`
     right: 0;
     width: 670px;
     height: 800px;
-
-    padding: 0 32px 32px 96px;
 
     background-size: 670px 800px;
     background-repeat: no-repeat;

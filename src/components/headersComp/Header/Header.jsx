@@ -7,14 +7,14 @@ import MobMenu from '../../MobMenu/MobMenu';
 import { UseAuth } from '../../../hooks/useAuth';
 
 export const Header = () => {
-  const { isLoggedIn, isRefreshing } = UseAuth();
+  const { isLoggedIn } = UseAuth();
 
   const { pathname } = useLocation();
 
   return (
     <HeaderContainer>
       <Logo />
-      {isLoggedIn && pathname !== '/params' && isRefreshing && (
+      {isLoggedIn && pathname !== '/params' && (
         <>
           <UserNav />
           <MobMenu />
