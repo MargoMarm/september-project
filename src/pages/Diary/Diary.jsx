@@ -28,6 +28,8 @@ import {
 import sprite from '../../assets/sprite.svg';
 import CustomInputForCalendar from '../../components/CustomInputForCalendar/CustomInputForCalendar';
 
+import formatDate from '../../utils/formatDate';
+
 const Diary = () => {
   const [date, setDate] = useState(new Date());
   const [parsedDate, setParsedDate] = useState('');
@@ -44,11 +46,11 @@ const Diary = () => {
   }, [dispatch, date, parsedDate]);
 
   const handleChangeAndParsedDate = (_, newDate) => {
-    const [dateSplit] = newDate.toLocaleString().split(', ');
-    const date = dateSplit.replaceAll('.', '-');
-    setParsedDate(date);
+    const parsedDate = formatDate(newDate);
+
+    setParsedDate(parsedDate);
     setDate(newDate);
-    return date;
+    return parsedDate;
   };
 
   const changeDay = (operator, initialDateStr) => {
