@@ -34,12 +34,11 @@ const diary = createSlice({
     builder.addCase(getDiaryList.pending, handlePending);
     builder.addCase(getDiaryList.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.products = payload.products;
-      state.exercises = payload.exercises;
-      state.burnedCalories = payload.burnedCalories;
-      state.consumedCalories = payload.consumedCalories;
-      state.doneExercisesTime = payload.doneExercisesTime;
-    });
+      state.products = payload.products || [];
+      state.exercises = payload.exercises || [];
+      state.burnedCalories = payload.burnedCalories || 0;
+      state.consumedCalories = payload.consumedCalories || 0;
+      state.doneExercisesTime = payload.doneExercisesTime || 0})
     builder.addCase(getDiaryList.rejected, (state, { payload }) => {
       state.productsAndExercisesError = payload;
       state.isLoading = false;

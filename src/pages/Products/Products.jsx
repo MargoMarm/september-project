@@ -33,7 +33,7 @@ const Products = () => {
             if (i < 20) {
               return (
                 <ProductsOrExercisesItem
-                  key={product._id}
+                  key={product.id}
                   page="product"
                   data={product}
                 />

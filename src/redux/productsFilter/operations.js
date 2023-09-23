@@ -3,9 +3,9 @@ import axios from 'axios';
 
 export const fetchProducts = createAsyncThunk(
   `filter/getProducts`,
-  async (_, thunkAPI) => {
+  async (searchParams, thunkAPI) => {
     try {
-      const res = await axios.get(`api/products`);
+      const res = await axios.get(`api/products?${searchParams}`);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -13,12 +13,16 @@ export const fetchProducts = createAsyncThunk(
   },
 );
 
-export const fetchFilteredProducts = createAsyncThunk(
-  `filter/getFilteredProducts`,
-  async (searchParams, thunkAPI) => {
+
+
+export const getCategories = createAsyncThunk(
+  `categories/getCategories`,
+  async (_, thunkAPI) => {
     try {
-      const res = await axios.get(`api/products&${searchParams}`);
-      return res.data;
+      const res = await axios.get("api/categories"); 
+    
+      return res.data[0].categories;
+      
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
