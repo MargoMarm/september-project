@@ -21,6 +21,7 @@ import { pageContentToRender } from '../../utils';
 
 import Modal from '../../components/Modal/Modal';
 import AddProductForm from '../../components/AddProductForm/AddProductForm';
+import axios from 'axios';
 
 const ProductsOrExercisesItem = ({ page, data }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -57,7 +58,7 @@ const ProductsOrExercisesItem = ({ page, data }) => {
 
   // це у нас буде універсальна функція для додавання продуктів або вправ, в залежності яка сторінка,
   //  передаємо певні влстивості в обєкт який приймає функція
-  const addProductOrExercise = ({
+  const addProductOrExercise = async ({
     id,
     date,
     amount,
@@ -67,9 +68,23 @@ const ProductsOrExercisesItem = ({ page, data }) => {
   }) => {
     if ((page = 'product')) {
       console.log(id, date, amount, calories);
+      const data = {
+        productId: id,
+        date,
+        amount, 
+        calories
+      }
+      try {
+        const response = await axios.post(`api/diary/add-product`, data );
+        console.log(response);
+        return response;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
       // тут буде dispatch(addProduct бла бла бла)
     }
     if ((page = 'exercises')) {
+      console.log(id, date, time, burnedCalories);
       // тут буде dispatch(addExercises бла бла бла)
     }
   };
