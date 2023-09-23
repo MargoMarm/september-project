@@ -61,8 +61,8 @@ export const Input = styled.input`
   transition: border-color 0.3s;
 
   &[aria-invalid] {
-    border-color:${colors.textError}!important;
-    color:${colors.textError}!important;
+    border-color: ${colors.textError}!important;
+    color: ${colors.textError}!important;
   }
 
   &:disabled {
@@ -77,13 +77,13 @@ export const Input = styled.input`
 `;
 
 export const ErrorField = styled.span`
-position: absolute;
-top: 100%;
-left: 5px;
-max-width: calc(100% - 10px);
-font-size: 12px;
-line-height: 1;
-color: ${colors.textError};
+  position: absolute;
+  top: 100%;
+  left: 5px;
+  max-width: calc(100% - 10px);
+  font-size: 12px;
+  line-height: 1;
+  color: ${colors.textError};
 `;
 
 export const Caption = styled.p`
