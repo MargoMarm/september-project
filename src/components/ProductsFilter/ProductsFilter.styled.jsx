@@ -25,6 +25,7 @@ export const Select = styled.select`
 
   
   ${mq.tablet} {
+    width: 204px;
     height: 52px;
   }
   padding-left: 14px;
