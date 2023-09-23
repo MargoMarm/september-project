@@ -12,10 +12,12 @@ import {
   Select,
   Option,
   InputWrapper,
-  
+  SelectPointer,
   Svg,
   FilterTitle,
 } from './ProductsFilter.styled';
+
+
 
 export default function ProductsFilter() {
   const dispatch = useDispatch()
@@ -77,7 +79,7 @@ export default function ProductsFilter() {
         </ButtonIconForInput>
       </InputWrapper>
       <SelectContainer>
-        
+        <SelectPointer>
         <Select value={currentCategory} onChange={handleChange}>
         <option style={optionStyles} value="default">Categories</option>
           {productsCategories.map(category => {
@@ -85,16 +87,22 @@ export default function ProductsFilter() {
               <option key={category} value={category} style={optionStyles}>
                 {category}
               </option>
+              
             );
           })}
+          
         </Select>
-       
+        </SelectPointer>
         
+        <SelectPointer>
         <Select value={isRecommended} onChange={handleChangeIsReccomended}> 
           <option value="default" >All</option>
           <option value="Recommended">Recommended</option>
           <option value="Not recomended">Not recommended</option>
         </Select>
+        </SelectPointer>
+       
+        
       </SelectContainer>
     </FilterContainer>
   );

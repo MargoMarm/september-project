@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { colors, mq } from '../../utils';
 
 
+
 export const Option = styled.option`
   width: '200px',
   padding: '10px',
@@ -15,9 +16,13 @@ export const Option = styled.option`
 
 
 export const Select = styled.select`
-
+  appearance: none;
+  position: reletive;
+  
   height: 46px;
   width: 100%;
+
+  
   ${mq.tablet} {
     height: 52px;
   }
@@ -35,7 +40,11 @@ export const Select = styled.select`
 
   color: ${colors.textWhite06};
   background-color: transparent;
+ 
+}
 `;
+
+
 
 export const FilterContainer = styled.div`
   position: relative;
@@ -65,7 +74,22 @@ export const FilterTitle = styled.div`
 export const SelectContainer = styled.div`
   display: flex;
   gap: 16px;
+
 `;
+
+export const SelectPointer = styled.div`
+  position: relative;
+&::after {
+  content: " ";
+  background-image: url('../../assets/shewron.svg'); 
+  color: red;
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  pointer-events: none; 
+}
+`
 
 export const InputWrapper = styled.div`
   position: relative;
