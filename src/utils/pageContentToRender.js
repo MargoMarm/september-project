@@ -12,6 +12,7 @@ const pageContentToRender = (page, data) => {
           subText1: data.calories,
           subText2: capitalizeWord(data.category),
           subText3: data.weight,
+          status: data.recommended,
         }
       : {
           subtitle: 'WORKOUT',
