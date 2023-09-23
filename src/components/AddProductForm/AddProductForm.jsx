@@ -53,8 +53,8 @@ console.log("AMOUNT", amount);
             addProduct({
               id: data.id,
               date,
-              amount,
-              calories: quantity,
+              amount: quantity,
+              calories: amount,
             })
           }
         >

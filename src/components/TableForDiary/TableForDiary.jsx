@@ -64,8 +64,8 @@ const TableForDiary = ({
                     <Row key={item._id} item={item}>
                       <Cell>{capitalizeWord(item.title)}</Cell>
                       <Cell>{capitalizeWord(item.category)}</Cell>
-                      <Cell>{item.amount}</Cell>
                       <Cell>{item.calories}</Cell>
+                      <Cell>{item.amount}</Cell>
                       <Cell>
                         <BeforeForCell
                           bgColor={item.recommend ? '#419B09' : '#E9101D'}
