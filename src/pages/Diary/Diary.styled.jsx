@@ -28,7 +28,7 @@ export const CalendarContainer = styled.div`
   display: flex;
   position: absolute;
   align-items: center;
-  z-index: 999;
+  z-index: 667;
   right: 20px;
   top: 4px;
 
