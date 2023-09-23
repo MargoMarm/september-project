@@ -91,7 +91,7 @@ export const SelectPointer = styled.div`
 }
 `
 
-export const InputWrapper = styled.div`
+export const InputWrapper = styled.form`
   position: relative;
   width: 100%;
   ${mq.tablet} {

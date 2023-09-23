@@ -4,7 +4,7 @@ import ButtonIconForInput from '../ButtonIconForInput';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getProductsCategories } from '../../redux/productsFilter/selectors';
-import { getCategories } from "../../redux/productsFilter/operations";
+import { getCategories, fetchProducts } from "../../redux/productsFilter/operations";
 import {
   FilterContainer,
   SelectContainer,
@@ -16,37 +16,63 @@ import {
   Svg,
   FilterTitle,
 } from './ProductsFilter.styled';
+import debounce from 'lodash.debounce';
 
 
 
 export default function ProductsFilter() {
+  const makeReqObj = (input, category, recommended) => {
+    const reqObj = {};
+
+    if (input) {
+      reqObj.title = input;
+    }
+    if (category && category !== 'Categories' && category !== "default") {
+      reqObj.category = category;
+    }
+
+    if (recommended === 'Recommended') {
+      reqObj.recommended = true;
+    }
+    if (recommended === 'Not recommended') {
+      reqObj.recommended = false;
+    }
+    return reqObj;
+  };
   const dispatch = useDispatch()
   const [currentCategory, setCurrentCategory] = useState("Categories");
   const [isRecommended, setIsRecommended] = useState("All")
+  const [query, setQuery] = useState("");
+  
   const productsCategories = useSelector(getProductsCategories);
+  useEffect(() => {
+    const reqObj = makeReqObj(query, currentCategory, isRecommended);
+    const urlParams = new URLSearchParams(reqObj).toString();
+     dispatch(fetchProducts(urlParams))
+  }, [query, currentCategory, isRecommended, dispatch ] )
+ 
 
   useEffect(() => {
     dispatch(getCategories());
   }, [dispatch]);
 
-   const handleChange = event => {
+   const handleChangeCategory = event => {
     const selectedValue = event.target.value;
     setCurrentCategory(selectedValue)
   }
-  console.log(currentCategory);
-  const handleChangeIsReccomended = event => {
-    const selectedValue = event.target.value;
-    setIsRecommended(selectedValue)
-  }
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Submit");
-  }
-  const request = {
-    recommended: isRecommended,
-    category: currentCategory,
+  const debouncedHandleChange = debounce((term) => {
+    setQuery(term)
+  }, 500);
 
+  const handleChangeQuery = event => {
+    const selectedValue = event.target.value;
+    debouncedHandleChange(selectedValue);
   }
+  const handleChangeisReccomended = event => {
+    const selectedValue = event.target.value;
+    setIsRecommended(selectedValue) 
+  }
+
   const optionStyles = {
     backgroundColor: 'rgba(28, 28, 28, 1)',
     color: "#EFEDE8",
@@ -57,12 +83,11 @@ export default function ProductsFilter() {
   return (
     <FilterContainer>
       <FilterTitle>Filters</FilterTitle>
-      <InputWrapper onSubmit={handleSubmit}>
-        <TextInput type="text" autoComplete="off" />
+      <InputWrapper >
+        <TextInput type="text" autoComplete="off"  onChange={handleChangeQuery} />
         <ButtonIconForInput
           right="42px"
           type="reset"
-          
         >
           <Svg>
             <use href={sprite + `#close`}></use>
@@ -80,7 +105,7 @@ export default function ProductsFilter() {
       </InputWrapper>
       <SelectContainer>
         <SelectPointer>
-        <Select value={currentCategory} onChange={handleChange}>
+        <Select value={currentCategory} onChange={handleChangeCategory}>
         <option style={optionStyles} value="default">Categories</option>
           {productsCategories.map(category => {
             return (
@@ -93,12 +118,11 @@ export default function ProductsFilter() {
           
         </Select>
         </SelectPointer>
-        
         <SelectPointer>
-        <Select value={isRecommended} onChange={handleChangeIsReccomended}> 
-          <option value="default" >All</option>
-          <option value="Recommended">Recommended</option>
-          <option value="Not recomended">Not recommended</option>
+        <Select value={isRecommended} onChange={handleChangeisReccomended}> 
+          <option style={optionStyles} value="default" >All</option>
+          <option style={optionStyles} value="Recommended">Recommended</option>
+          <option style={optionStyles} value="Not recommended">Not recommended</option>
         </Select>
         </SelectPointer>
        
