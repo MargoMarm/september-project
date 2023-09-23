@@ -24,3 +24,17 @@ export const fetchFilteredProducts = createAsyncThunk(
     }
   },
 );
+
+export const getCategories = createAsyncThunk(
+  `categories/getCategories`,
+  async (_, thunkAPI) => {
+    try {
+      const res = await axios.get("api/categories"); 
+    
+      return res.data[0].categories;
+      
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  },
+);
