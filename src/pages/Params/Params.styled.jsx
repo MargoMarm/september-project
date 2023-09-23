@@ -119,12 +119,25 @@ export const ParamsPageWrapper = styled.div`
         }});
       }
     }
-  }
 
+    ${mq.desktop} {
+      background: none;
+    }
+  }
+`;
+
+export const ParamsPageWrapperDesktop = styled.div`
   ${mq.desktop} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 670px;
+    height: 800px;
+
     padding: 0 32px 32px 96px;
 
     background-size: 670px 800px;
+    background-repeat: no-repeat;
 
     background-image: url(${props => {
       if (props.steps === 1) {
