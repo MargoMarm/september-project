@@ -45,6 +45,9 @@ const diary = createSlice({
       state.isLoading = false;
       state.products = [];
       state.exercises = [];
+      state.burnedCalories = 0;
+      state.consumedCalories = 0;
+      state.doneExercisesTime = 0;
     });
 
     builder.addCase(deleteProduct.pending, handlePending);
