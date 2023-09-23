@@ -62,30 +62,19 @@ const Diary = () => {
     handleChangeAndParsedDate(currentDate, currentDate);
   };
 
-  const isDisabled = () => {
-    const reversedDate = parsedDate.split('-').reverse().join('-');
-    const currentDate = new Date();
-    const targetDate = new Date(reversedDate);
-    return currentDate > targetDate;
-  };
-
   return (
     <DiaryWrapper>
-      <Title text={'Diary'} />
+      <Title text={'Diary'} margin={mgForTitle} />
       <CalendarContainer>
         <Calendar
           value={date}
           onChange={handleChangeAndParsedDate}
           name="name"
-          minDate={new Date()}
           dateFormat={'dd/MM/yyyy'}
           customInput={<CustomInputForCalendar />}
           withoutВorder
         />
-        <CalendarBtn
-          onClick={() => changeDay('previousDay', date)}
-          disabled={isDisabled()}
-        >
+        <CalendarBtn onClick={() => changeDay('previousDay', date)}>
           <CalendarBtnIcon>
             <use href={sprite + `#chevron-left`}></use>
           </CalendarBtnIcon>

@@ -69,4 +69,5 @@ Calendar.propTypes = {
   showYearDropdown: PropTypes.bool,
   dateFormat: PropTypes.string,
   withoutВorder: PropTypes.bool,
+  customInput: PropTypes.object,
 };

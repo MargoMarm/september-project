@@ -1,16 +1,15 @@
 import styled from '@emotion/styled';
 import { colors, mq } from '../../utils';
-import { css } from '@emotion/react';
 
 export const DiaryWrapper = styled.div`
   position: relative;
 
-  padding: 40px 20px 80px 20px;
+  padding: 0 20px;
   ${mq.tablet} {
-    padding: 72px 32px 64px 32px;
+    padding: 0 32px;
   }
   ${mq.desktop} {
-    padding: 72px 96px 68px 96px;
+    padding: 0 96px;
   }
 `;
 
@@ -30,8 +29,17 @@ export const CalendarContainer = styled.div`
   position: absolute;
   align-items: center;
   z-index: 999;
-  right: 96px;
-  top: 0;
+  right: 20px;
+  top: 4px;
+
+  ${mq.tablet} {
+    right: 32px;
+    top: -10px;
+  }
+
+  ${mq.desktop} {
+    right: 96px;
+  }
 `;
 
 export const CalendarBtn = styled.button`
@@ -48,14 +56,6 @@ export const CalendarBtn = styled.button`
 
   &:hover > svg {
     fill: ${colors.orange};
-  }
-
-  &:disabled {
-    cursor: default;
-  }
-
-  &:disabled > svg {
-    fill: ${colors.textWhite02};
   }
 `;
 

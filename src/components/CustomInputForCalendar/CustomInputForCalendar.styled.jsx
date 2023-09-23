@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '../../utils';
+import { colors, mq } from '../../utils';
 
 export const Label = styled.label`
   position: relative;
@@ -18,14 +18,18 @@ export const Label = styled.label`
   &:focus-visible {
     border: none;
   }
+
+  &:focus {
+    border: none;
+  }
 `;
 
 export const Input = styled.input`
-  width: 161px;
+  width: 125px;
 
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 1.33;
+  line-height: 1.11;
 
   cursor: pointer;
 
@@ -37,6 +41,7 @@ export const Input = styled.input`
 
   &:focus {
     color: ${colors.orange};
+    border: none;
   }
 
   &:focus-visible {
@@ -46,17 +51,34 @@ export const Input = styled.input`
   &:focus + svg {
     stroke: ${colors.orange};
   }
+
+  ${mq.tablet} {
+    width: 161px;
+
+    font-size: 24px;
+    line-height: 1.33;
+  }
+
+  ${mq.desktop} {
+  }
 `;
 
 export const Icon = styled.svg`
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   position: absolute;
-  right: -14px;
-  top: 40%;
+  right: -8px;
+  top: 46%;
 
   stroke: ${colors.grey};
 
   transform: translate(-50%, -50%);
   transition: stroke 0.3s;
+
+  ${mq.tablet} {
+    width: 24px;
+    height: 24px;
+    right: -14px;
+    top: 40%;
+  }
 `;
