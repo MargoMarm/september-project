@@ -79,12 +79,15 @@ export default function ProductsFilter() {
     fontSize: "16px",
     lineHeight: "24px", 
   };
+  const handleSubmit = event => {
+    event.preventDefault();
+  }
   
   return (
     <FilterContainer>
       <FilterTitle>Filters</FilterTitle>
       <InputWrapper >
-        <TextInput type="text" autoComplete="off"  onChange={handleChangeQuery} />
+        <TextInput type="text" autoComplete="off" onSubmit={handleSubmit}  onChange={handleChangeQuery} />
         <ButtonIconForInput
           right="42px"
           type="reset"
