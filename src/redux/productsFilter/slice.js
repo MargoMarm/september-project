@@ -1,15 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchProducts, fetchFilteredProducts } from './operations';
+import { fetchProducts, getCategories } from './operations';
 
-const initialstate = {
-  products: [],
-  error: null,
-  isLoading: false,
-};
+
 
 export const productsSlice = createSlice({
   name: 'products',
-  initialState: initialstate,
+  initialState : {
+    products: [],
+    categories: ["some", "SOME"],
+    error: null,
+    isLoading: false,
+  },
   reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
@@ -24,15 +25,15 @@ export const productsSlice = createSlice({
       state.error = action.payload;
       state.isLoading = false;
     });
-    builder.addCase(fetchFilteredProducts.fulfilled, (state, action) => {
-      state.products = action.payload;
+    builder.addCase(getCategories.fulfilled, (state, action) => {
+      state.categories = action.payload;
       state.error = null;
       state.isLoading = false;
     });
-    builder.addCase(fetchFilteredProducts.pending, (state, action) => {
+    builder.addCase(getCategories.pending, (state, action) => {
       state.isLoading = true;
     });
-    builder.addCase(fetchFilteredProducts.rejected, (state, action) => {
+    builder.addCase(getCategories.rejected, (state, action) => {
       state.error = action.payload;
       state.isLoading = false;
     });
