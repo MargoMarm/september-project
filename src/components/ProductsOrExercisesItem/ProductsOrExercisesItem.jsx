@@ -55,7 +55,24 @@ const ProductsOrExercisesItem = ({ page, data }) => {
 
   const contentToRender = pageContentToRender(page, data);
 
-  console.log(data);
+  // це у нас буде універсальна функція для додавання продуктів або вправ, в залежності яка сторінка,
+  //  передаємо певні влстивості в обєкт який приймає функція
+  const addProductOrExercise = ({
+    id,
+    date,
+    amount,
+    calories,
+    time,
+    burnedCalories,
+  }) => {
+    if ((page = 'product')) {
+      console.log(id, date, amount, calories);
+      // тут буде dispatch(addProduct бла бла бла)
+    }
+    if ((page = 'exercises')) {
+      // тут буде dispatch(addExercises бла бла бла)
+    }
+  };
 
   return (
     <Item>
@@ -102,8 +119,17 @@ const ProductsOrExercisesItem = ({ page, data }) => {
       {isModalOpen && (
         <Modal openModal={toggleModal}>
           {page === 'product' && (
-            <AddProductForm closeModal={toggleModal} data={data} />
+            <AddProductForm
+              closeModal={toggleModal}
+              data={data}
+              addProduct={addProductOrExercise}
+            />
           )}
+
+          {/* тут буде логіка відкриття модалки для додавання вправ, я поки що до неї не лізу
+           {page === 'exercise' && (
+            <AddProductForm closeModal={toggleModal} data={data} />
+          )} */}
         </Modal>
       )}
     </Item>

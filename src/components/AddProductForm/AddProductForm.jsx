@@ -11,11 +11,14 @@ import {
   InputTitle,
   TitleCalories,
 } from './AddProductForm.styled';
+import formatDate from '../../utils/formatDate';
 
-function AddProductForm({ data, closeModal }) {
+function AddProductForm({ data, closeModal, addProduct }) {
   const [quantity, setQuantity] = useState(0);
 
   const amount = Math.round((quantity * data.calories) / 100);
+
+  console.log(data);
 
   return (
     <form>
@@ -39,7 +42,20 @@ function AddProductForm({ data, closeModal }) {
       </Calories>
 
       <ButtonContainer>
-        <AddButton type="button">Add to diary</AddButton>
+        <AddButton
+          type="button"
+          onClick={() =>
+            addProduct({
+              id: data.id,
+              // щось тут з датою підшамань
+              // date: formatDate(Date.now()),
+              amount,
+              calories: data.calories,
+            })
+          }
+        >
+          Add to diary
+        </AddButton>
         <CloseButton type="button" onClick={closeModal}>
           Cancel
         </CloseButton>
@@ -51,6 +67,7 @@ function AddProductForm({ data, closeModal }) {
 AddProductForm.propTypes = {
   data: PropTypes.object,
   closeModal: PropTypes.func,
+  addProduct: PropTypes.func,
 };
 
 export default AddProductForm;
