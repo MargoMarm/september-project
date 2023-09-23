@@ -68,7 +68,7 @@ export const TextRecommended = styled.p`
     width: 14px;
     height: 14px;
     border-radius: 10px;
-    background: #419b09;
+    background-color: ${props => (props.reccomend ? '#419b09' : '#E9101D')};
     margin-right: 8px;
   }
 `;

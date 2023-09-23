@@ -55,11 +55,17 @@ const ProductsOrExercisesItem = ({ page, data }) => {
 
   const contentToRender = pageContentToRender(page, data);
 
+  console.log(data);
+
   return (
     <Item>
       <SubDiv>
         <TextDiet>{contentToRender.subtitle}</TextDiet>
-        {page === 'product' && <TextRecommended>Recommended</TextRecommended>}
+        {page === 'product' && (
+          <TextRecommended reccomend={data.recommended}>
+            {data.recommended ? 'Recommended' : 'Not recommended'}
+          </TextRecommended>
+        )}
 
         <AddBtn onClick={toggleModal}>
           {contentToRender.button}

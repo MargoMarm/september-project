@@ -38,7 +38,8 @@ const diary = createSlice({
       state.exercises = payload.exercises || [];
       state.burnedCalories = payload.burnedCalories || 0;
       state.consumedCalories = payload.consumedCalories || 0;
-      state.doneExercisesTime = payload.doneExercisesTime || 0})
+      state.doneExercisesTime = payload.doneExercisesTime || 0;
+    });
     builder.addCase(getDiaryList.rejected, (state, { payload }) => {
       state.productsAndExercisesError = payload;
       state.isLoading = false;
