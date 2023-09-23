@@ -56,13 +56,13 @@ export const InfoCardConteiner = styled.div`
 export const InfoCard = styled.div`
   flex-basis: calc((100% - 8px) / 2);
 
-  height: 62px;
+  min-height: 62px;
   padding: 12px 18px;
   border-radius: 12px;
   border: 1px solid ${colors.textWhite02};
   background-color: ${colors.textWhite005};
   ${mq.tablet} {
-    height: 68px;
+    min-height: 68px;
   }
 `;
 
