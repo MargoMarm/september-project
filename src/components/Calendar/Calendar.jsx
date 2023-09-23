@@ -1,23 +1,38 @@
 import PropTypes from 'prop-types';
-import { forwardRef} from 'react';
+import { forwardRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-import { parseISO  } from 'date-fns';
+import { parseISO } from 'date-fns';
 import { Icon, Ipt, Label, GlobalStyles } from './Calendar.styled';
 import sprite from '../../assets/sprite.svg';
 import { Global } from '@emotion/react';
 
-export default function Calendar({ name, value, onChange, maxDate, minDate, showYearDropdown, dateFormat, withoutВorder }) {
+export default function Calendar({
+  name,
+  value,
+  onChange,
+  maxDate,
+  minDate,
+  showYearDropdown,
+  dateFormat,
+  withoutВorder,
+  customInput,
+}) {
   const ExampleCustomInput = forwardRef((dd, ref) => {
     const { value, onClick } = dd;
-    return(
+    return (
       <Label onClick={onClick} ref={ref}>
-        <Ipt value={value || ''} name="name" readOnly withoutВorder={withoutВorder} />
+        <Ipt
+          value={value || ''}
+          name="name"
+          readOnly
+          withoutВorder={withoutВorder}
+        />
         <Icon>
           <use href={`${sprite}#calendar`}></use>
         </Icon>
       </Label>
-    )
+    );
   });
 
   ExampleCustomInput.displayName = 'Label';
@@ -26,14 +41,16 @@ export default function Calendar({ name, value, onChange, maxDate, minDate, show
     <>
       <DatePicker
         name={name}
-        selected={typeof value == "string" ? parseISO(value) : value}
-        onChange={date => { onChange(name, date) }}
+        selected={typeof value == 'string' ? parseISO(value) : value}
+        onChange={date => {
+          onChange(name, date);
+        }}
         maxDate={maxDate}
         minDate={minDate}
         yearDropdownItemNumber={40}
-        customInput={<ExampleCustomInput />}
+        customInput={customInput || <ExampleCustomInput />}
         scrollableYearDropdown
-        dateFormat={dateFormat || "dd.MM.yyyy"}
+        dateFormat={dateFormat || 'dd.MM.yyyy'}
         showYearDropdown={showYearDropdown}
       />
       <Global styles={GlobalStyles} />
@@ -44,10 +61,8 @@ export default function Calendar({ name, value, onChange, maxDate, minDate, show
 Calendar.propTypes = {
   onClick: PropTypes.func,
   name: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Date)
-  ]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)])
+    .isRequired,
   onChange: PropTypes.func.isRequired,
   maxDate: PropTypes.instanceOf(Date),
   minDate: PropTypes.instanceOf(Date),
