@@ -13,7 +13,6 @@ import { selectCurrentTitle } from '../../redux/exerciseFilters/selectors';
 import { selectItems } from '../../redux/exercises/selectors';
 import ExercisesBtnBack from '../../components/ExercisesBtnBack/ExercisesBtnBack';
 import Scrollbar from '../../components/Scrollbar';
-import { ProductPageContainer } from '../Products/Products.styled';
 
 const Exercises = () => {
   let shouldGetFilters = useSelector(selectGetFilters);
@@ -21,7 +20,7 @@ const Exercises = () => {
   let currentTitle = useSelector(selectCurrentTitle);
 
   return (
-    <ProductPageContainer>
+    <>
       {shouldGetFilters ? null : <ExercisesBtnBack />}
       <TitleThumb>
         {shouldGetFilters ? (
@@ -79,7 +78,7 @@ const Exercises = () => {
         </Scrollbar>
       )}
       ;
-    </ProductPageContainer>
+    </>
   );
 };
 
