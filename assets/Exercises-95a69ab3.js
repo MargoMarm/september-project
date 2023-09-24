@@ -1,4 +1,4 @@
-import{n as a,m as r,c as n,P as p,r as h,j as e,u as b,d as x,o as E,p as w,q,t as y,v as B}from"./index-33f75ee5.js";import{c as S}from"./formatDate-d1383d55.js";import{s as u}from"./styled-components.browser.esm-b12141ba.js";import{T as j}from"./Title-371d2aaa.js";import{S as T,P as F,a as z}from"./ProductsOrExercisesItem-67a1e7ae.js";import"./BtnSubmit-da28be0b.js";const I=a.li`
+import{n as a,m as r,c as n,P as p,r as h,j as e,u as b,d as x,o as E,p as w,q,t as y,v as B}from"./index-8a091581.js";import{c as S}from"./formatDate-d1383d55.js";import{s as u}from"./styled-components.browser.esm-6b378521.js";import{T as j}from"./Title-9267c08f.js";import{S as T,P as F,a as z}from"./ProductsOrExercisesItem-da3f4eeb.js";import"./BtnSubmit-3d5ed3bc.js";const I=a.li`
   margin-bottom: 20px;
 
   &:last-child {
