@@ -18,7 +18,6 @@ import { selectUser } from '../../../redux/auth/selectors';
 export const UserNav = () => {
   const dispatch = useDispatch();
   const { avatarURL } = useSelector(selectUser);
-
   return (
     <WrapUserNav>
       <CustomNavLink to="/diary" text="Diary" isinheader={'true'} />
@@ -28,11 +27,19 @@ export const UserNav = () => {
         <NavLink to={'/profile'}>
           <Svg>
             <use href={sprite + `#settings`}></use>
-          </Svg>{' '}
+          </Svg>
         </NavLink>
-        <UserAvatar>
-          <img src={avatarURL} alt="user's avatar" />
-        </UserAvatar>
+        {avatarURL ? (
+          <UserAvatar>
+            <img src={avatarURL} alt="user's avatar" />
+          </UserAvatar>
+        ) : (
+          <UserAvatar>
+            <Svg>
+              <use href={sprite + `#user`}></use>
+            </Svg>
+          </UserAvatar>
+        )}
         <Button
           onClick={() => {
             handleLogout(dispatch);

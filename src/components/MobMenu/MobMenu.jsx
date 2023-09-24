@@ -52,9 +52,15 @@ const MobMenu = () => {
           </Svg>
         </ButtonMenu>
         <ButtonMenu type="button">
-          <UserAvatar>
-            <img src={avatarURL} alt="user's avatar" />
-          </UserAvatar>
+          {avatarURL ? (
+            <UserAvatar>
+              <img src={avatarURL} alt="user's avatar" />
+            </UserAvatar>
+          ) : (
+            <Svg>
+              <use href={sprite + `#user`}></use>
+            </Svg>
+          )}
         </ButtonMenu>
         <ButtonMenu type="button" onClick={toggleMobMenu}>
           <Svg>
