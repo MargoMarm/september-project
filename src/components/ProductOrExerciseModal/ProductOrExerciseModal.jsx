@@ -14,7 +14,7 @@ import { nanoid } from '@reduxjs/toolkit';
 
 function ProductOrExerciseModal({ modalType, data, btnNext }) {
   const transformKey = key => {
-    if (key === 'yourTime') {
+    if (key === 'time') {
       return 'Your  time: ';
     }
     if (key === 'burnedCalories') {

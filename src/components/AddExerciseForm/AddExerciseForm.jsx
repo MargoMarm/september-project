@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-import BtnSubmit from '../BtnSubmit';
 import Timer from '../Timer';
 import {
   Watch,
@@ -15,10 +14,11 @@ import {
   TimerContainer,
   Container,
 } from './AddExerciseForm.styled';
-import { addToDiary } from '../../httpRequests/addToDiary';
-import { getCurrentDate } from '../../utils/getCurrentDate';
 
-export default function AddExerciseForm({ data, closeModal }) {
+import formatDate from '../../utils/formatDate';
+import { AddButton } from '../AddProductForm/AddProductForm.styled';
+
+export default function AddExerciseForm({ data, addExercise }) {
   const {
     _id,
     burnedCalories: calories,
@@ -60,6 +60,8 @@ export default function AddExerciseForm({ data, closeModal }) {
     setIntervalId(null);
   };
 
+  const date = formatDate(new Date());
+
   const writeRemainengTime = ({ remainingTime }) => {
     const minutes =
       Math.floor(remainingTime / 60).toString().length > 1
@@ -75,27 +77,6 @@ export default function AddExerciseForm({ data, closeModal }) {
         {minutes}:{seconds}
       </Watch>
     );
-  };
-
-  const handleSubmit = () => {
-    const date = getCurrentDate();
-    const data = {
-      exerciseId: _id,
-      date,
-      time: exTime,
-      burnedCalories: burnedCalory,
-    };
-
-    if (!data.time || !data.burnedCalories) {
-      return;
-    }
-
-    addToDiary(data).then(data => {
-      if (!data) {
-        return;
-      }
-      closeModal();
-    });
   };
 
   return (
@@ -136,11 +117,19 @@ export default function AddExerciseForm({ data, closeModal }) {
         </InfoCard>
       </InfoCardConteiner>
       <ButtonWrapper>
-        <BtnSubmit
-          title="Add to diary"
-          fontTablet="16px"
-          onClick={handleSubmit}
-        />
+        <AddButton
+          type="button"
+          onClick={() =>
+            addExercise({
+              id: _id,
+              date,
+              time: exTime,
+              burnedCalories: burnedCalory,
+            })
+          }
+        >
+          Add to diary
+        </AddButton>
       </ButtonWrapper>
     </Container>
   );
@@ -148,5 +137,5 @@ export default function AddExerciseForm({ data, closeModal }) {
 
 AddExerciseForm.propTypes = {
   data: PropTypes.object.isRequired,
-  closeModal: PropTypes.func.isRequired,
+  addExercise: PropTypes.func,
 };

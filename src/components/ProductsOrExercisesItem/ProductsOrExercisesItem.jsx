@@ -26,12 +26,16 @@ import { useDispatch } from 'react-redux';
 import { addProduct } from '../../redux/products/operations';
 import textLength from '../../utils/textLength';
 import ProductOrExerciseModal from '../ProductOrExerciseModal/ProductOrExerciseModal';
+import { addExercise } from '../../redux/exercises/operations';
 
 const ProductsOrExercisesItem = ({ page, data }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isModalAddOpen, setIsModalAddOpen] = useState(false);
   const [isModalSuccessOpen, setIsModalOpen] = useState(false);
   const [addedCaloriesToDiary, setAddedCaloriesToDiary] = useState(0);
+  const [addedExerciseTime, setAddedExerciseTime] = useState(0);
+  const [addedExerciseBurnedCalories, setAddedExerciseBurnedCalories] =
+    useState(0);
 
   const toggleAddModal = () => setIsModalAddOpen(state => !state);
   const toggleSuccessModal = () => setIsModalOpen(state => !state);
@@ -67,13 +71,24 @@ const ProductsOrExercisesItem = ({ page, data }) => {
         amount,
         calories,
       };
-      console.log(data);
       setAddedCaloriesToDiary(calories);
       dispatch(addProduct(data));
     }
-    if (page === 'exercises') {
-      console.log(id, date, time, burnedCalories);
-      // тут буде dispatch(addExercises бла бла бла)
+    if (page === 'exercise') {
+      const data = {
+        exerciseId: id,
+        date,
+        time,
+        burnedCalories,
+      };
+
+      if (!time || !burnedCalories) {
+        return;
+      }
+      console.log(data);
+      setAddedExerciseTime(time);
+      setAddedExerciseBurnedCalories(burnedCalories);
+      dispatch(addExercise(data));
     }
     toggleAddModal();
     toggleSuccessModal();
@@ -122,7 +137,10 @@ const ProductsOrExercisesItem = ({ page, data }) => {
       </SubTypeDiv>
 
       {isModalAddOpen && (
-        <Modal openModal={toggleAddModal}>
+        <Modal
+          openModal={toggleAddModal}
+          width={page === 'product' ? 479 : 694}
+        >
           {page === 'product' && (
             <AddProductForm
               closeModal={toggleAddModal}
@@ -131,13 +149,13 @@ const ProductsOrExercisesItem = ({ page, data }) => {
             />
           )}
           {page === 'exercise' && (
-            <AddExerciseForm closeModal={toggleAddModal} data={data} />
+            <AddExerciseForm data={data} addExercise={addProductOrExercise} />
           )}
         </Modal>
       )}
 
       {isModalSuccessOpen && (
-        <Modal openModal={toggleSuccessModal}>
+        <Modal openModal={toggleSuccessModal} width={430}>
           {page === 'product' && (
             <ProductOrExerciseModal
               modalType="product"
@@ -145,12 +163,19 @@ const ProductsOrExercisesItem = ({ page, data }) => {
               btnNext={toggleSuccessModal}
             />
           )}
+
+          {page === 'exercise' && (
+            <ProductOrExerciseModal
+              modalType="exercise"
+              data={{
+                time: addedExerciseTime,
+                burnedCalories: addedExerciseBurnedCalories,
+              }}
+              btnNext={toggleSuccessModal}
+            />
+          )}
         </Modal>
       )}
-      {/* тут буде логіка відкриття модалки для додавання вправ, я поки що до неї не лізу
-           {page === 'exercise' && (
-            <AddProductForm closeModal={toggleModal} data={data} />
-          )} */}
     </Item>
   );
 };
