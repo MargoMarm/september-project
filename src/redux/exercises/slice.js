@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getExercises } from './operations';
+import { addExercise, getExercises } from './operations';
 
 export const exercisesSlice = createSlice({
-  name: 'filters',
+  name: 'exercise',
   initialState: {
     items: [],
     error: null,
@@ -26,6 +26,19 @@ export const exercisesSlice = createSlice({
     });
     builder.addCase(getExercises.pending, state => {
       state.isLoading = true;
+    });
+
+    builder.addCase(addExercise.fulfilled, state => {
+      state.isLoading = false;
+      state.error = null;
+    });
+    builder.addCase(addExercise.rejected, (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+    });
+    builder.addCase(addExercise.pending, state => {
+      state.isLoading = true;
+      state.error = null;
     });
   },
 });

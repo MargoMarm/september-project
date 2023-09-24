@@ -14,24 +14,26 @@ import { nanoid } from '@reduxjs/toolkit';
 
 function ProductOrExerciseModal({ modalType, data, btnNext }) {
   const transformKey = key => {
-    if (key === 'yourTime') {
-      return 'Your  time: ';
+    if (key === 'time') {
+      return 'Your  time:   ';
     }
     if (key === 'burnedCalories') {
-      return 'Burned calories:  ';
+      return 'Burned calories:    ';
     }
     if (key === 'calories') {
-      return 'calories: ';
+      return 'Calories: ';
     }
   };
 
   const mappedData = data => {
     const keys = Object.keys(data);
     const renderKeys = keys.map(key => {
+      console.log("KEY",key);
       return (
         <li key={nanoid()}>
           <Key>
-            {transformKey(key)} <Value>{data[key]}</Value>
+          {`${transformKey(key)} `}
+           <Value>{key === "time" && `${data[key]} seconds` } {key === "burnedCalories" && `${data[key]}`} {key === "calories" && `${data[key]}`} </Value>
           </Key>
         </li>
       );
