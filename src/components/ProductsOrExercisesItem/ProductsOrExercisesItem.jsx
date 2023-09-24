@@ -21,12 +21,16 @@ import { pageContentToRender } from '../../utils';
 
 import Modal from '../../components/Modal/Modal';
 import AddProductForm from '../../components/AddProductForm/AddProductForm';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../redux/products/operations';
+import textLength from '../../utils/textLength';
 
 const ProductsOrExercisesItem = ({ page, data }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = () => setIsModalOpen(state => !state);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.addEventListener('resize', updateWindowWidth);
@@ -40,25 +44,9 @@ const ProductsOrExercisesItem = ({ page, data }) => {
     setWindowWidth(window.innerWidth);
   };
 
-  const textLength = name => {
-    let maxLength = 24;
-
-    if (windowWidth < 768) {
-      maxLength = 23;
-    } else if (windowWidth < 1440) {
-      maxLength = 19;
-    }
-
-    return name.length <= maxLength
-      ? name
-      : name.substring(0, maxLength) + '...';
-  };
-
   const contentToRender = pageContentToRender(page, data);
 
-  // це у нас буде універсальна функція для додавання продуктів або вправ, в залежності яка сторінка,
-  //  передаємо певні влстивості в обєкт який приймає функція
-  const addProductOrExercise = async ({
+  const addProductOrExercise = ({
     id,
     date,
     amount,
@@ -66,27 +54,20 @@ const ProductsOrExercisesItem = ({ page, data }) => {
     time,
     burnedCalories,
   }) => {
-    if ((page = 'product')) {
-      console.log(id, date, amount, calories);
+    if (page === 'product') {
       const data = {
         productId: id,
         date,
-        amount, 
-        calories
-      }
-      try {
-        const response = await axios.post(`api/diary/add-product`, data );
-        console.log(response);
-        return response;
-      } catch (error) {
-        return thunkAPI.rejectWithValue(error.message);
-      }
-      // тут буде dispatch(addProduct бла бла бла)
+        amount,
+        calories,
+      };
+      dispatch(addProduct(data));
     }
-    if ((page = 'exercises')) {
+    if (page === 'exercises') {
       console.log(id, date, time, burnedCalories);
       // тут буде dispatch(addExercises бла бла бла)
     }
+    toggleModal();
   };
 
   return (
@@ -112,7 +93,7 @@ const ProductsOrExercisesItem = ({ page, data }) => {
             <use href={sprite + `#runningMan`}></use>
           </RunningMan>
         </IconContainer>
-        {textLength(contentToRender.title)}
+        {textLength(contentToRender.title, windowWidth)}
       </NameProduct>
       <SubTypeDiv>
         <SubType>

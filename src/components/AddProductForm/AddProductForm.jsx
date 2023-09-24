@@ -17,13 +17,7 @@ function AddProductForm({ data, closeModal, addProduct }) {
   const [quantity, setQuantity] = useState(0);
 
   const amount = Math.round((quantity * data.calories) / 100);
-  const date = formatDate(new Date);
-  console.log("DATE", date);
-
-  console.log(data.title);
-  console.log("DATA ID ", data.id);
-console.log("QUANTITY",quantity);
-console.log("AMOUNT", amount);
+  const date = formatDate(new Date());
 
   return (
     <form>
