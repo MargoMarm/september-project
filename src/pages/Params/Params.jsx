@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ParamsForm from '../../components/ParamsForm';
 import ParamsBar from '../../components/ParamsBar';
-import { ParamsPageWrapper } from './Params.styled';
+import { ParamsPageWrapper, ParamsPageWrapperDesktop } from './Params.styled';
 
 const Params = () => {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -16,12 +16,14 @@ const Params = () => {
   }, [steps, swiperRef]);
 
   return (
-    <ParamsPageWrapper steps={steps}>
+    <>
+      <ParamsPageWrapperDesktop steps={steps}></ParamsPageWrapperDesktop>
+      <ParamsPageWrapper steps={steps}>
+        <ParamsForm setSwiperRef={setSwiperRef} setSteps={setSteps} />
 
-      <ParamsForm setSwiperRef={setSwiperRef} setSteps={setSteps} />
-
-      <ParamsBar steps={steps} />
-    </ParamsPageWrapper>
+        <ParamsBar steps={steps} />
+      </ParamsPageWrapper>
+    </>
   );
 };
 

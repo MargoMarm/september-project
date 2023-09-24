@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors, button } from '../../utils';
+import { colors, button, mq } from '../../utils';
 
 export const Backdrop = styled.div`
   position: fixed;
@@ -9,7 +9,7 @@ export const Backdrop = styled.div`
   top: 0;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   background-color: ${colors.backdrop};
 `;
 
@@ -22,12 +22,17 @@ export const ModalWrap = styled.div`
   justify-content: center;
   align-items: center;
 
-  // max-width: 400px;
-  // min-width: 300px;
-  padding: 48px 32px;
+  width: 335px;
+  padding: 48px 0;
   border-radius: 8px;
   background-color: ${colors.modalBlack};
   z-index: 1;
+
+  ${mq.tablet} {
+    min-width: 430px;
+    padding: 48px 32px;
+    box-sizing: content-box;
+  }
 `;
 
 export const ButtonExit = styled.button`
