@@ -1,4 +1,4 @@
-import{n as a,m as r,c as n,P as p,r as h,j as e,u as b,d as x,o as E,p as w,q,t as y,v as B}from"./index-bf949111.js";import{c as S}from"./capitalizeWord-85339af4.js";import{s as u}from"./styled-components.browser.esm-a99e7f6e.js";import{T as j}from"./Title-5150b6e4.js";import{S as T,P as F,a as z}from"./ProductsOrExercisesItem-e83869a5.js";const I=a.li`
+import{n as a,m as r,c as n,P as p,r as h,j as e,u as b,d as x,o as E,p as w,q,t as y,v as B}from"./index-1216710f.js";import{c as S}from"./formatDate-d1383d55.js";import{s as u}from"./styled-components.browser.esm-70a4b445.js";import{T as j}from"./Title-4ab9601c.js";import{S as T,P as F,a as z}from"./ProductsOrExercisesItem-0d8f60b3.js";import"./BtnSubmit-948fc7bd.js";const I=a.li`
   margin-bottom: 20px;
 
   &:last-child {
@@ -185,4 +185,4 @@ line-height: 1.5;
   transition:
     scale 250ms ease-in-out,
     fill 250ms ease-in-out;
-`,J=()=>{const t=b(),s=()=>{t(y(!0))};return e.jsxs(_,{type:"button",onClick:s,children:[e.jsx(H,{children:e.jsx("use",{href:"/src/assets/sprite.svg#icon-arrow-left"})}),"Back"]})},ee=()=>{let t=x(C),s=x(A),c=x(O);return e.jsxs(e.Fragment,{children:[t?null:e.jsx(J,{}),e.jsxs(U,{children:[t?e.jsx(j,{text:"Exercises",margin:{top:{desk:72,tab:72,mob:40},bt:{tab:32,mob:40}}}):e.jsx(j,{text:c,margin:{top:{desk:16,tab:16,mob:12},bt:{tab:32,mob:40}}}),e.jsx(Q,{})]}),t?e.jsx(v,{}):e.jsx(T,{width:{dt:"868"},children:e.jsx(F,{children:s.map((l,i)=>i<20?e.jsx(z,{page:"exercise",data:l},l._id):null)})}),";"]})};export{ee as default};
+`,J=()=>{const t=b(),s=()=>{t(y(!0))};return e.jsxs(_,{type:"button",onClick:s,children:[e.jsx(H,{children:e.jsx("use",{href:"/src/assets/sprite.svg#icon-arrow-left"})}),"Back"]})},te=()=>{let t=x(C),s=x(A),c=x(O);return e.jsxs(e.Fragment,{children:[t?null:e.jsx(J,{}),e.jsxs(U,{children:[t?e.jsx(j,{text:"Exercises",margin:{top:{desk:72,tab:72,mob:40},bt:{tab:32,mob:40}}}):e.jsx(j,{text:c,margin:{top:{desk:16,tab:16,mob:12},bt:{tab:32,mob:40}}}),e.jsx(Q,{})]}),t?e.jsx(v,{}):e.jsx(T,{width:{dt:"868"},children:e.jsx(F,{children:s.map((l,i)=>i<20?e.jsx(z,{page:"exercise",data:l},l._id):null)})}),";"]})};export{te as default};

@@ -1,0 +1,1 @@
+function s(t){return t.substring(0,1).toUpperCase()+t.substring(1)}const c=t=>{const r=t;let e=r.getDate(),a=r.getMonth()+1;const n=r.getFullYear();return e<10&&(e="0"+e),a<10&&(a="0"+a),e+"-"+a+"-"+n};export{s as c,c as f};
