@@ -10,7 +10,7 @@ export default function ButtonIconForInput({ children, onClick, right, type }) {
 }
 
 ButtonIconForInput.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   right: PropTypes.string,
   type: PropTypes.string.isRequired,
   children: PropTypes.object.isRequired,
