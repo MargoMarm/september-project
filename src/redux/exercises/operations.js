@@ -12,3 +12,15 @@ export const getExercises = createAsyncThunk(
     }
   },
 );
+
+export const addExercise = createAsyncThunk(
+  'addExercise',
+  async (exerciseDetails, thunkAPI) => {
+    try {
+      const { data } = await axios.post('/api/diary/add-exercise', exerciseDetails);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  },
+);
