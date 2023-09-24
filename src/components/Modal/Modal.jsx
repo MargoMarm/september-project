@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 
 const modalRoot = document.querySelector('#modal-root');
 
-export const Modal = ({ children, openModal }) => {
+export const Modal = ({ children, openModal, width }) => {
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
@@ -28,7 +28,7 @@ export const Modal = ({ children, openModal }) => {
 
   return createPortal(
     <Backdrop onClick={handleBackdropClick}>
-      <ModalWrap>
+      <ModalWrap width={width}>
         <ButtonExit type="button" onClick={() => openModal()}>
           <Svg>
             <use href={sprite + '#close'} />

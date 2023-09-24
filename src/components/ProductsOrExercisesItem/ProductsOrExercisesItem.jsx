@@ -22,11 +22,21 @@ import { pageContentToRender } from '../../utils';
 import Modal from '../../components/Modal/Modal';
 import AddProductForm from '../../components/AddProductForm/AddProductForm';
 import AddExerciseForm from '../AddExerciseForm';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../redux/products/operations';
+import textLength from '../../utils/textLength';
+import ProductOrExerciseModal from '../ProductOrExerciseModal/ProductOrExerciseModal';
 
 const ProductsOrExercisesItem = ({ page, data }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleModal = () => setIsModalOpen(state => !state);
+  const [isModalAddOpen, setIsModalAddOpen] = useState(false);
+  const [isModalSuccessOpen, setIsModalOpen] = useState(false);
+  const [addedCaloriesToDiary, setAddedCaloriesToDiary] = useState(0);
+
+  const toggleAddModal = () => setIsModalAddOpen(state => !state);
+  const toggleSuccessModal = () => setIsModalOpen(state => !state);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.addEventListener('resize', updateWindowWidth);
@@ -40,29 +50,46 @@ const ProductsOrExercisesItem = ({ page, data }) => {
     setWindowWidth(window.innerWidth);
   };
 
-  const textLength = name => {
-    let maxLength = 24;
-
-    if (windowWidth < 768) {
-      maxLength = 23;
-    } else if (windowWidth < 1440) {
-      maxLength = 19;
-    }
-
-    return name.length <= maxLength
-      ? name
-      : name.substring(0, maxLength) + '...';
-  };
-
   const contentToRender = pageContentToRender(page, data);
+
+  const addProductOrExercise = ({
+    id,
+    date,
+    amount,
+    calories,
+    time,
+    burnedCalories,
+  }) => {
+    if (page === 'product') {
+      const data = {
+        productId: id,
+        date,
+        amount,
+        calories,
+      };
+      console.log(data);
+      setAddedCaloriesToDiary(calories);
+      dispatch(addProduct(data));
+    }
+    if (page === 'exercises') {
+      console.log(id, date, time, burnedCalories);
+      // тут буде dispatch(addExercises бла бла бла)
+    }
+    toggleAddModal();
+    toggleSuccessModal();
+  };
 
   return (
     <Item>
       <SubDiv>
         <TextDiet>{contentToRender.subtitle}</TextDiet>
-        {page === 'product' && <TextRecommended>Recommended</TextRecommended>}
+        {page === 'product' && (
+          <TextRecommended reccomend={data.recommended}>
+            {data.recommended ? 'Recommended' : 'Not recommended'}
+          </TextRecommended>
+        )}
 
-        <AddBtn onClick={toggleModal}>
+        <AddBtn onClick={toggleAddModal}>
           {contentToRender.button}
           <ArrowRight>
             <use href={sprite + `#arrow-right`}></use>
@@ -75,7 +102,7 @@ const ProductsOrExercisesItem = ({ page, data }) => {
             <use href={sprite + `#runningMan`}></use>
           </RunningMan>
         </IconContainer>
-        {textLength(contentToRender.title)}
+        {textLength(contentToRender.title, windowWidth)}
       </NameProduct>
       <SubTypeDiv>
         <SubType>
@@ -94,16 +121,36 @@ const ProductsOrExercisesItem = ({ page, data }) => {
         </SubType>
       </SubTypeDiv>
 
-      {isModalOpen && (
-        <Modal openModal={toggleModal}>
+      {isModalAddOpen && (
+        <Modal openModal={toggleAddModal}>
           {page === 'product' && (
-            <AddProductForm closeModal={toggleModal} data={data} />
+            <AddProductForm
+              closeModal={toggleAddModal}
+              data={data}
+              addProduct={addProductOrExercise}
+            />
           )}
           {page === 'exercise' && (
-            <AddExerciseForm closeModal={toggleModal} data={data} />
+            <AddExerciseForm closeModal={toggleAddModal} data={data} />
           )}
         </Modal>
       )}
+
+      {isModalSuccessOpen && (
+        <Modal openModal={toggleSuccessModal}>
+          {page === 'product' && (
+            <ProductOrExerciseModal
+              modalType="product"
+              data={{ calories: addedCaloriesToDiary }}
+              btnNext={toggleSuccessModal}
+            />
+          )}
+        </Modal>
+      )}
+      {/* тут буде логіка відкриття модалки для додавання вправ, я поки що до неї не лізу
+           {page === 'exercise' && (
+            <AddProductForm closeModal={toggleModal} data={data} />
+          )} */}
     </Item>
   );
 };

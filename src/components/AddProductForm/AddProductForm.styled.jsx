@@ -51,6 +51,16 @@ export const InputQuantity = styled.input`
     text-align: right;
   }
 
+  &::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+
   ${mq.tablet} {
     width: 155px;
     height: 40px;

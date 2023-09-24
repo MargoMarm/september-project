@@ -1,13 +1,18 @@
 import PropTypes from 'prop-types';
 import { ButtonSubmit } from './BtnSubmit.styled';
 
-export default function BtnSubmit({ title, margin, fontSize, onClick }) {
+export default function BtnSubmit({
+  title,
+  margin,
+  fontSize,
+  btnNext = () => null,
+}) {
   return (
     <ButtonSubmit
-      onClick={onClick}
       type="submit"
       margin={margin}
       fontSize={fontSize}
+      onClick={btnNext}
     >
       {title}
     </ButtonSubmit>
@@ -18,5 +23,5 @@ BtnSubmit.propTypes = {
   title: PropTypes.string.isRequired,
   margin: PropTypes.object,
   fontSize: PropTypes.string,
-  onClick: PropTypes.func,
+  btnNext: PropTypes.func,
 };

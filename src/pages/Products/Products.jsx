@@ -6,14 +6,10 @@ import Scrollbar from '../../components/Scrollbar';
 import ProductsOrExercisesItem from '../../components/ProductsOrExercisesItem/ProductsOrExercisesItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../redux/productsFilter/selectors';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { fetchProducts } from '../../redux/productsFilter/operations';
 
 const Products = () => {
-  // const [name, setName] = useState();
-  // const [category, setCategory] = useState();
-  // const [recomended, setRecomended] = useState();
-
   const dispatch = useDispatch();
   const products = useSelector(getProducts);
 

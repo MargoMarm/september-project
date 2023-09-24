@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors, mq } from '../../utils';
+import shewron from '../../assets/chevron-down.png'
 
 
 
@@ -24,6 +25,7 @@ export const Select = styled.select`
 
   
   ${mq.tablet} {
+    width: 204px;
     height: 52px;
   }
   padding-left: 14px;
@@ -81,7 +83,9 @@ export const SelectPointer = styled.div`
   position: relative;
 &::after {
   content: " ";
-  background-image: url('../../assets/shewron.svg'); 
+  width: 18px;
+  height: 18px;
+  background-image: url(${shewron}); 
   color: red;
   position: absolute;
   top: 50%;

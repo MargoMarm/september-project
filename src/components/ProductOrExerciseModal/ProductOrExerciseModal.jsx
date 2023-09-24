@@ -12,7 +12,7 @@ import {
 } from './ProductOrExerciseModal.styled';
 import { nanoid } from '@reduxjs/toolkit';
 
-function ProductOrExerciseModal({ modalType, data }) {
+function ProductOrExerciseModal({ modalType, data, btnNext }) {
   const transformKey = key => {
     if (key === 'yourTime') {
       return 'Your  time: ';
@@ -53,9 +53,9 @@ function ProductOrExerciseModal({ modalType, data }) {
 
       <DataList>{mappedData(data)}</DataList>
 
-      <BtnSubmit title={'Next product'} />
+      <BtnSubmit title={'Next product'} btnNext={btnNext} />
 
-      <ToDiary to={'/dairy'}>
+      <ToDiary to={'/diary'}>
         To the diary
         <Svg fill="">
           <use href="/src/assets/sprite.svg#arrow-right"></use>
@@ -68,6 +68,7 @@ function ProductOrExerciseModal({ modalType, data }) {
 ProductOrExerciseModal.propTypes = {
   modalType: PropTypes.oneOf(['product', 'exercise']),
   data: PropTypes.object.isRequired,
+  btnNext: PropTypes.func,
 };
 
 export default ProductOrExerciseModal;

@@ -4,7 +4,7 @@ import { mq } from '../../utils';
 export const Container = styled.ul`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 20px;
   height: 100vh;
@@ -14,8 +14,8 @@ export const Container = styled.ul`
   ${mq.tablet} {
     flex-direction: row;
     flex-wrap: wrap;
-    row-gap: 16px;
-    column-gap: 32px;
+    row-gap: 32px;
+    column-gap: 16px;
   }
   ${mq.desktop} {
     width: 868px;
