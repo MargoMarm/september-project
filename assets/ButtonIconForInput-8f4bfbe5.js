@@ -1,4 +1,4 @@
-import{n as s,c as e,P as t,j as a}from"./index-48b352cd.js";const p=s.button`
+import{n as s,c as e,P as t,j as a}from"./index-bf949111.js";const p=s.button`
   position: absolute;
   top: 50%;
   right: ${({right:n})=>n||"0"};
@@ -16,4 +16,4 @@ import{n as s,c as e,P as t,j as a}from"./index-48b352cd.js";const p=s.button`
     fill: ${e.orange};
     stroke: ${e.orange};
   }
-`;function u({children:n,onClick:o,right:r,type:i}){return a.jsx(p,{onClick:o,right:r,type:i,children:n})}u.propTypes={onClick:t.func.isRequired,right:t.string,type:t.string.isRequired,children:t.object.isRequired};export{u as B};
+`;function c({children:n,onClick:o,right:r,type:i}){return a.jsx(p,{onClick:o,right:r,type:i,children:n})}c.propTypes={onClick:t.func,right:t.string,type:t.string.isRequired,children:t.object.isRequired};export{c as B};

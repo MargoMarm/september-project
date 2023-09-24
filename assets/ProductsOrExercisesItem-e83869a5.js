@@ -1,4 +1,4 @@
-import{n as G,m as rt,j as _,r as Pt,P as ne,c as N,y as Bo,z as Do,s as rn}from"./index-48b352cd.js";import{c as ue}from"./capitalizeWord-85339af4.js";const _o=(t,e)=>t==="product"?{subtitle:"DIET",title:ue(e.title),button:"Add",text1:"Calories:",text2:"Category:",text3:"Weight:",subText1:e.calories,subText2:ue(e.category),subText3:e.weight}:{subtitle:"WORKOUT",title:ue(e.name),button:"Start",text1:"Burned calories:",text2:"Body part:",text3:"Target:",subText1:e.burnedCalories,subText2:ue(e.bodyPart),subText3:ue(e.target)},Wo=G.ul`
+import{n as G,m as rt,j as _,r as Pt,P as ne,c as N,y as Bo,z as Do,s as rn}from"./index-bf949111.js";import{c as ue}from"./capitalizeWord-85339af4.js";const _o=(t,e)=>t==="product"?{subtitle:"DIET",title:ue(e.title),button:"Add",text1:"Calories:",text2:"Category:",text3:"Weight:",subText1:e.calories,subText2:ue(e.category),subText3:e.weight}:{subtitle:"WORKOUT",title:ue(e.name),button:"Start",text1:"Burned calories:",text2:"Body part:",text3:"Target:",subText1:e.burnedCalories,subText2:ue(e.bodyPart),subText3:ue(e.target)},Wo=G.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
