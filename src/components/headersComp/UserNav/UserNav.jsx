@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { handleLogout } from '../../../utils';
 import CustomNavLink from '../../CustomNavLink/CustomNavLink';
 import {
@@ -7,15 +7,19 @@ import {
   Svg,
   SvgUser,
   ButtonWrap,
-  Span,
+	Span,
+  UserAvatar
 } from './UserNav.styled';
 import { NavLink } from 'react-router-dom';
 
 import sprite from '../../../assets/sprite.svg';
+import { selectUser } from '../../../redux/auth/selectors';
 
 export const UserNav = () => {
   const dispatch = useDispatch();
-
+	const {avatarURL} = useSelector(selectUser)
+	
+	console.log(avatarURL)
   return (
     <WrapUserNav>
       <CustomNavLink to="/diary" text="Diary" isinheader={'true'} />
@@ -27,11 +31,9 @@ export const UserNav = () => {
             <use href={sprite + `#settings`}></use>
           </Svg>{' '}
         </NavLink>
-        <Button>
-          <SvgUser>
-            <use href={sprite + `#ecllipse`}></use>
-          </SvgUser>{' '}
-        </Button>
+			  <UserAvatar>
+				  
+</UserAvatar>
         <Button
           onClick={() => {
             handleLogout(dispatch);

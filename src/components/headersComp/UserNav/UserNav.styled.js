@@ -42,3 +42,10 @@ export const Span = styled.span`
     gap: 8px;
   }
 `;
+
+export const UserAvatar = styled.div`
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+`;
