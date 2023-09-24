@@ -84,11 +84,11 @@ export default function AddExerciseForm({ data, closeModal }) {
       exerciseId: _id,
       date,
       time: exTime,
-      calory: burnedCalory,
+      burnedCalories: burnedCalory,
     };
     console.log(data);
 
-    if (!data.time || !data.calory) {
+    if (!data.time || !data.burnedCalories) {
       return;
     }
 
