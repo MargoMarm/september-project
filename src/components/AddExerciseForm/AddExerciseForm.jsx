@@ -38,7 +38,6 @@ export default function AddExerciseForm({ data, closeModal }) {
   const countCalory = (calory, time, exTime) => {
     const burnedCalory = Math.floor((exTime * calory) / (time * 60));
     setBurnedCalory(burnedCalory);
-    return burnedCalory;
   };
 
   useEffect(() => {
@@ -86,7 +85,6 @@ export default function AddExerciseForm({ data, closeModal }) {
       time: exTime,
       burnedCalories: burnedCalory,
     };
-    console.log(data);
 
     if (!data.time || !data.burnedCalories) {
       return;
