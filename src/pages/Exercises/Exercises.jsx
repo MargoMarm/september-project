@@ -1,7 +1,11 @@
 import ExercisesItemList from '../../components/ExercisesItemList/ExercisesItemList';
 import ExercisesCategories from '../../components/ExercisesCategories/ExercisesCategories';
 import Title from '../../components/Title/Title';
-import { TitleThumb } from './Exercises.styled';
+import {
+  TitleThumb,
+  ExercisesContainer,
+  ExercisesListContainer,
+} from './Exercises.styled';
 
 import ProductsOrExercisesContainer from '../../components/ProductOrExerciseContainer/ProductOrExerciseContainer';
 import ProductsOrExercisesItem from '../../components/ProductsOrExercisesItem/ProductsOrExercisesItem';
@@ -21,63 +25,68 @@ const Exercises = () => {
 
   return (
     <>
-      {shouldGetFilters ? null : <ExercisesBtnBack />}
-      <TitleThumb>
-        {shouldGetFilters ? (
-          <Title
-            text={'Exercises'}
-            margin={{
-              top: {
-                desk: 72,
-                tab: 72,
-                mob: 40,
-              },
-              bt: {
-                tab: 32,
-                mob: 40,
-              },
-            }}
-          />
-        ) : (
-          <Title
-            text={currentTitle}
-            margin={{
-              top: {
-                desk: 16,
-                tab: 16,
-                mob: 12,
-              },
-              bt: {
-                tab: 32,
-                mob: 40,
-              },
-            }}
-          />
-        )}
+      <ExercisesContainer>
+        {shouldGetFilters ? null : <ExercisesBtnBack />}
+        <TitleThumb>
+          {shouldGetFilters ? (
+            <Title
+              text={'Exercises'}
+              margin={{
+                top: {
+                  desk: 72,
+                  tab: 72,
+                  mob: 40,
+                },
+                bt: {
+                  tab: 32,
+                  mob: 40,
+                },
+              }}
+            />
+          ) : (
+            <Title
+              text={currentTitle}
+              margin={{
+                top: {
+                  desk: 16,
+                  tab: 16,
+                  mob: 12,
+                },
+                bt: {
+                  tab: 32,
+                  mob: 40,
+                },
+              }}
+            />
+          )}
 
-        <ExercisesCategories />
-      </TitleThumb>
+          <ExercisesCategories />
+        </TitleThumb>
+      </ExercisesContainer>
       {shouldGetFilters ? (
-        <ExercisesItemList />
+        <ExercisesContainer>
+          <ExercisesItemList />
+        </ExercisesContainer>
       ) : (
-        <Scrollbar width={{ dt: '868' }}>
-          <ProductsOrExercisesContainer>
-            {items.map((item, i) => {
-              if (i < 20) {
-                return (
-                  <ProductsOrExercisesItem
-                    key={item._id}
-                    page="exercise"
-                    data={item}
-                  />
-                );
-              }
-              return null;
-            })}
-          </ProductsOrExercisesContainer>
-        </Scrollbar>
+        <ExercisesListContainer>
+          <Scrollbar width={{ dt: '868' }}>
+            <ProductsOrExercisesContainer>
+              {items.map((item, i) => {
+                if (i < 20) {
+                  return (
+                    <ProductsOrExercisesItem
+                      key={item._id}
+                      page="exercise"
+                      data={item}
+                    />
+                  );
+                }
+                return null;
+              })}
+            </ProductsOrExercisesContainer>
+          </Scrollbar>
+        </ExercisesListContainer>
       )}
-      ;
     </>
   );
 };

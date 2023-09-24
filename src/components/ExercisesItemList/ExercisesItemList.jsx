@@ -11,7 +11,17 @@ import { getExercises } from '../../redux/exercises/operations';
 
 import { setCurrentTitle } from '../../redux/exerciseFilters/slice';
 
-export const ExercisesList = () => {
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import { nanoid } from '@reduxjs/toolkit';
+
+const ExercisesList = () => {
   const dispatch = useDispatch();
 
   const handleGetExercises = (params, name) => {
@@ -23,20 +33,41 @@ export const ExercisesList = () => {
   let category = useSelector(selectFilter);
   let filters = useSelector(selectItems);
 
+  const array = filters.filter(item => item.filter === category);
+
+  const chunkedFilters = [];
+  for (let i = 0; i < array.length; i += 10) {
+    chunkedFilters.push(array.slice(i, i + 10));
+  }
+
   return (
-    <ExercisesItemList>
-      {filters
-        .filter(item => item.filter === category)
-        .map(({ filter, name, imgURL, _id }) => (
-          <ExercisesItem
-            handleGetExercises={handleGetExercises}
-            key={_id}
-            imgURL={imgURL}
-            name={capitalizeWord(name)}
-            filter={filter}
-          />
-        ))}
-    </ExercisesItemList>
+    <Swiper
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      spaceBetween={50}
+      slidesPerView={1}
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={swiper => console.log(swiper)}
+      className="pagination"
+
+      // onSlideChange={() => console.log('slide change')}
+    >
+      {chunkedFilters.map(arr => (
+        <SwiperSlide key={nanoid()}>
+          <ExercisesItemList>
+            {arr.map(({ filter, name, imgURL, _id }) => (
+              <ExercisesItem
+                handleGetExercises={handleGetExercises}
+                key={_id}
+                imgURL={imgURL}
+                name={capitalizeWord(name)}
+                filter={filter}
+              />
+            ))}
+          </ExercisesItemList>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 
