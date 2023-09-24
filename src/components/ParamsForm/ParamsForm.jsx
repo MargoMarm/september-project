@@ -2,7 +2,9 @@ import { Formik, Form } from 'formik';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Notiflix from 'notiflix';
 import 'swiper/css';
 import {
   FormControl,
@@ -13,9 +15,8 @@ import {
   colors,
 } from '@mui/material';
 import { sub } from 'date-fns';
-import { format } from 'date-fns';
-import axios from 'axios';
 
+import { updateBodyParts } from '../../redux/auth/operation';
 import {
   FormikField,
   InputGroup,
@@ -36,6 +37,7 @@ import Calendar from '../Calendar/Calendar';
 
 const ParamsForm = ({ setSteps, setSwiperRef }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const maxDate = sub(new Date(), { years: 18 });
   const minDate = sub(new Date(), { years: 70 });
@@ -52,19 +54,19 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
         levelActivity: '',
       }}
       onSubmit={async (values, Formik) => {
-        const newParamsUser = {
+        if (Object.values(values).includes('')) {
+          Notiflix.Notify.warning('PLEASE, FILL ALL FIELDS');
+          return;
+        }
+
+        const newParams = {
           ...values,
           blood: Number(values.blood),
           levelActivity: Number(values.levelActivity),
           birthday: values.birthday,
         };
 
-        console.log(newParamsUser);
-
-        await axios.post(
-          'https://power-pulse-rest-api.onrender.com/api/users/create',
-          newParamsUser,
-        );
+        dispatch(updateBodyParts(newParams));
 
         navigate('/diary');
 
@@ -447,13 +449,13 @@ ParamsForm.propTypes = {
 };
 
 const paramsSchema = Yup.object({
-  height: Yup.number().min(150).required(),
-  currentWeight: Yup.number().min(35).required(),
-  desiredWeight: Yup.number().min(35).required(),
-  birthday: Yup.string().required(),
-  blood: Yup.string().required(),
-  sex: Yup.string().required(),
-  levelActivity: Yup.number().required(),
+  height: Yup.number().min(150).max(250),
+  currentWeight: Yup.number().min(35).max(400),
+  desiredWeight: Yup.number().min(35).max(400),
+  birthday: Yup.string(),
+  blood: Yup.string(),
+  sex: Yup.string(),
+  levelActivity: Yup.number(),
 });
 
 export default ParamsForm;
