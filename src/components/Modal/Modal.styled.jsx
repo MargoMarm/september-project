@@ -15,7 +15,6 @@ export const Backdrop = styled.div`
 
 export const ModalWrap = styled.div`
   border: 1px solid ${colors.textWhite02};
-  box-sizing: border-box;
   position: absolute;
 
   display: flex;
@@ -23,15 +22,14 @@ export const ModalWrap = styled.div`
   align-items: center;
 
   width: 335px;
-  padding: 48px 0;
+  padding: 48px 20px;
   border-radius: 8px;
   background-color: ${colors.modalBlack};
   z-index: 1;
 
   ${mq.tablet} {
-    min-width: 430px;
+    width: ${props => props.width}px;
     padding: 48px 32px;
-    box-sizing: content-box;
   }
 `;
 

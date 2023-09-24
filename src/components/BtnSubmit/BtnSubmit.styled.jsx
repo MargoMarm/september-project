@@ -23,7 +23,7 @@ export const ButtonSubmit = styled.button`
   line-height: 112.5%;
 
   ${mq.tablet} {
-    padding: 16px 60px;
+    padding: 16px 45px;
     font-size: ${fontSize => fontSize};
     line-height: 120%;
     margin-top: ${({ margin }) => margin?.top.tab || 0};
