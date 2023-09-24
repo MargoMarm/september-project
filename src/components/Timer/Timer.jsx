@@ -1,5 +1,4 @@
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import sprite from '../../assets/sprite.svg';
@@ -13,18 +12,12 @@ import {
 } from './Timer.styled';
 
 export default function Timer({
-  calories,
   writeTime,
-  countCalory,
-  remainingTime,
-  time,
+  isPlaying,
+  calory,
+  startExercise,
+  stopExercise,
 }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const toglePlaying = () => {
-    setIsPlaying(prevstate => !prevstate);
-  };
-
   return (
     <>
       <FlexContainer>
@@ -42,17 +35,22 @@ export default function Timer({
       </FlexContainer>
 
       <FlexContainer>
-        <PauseButton type="button" onClick={toglePlaying}>
-          <Svg>
-            <use href={sprite + `${isPlaying ? '#pause' : '#play'}`}></use>
-          </Svg>
-        </PauseButton>
-
+        {isPlaying ? (
+          <PauseButton type="button" onClick={stopExercise}>
+            <Svg>
+              <use href={sprite + '#pause'}></use>
+            </Svg>
+          </PauseButton>
+        ) : (
+          <PauseButton type="button" onClick={startExercise}>
+            <Svg>
+              <use href={sprite + '#play'}></use>
+            </Svg>
+          </PauseButton>
+        )}
         <BurntCaloryLabel>
           Burned calories:
-          <BurntCaloryInfo>
-            {countCalory(remainingTime, calories, time)}
-          </BurntCaloryInfo>
+          <BurntCaloryInfo>{calory}</BurntCaloryInfo>
         </BurntCaloryLabel>
       </FlexContainer>
     </>
@@ -60,9 +58,9 @@ export default function Timer({
 }
 
 Timer.propTypes = {
-  calories: PropTypes.number.isRequired,
+  calory: PropTypes.number.isRequired,
   writeTime: PropTypes.func.isRequired,
-  countCalory: PropTypes.func.isRequired,
-  remainingTime: PropTypes.number.isRequired,
-  time: PropTypes.number.isRequired,
+  startExercise: PropTypes.func.isRequired,
+  stopExercise: PropTypes.func.isRequired,
+  isPlaying: PropTypes.bool.isRequired,
 };

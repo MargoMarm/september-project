@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import BtnSubmit from '../BtnSubmit';
 import Timer from '../Timer';
@@ -30,12 +30,38 @@ export default function AddExerciseForm({ data, closeModal }) {
     time,
   } = data;
 
-  const [remainingTime, setremainingTime] = useState(0);
   const [burnedCalory, setBurnedCalory] = useState(0);
+  const [exTime, setExTime] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [intervalId, setIntervalId] = useState(null);
+
+  const countCalory = (calory, time, exTime) => {
+    const burnedCalory = Math.floor((exTime * calory) / (time * 60));
+    setBurnedCalory(burnedCalory);
+    return burnedCalory;
+  };
+
+  useEffect(() => {
+    countCalory(calories, time, exTime);
+  }, [calories, time, exTime]);
+
+  const writeTime = () => {
+    setExTime(prevSt => prevSt + 1);
+  };
+
+  const startExercise = () => {
+    const intervalId = setInterval(writeTime, 1000);
+    setIntervalId(intervalId);
+    setIsPlaying(true);
+  };
+
+  const stopExercise = () => {
+    setIsPlaying(false);
+    clearInterval(intervalId);
+    setIntervalId(null);
+  };
 
   const writeRemainengTime = ({ remainingTime }) => {
-    setremainingTime(remainingTime);
-
     const minutes =
       Math.floor(remainingTime / 60).toString().length > 1
         ? Math.floor(remainingTime / 60)
@@ -52,22 +78,12 @@ export default function AddExerciseForm({ data, closeModal }) {
     );
   };
 
-  const countCalory = (remainingTime, calory, time) => {
-    const burnedCalory = Math.floor(
-      ((time * 60 - remainingTime) * calory) / (time * 60),
-    );
-    setBurnedCalory(burnedCalory);
-
-    return burnedCalory;
-  };
-
   const handleSubmit = () => {
     const date = getCurrentDate();
-    const workTime = time * 60 - remainingTime;
     const data = {
       exerciseId: _id,
       date,
-      time: workTime,
+      time: exTime,
       calory: burnedCalory,
     };
     console.log(data);
@@ -91,11 +107,12 @@ export default function AddExerciseForm({ data, closeModal }) {
           <Img src={gifUrl} alt="gif of exercise" />
         </GifContainer>
         <Timer
-          time={time}
-          remainingTime={remainingTime}
-          calories={calories}
+          startExercise={startExercise}
+          stopExercise={stopExercise}
           countCalory={countCalory}
+          calory={burnedCalory}
           writeTime={writeRemainengTime}
+          isPlaying={isPlaying}
         />
       </TimerContainer>
       <InfoCardConteiner>
