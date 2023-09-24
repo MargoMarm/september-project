@@ -7,6 +7,7 @@ import {
   logInUser,
   logOutUser,
   updateUserData,
+  updateBodyParts,
 } from './operation';
 
 const initialState = {
@@ -41,11 +42,17 @@ export const authSlice = createSlice({
   extraReducers: builder => {
     builder.addCase(authUser.fulfilled, (state, action) => {
       state.token = action.payload.token;
+      state.user.name = action.payload.name;
+      state.user.email = action.payload.email;
       state.isLoggedIn = true;
       state.error = null;
     });
     builder.addCase(authUser.rejected, (state, action) => {
       state.error = action.payload;
+    });
+
+    builder.addCase(updateBodyParts.fulfilled, (state, { payload }) => {
+      replaceUserState(state, payload);
     });
 
     builder.addCase(logInUser.fulfilled, (state, { payload }) => {

@@ -96,3 +96,15 @@ export const updateUserData = createAsyncThunk(
     }
   },
 );
+
+export const updateBodyParts = createAsyncThunk(
+  'auth/updateBodyParts',
+  async (userData, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/api/users/create', userData);
+      return data;
+    } catch (e) {
+      return rejectWithValue(e.message);
+    }
+  },
+);
