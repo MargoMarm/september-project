@@ -53,6 +53,7 @@ export const Value = styled.span`
   font-style: normal;
   font-weight: 400;
   line-height: ${14 / 18};
+  margin-left: 5px;
 `;
 
 export const ToDiary = styled(NavLink)`
