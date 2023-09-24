@@ -4,8 +4,12 @@ import { colors, mq } from '../../utils/index';
 export const Item = styled.li`
   margin-bottom: 20px;
 
-  &:last-child {
-    margin-bottom: 80px;
+  // &:last-child {
+  //   margin-bottom: 80px;
+  // }
+
+  &:nth-child(10) {
+    margin-bottom: 0;
   }
 
   ${mq.tablet} {
