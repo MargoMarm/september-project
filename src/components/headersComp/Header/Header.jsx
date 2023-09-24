@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import { HeaderContainer } from './Header.styled';
 import UserNav from '../UserNav/UserNav';
 import Logo from '../Logo/Logo';
@@ -7,11 +8,13 @@ import { UseAuth } from '../../../hooks/useAuth';
 
 export const Header = () => {
   const { isLoggedIn } = UseAuth();
+  const { pathname } = useLocation();
+  console.log(pathname);
 
   return (
     <HeaderContainer>
       <Logo />
-      {isLoggedIn && (
+      {isLoggedIn && pathname !== '/params' && (
         <>
           <UserNav />
           <MobMenu />
