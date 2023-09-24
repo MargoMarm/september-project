@@ -70,6 +70,7 @@ export default function AddExerciseForm({ data, closeModal }) {
       time: workTime,
       calory: burnedCalory,
     };
+    console.log(data);
 
     if (!data.time || !data.calory) {
       return;
