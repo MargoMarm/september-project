@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { handleLogout } from '../../utils';
 import CustomNavLink from '../CustomNavLink/CustomNavLink';
 import {
@@ -15,6 +15,9 @@ import {
   SvgUser,
   Overlay,
 } from './MobMenu.styled';
+import { UserAvatar } from '../headersComp/UserNav/UserNav.styled';
+import { selectUser } from '../../redux/auth/selectors';
+
 import sprite from '../../assets/sprite.svg';
 
 const MobMenu = () => {
@@ -23,6 +26,8 @@ const MobMenu = () => {
   const toggleMobMenu = () => setMobMenu(!mobMenu);
 
   const dispatch = useDispatch();
+
+  const { avatarURL } = useSelector(selectUser);
 
   useEffect(() => {
     const handleKeyDown = e => {
@@ -47,9 +52,9 @@ const MobMenu = () => {
           </Svg>
         </ButtonMenu>
         <ButtonMenu type="button">
-          <SvgUser>
-            <use href={sprite + `#ecllipse`}></use>
-          </SvgUser>
+          <UserAvatar>
+            <img src={avatarURL} alt="user's avatar" />
+          </UserAvatar>
         </ButtonMenu>
         <ButtonMenu type="button" onClick={toggleMobMenu}>
           <Svg>

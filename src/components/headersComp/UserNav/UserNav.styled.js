@@ -48,4 +48,9 @@ export const UserAvatar = styled.div`
   height: 46px;
   border-radius: 50%;
   overflow: hidden;
+
+  > img  {
+	width: 100%;
+	height: auto;
+  }
 `;

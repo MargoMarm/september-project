@@ -7,8 +7,8 @@ import {
   Svg,
   SvgUser,
   ButtonWrap,
-	Span,
-  UserAvatar
+  Span,
+  UserAvatar,
 } from './UserNav.styled';
 import { NavLink } from 'react-router-dom';
 
@@ -17,9 +17,8 @@ import { selectUser } from '../../../redux/auth/selectors';
 
 export const UserNav = () => {
   const dispatch = useDispatch();
-	const {avatarURL} = useSelector(selectUser)
-	
-	console.log(avatarURL)
+  const { avatarURL } = useSelector(selectUser);
+
   return (
     <WrapUserNav>
       <CustomNavLink to="/diary" text="Diary" isinheader={'true'} />
@@ -31,9 +30,9 @@ export const UserNav = () => {
             <use href={sprite + `#settings`}></use>
           </Svg>{' '}
         </NavLink>
-			  <UserAvatar>
-				  
-</UserAvatar>
+        <UserAvatar>
+          <img src={avatarURL} alt="user's avatar" />
+        </UserAvatar>
         <Button
           onClick={() => {
             handleLogout(dispatch);
