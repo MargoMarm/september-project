@@ -9,7 +9,6 @@ import { UseAuth } from '../../../hooks/useAuth';
 export const Header = () => {
   const { isLoggedIn } = UseAuth();
   const { pathname } = useLocation();
-  console.log(pathname);
 
   return (
     <HeaderContainer>
