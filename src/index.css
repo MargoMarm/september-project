@@ -87,3 +87,15 @@ button {
   --os-handle-perpendicular-size-active: 8px;
   --os-handle-perpendicular-size-hover: 8px;
 }
+
+/* стили слайдера для пагинации */
+
+.pagination .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background: #efede8;
+}
+
+.pagination .swiper-pagination-bullet-active {
+  background: #e6533c;
+}

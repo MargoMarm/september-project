@@ -48,6 +48,7 @@ const ExercisesList = () => {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={swiper => console.log(swiper)}
+      className="pagination"
 
       // onSlideChange={() => console.log('slide change')}
     >
