@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { mq } from '../../utils';
 
-import imgHomePage from '../../assets/images/imgHomePage';
+import imgDx2 from '../../assets/images/exercises_desk_2x.jpeg';
 
 export const ExercisesContainer = styled.div`
   padding-left: 20px;
@@ -27,38 +27,33 @@ export const TitleThumb = styled.div`
 `;
 
 export const ExercisesListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   padding: 40px 20px 80px 20px;
-  gap: 40px;
+  position: relative;
+
 
   ${mq.tablet} {
-    gap: 32px;
     padding: 72px 32px 48px 32px;
   }
 
   ${mq.desktop} {
     padding: 68px 81px 81px 96px;
+  }
+`;
 
-    gap: 28px;
+export const BGImg = styled.div`
+  ${mq.desktop} {
+    position: absolute;
+    top: -117px;
+    right: 0;
+    z-index: -1;
+    display: block;
 
+    width: 428px;
+    height: 716px;
     background: linear-gradient(89deg, #040404 1.1%, rgba(4, 4, 4, 0) 70.79%);
     background-repeat: no-repeat;
     background-position: 100% 0;
     background-size: 428px 716px;
-    background-image: url(${imgHomePage.imgDx1});
-
-    ${
-      '' /* @media (min-device-pixel-ratio: 2),
-      (-webkit-min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      & {
-        background-image: url(${imgProducts.imgDx2});
-      }
-
-      
-    } */
-    }
+    background-image: url(${imgDx2});
   }
 `;

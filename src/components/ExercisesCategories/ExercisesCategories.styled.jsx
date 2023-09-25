@@ -33,8 +33,8 @@ export const CategoriesLink = styled.button`
     position: absolute;
 
     transition:
-      background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-      transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: scalex(0);
 
     bottom: -4px;
