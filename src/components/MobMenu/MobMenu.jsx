@@ -12,7 +12,7 @@ import {
   ContainerLink,
   Span,
   Svg,
-  SvgUser,
+  Link,
   Overlay,
 } from './MobMenu.styled';
 import { UserAvatar } from '../headersComp/UserNav/UserNav.styled';
@@ -46,11 +46,11 @@ const MobMenu = () => {
   return (
     <>
       <MenuBars to="#">
-        <ButtonMenu type="button">
+        <Link to={'/profile'}>
           <Svg>
             <use href={sprite + `#settings`}></use>
           </Svg>
-        </ButtonMenu>
+        </Link>
         <ButtonMenu type="button">
           {avatarURL ? (
             <UserAvatar>
