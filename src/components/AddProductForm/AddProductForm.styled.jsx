@@ -34,8 +34,6 @@ export const InputTitle = styled.input`
     width: 244px;
     height: 40px;
   }
-  
-
 `;
 
 export const InputQuantity = styled.input`
@@ -116,11 +114,18 @@ export const AddButton = styled.button`
   margin-right: 14px;
 
   &:hover {
-    background: #ef8964;
+    background: ${colors.orangeSecondary};
   }
 
   ${mq.tablet} {
     margin-right: 16px;
+  }
+
+  &:disabled {
+    color: ${colors.textWhite06};
+    background: ${colors.orangeSecondary};
+
+    cursor: not-allowed;
   }
 `;
 
@@ -140,5 +145,10 @@ export const CloseButton = styled.button`
 
   ${mq.tablet} {
     padding: 12px 40px;
+  }
+
+  &:hover {
+    border-color: ${colors.orange};
+    transition: border-color 0.3s ease-out;
   }
 `;

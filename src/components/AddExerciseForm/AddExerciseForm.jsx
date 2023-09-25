@@ -119,6 +119,7 @@ export default function AddExerciseForm({ data, addExercise }) {
       </InfoCardConteiner>
       <ButtonWrapper>
         <AddButton
+          disabled={burnedCalory > 0 ? false : true}
           type="button"
           onClick={() =>
             addExercise({

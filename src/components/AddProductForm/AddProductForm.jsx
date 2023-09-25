@@ -28,14 +28,12 @@ function AddProductForm({ data, closeModal, addProduct }) {
 
         <label>
           <InputQuantity
-            
             placeholder="grams"
             type="number"
             value={quantity}
             onChange={e => setQuantity(e.target.value)}
           />
-           </label>
-       
+        </label>
       </InputContainer>
 
       <Calories>
@@ -44,6 +42,7 @@ function AddProductForm({ data, closeModal, addProduct }) {
 
       <ButtonContainer>
         <AddButton
+          disabled={quantity > 0 ? false : true}
           type="button"
           onClick={() =>
             addProduct({
