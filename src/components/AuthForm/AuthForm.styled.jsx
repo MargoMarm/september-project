@@ -3,7 +3,7 @@ import { colors, mq } from '../../utils';
 import { Form, Field } from 'formik';
 
 export const FormContainer = styled(Form)`
-  width: 335px;
+  /* width: 335px; */
   margin-top: 28px;
   ${mq.tablet} {
     margin-top: 32px;
