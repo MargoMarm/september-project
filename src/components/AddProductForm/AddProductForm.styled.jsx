@@ -48,7 +48,7 @@ export const InputQuantity = styled.input`
   gap: 10px;
   background-color: inherit;
   color: ${colors.white};
- 
+
   &::placeholder {
     color: ${colors.textWhite03};
     text-align: right;
@@ -70,8 +70,9 @@ export const InputQuantity = styled.input`
     margin-top: 0;
   }
 
-
-
+  :focus-visible {
+    outline: 2px solid ${colors.orange};
+  }
 `;
 
 export const Calories = styled.p`

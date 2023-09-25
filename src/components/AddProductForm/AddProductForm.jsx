@@ -14,7 +14,7 @@ import {
 import formatDate from '../../utils/formatDate';
 
 function AddProductForm({ data, closeModal, addProduct }) {
-  const [quantity, setQuantity] = useState(null);
+  const [quantity, setQuantity] = useState('');
 
   const amount = Math.round((quantity * data.calories) / 100);
   const date = formatDate(new Date());
