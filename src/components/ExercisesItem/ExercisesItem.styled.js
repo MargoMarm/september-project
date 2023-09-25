@@ -8,9 +8,7 @@ export const Item = styled.li`
     margin-bottom: 0px;
   }
 
-  // &:nth-child(10) {
-  //   margin-bottom: 0;
-  // }
+
 
   ${mq.tablet} {
     flex-basis: calc((100% - 32px) / 3);
