@@ -11,4 +11,5 @@ export const ScrollContainer = styled.div`
     width: ${({ width }) => width?.dt + 'px' || '100%'};
     height: 487px;
   }
+
 `;
