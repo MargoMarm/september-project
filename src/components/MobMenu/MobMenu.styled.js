@@ -1,5 +1,14 @@
 import styled from '@emotion/styled';
 import { mq, colors, button, svgUser } from '../../utils';
+import { NavLink } from 'react-router-dom';
+
+export const Link = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  ${mq.desktop} {
+    display: none;
+  }
+`;
 
 export const MenuBars = styled.div`
   display: flex;
@@ -74,7 +83,7 @@ export const NavbarToggle = styled.div`
 `;
 
 export const ContainerMenu = styled.div`
-position: relative;
+  position: relative;
 
   width: 100%;
   height: 100vh;
