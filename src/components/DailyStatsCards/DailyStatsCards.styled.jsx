@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { colors, mq } from '../../utils';
 
-export const CardWrap = styled.div`
+export const CardWrap = styled.li`
   box-sizing: border-box;
   border: 1px solid;
 

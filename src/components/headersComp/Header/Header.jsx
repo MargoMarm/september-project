@@ -9,9 +9,8 @@ import { UseAuth } from '../../../hooks/useAuth';
 export const Header = () => {
   const { isLoggedIn } = UseAuth();
   const { pathname } = useLocation();
-
   return (
-    <HeaderContainer>
+    <HeaderContainer isLoggedIn={isLoggedIn} >
       <Logo />
       {isLoggedIn && pathname !== '/params' && (
         <>
