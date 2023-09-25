@@ -1,4 +1,4 @@
-import{n as e,c as n,m as i,j as t,s as o,C as s}from"./index-6891c9c9.js";import{W as p,a as r,L as x}from"./Home.styled-b50db197.js";import"./imgHomePage-66a7b711.js";const a=e.h1`
+import{n as e,c as n,m as i,j as t,s as o,C as s}from"./index-5031df81.js";import{W as p,a as r,L as x}from"./Home.styled-421ff723.js";const a=e.h1`
   letter-spacing: 0.38px;
   font-weight: 500;
   color: ${n.white};
@@ -40,4 +40,4 @@ import{n as e,c as n,m as i,j as t,s as o,C as s}from"./index-6891c9c9.js";impor
       }
     }
   }
-`;function l(){return t.jsxs(a,{children:["Transforming your"," ",t.jsxs("span",{children:["body"," ",t.jsx("svg",{children:t.jsx("use",{href:o+"#line"})})]})," ","shape with Power Pulse"]})}const c=()=>t.jsxs(t.Fragment,{children:[t.jsx(p,{}),t.jsxs(r,{children:[t.jsx(l,{}),t.jsxs(x,{children:[t.jsx("li",{children:t.jsx(s,{isorange:"true",text:"Sign up",to:"/signup"})}),t.jsx("li",{children:t.jsx(s,{text:"Sign in",to:"/signin"})})]})]})]});export{c as default};
+`;function l(){return t.jsxs(a,{children:["Transforming your"," ",t.jsxs("span",{children:["body"," ",t.jsx("svg",{children:t.jsx("use",{href:o+"#line"})})]})," ","shape with Power Pulse"]})}const m=()=>t.jsxs(t.Fragment,{children:[t.jsx(p,{}),t.jsxs(r,{children:[t.jsx(l,{}),t.jsxs(x,{children:[t.jsx("li",{children:t.jsx(s,{isorange:"true",text:"Sign up",to:"/signup"})}),t.jsx("li",{children:t.jsx(s,{text:"Sign in",to:"/signin"})})]})]})]});export{m as default};
