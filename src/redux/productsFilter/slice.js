@@ -7,7 +7,7 @@ export const productsSlice = createSlice({
   name: 'products',
   initialState : {
     products: [],
-    categories: ["some", "SOME"],
+    categories: [],
     error: null,
     isLoading: false,
   },

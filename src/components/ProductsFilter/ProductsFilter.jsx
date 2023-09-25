@@ -18,6 +18,8 @@ import {
 } from './ProductsFilter.styled';
 import debounce from 'lodash.debounce';
 
+import { capitalizeWord } from "../../utils/capitalizeWord";
+
 
 
 export default function ProductsFilter() {
@@ -81,13 +83,20 @@ export default function ProductsFilter() {
   };
   const handleSubmit = event => {
     event.preventDefault();
+    console.log("SUBMIT");
+    const selectedValue = event.target.value;
+    setQuery(selectedValue)
+  }
+  const hanleReset = () => {
+    console.log("isReset");
+    setQuery("")
   }
   
   return (
     <FilterContainer>
       <FilterTitle>Filters</FilterTitle>
-      <InputWrapper >
-        <TextInput type="text" autoComplete="off" onSubmit={handleSubmit}  onChange={handleChangeQuery} />
+      <InputWrapper  onSubmit={handleSubmit} onReset={hanleReset}>
+        <TextInput type="text" autoComplete="off"    onChange={handleChangeQuery} />
         <ButtonIconForInput
           right="42px"
           type="reset"
@@ -97,9 +106,8 @@ export default function ProductsFilter() {
           </Svg>
         </ButtonIconForInput>
         <ButtonIconForInput
-          
+        type="submit"
           right="18px"
-          type="submit"
         >
           <Svg>
             <use href={sprite + `#icon-search`}></use>
@@ -113,7 +121,7 @@ export default function ProductsFilter() {
           {productsCategories.map(category => {
             return (
               <option key={category} value={category} style={optionStyles}>
-                {category}
+                {capitalizeWord(category)}
               </option>
               
             );
