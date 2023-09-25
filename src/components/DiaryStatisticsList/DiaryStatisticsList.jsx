@@ -10,8 +10,11 @@ import {
   consumedCalories,
   doneExercisesTime,
 } from '../../redux/diary/selectors';
+import { useMediaQuery } from 'react-responsive';
 
 const DairyStatisticList = () => {
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1439 });
+
   const dayliTime = useSelector(selectDailyTime);
   const dailyСalories = useSelector(selectDailyСalories);
   const burnCalories = useSelector(burnedCalories);
@@ -31,7 +34,45 @@ const DairyStatisticList = () => {
   let resultTime = dayliTime - result.minutes;
   let theRestOfTheСalories = dailyСalories - consumCalories;
 
-  return (
+  return isTablet ? (
+    <List>
+      {' '}
+      <DailyStatsCards
+        icon="fork-and-knife"
+        fill="true"
+        label="Daily calorie intake"
+        keyValue={dailyСalories}
+      ></DailyStatsCards>
+      <DailyStatsCards
+        icon="apple"
+        label="Сalories consumed"
+        keyValue={consumCalories}
+      ></DailyStatsCards>
+      <DailyStatsCards
+        icon="bubble"
+        label="The rest of the calories"
+        keyValue={theRestOfTheСalories}
+        border={theRestOfTheСalories < 0 ? 'red' : 'default'}
+      ></DailyStatsCards>
+      <DailyStatsCards
+        icon="barbell"
+        fill="true"
+        label="Daily norm of sports"
+        keyValue={dayliTime + ' min'}
+      ></DailyStatsCards>
+      <DailyStatsCards
+        icon="fire"
+        label="Сalories burned"
+        keyValue={burnCalories}
+      ></DailyStatsCards>
+      <DailyStatsCards
+        icon="runningMan"
+        label="The rest of sports"
+        keyValue={resultTime + ' min'}
+        border={resultTime > dayliTime ? 'green' : 'default'}
+      ></DailyStatsCards>
+    </List>
+  ) : (
     <List>
       <DailyStatsCards
         icon="fork-and-knife"

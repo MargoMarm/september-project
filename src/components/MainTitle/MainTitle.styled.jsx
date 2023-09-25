@@ -1,43 +1,16 @@
 import styled from '@emotion/styled';
 import { mq, colors } from '../../utils';
 
-const commonStyles = {
-  color: colors.white,
-  fontFamily: 'Roboto',
-  fontWeight: 500,
-  wordWrap: 'break-word',
-};
-
 export const Text = styled.h1`
   letter-spacing: 0.38px;
-  ${commonStyles}
-
-  & > span {
-    position: relative;
-    display: inline-block;
-
-    & > svg {
-      position: absolute;
-      z-index: -1;
-      width: 98px;
-      height: 35px;
-      left: -13px;
-      top: 1px;
-
-      ${mq.tablet} {
-        width: 185px;
-        height: 67px;
-        left: -20px;
-        top: 10px;
-      }
-    }
-  }
+  font-weight: 500;
+  color: ${colors.white};
 
   ${mq.smallMobile} {
-    width: 335px;
     margin-top: 66px;
     margin-bottom: 40px;
     line-height: 105.26%;
+    font-size: 38px;
   }
 
   ${mq.tablet} {
@@ -48,5 +21,26 @@ export const Text = styled.h1`
 
     margin-top: 116px;
     margin-bottom: 64px;
+  }
+
+  & > span {
+    position: relative;
+    display: inline-block;
+
+    & > svg {
+      position: absolute;
+      z-index: -1;
+      width: 98px;
+      height: 35px;
+      left: -7px;
+      top: 3px;
+
+      ${mq.tablet} {
+        width: 185px;
+        height: 67px;
+        left: -20px;
+        top: 10px;
+      }
+    }
   }
 `;

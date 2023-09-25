@@ -9,17 +9,17 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  border-bottom: ${props =>
+    props.isLoggedIn ? `1px solid ${colors.textWhite03}` : 'none'};
   ${mq.tablet} {
     background-color: ${colors.black};
-    padding: 0 32x;
-
+    padding: 0 32px;
     height: 84px;
-    border-bottom: 1px solid ${colors.textWhite03};
   }
 
   ${mq.desktop} {
     background-color: transparent;
-    border: none;
     padding-left: 96px;
+	 
   }
 `;

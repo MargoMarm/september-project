@@ -62,7 +62,8 @@ export const authSlice = createSlice({
       state.error = null;
     });
     builder.addCase(logInUser.rejected, (state, action) => {
-      state.error = action.payload;
+		 state.error = action.payload;
+		 Notify.failure("Oops... Something went wrong! Enter correct email or password")
     });
 
     builder.addCase(logOutUser.fulfilled, state => {
