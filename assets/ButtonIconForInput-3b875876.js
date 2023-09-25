@@ -1,4 +1,4 @@
-import{n as i,c as o,P as n,j as a}from"./index-5031df81.js";const p=i.button`
+import{n as i,c as o,P as n,j as a}from"./index-22f915ea.js";const p=i.button`
   position: absolute;
   top: 50%;
   right: ${({right:t})=>t||"0"};

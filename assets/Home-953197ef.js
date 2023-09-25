@@ -1,4 +1,4 @@
-import{n as e,c as n,m as i,j as t,s as o,C as s}from"./index-5031df81.js";import{W as p,a as r,L as x}from"./Home.styled-421ff723.js";const a=e.h1`
+import{n as e,c as n,m as i,j as t,s as o,C as s}from"./index-22f915ea.js";import{W as p,a as r,L as x}from"./Home.styled-2d938642.js";const a=e.h1`
   letter-spacing: 0.38px;
   font-weight: 500;
   color: ${n.white};
