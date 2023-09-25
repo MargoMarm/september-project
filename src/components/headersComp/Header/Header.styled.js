@@ -11,7 +11,7 @@ export const HeaderContainer = styled.div`
   padding: 0 20px;
   ${mq.tablet} {
     background-color: ${colors.black};
-    padding: 0 32x;
+    padding: 0 32px;
 
     height: 84px;
     border-bottom: 1px solid ${colors.textWhite03};
