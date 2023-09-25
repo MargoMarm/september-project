@@ -9,10 +9,10 @@ export const LinkList = styled.ul`
 `;
 
 export const Wrapper = styled.div`
-  height: 812px;
+  height: 685px;
   background-image: url(${imgForHome.imgMx1});
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right bottom;
   background-size: 298px 571px;
   padding: 0 20px;
 
@@ -35,7 +35,7 @@ export const Wrapper = styled.div`
   }
 
   ${mq.tablet} {
-    height: 768px;
+    height: 1024px;
     background-image: url(${imgForHome.imgTx1});
     background-size: 437px 893px;
     padding: 0 32px;

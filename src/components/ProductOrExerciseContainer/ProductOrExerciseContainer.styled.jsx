@@ -6,6 +6,7 @@ export const Container = styled.ul`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  align-content: flex-start;
   gap: 20px;
   height: 100vh;
   width: 100%;
@@ -16,8 +17,11 @@ export const Container = styled.ul`
     flex-wrap: wrap;
     row-gap: 32px;
     column-gap: 16px;
+    
   }
   ${mq.desktop} {
     width: 868px;
+   
   }
+
 `;

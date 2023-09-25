@@ -34,9 +34,12 @@ export const InputTitle = styled.input`
     width: 244px;
     height: 40px;
   }
+  
+
 `;
 
 export const InputQuantity = styled.input`
+  position: relative;
   width: 287px;
   height: 34px;
   padding: 8px 14px;
@@ -65,6 +68,10 @@ export const InputQuantity = styled.input`
     width: 155px;
     height: 40px;
     margin-top: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid ${colors.orange};
   }
 `;
 

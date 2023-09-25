@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../redux/productsFilter/selectors';
 import { useEffect } from 'react';
 import { fetchProducts } from '../../redux/productsFilter/operations';
+import EmptyProductList from "../../components/EmptyProductList/EmptyProductList";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -23,10 +24,10 @@ const Products = () => {
         <Title text="Products" />
         <ProductsFilter />
       </FlexWrapper>
-      <Scrollbar width={{ dt: '868' }}>
+      {products.length !== 0 ? (  
+         <Scrollbar width={{ dt: '868' }}>
         <ProductsOrExercisesContainer>
           {products.map((product, i) => {
-            if (i < 20) {
               return (
                 <ProductsOrExercisesItem
                   key={product.id}
@@ -35,10 +36,11 @@ const Products = () => {
                 />
               );
             }
-            return null;
-          })}
+          )}
         </ProductsOrExercisesContainer>
-      </Scrollbar>
+       
+      </Scrollbar>) : <EmptyProductList/>}
+   
     </ProductPageContainer>
   );
 };

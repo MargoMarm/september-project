@@ -75,7 +75,12 @@ export const FilterTitle = styled.div`
 
 export const SelectContainer = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 16px;
+   ${mq.tablet} {
+    flex-direction: row;
+    
+  }
 
 `;
 

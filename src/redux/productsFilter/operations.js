@@ -25,6 +25,14 @@ export const getCategories = createAsyncThunk(
       
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
-    }
+    } 
   },
+  {
+    condition: (_, { getState, extra }) => {
+      const  state  = getState();
+      if (state.products.categories.length > 1) {
+        return false
+      }
+    }
+  }
 );

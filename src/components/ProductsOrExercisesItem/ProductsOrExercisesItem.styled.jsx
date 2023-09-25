@@ -7,7 +7,7 @@ export const Item = styled.li`
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  height: auto;
+  height: 159px;
   padding: 16px;
   align-items: flex-start;
 

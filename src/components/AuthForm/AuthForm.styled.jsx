@@ -3,8 +3,8 @@ import { colors, mq } from '../../utils';
 import { Form, Field } from 'formik';
 
 export const FormContainer = styled(Form)`
-  width: 335px;
   margin-top: 28px;
+
   ${mq.tablet} {
     margin-top: 32px;
     width: 364px;
@@ -15,10 +15,10 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 21px;
+  gap: 28px;
   margin-bottom: 28px;
   ${mq.tablet} {
-    gap: 24px;
+    gap: 32px;
     margin-bottom: 64px;
   }
 `;
@@ -55,6 +55,9 @@ export const TextInput = styled(Field)`
 
 export const Warning = styled.div`
   position: absolute;
+  ${mq.smallMobile} {
+    bottom: -24px;
+  }
 `;
 
 export const Error = styled.div`
