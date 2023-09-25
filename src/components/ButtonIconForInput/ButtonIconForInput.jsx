@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { Button } from './ButtonIconForInput.styled';
 
-export default function ButtonIconForInput({ children, onClick, right, type }) {
+export default function ButtonIconForInput({ children, onClick, right, type, }) {
   return (
-    <Button onClick={onClick} right={right} type={type}>
+    <Button onClick={onClick}  right={right} type={type} > 
       {children}
     </Button>
   );
@@ -12,6 +12,6 @@ export default function ButtonIconForInput({ children, onClick, right, type }) {
 ButtonIconForInput.propTypes = {
   // onClick: PropTypes.func.isRequired,
   right: PropTypes.string,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   children: PropTypes.object.isRequired,
 };
