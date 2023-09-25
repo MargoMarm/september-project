@@ -8,6 +8,7 @@ export const ProductPageContainer = styled.div`
   flex-direction: column;
   padding: 40px 20px 80px 20px;
   gap: 40px;
+  height: 100vh;
 
   ${mq.tablet} {
     gap: 32px;
@@ -52,3 +53,4 @@ export const FlexWrapper = styled.div`
     justify-content: space-between;
   }
 `;
+

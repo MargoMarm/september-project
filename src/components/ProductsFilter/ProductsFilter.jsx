@@ -27,7 +27,7 @@ export default function ProductsFilter() {
     const reqObj = {};
 
     if (input) {
-      reqObj.title = input;
+      reqObj.title = input.trim();
     }
     if (category && category !== 'Categories' && category !== "default") {
       reqObj.category = category;
