@@ -11,6 +11,9 @@ import {
   DataList,
 } from './ProductOrExerciseModal.styled';
 import { nanoid } from '@reduxjs/toolkit';
+import foodIcon from "../../assets/images/foodIcon.png";
+import thumbUp from "../../assets/images/thumbUp.png";
+import sprite from '../../assets/sprite.svg';
 
 function ProductOrExerciseModal({ modalType, data, btnNext }) {
   const transformKey = key => {
@@ -28,7 +31,7 @@ function ProductOrExerciseModal({ modalType, data, btnNext }) {
   const mappedData = data => {
     const keys = Object.keys(data);
     const renderKeys = keys.map(key => {
-      console.log("KEY",key);
+     
       return (
         <li key={nanoid()}>
           <Key>
@@ -46,8 +49,8 @@ function ProductOrExerciseModal({ modalType, data, btnNext }) {
       <Img
         src={
           modalType === 'product'
-            ? '/src/assets/images/foodIcon.png'
-            : '/src/assets/images/thumbUp.png'
+            ? foodIcon
+            : thumbUp
         }
         alt="it`s a placeholder image, but it`s avocado too"
       />
@@ -60,7 +63,7 @@ function ProductOrExerciseModal({ modalType, data, btnNext }) {
       <ToDiary to={'/diary'}>
         To the diary
         <Svg fill="">
-          <use href="/src/assets/sprite.svg#arrow-right"></use>
+        <use href={sprite + `#arrow-right`}></use>
         </Svg>
       </ToDiary>
     </ContentWrap>

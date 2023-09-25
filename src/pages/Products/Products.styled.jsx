@@ -9,10 +9,13 @@ export const ProductPageContainer = styled.div`
   padding: 40px 20px 80px 20px;
   gap: 40px;
   height: 100vh;
+  position: relative;
 
   ${mq.tablet} {
+    
     gap: 32px;
     padding: 72px 32px 48px 32px;
+   
   }
 
   ${mq.desktop} {
@@ -25,7 +28,7 @@ export const ProductPageContainer = styled.div`
     background-position: 100% 0;
     background-size: 428px 716px;
     background-image: url(${imgProducts.imgDx1});
-
+  
     ${
       '' /* @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -39,6 +42,7 @@ export const ProductPageContainer = styled.div`
     } */
     }
   }
+  
 `;
 
 export const FlexWrapper = styled.div`

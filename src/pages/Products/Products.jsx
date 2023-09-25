@@ -9,6 +9,7 @@ import { getProducts } from '../../redux/productsFilter/selectors';
 import { useEffect } from 'react';
 import { fetchProducts } from '../../redux/productsFilter/operations';
 import EmptyProductList from "../../components/EmptyProductList/EmptyProductList";
+
 const Products = () => {
   const dispatch = useDispatch();
   const products = useSelector(getProducts);
@@ -23,7 +24,8 @@ const Products = () => {
         <Title text="Products" />
         <ProductsFilter />
       </FlexWrapper>
-      {products.length !== 0 ? (   <Scrollbar width={{ dt: '868' }}>
+      {products.length !== 0 ? (  
+         <Scrollbar width={{ dt: '868' }}>
         <ProductsOrExercisesContainer>
           {products.map((product, i) => {
               return (
@@ -36,6 +38,7 @@ const Products = () => {
             }
           )}
         </ProductsOrExercisesContainer>
+       
       </Scrollbar>) : <EmptyProductList/>}
    
     </ProductPageContainer>

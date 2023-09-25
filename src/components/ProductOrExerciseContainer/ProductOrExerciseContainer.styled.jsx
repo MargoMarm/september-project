@@ -20,4 +20,5 @@ export const Container = styled.ul`
   ${mq.desktop} {
     width: 868px;
   }
+
 `;
