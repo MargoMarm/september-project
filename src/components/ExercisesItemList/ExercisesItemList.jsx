@@ -57,10 +57,7 @@ const ExercisesList = () => {
       slidesPerView={1}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      onSwiper={swiper => console.log(swiper)}
       className="pagination"
-
-      // onSlideChange={() => console.log('slide change')}
     >
       {chunkedFilters.map(arr => (
         <SwiperSlide key={nanoid()}>
