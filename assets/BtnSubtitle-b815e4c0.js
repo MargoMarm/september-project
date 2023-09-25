@@ -1,4 +1,4 @@
-import{n as r,m as a,c as i,P as s,r as f,j as e,s as o,L as k}from"./index-1e579745.js";import{F as z,a as P,c as R,b as c,d as T,E as p}from"./formik.esm-4fe0cc7b.js";import{B}from"./BtnSubmit-93f8e2f1.js";import{B as E}from"./ButtonIconForInput-8ec837ab.js";import{s as g}from"./styled-components.browser.esm-124221b6.js";const I=r(z)`
+import{n as r,m as a,c as i,P as s,r as f,j as e,s as o,L as k}from"./index-14519855.js";import{F as z,a as P,c as R,b as c,d as T,E as p}from"./formik.esm-c64f8f25.js";import{B}from"./BtnSubmit-528f5506.js";import{B as E}from"./ButtonIconForInput-f1f8c3bf.js";import{s as g}from"./styled-components.browser.esm-272f5ec5.js";const I=r(z)`
   width: 335px;
   margin-top: 28px;
   ${a.tablet} {
@@ -9,10 +9,10 @@ import{n as r,m as a,c as i,P as s,r as f,j as e,s as o,L as k}from"./index-1e57
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 14px;
+  gap: 21px;
   margin-bottom: 28px;
   ${a.tablet} {
-    gap: 20px;
+    gap: 24px;
     margin-bottom: 64px;
   }
 `,x=r.div`

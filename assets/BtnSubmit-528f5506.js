@@ -1,4 +1,4 @@
-import{n as i,c as e,m as b,P as o,j as l}from"./index-1e579745.js";const r=i.button`
+import{n as i,c as e,m as b,P as o,j as l}from"./index-14519855.js";const r=i.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@ import{n as i,c as e,m as b,P as o,j as l}from"./index-1e579745.js";const r=i.bu
   line-height: 112.5%;
 
   ${b.tablet} {
-    padding: 16px 45px;
+    padding: 16px 60px;
     font-size: ${t=>t};
     line-height: 120%;
     margin-top: ${({margin:t})=>(t==null?void 0:t.top.tab)||0};
