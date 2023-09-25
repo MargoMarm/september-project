@@ -14,7 +14,7 @@ import {
 import formatDate from '../../utils/formatDate';
 
 function AddProductForm({ data, closeModal, addProduct }) {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(null);
 
   const amount = Math.round((quantity * data.calories) / 100);
   const date = formatDate(new Date());
@@ -28,12 +28,14 @@ function AddProductForm({ data, closeModal, addProduct }) {
 
         <label>
           <InputQuantity
+            
             placeholder="grams"
             type="number"
             value={quantity}
             onChange={e => setQuantity(e.target.value)}
           />
-        </label>
+           </label>
+       
       </InputContainer>
 
       <Calories>

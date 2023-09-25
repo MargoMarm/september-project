@@ -34,9 +34,12 @@ export const InputTitle = styled.input`
     width: 244px;
     height: 40px;
   }
+  
+
 `;
 
 export const InputQuantity = styled.input`
+  position: relative;
   width: 287px;
   height: 34px;
   padding: 8px 14px;
@@ -45,7 +48,7 @@ export const InputQuantity = styled.input`
   gap: 10px;
   background-color: inherit;
   color: ${colors.white};
-
+ 
   &::placeholder {
     color: ${colors.textWhite03};
     text-align: right;
@@ -66,6 +69,9 @@ export const InputQuantity = styled.input`
     height: 40px;
     margin-top: 0;
   }
+
+
+
 `;
 
 export const Calories = styled.p`
