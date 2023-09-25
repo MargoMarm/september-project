@@ -4,6 +4,13 @@ import { NavLink } from 'react-router-dom';
 import { colors, mq } from '../../utils';
 
 export const Link = styled(NavLink)`
+  ${mq.smallMobile} {
+    font-size: 14px;
+  }
+  ${mq.mobile} {
+    font-size: 16px;
+  }
+
   box-sizing: border-box;
   padding: ${props =>
     props.isinheader === 'true' ? '10px 27px' : '12px 40px'};
@@ -17,7 +24,6 @@ export const Link = styled(NavLink)`
     props.isorange === 'true' ? 'none' : '1px solid rgba(239, 237, 232, 0.30)'};
   color: ${colors.white};
 
-  font-size: 16px;
   font-weight: ${props => (props.isinheader === 'true' ? '400' : '500')};
   line-height: 1.13;
 

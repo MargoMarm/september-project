@@ -33,7 +33,7 @@ export const Text = styled.h1`
     }
   }
 
-  ${mq.mobile} {
+  ${mq.smallMobile} {
     width: 335px;
     margin-top: 66px;
     margin-bottom: 40px;
