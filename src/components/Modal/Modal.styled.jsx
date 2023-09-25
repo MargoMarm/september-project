@@ -39,10 +39,24 @@ export const ButtonExit = styled.button`
   top: 14px;
   right: 14px;
   ${button}
+
+  &:hover svg {
+    stroke: ${colors.orange};
+    scale: 1.1;
+  }
+  &:focus svg {
+    stroke: ${colors.orange};
+    scale: 1.1;
+  }
 `;
 
 export const Svg = styled.svg`
-  fill: ${colors.grey};
   width: 24px;
   height: 24px;
+  stroke: ${colors.textWhite04};
+  scale: 1;
+
+  transition:
+    scale 250ms ease-in-out,
+    stroke 250ms ease-in-out;
 `;
