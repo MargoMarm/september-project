@@ -35,7 +35,7 @@ export const Wrapper = styled.div`
   }
 
   ${mq.tablet} {
-    height: 768px;
+    height: 1024px;
     background-image: url(${imgForHome.imgTx1});
     background-size: 437px 893px;
     padding: 0 32px;
