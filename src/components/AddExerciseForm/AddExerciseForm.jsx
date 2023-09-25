@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import { capitalizeWord } from '../../utils/capitalizeWord';
 
 import Timer from '../Timer';
 import {
@@ -97,19 +98,19 @@ export default function AddExerciseForm({ data, addExercise }) {
       <InfoCardConteiner>
         <InfoCard>
           <CardTitle>Name</CardTitle>
-          <CardInfo>{name}</CardInfo>
+          <CardInfo>{capitalizeWord(name)}</CardInfo>
         </InfoCard>
         <InfoCard>
           <CardTitle>Target</CardTitle>
-          <CardInfo>{target}</CardInfo>
+          <CardInfo>{capitalizeWord(target)}</CardInfo>
         </InfoCard>
         <InfoCard>
           <CardTitle>Body Part</CardTitle>
-          <CardInfo>{bodyPart}</CardInfo>
+          <CardInfo>{capitalizeWord(bodyPart)}</CardInfo>
         </InfoCard>
         <InfoCard>
           <CardTitle>Equipment</CardTitle>
-          <CardInfo>{equipment}</CardInfo>
+          <CardInfo>{capitalizeWord(equipment)}</CardInfo>
         </InfoCard>
         <InfoCard>
           <CardTitle>Time</CardTitle>

@@ -4,7 +4,8 @@ import Title from '../../components/Title/Title';
 import {
   TitleThumb,
   ExercisesContainer,
-  ExercisesListContainer,
+	ExercisesListContainer,
+  BGImg
 } from './Exercises.styled';
 
 import ProductsOrExercisesContainer from '../../components/ProductOrExerciseContainer/ProductOrExerciseContainer';
@@ -68,7 +69,8 @@ const Exercises = () => {
           <ExercisesItemList />
         </ExercisesContainer>
       ) : (
-        <ExercisesListContainer>
+				  <ExercisesListContainer>
+					  <BGImg/>
           <Scrollbar width={{ dt: '868' }}>
             <ProductsOrExercisesContainer>
               {items.map((item, i) => {

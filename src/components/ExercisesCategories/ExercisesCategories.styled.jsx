@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { NavLink } from 'react-router-dom';
 import { mq, colors } from '../../utils';
 
 export const CategoriesList = styled.ul`
@@ -28,6 +27,21 @@ export const CategoriesLink = styled.button`
   outline: none;
   border: none;
 
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    transition:
+      background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scalex(0);
+
+    bottom: -4px;
+    left: 0;
+    background-color: transparent;
+  }
+
   &.active::after {
     content: '';
     display: block;
@@ -38,6 +52,7 @@ export const CategoriesLink = styled.button`
     bottom: -4px;
     left: 0;
     background-color: #ef8964;
+    transform: scalex(1);
     border-radius: 2px;
   }
 

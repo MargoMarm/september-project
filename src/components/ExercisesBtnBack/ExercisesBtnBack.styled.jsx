@@ -4,8 +4,11 @@ import { mq, colors } from '../../utils';
 
 export const ButtonBack = styled.button`
   display: flex;
-  padding: 0px;
   align-items: center;
+
+ padding: 0px;
+ margin-top:10px;
+
 	font-size: 14px;
   line-height: 1.28; 
 

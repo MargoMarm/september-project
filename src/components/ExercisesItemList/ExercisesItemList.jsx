@@ -14,6 +14,7 @@ import { setCurrentTitle } from '../../redux/exerciseFilters/slice';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useMediaQuery } from 'react-responsive';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -35,9 +36,18 @@ const ExercisesList = () => {
 
   const array = filters.filter(item => item.filter === category);
 
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1439 });
+
   const chunkedFilters = [];
-  for (let i = 0; i < array.length; i += 10) {
-    chunkedFilters.push(array.slice(i, i + 10));
+
+  if (isTablet) {
+    for (let i = 0; i < array.length; i += 9) {
+      chunkedFilters.push(array.slice(i, i + 9));
+    }
+  } else {
+    for (let i = 0; i < array.length; i += 10) {
+      chunkedFilters.push(array.slice(i, i + 10));
+    }
   }
 
   return (
@@ -47,10 +57,7 @@ const ExercisesList = () => {
       slidesPerView={1}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      onSwiper={swiper => console.log(swiper)}
       className="pagination"
-
-      // onSlideChange={() => console.log('slide change')}
     >
       {chunkedFilters.map(arr => (
         <SwiperSlide key={nanoid()}>
