@@ -1,13 +1,11 @@
-import{n as F,m as I,c as O,P as H,r as V,j as h,u as K,d as N,o as re,p as oe,q as ce,t as pe,v as ae,w as de}from"./index-14519855.js";import{c as fe}from"./formatDate-d1383d55.js";import{e as ge,c as Q,b as ue,d as Y,f as me,g as be,n as he,h as ve,S as xe,a as ye}from"./swiper-ca91be22.js";import{s as G}from"./styled-components.browser.esm-272f5ec5.js";import{T as Z}from"./Title-3be0a3bb.js";import{i as Ce}from"./imgHomePage-66a7b711.js";import{S as Ee,P as Le,a as ke}from"./ProductsOrExercisesItem-0008d2eb.js";import"./BtnSubmit-528f5506.js";const we=F.li`
+import{n as F,m as I,c as O,P as H,r as V,j as h,u as K,d as N,o as re,p as oe,q as ce,t as pe,v as ae,w as de}from"./index-03078ed5.js";import{c as fe}from"./formatDate-d1383d55.js";import{e as ge,c as Q,b as ue,d as Y,f as me,g as be,n as he,h as ve,S as xe,a as ye}from"./swiper-68c20c93.js";import{s as G}from"./styled-components.browser.esm-63b18772.js";import{T as Z}from"./Title-00c8947d.js";import{i as Ce}from"./imgHomePage-66a7b711.js";import{S as Ee,P as Le,a as ke}from"./ProductsOrExercisesItem-c3b40493.js";import"./BtnSubmit-6eb12b0a.js";const we=F.li`
   margin-bottom: 20px;
 
   &:last-child {
     margin-bottom: 0px;
   }
 
-  // &:nth-child(10) {
-  //   margin-bottom: 0;
-  // }
+
 
   ${I.tablet} {
     flex-basis: calc((100% - 32px) / 3);

@@ -1,11 +1,11 @@
-import{n as o,m as e}from"./index-14519855.js";import{i}from"./imgHomePage-66a7b711.js";const r=o.ul`
+import{n as o,m as e}from"./index-03078ed5.js";import{i}from"./imgHomePage-66a7b711.js";const r=o.ul`
   display: flex;
   gap: 20px;
 `,a=o.div`
-  height: 812px;
+  height: 685px;
   background-image: url(${i.imgMx1});
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right bottom;
   background-size: 298px 571px;
   padding: 0 20px;
 
@@ -28,7 +28,7 @@ import{n as o,m as e}from"./index-14519855.js";import{i}from"./imgHomePage-66a7b
   }
 
   ${e.tablet} {
-    height: 768px;
+    height: 1024px;
     background-image: url(${i.imgTx1});
     background-size: 437px 893px;
     padding: 0 32px;
@@ -55,7 +55,7 @@ import{n as o,m as e}from"./index-14519855.js";import{i}from"./imgHomePage-66a7b
     background: none;
     padding: 0 0 0 96px;
   }
-`,d=o.div`
+`,t=o.div`
   ${e.desktop} {
     position: absolute;
     top: 0;
@@ -84,4 +84,4 @@ import{n as o,m as e}from"./index-14519855.js";import{i}from"./imgHomePage-66a7b
       }
     }
   }
-`;export{r as L,d as W,a};
+`;export{r as L,t as W,a};
