@@ -9,10 +9,10 @@ export const LinkList = styled.ul`
 `;
 
 export const Wrapper = styled.div`
-  height: 812px;
+  height: 685px;
   background-image: url(${imgForHome.imgMx1});
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right bottom;
   background-size: 298px 571px;
   padding: 0 20px;
 
