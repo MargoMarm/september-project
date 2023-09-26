@@ -76,17 +76,16 @@ export const InputQuantity = styled.input`
   }
 
   &:focus + label {
-    top: -11px;
+    top: -10px;
   }
 `;
 
 export const Label = styled.label`
   position: absolute;
-  z-index: 2;
   top: 10px;
-  left: 13px;
+  right: 18px;
   font-size: 14px;
-  padding: 0 5px;
+  padding: 0 12px;
   background-color: ${colors.modalBlack};
   color: ${colors.textWhite03};
 
