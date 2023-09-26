@@ -58,9 +58,9 @@ export const InputQuantity = styled.input`
     margin: 0;
   }
 
-  &[type='number'] {
+  /* &[type='number'] {
     -moz-appearance: textfield;
-  }
+  } */
 
   ${mq.tablet} {
     width: 155px;
@@ -110,11 +110,11 @@ export const AddButton = styled.button`
   font-weight: 500;
   line-height: calc(18 / 16);
   border: 1px solid ${colors.textWhite03};
-  transition: background 0.3s ease-out;
   margin-right: 14px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    background: ${colors.orangeSecondary};
+    background-color: ${colors.orangeSecondary};
   }
 
   ${mq.tablet} {

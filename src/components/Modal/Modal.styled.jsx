@@ -57,6 +57,6 @@ export const Svg = styled.svg`
   scale: 1;
 
   transition:
-    scale 250ms ease-in-out,
-    stroke 250ms ease-in-out;
+    scale 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 200ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
