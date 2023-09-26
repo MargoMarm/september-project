@@ -5,6 +5,7 @@ export const GreyCard = styled.div`
   position: absolute;
   top: ${props => (props.step === '2' ? 534 : 474)}px;
   left: ${props => (props.step === '2' ? 154 : 101)}px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,16 +17,18 @@ export const GreyCard = styled.div`
   border-radius: 12px;
 
   ${mq.tablet} {
-    top: 630px;
-    left: 297px;
+    top: ${props => (props.page === 'auth' ? 526 : 630)}px;
+
+    left: ${props => (props.page === 'auth' ? 331 : 298)}px;
 
     width: 206px;
     height: 96px;
   }
 
   ${mq.desktop} {
-    left: 674px;
-    top: 300px;
+    top: ${props => (props.page === 'auth' ? 184 : 300)}px;
+
+    left: ${props => (props.page === 'auth' ? 770 : 674)}px;
   }
 `;
 
@@ -93,8 +96,9 @@ export const GreyStaticText = styled.p`
 
 export const OrangeCard = styled.div`
   position: absolute;
-  top: 625px;
-  right: 0;
+  top: ${props => (props.page === 'auth' ? 570 : 625)}px;
+  right: ${props => (props.page === 'auth' ? 20 : 0)}px;
+
   width: 119px;
   height: 76px;
   padding: 14px 18px;
@@ -105,12 +109,13 @@ export const OrangeCard = styled.div`
   ${mq.tablet} {
     top: 782px;
 
+    top: ${props => (props.page === 'auth' ? 672 : 782)}px;
+    right: ${props => (props.page === 'auth' ? 32 : 0)}px;
     width: 180px;
     height: 110px;
   }
-
   ${mq.desktop} {
-    top: 430px;
+    top: ${props => (props.page === 'auth' ? 318 : 434)}px;
   }
 `;
 
