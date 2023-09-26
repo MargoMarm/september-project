@@ -14,7 +14,6 @@ import {
   Svg,
   Link,
   Overlay,
-  AvatarWrapper,
 } from './MobMenu.styled';
 import { UserAvatar } from '../headersComp/UserNav/UserNav.styled';
 import { selectUser } from '../../redux/auth/selectors';
@@ -32,7 +31,7 @@ const MobMenu = () => {
 
   useEffect(() => {
     const handleKeyDown = e => {
-      if (e.code === 'Escape') {
+      if (e.code === 'Escape' && mobMenu) {
         toggleMobMenu();
       }
     };
@@ -42,7 +41,7 @@ const MobMenu = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [toggleMobMenu]);
+  }, [mobMenu, toggleMobMenu]);
 
   return (
     <>
@@ -52,7 +51,7 @@ const MobMenu = () => {
             <use href={sprite + `#settings`}></use>
           </Svg>
         </Link>
-        <AvatarWrapper>
+        <ButtonMenu type="button">
           {avatarURL ? (
             <UserAvatar>
               <img src={avatarURL} alt="user's avatar" />
@@ -62,7 +61,7 @@ const MobMenu = () => {
               <use href={sprite + `#user`}></use>
             </Svg>
           )}
-        </AvatarWrapper>
+        </ButtonMenu>
         <ButtonMenu type="button" onClick={toggleMobMenu}>
           <Svg>
             <use href={sprite + `#menu`}></use>
