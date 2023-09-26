@@ -5,12 +5,12 @@ const Loader = ({ size }) => {
       height={size}
       width={size}
       radius={1}
-      color="#EF8964"
+      color="#E6533C"
       ariaLabel="puff-loading"
       wrapperStyle={{
         display: 'flex',
         justifyContent: 'center',
-        marginTop: '20px',
+        margin: '20px auto 0 auto',
       }}
       wrapperClass=""
       visible={true}
