@@ -15,8 +15,9 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   background-color: transparent;
+  color: ${colors.white};
+
   &:hover {
-    fill: ${colors.orange};
-    stroke: ${colors.orange};
+    color: ${colors.orange};
   }
 `;

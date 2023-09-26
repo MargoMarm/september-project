@@ -5,14 +5,14 @@ import shewron from '../../assets/chevron-down.png'
 
 
 export const Option = styled.option`
-  width: '200px',
-  padding: '10px',
-  fontSize: '16px',
-  border: '1px solid #ccc',
-  borderRadius: '4px',
-  backgroundColor: '#fff',
-  appearance: 'none',
-  cursor: 'pointer',
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color:#fff;
+  appearance: none;
+  cursor: pointer;
 `
 
 
@@ -28,6 +28,7 @@ export const Select = styled.select`
     width: 204px;
     height: 52px;
   }
+
   padding-left: 14px;
   padding-right: 14px;
 
@@ -43,7 +44,7 @@ export const Select = styled.select`
   color: ${colors.textWhite06};
   background-color: transparent;
  
-}
+
 `;
 
 
@@ -131,9 +132,15 @@ export const TextInput = styled.input`
   &:focus-visible {
     border: 1px solid ${colors.orange};
   }
+
+  &:focus-visible ~ button {
+    color: ${colors.orange};
+  }
 `;
 
 export const Svg = styled.svg`
+  stroke: currentColor;
+
   width: 18px;
   height: 18px;
 `;
