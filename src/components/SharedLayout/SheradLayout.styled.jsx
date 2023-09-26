@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { mq } from '../../utils';
 
 export const Container = styled.div`
+  position: relative;
   margin: 0px auto;
 
   ${mq.mobile} {
