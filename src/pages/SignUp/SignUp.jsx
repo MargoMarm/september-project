@@ -11,7 +11,6 @@ import { mg } from '../../utils';
 const SignUp = () => {
   const dispatch = useDispatch();
   const handleSubmit = (user, { resetForm }) => {
-    console.log(user);
     dispatch(authUser(user));
     resetForm();
   };

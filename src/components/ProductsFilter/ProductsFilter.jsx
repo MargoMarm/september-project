@@ -83,12 +83,10 @@ export default function ProductsFilter() {
   };
   const handleSubmit = event => {
     event.preventDefault();
-    console.log("SUBMIT");
     const selectedValue = event.target.value;
     setQuery(selectedValue)
   }
   const hanleReset = () => {
-    console.log("isReset");
     setQuery("")
   }
   
