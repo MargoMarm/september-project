@@ -1,4 +1,4 @@
-import{n as q,m as T,c as F,P as H,r as V,j as m,u as Q,d as N,o as re,p as oe,q as ce,t as pe,v as ae,w as de,s as fe}from"./index-22f915ea.js";import{c as ge}from"./formatDate-d1383d55.js";import{e as ue,c as K,b as me,d as Y,f as be,g as he,n as ve,h as xe,S as ye,a as Ce}from"./swiper-34fcad52.js";import{r as Ee}from"./react-responsive-a94714e7.js";import{s as G}from"./styled-components.browser.esm-2b836593.js";import{T as Z}from"./Title-f4a866f2.js";import{S as Le,P as ke,a as we}from"./ProductsOrExercisesItem-fa894c80.js";import"./BtnSubmit-cc8f8670.js";const $e=q.li`
+import{n as q,m as T,c as F,P as H,r as V,j as m,u as Q,d as N,o as re,p as oe,q as ce,t as pe,v as ae,w as de,s as fe}from"./index-f7692a4e.js";import{c as ge}from"./formatDate-d1383d55.js";import{e as ue,c as K,b as me,d as Y,f as be,g as he,n as ve,h as xe,S as ye,a as Ce}from"./swiper-6df6dd49.js";import{r as Ee}from"./react-responsive-d456cba3.js";import{s as G}from"./styled-components.browser.esm-40e97145.js";import{T as Z}from"./Title-7341fd9f.js";import{S as Le,P as ke,a as we}from"./ProductsOrExercisesItem-4f9cd130.js";import"./BtnSubmit-7c790093.js";const $e=q.li`
   margin-bottom: 20px;
 
   &:last-child {
@@ -187,49 +187,43 @@ import{n as q,m as T,c as F,P as H,r as V,j as m,u as Q,d as N,o as re,p as oe,q
   display: flex;
   align-items: center;
 
- padding: 0px;
- margin-top:10px;
+  padding: 0px;
+  margin-top: 10px;
 
-	font-size: 14px;
-  line-height: 1.28; 
-
-
+  font-size: 14px;
+  line-height: 1.28;
 
   background-color: transparent;
   color: ${F.textWhite04};
   border: none;
-	scale: 1;
+  scale: 1;
 
   transition:
-  scale 250ms ease-in-out,
-  color 250ms ease-in-out;
-	fill 250ms ease-in-out;
+    scale 250ms ease-in-out,
+    color 250ms ease-in-out,
+    fill 250ms ease-in-out;
 
-
-		${T.tablet}{
- font-size: 16px;
-line-height: 1.5; 
-		}
-
-
+  ${T.tablet} {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
   &:hover {
     color: ${F.orange};
     scale: 1.1;
-
   }
   &:focus {
     color: ${F.orange};
-		scale: 1.1;
+    scale: 1.1;
   }
 
   &:hover svg {
     fill: ${F.orange};
-		scale: 1.1;
+    scale: 1.1;
   }
   &:focus svg {
     fill: ${F.orange};
-		scale: 1.1;
+    scale: 1.1;
   }
 `,_e=G.svg`
   width: 16px;
