@@ -97,3 +97,6 @@ export const Watch = styled.span`
   line-height: 150%;
   color: ${colors.white};
 `;
+
+
+
