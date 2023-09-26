@@ -14,6 +14,7 @@ import {
   Svg,
   Link,
   Overlay,
+  AvatarWrapper,
 } from './MobMenu.styled';
 import { UserAvatar } from '../headersComp/UserNav/UserNav.styled';
 import { selectUser } from '../../redux/auth/selectors';
@@ -51,7 +52,7 @@ const MobMenu = () => {
             <use href={sprite + `#settings`}></use>
           </Svg>
         </Link>
-        <ButtonMenu type="button">
+        <AvatarWrapper>
           {avatarURL ? (
             <UserAvatar>
               <img src={avatarURL} alt="user's avatar" />
@@ -61,7 +62,7 @@ const MobMenu = () => {
               <use href={sprite + `#user`}></use>
             </Svg>
           )}
-        </ButtonMenu>
+        </AvatarWrapper>
         <ButtonMenu type="button" onClick={toggleMobMenu}>
           <Svg>
             <use href={sprite + `#menu`}></use>
