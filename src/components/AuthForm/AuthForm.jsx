@@ -29,7 +29,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
   const authSchema = Yup.object().shape({
     name: validateName(nameIsShown),
     email: Yup.string()
-      .matches(emailLyout, { message: 'Email must be valid' })
+      .matches(emailLyout, { message: 'Email must be valid! For example: example@gmail.com' })
       .email('Invalid email')
       .required('Email is required'),
     password: Yup.string()
@@ -72,7 +72,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
         <InputContainer>
           {nameIsShown && (
             <InputWrapper>
-              <TextInput id="name" type="text" placeholder="name" name="name" />
+              <TextInput id="name" type="text" placeholder="Name" name="name" />
               <Warning>
                 <ErrorMessage name="name">
                   {msg => (
@@ -91,7 +91,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
             <TextInput
               id="email"
               type="email"
-              placeholder="email"
+              placeholder="Email"
               name="email"
             />
             <Warning>
@@ -111,7 +111,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
             <TextInput
               id="password"
               type={typePasswordInput}
-              placeholder="password"
+              placeholder="Password"
               name="password"
             />
             <ButtonIconForInput
