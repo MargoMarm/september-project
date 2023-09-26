@@ -9,11 +9,11 @@
 
 ## Технології
 
-- [HTML](https://www.gatsbyjs.com/)
-- [CSS](https://www.typescriptlang.org/)
-- [Javacript](https://www.typescriptlang.org/)
-- [React](https://www.typescriptlang.org/)
-- [Redux](https://www.typescriptlang.org/)
+- [HTML](https://html.com/)
+- [CSS](https://www.css3.com/)
+- [Javacript](https://www.javascript.com/)
+- [React](https://legacy.reactjs.org/)
+- [Redux](https://github.com/redux-offline/redux-offline)
 
 
 ## Contributing
