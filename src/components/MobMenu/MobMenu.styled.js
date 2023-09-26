@@ -31,6 +31,18 @@ export const ButtonMenu = styled.button`
     display: none;
   }
 `;
+
+export const AvatarWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  ${button}
+
+  ${mq.desktop} {
+    display: none;
+  }
+`;
+
 export const Svg = styled.svg`
   fill: ${colors.grey};
   width: 24px;

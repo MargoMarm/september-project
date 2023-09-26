@@ -95,49 +95,51 @@ export default function ProductsFilter() {
   return (
     <FilterContainer>
       <FilterTitle>Filters</FilterTitle>
-      <InputWrapper  onSubmit={handleSubmit} onReset={hanleReset}>
-        <TextInput type="text" autoComplete="off"    onChange={handleChangeQuery} />
-        <ButtonIconForInput
-          right="42px"
-          type="reset"
-        >
-          <Svg>
-            <use href={sprite + `#close`}></use>
-          </Svg>
-        </ButtonIconForInput>
-        <ButtonIconForInput
-        type="submit"
-          right="18px"
-        >
+      <InputWrapper onSubmit={handleSubmit} onReset={hanleReset}>
+        <TextInput
+          type="text"
+          autoComplete="off"
+          onChange={handleChangeQuery}
+        />
+        <ButtonIconForInput type="submit" right="18px">
           <Svg>
             <use href={sprite + `#icon-search`}></use>
+          </Svg>
+        </ButtonIconForInput>
+        <ButtonIconForInput right="42px" type="reset">
+          <Svg>
+            <use href={sprite + `#close`}></use>
           </Svg>
         </ButtonIconForInput>
       </InputWrapper>
       <SelectContainer>
         <SelectPointer>
-        <Select value={currentCategory} onChange={handleChangeCategory}>
-        <option style={optionStyles} value="default">Categories</option>
-          {productsCategories.map(category => {
-            return (
-              <option key={category} value={category} style={optionStyles}>
-                {capitalizeWord(category)}
-              </option>
-              
-            );
-          })}
-          
-        </Select>
+          <Select value={currentCategory} onChange={handleChangeCategory}>
+            <option style={optionStyles} value="default">
+              Categories
+            </option>
+            {productsCategories.map(category => {
+              return (
+                <option key={category} value={category} style={optionStyles}>
+                  {capitalizeWord(category)}
+                </option>
+              );
+            })}
+          </Select>
         </SelectPointer>
         <SelectPointer>
-        <Select value={isRecommended} onChange={handleChangeisReccomended}> 
-          <option style={optionStyles} value="default" >All</option>
-          <option style={optionStyles} value="Recommended">Recommended</option>
-          <option style={optionStyles} value="Not recommended">Not recommended</option>
-        </Select>
+          <Select value={isRecommended} onChange={handleChangeisReccomended}>
+            <option style={optionStyles} value="default">
+              All
+            </option>
+            <option style={optionStyles} value="Recommended">
+              Recommended
+            </option>
+            <option style={optionStyles} value="Not recommended">
+              Not recommended
+            </option>
+          </Select>
         </SelectPointer>
-       
-        
       </SelectContainer>
     </FilterContainer>
   );

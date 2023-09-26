@@ -13,7 +13,7 @@ export const ButtonSubmit = styled.button`
   margin-top: ${({ margin }) => {
     return margin?.top.mob || 0;
   }};
-  margin-bottom: : ${({ margin }) => {
+  margin-bottom: ${({ margin }) => {
     return margin?.bot.mob || 0;
   }};
 
@@ -21,12 +21,17 @@ export const ButtonSubmit = styled.button`
   font-size: 16px;
   font-weight: 500;
   line-height: 112.5%;
+  transition: background 0.3s ease-out;
 
   ${mq.tablet} {
-    padding: 16px 60px;
-    font-size: ${fontSize => fontSize};
+    padding: 14px 32px;
     line-height: 120%;
     margin-top: ${({ margin }) => margin?.top.tab || 0};
-    margin-bottom: : ${({ margin }) => margin?.bot.tab || 0} ;
+    margin-bottom: ${({ margin }) => margin?.bot.tab || 0};
+  }
+
+  &:hover,
+  &:focus {
+    background: ${colors.orangeSecondary};
   }
 `;

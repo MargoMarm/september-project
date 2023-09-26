@@ -47,23 +47,22 @@ function ProductOrExerciseModal({ modalType, data, btnNext }) {
   return (
     <ContentWrap>
       <Img
-        src={
-          modalType === 'product'
-            ? foodIcon
-            : thumbUp
-        }
+        src={modalType === 'product' ? foodIcon : thumbUp}
         alt="it`s a placeholder image, but it`s avocado too"
       />
       <WellDone>Well Done</WellDone>
 
       <DataList>{mappedData(data)}</DataList>
 
-      <BtnSubmit title={'Next product'} btnNext={btnNext} />
+      <BtnSubmit
+        title={modalType === 'product' ? 'Next product' : 'Next exercise'}
+        btnNext={btnNext}
+      />
 
       <ToDiary to={'/diary'}>
         To the diary
         <Svg fill="">
-        <use href={sprite + `#arrow-right`}></use>
+          <use href={sprite + `#arrow-right`}></use>
         </Svg>
       </ToDiary>
     </ContentWrap>

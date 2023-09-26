@@ -15,8 +15,13 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   background-color: transparent;
+  color: ${colors.white};
+  transition:
+    scale 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover {
-    fill: ${colors.orange};
-    stroke: ${colors.orange};
+    color: ${colors.orange};
+    scale: 1.15;
   }
 `;

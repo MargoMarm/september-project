@@ -41,11 +41,10 @@ export const Input = styled.input`
 
   &:focus {
     color: ${colors.orange};
-    border: none;
   }
 
   &:focus-visible {
-    border: none;
+    outline: none;
   }
 
   &:focus + svg {

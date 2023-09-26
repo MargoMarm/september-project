@@ -20,6 +20,11 @@ export const PauseButton = styled.button`
   outline: none;
   padding: 0;
   background-color: transparent;
+
+  &:hover svg {
+    scale: 1.15;
+  }
+
 `;
 
 export const Svg = styled.svg`
@@ -27,11 +32,15 @@ export const Svg = styled.svg`
   height: 32px;
   fill: ${colors.orange};
   stroke: ${colors.white};
+
+  scale: 1;
+
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 export const BurntCaloryLabel = styled.div`
   font-size: 14px;
-  line-height: 128 %;
+  line-height: 128%;
   color: ${colors.textWhite03};
 `;
 
