@@ -1,4 +1,4 @@
-import{n as r,c as a,m as n,j as s,P as i}from"./index-f7692a4e.js";const m=r.h2`
+import{n as r,c as a,m as n,j as s,P as i}from"./index-cb13c4de.js";const m=r.h2`
   color: ${a.white};
 
   font-family: Roboto;
