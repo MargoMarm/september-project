@@ -11,8 +11,9 @@ import {
 import sprite from '../../assets/sprite.svg';
 import TableForDiary from '../TableForDiary/TableForDiary';
 import TableForDiaryOnMobile from '../TableForDiaryOnMobile/TableForDiaryOnMobile';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteExercise, deleteProduct } from '../../redux/diary/operations';
+import { getIsLoadingDiary } from '../../redux/diary/selectors';
 
 const DayDiaryProductsOrExercises = ({
   to,
@@ -46,6 +47,7 @@ const DayDiaryProductsOrExercises = ({
           </ArrowRight>
         </AddLink>
       </DayDiarySubDiv>
+
       {list.length !== 0 ? (
         <>
           <TableForDiary

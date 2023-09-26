@@ -20,8 +20,15 @@ import {
   HeaderCell,
   Cell,
 } from '@table-library/react-table-library/table';
+import { useSelector } from 'react-redux';
+
+import Loader from '../Lodaer/Loader';
 
 import PropTypes from 'prop-types';
+import {
+  getIsLoadingExercies,
+  getIsLoadingPrfoducts,
+} from '../../redux/diary/selectors';
 
 const stylesForExercises = { ...BASELINE_THEME, ...BASELINE_THEME_EXERCISES };
 
@@ -33,7 +40,8 @@ const TableForDiary = ({
   date,
 }) => {
   const data = { nodes: list };
-
+  const isLoadingExercies = useSelector(getIsLoadingExercies);
+  const isLoadingProducts = useSelector(getIsLoadingPrfoducts);
   return (
     <>
       {productTable && (
@@ -45,55 +53,59 @@ const TableForDiary = ({
             <ColumnNameProducts>Weight</ColumnNameProducts>
             <ColumnNameProducts>Recommend</ColumnNameProducts>
           </HeaderCont>
-          <Table data={data} theme={BASELINE_THEME} layout={{ custom: true }}>
-            {tableList => (
-              <>
-                <Header>
-                  <HeaderRow>
-                    <HeaderCell>Title</HeaderCell>
-                    <HeaderCell>Category</HeaderCell>
-                    <HeaderCell>Calories</HeaderCell>
-                    <HeaderCell>Weight</HeaderCell>
-                    <HeaderCell>Recommend</HeaderCell>
-                    <HeaderCell>{''}</HeaderCell>
-                  </HeaderRow>
-                </Header>
+          {isLoadingProducts ? (
+            <Loader size={'60'} />
+          ) : (
+            <Table data={data} theme={BASELINE_THEME} layout={{ custom: true }}>
+              {tableList => (
+                <>
+                  <Header>
+                    <HeaderRow>
+                      <HeaderCell>Title</HeaderCell>
+                      <HeaderCell>Category</HeaderCell>
+                      <HeaderCell>Calories</HeaderCell>
+                      <HeaderCell>Weight</HeaderCell>
+                      <HeaderCell>Recommend</HeaderCell>
+                      <HeaderCell>{''}</HeaderCell>
+                    </HeaderRow>
+                  </Header>
 
-                <Body>
-                  {tableList.map(item => (
-                    <Row key={item._id} item={item}>
-                      <Cell>{capitalizeWord(item.title)}</Cell>
-                      <Cell>{capitalizeWord(item.category)}</Cell>
-                      <Cell>{item.calories}</Cell>
-                      <Cell>{item.amount}</Cell>
-                      <Cell>
-                        <BeforeForCell
-                          bgColor={item.recommend ? '#419B09' : '#E9101D'}
-                        />
-                        {item.recommend ? 'Yes' : 'No'}
-                      </Cell>
-                      <Cell>
-                        <DeleteBtn
-                          onClick={() =>
-                            onDelete({
-                              date,
-                              id: item._id,
-                              calories: item.calories,
-                              time: item.amount,
-                            })
-                          }
-                        >
-                          <DeleteIcon>
-                            <use href={sprite + `#icon-trash`}></use>
-                          </DeleteIcon>
-                        </DeleteBtn>
-                      </Cell>
-                    </Row>
-                  ))}
-                </Body>
-              </>
-            )}
-          </Table>
+                  <Body>
+                    {tableList.map(item => (
+                      <Row key={item._id} item={item}>
+                        <Cell>{capitalizeWord(item.title)}</Cell>
+                        <Cell>{capitalizeWord(item.category)}</Cell>
+                        <Cell>{item.calories}</Cell>
+                        <Cell>{item.amount}</Cell>
+                        <Cell>
+                          <BeforeForCell
+                            bgColor={item.recommend ? '#419B09' : '#E9101D'}
+                          />
+                          {item.recommend ? 'Yes' : 'No'}
+                        </Cell>
+                        <Cell>
+                          <DeleteBtn
+                            onClick={() =>
+                              onDelete({
+                                date,
+                                id: item._id,
+                                calories: item.calories,
+                                time: item.amount,
+                              })
+                            }
+                          >
+                            <DeleteIcon>
+                              <use href={sprite + `#icon-trash`}></use>
+                            </DeleteIcon>
+                          </DeleteBtn>
+                        </Cell>
+                      </Row>
+                    ))}
+                  </Body>
+                </>
+              )}
+            </Table>
+          )}
         </CustomContainer>
       )}
 
@@ -108,56 +120,60 @@ const TableForDiary = ({
             <ColumnNameExercises>Time</ColumnNameExercises>
             <ColumnNameExercises>{''}</ColumnNameExercises>
           </HeaderCont>
-          <Table
-            data={data}
-            theme={stylesForExercises}
-            layout={{ custom: true }}
-          >
-            {tableList => (
-              <>
-                <Header>
-                  <HeaderRow>
-                    <HeaderCell>Body Part</HeaderCell>
-                    <HeaderCell>Equipment</HeaderCell>
-                    <HeaderCell>Name</HeaderCell>
-                    <HeaderCell>Target</HeaderCell>
-                    <HeaderCell>Burned Cal...</HeaderCell>
-                    <HeaderCell>Time</HeaderCell>
-                    <HeaderCell>{''}</HeaderCell>
-                  </HeaderRow>
-                </Header>
+          {isLoadingExercies ? (
+            <Loader size={'60'} />
+          ) : (
+            <Table
+              data={data}
+              theme={stylesForExercises}
+              layout={{ custom: true }}
+            >
+              {tableList => (
+                <>
+                  <Header>
+                    <HeaderRow>
+                      <HeaderCell>Body Part</HeaderCell>
+                      <HeaderCell>Equipment</HeaderCell>
+                      <HeaderCell>Name</HeaderCell>
+                      <HeaderCell>Target</HeaderCell>
+                      <HeaderCell>Burned Cal...</HeaderCell>
+                      <HeaderCell>Time</HeaderCell>
+                      <HeaderCell>{''}</HeaderCell>
+                    </HeaderRow>
+                  </Header>
 
-                <Body>
-                  {tableList.map(item => (
-                    <Row key={item._id} item={item}>
-                      <Cell>{capitalizeWord(item.bodyPart)}</Cell>
-                      <Cell>{capitalizeWord(item.equipment)}</Cell>
-                      <Cell>{capitalizeWord(item.name)}</Cell>
-                      <Cell>{capitalizeWord(item.target)}</Cell>
-                      <Cell>{item.burnedCalories}</Cell>
-                      <Cell>{item.time}</Cell>
-                      <Cell>
-                        <DeleteBtn
-                          onClick={() =>
-                            onDelete({
-                              date,
-                              id: item._id,
-                              calories: item.burnedCalories,
-                              time: item.time,
-                            })
-                          }
-                        >
-                          <DeleteIcon>
-                            <use href={sprite + `#icon-trash`}></use>
-                          </DeleteIcon>
-                        </DeleteBtn>
-                      </Cell>
-                    </Row>
-                  ))}
-                </Body>
-              </>
-            )}
-          </Table>
+                  <Body>
+                    {tableList.map(item => (
+                      <Row key={item._id} item={item}>
+                        <Cell>{capitalizeWord(item.bodyPart)}</Cell>
+                        <Cell>{capitalizeWord(item.equipment)}</Cell>
+                        <Cell>{capitalizeWord(item.name)}</Cell>
+                        <Cell>{capitalizeWord(item.target)}</Cell>
+                        <Cell>{item.burnedCalories}</Cell>
+                        <Cell>{item.time}</Cell>
+                        <Cell>
+                          <DeleteBtn
+                            onClick={() =>
+                              onDelete({
+                                date,
+                                id: item._id,
+                                calories: item.burnedCalories,
+                                time: item.time,
+                              })
+                            }
+                          >
+                            <DeleteIcon>
+                              <use href={sprite + `#icon-trash`}></use>
+                            </DeleteIcon>
+                          </DeleteBtn>
+                        </Cell>
+                      </Row>
+                    ))}
+                  </Body>
+                </>
+              )}
+            </Table>
+          )}
         </CustomContainer>
       )}
     </>
