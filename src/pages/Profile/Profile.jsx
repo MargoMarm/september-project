@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Title from "../../components/Title/Title";
 import UserCard from "../../components/UserCard";
 import UserForm from "../../components/UserForm";
 import { BlockWrapper, FormWrap, Container } from "./Profile.styled";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateUserData } from "../../redux/auth/operation";
 
 const mgUserPage = {

@@ -4,12 +4,12 @@ import { colors, mq } from '../../utils';
 export const DiaryWrapper = styled.div`
   position: relative;
 
-  padding: 0 20px;
+  padding: 0 20px 80px 20px;
   ${mq.tablet} {
-    padding: 0 32px;
+    padding: 0 32px 64px 32px;
   }
   ${mq.desktop} {
-    padding: 0 96px;
+    padding: 0 96px 68px 96px;
   }
 `;
 

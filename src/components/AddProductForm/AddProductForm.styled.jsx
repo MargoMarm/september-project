@@ -11,6 +11,8 @@ export const Container = styled.div`
 `;
 
 export const InputContainer = styled.div`
+  position: relative;
+
   margin-bottom: 16px;
   display: flex;
   flex-direction: column;
@@ -34,8 +36,6 @@ export const InputTitle = styled.input`
     width: 244px;
     height: 40px;
   }
-  
-
 `;
 
 export const InputQuantity = styled.input`
@@ -60,9 +60,9 @@ export const InputQuantity = styled.input`
     margin: 0;
   }
 
-  &[type='number'] {
+  /* &[type='number'] {
     -moz-appearance: textfield;
-  }
+  } */
 
   ${mq.tablet} {
     width: 155px;
@@ -71,8 +71,29 @@ export const InputQuantity = styled.input`
   }
 
   :focus-visible {
-    outline: 2px solid ${colors.orange};
+	outline: 0;
+    border: 2px solid ${colors.orange};
   }
+
+  &:focus + label {
+    top: -10px;
+  }
+`;
+
+export const Label = styled.label`
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 14px;
+  padding: 0 12px;
+  background-color: ${colors.modalBlack};
+  color: ${colors.textWhite03};
+
+  transition: top 200ms cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
 `;
 
 export const Calories = styled.p`
@@ -112,15 +133,22 @@ export const AddButton = styled.button`
   font-weight: 500;
   line-height: calc(18 / 16);
   border: 1px solid ${colors.textWhite03};
-  transition: background 0.3s ease-out;
   margin-right: 14px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    background: #ef8964;
+    background-color: ${colors.orangeSecondary};
   }
 
   ${mq.tablet} {
     margin-right: 16px;
+  }
+
+  &:disabled {
+    color: ${colors.textWhite06};
+    background: ${colors.orangeSecondary};
+
+    cursor: not-allowed;
   }
 `;
 
@@ -140,5 +168,10 @@ export const CloseButton = styled.button`
 
   ${mq.tablet} {
     padding: 12px 40px;
+  }
+
+  &:hover {
+    border-color: ${colors.orange};
+    transition: border-color 0.3s ease-out;
   }
 `;

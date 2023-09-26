@@ -27,7 +27,7 @@ const Products = () => {
       {products.length !== 0 ? (  
          <Scrollbar width={{ dt: '868' }}>
         <ProductsOrExercisesContainer>
-          {products.map((product, i) => {
+          {products.map((product) => {
               return (
                 <ProductsOrExercisesItem
                   key={product.id}
