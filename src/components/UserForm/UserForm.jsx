@@ -20,12 +20,14 @@ import { selectUser } from "../../redux/auth/selectors";
 import { useFormik } from "formik";
 import { sub } from 'date-fns';
 import validationSchema from "./validationSchema";
+import {isTheSameForm} from "../../utils"
+import { useMemo } from "react";
 
 
 const maxDate = sub(new Date(), { years: 18 });
 const minDate = sub(new Date(), { years: 70 });
 
-export default function UserForm({submit}) {
+export default function UserForm({submit, avatar}) {
   const {
     name,
     email,
@@ -57,6 +59,8 @@ export default function UserForm({submit}) {
     validationSchema,
     onSubmit: submit,
   });
+
+  let disBtn = useMemo(() => isTheSameForm(initialValues, formik.values) && !avatar, [formik.values, avatar]);
 
   return (
     <Form onSubmit={formik.handleSubmit} autoComplete="off">
@@ -292,11 +296,12 @@ export default function UserForm({submit}) {
         }
       </CheckboxList>
 
-      <Button type="submit">Save</Button>
+      <Button type="submit" disabled={disBtn}>Save</Button>
     </Form>
   );
 }
 
 UserForm.propTypes = {
   submit: PropTypes.func.isRequired,
+  avatar: PropTypes.oneOfType([PropTypes.object, PropTypes.instanceOf(null)]),
 }
