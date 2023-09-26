@@ -56,7 +56,6 @@ const ExercisesList = () => {
       spaceBetween={50}
       slidesPerView={1}
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
       className="pagination"
     >
       {chunkedFilters.map(arr => (

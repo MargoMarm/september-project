@@ -45,6 +45,16 @@ export const FormikField = styled(Field)`
     border-color: ${colors.orange};
   }
 
+  &::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* &[type='number'] {
+    -moz-appearance: textfield;
+  } */
+
   ${mq.tablet} {
     font-size: 16px;
     line-height: 150%;

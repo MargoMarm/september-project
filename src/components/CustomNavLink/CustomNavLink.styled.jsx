@@ -27,6 +27,18 @@ export const Link = styled(NavLink)`
   font-weight: ${props => (props.isinheader === 'true' ? '400' : '500')};
   line-height: 1.13;
 
+  &.active {
+    background-color: ${colors.orange};
+  }
+
+  &.active:hover {
+    background-color: ${colors.orange};
+  }
+
+  transition:
+    background-color 0.3s,
+    border 0.3s;
+
   &:hover {
     background-color: ${props =>
       props.isorange === 'true' ? colors.orangeSecondary : 'inherit'};

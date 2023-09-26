@@ -118,6 +118,7 @@ export const GlobalStyles = css`
     height: 32px;
     border-radius: 50%;
     font-size: 14px;
+    cursor: pointer;
     transition:
       color 0.3s,
       background-color 0.3s;
@@ -147,6 +148,7 @@ export const GlobalStyles = css`
     position: absolute;
     top: 16px;
     right: 40px;
+    cursor: pointer;
   }
 
   .react-datepicker__month-read-view--selected-month,
