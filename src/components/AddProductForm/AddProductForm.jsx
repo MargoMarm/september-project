@@ -10,6 +10,8 @@ import {
   InputQuantity,
   InputTitle,
   TitleCalories,
+  Label,
+  InputWrapper,
 } from './AddProductForm.styled';
 import formatDate from '../../utils/formatDate';
 
@@ -25,15 +27,15 @@ function AddProductForm({ data, closeModal, addProduct }) {
         <label>
           <InputTitle type="text" value={data.title} disabled />
         </label>
-
-        <label>
+        <InputWrapper>
           <InputQuantity
-            placeholder="grams"
+            id="grams"
             type="number"
             value={quantity}
             onChange={e => setQuantity(e.target.value)}
           />
-        </label>
+          <Label htmlFor="grams">grams </Label>
+        </InputWrapper>
       </InputContainer>
 
       <Calories>

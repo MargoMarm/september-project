@@ -11,6 +11,8 @@ export const Container = styled.div`
 `;
 
 export const InputContainer = styled.div`
+  position: relative;
+
   margin-bottom: 16px;
   display: flex;
   flex-direction: column;
@@ -69,8 +71,30 @@ export const InputQuantity = styled.input`
   }
 
   :focus-visible {
-    outline: 2px solid ${colors.orange};
+	outline: 0;
+    border: 2px solid ${colors.orange};
   }
+
+  &:focus + label {
+    top: -11px;
+  }
+`;
+
+export const Label = styled.label`
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 13px;
+  font-size: 14px;
+  padding: 0 5px;
+  background-color: ${colors.modalBlack};
+  color: ${colors.textWhite03};
+
+  transition: top 200ms cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
 `;
 
 export const Calories = styled.p`
