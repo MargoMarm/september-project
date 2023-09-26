@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { authUser } from '../../redux/auth/operation';
 import BtnSubtitle from '../../components/BtnSubtitle/BtnSubtitle';
 import { Wrapper, WrapperDesktop } from '../Home/Home.styled';
-
+import ParamsBlockCard from '../../components/ParamsBlockСard/ParamsBlockCard';
 import { mg } from '../../utils';
 
 const SignUp = () => {
@@ -36,6 +36,15 @@ const SignUp = () => {
           text={'Already have account?'}
           to={'/signin'}
           linkText={'Sign In'}
+        />
+
+        <ParamsBlockCard type={'grey'} page={'auth'} data={350} />
+
+        <ParamsBlockCard
+          type={'orange'}
+          page={'auth'}
+          data={500}
+          measure={'cal'}
         />
       </Wrapper>
     </>
