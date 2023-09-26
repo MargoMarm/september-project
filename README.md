@@ -18,6 +18,8 @@
 
 ## Contributing
 
+**Let's Ask Something Now!**
+
 Якщо вас цікавить докладніша інформація про наш проект, ви можете знайти деталі за цими посиланнями.
 - [Жива сторінка](https://margomarm.github.io/september-project/)
 - [GitHub репозиторій](https://github.com/MargoMarm/september-project)
