@@ -129,11 +129,13 @@ export const TextInput = styled.input`
 
   color: ${colors.textWhite06};
   background-color: transparent;
+
+  
   &:focus-visible {
     border: 1px solid ${colors.orange};
   }
 
-  &:focus-visible ~ button {
+  &:focus-visible + button {
     color: ${colors.orange};
   }
 `;
