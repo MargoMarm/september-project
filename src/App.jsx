@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from './redux/auth/operation';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
-// import SharedLayout from './components/SharedLayout/SharedLayout';
+
 import { PrivateRoute, PublicRoute } from './components/Routes';
 import { UseAuth } from './hooks/useAuth';
 
