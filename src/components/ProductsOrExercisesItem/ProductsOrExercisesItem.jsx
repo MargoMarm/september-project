@@ -85,7 +85,6 @@ const ProductsOrExercisesItem = ({ page, data }) => {
       if (!time || !burnedCalories) {
         return;
       }
-      console.log(data);
       setAddedExerciseTime(time);
       setAddedExerciseBurnedCalories(burnedCalories);
       dispatch(addExercise(data));
