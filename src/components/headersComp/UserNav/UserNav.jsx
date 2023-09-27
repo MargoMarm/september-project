@@ -47,7 +47,7 @@ export const UserNav = () => {
         >
           <Span>Logout</Span>
           <Svg>
-            <use href={sprite + `#logout`}></use>
+            <use href={sprite + `#logout_`}></use>
           </Svg>{' '}
         </Button>
       </ButtonWrap>

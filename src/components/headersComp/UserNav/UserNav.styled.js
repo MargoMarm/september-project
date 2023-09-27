@@ -15,7 +15,7 @@ export const WrapUserNav = styled.div`
 export const Svg = styled.svg`
   width: 24px;
   height: 24px;
-  fill: ${colors.grey};
+  stroke: currentColor;
 `;
 export const SvgUser = styled.svg`
   ${svgUser}
@@ -31,10 +31,10 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
+  color: ${colors.orange};
   ${button};
 `;
 export const Span = styled.span`
-  color: ${colors.orange};
   font-size: 16px;
   line-height: 24px;
 
