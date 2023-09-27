@@ -1,7 +1,7 @@
 ![readme cover](./src/assets/images/readme.jpg)
 # Power Pulse (ukr)
 
-Наша мета - зробити життя користувачів здоровішим і комфортнішим, надаючи їм
+**Наша мета** - зробити життя користувачів здоровішим і комфортнішим, надаючи їм
 зручний і ефективний інструмент для ведення обліку калорій та здорового
 харчування.
 ## Наша цільова аудиторія
@@ -55,7 +55,7 @@
 
 # Power Pulse (eng)
 
-Our goal is to make users' lives healthier and more comfortable by providing them with a convenient and effective tool for calorie tracking and healthy eating.
+**Our goal** is to make users' lives healthier and more comfortable by providing them with a convenient and effective tool for calorie tracking and healthy eating.
 
 ## Target Audience
 
