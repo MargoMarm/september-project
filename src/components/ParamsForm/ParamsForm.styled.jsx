@@ -140,3 +140,26 @@ export const CalendarPlaceholder = styled.p`
     line-height: 150%;
   }
 `;
+
+export const RADIO_STYLE_OPTIONS = {
+  color: 'grey',
+  '&.Mui-checked': {
+    color: colors.orangeSecondary,
+  },
+  '& .MuiSvgIcon-root': {
+    fontSize: 18,
+  },
+};
+
+export const RADIO_TITLE_STYLE = {
+  color: `${colors.white}`,
+  fontSize: '14px',
+  fontWeight: 400,
+  lineHeight: '128.571%',
+};
+
+export const ErrorMessage = styled.p`
+  font-size: 7px;
+  padding-left: ${props => (props.padding ? 10 : 0)}px;
+  color: ${colors.red};
+`;

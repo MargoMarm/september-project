@@ -1,10 +1,9 @@
-import { Formik, Form } from 'formik';
-import PropTypes from 'prop-types';
-import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Notiflix from 'notiflix';
 import 'swiper/css';
 import {
   FormControl,
@@ -12,7 +11,6 @@ import {
   FormControlLabel,
   RadioGroup,
   Radio,
-  colors,
 } from '@mui/material';
 import { sub } from 'date-fns';
 
@@ -24,15 +22,16 @@ import {
   BtnsAndBlock,
   BtnSubmit,
   CalendarWrapper,
+  ErrorMessage,
+  RADIO_STYLE_OPTIONS,
+  RADIO_TITLE_STYLE,
 } from './ParamsForm.styled';
-import { colors as palette } from '../../utils';
-import { mg } from '../../utils';
-
 import ParamsBlockCard from '../ParamsBlockСard';
 import ParamsBtn from '../ParamsBtn';
 import Title from '../Title/Title';
 import SubTitle from '../SubTitle/SubTitle';
 import Calendar from '../Calendar/Calendar';
+import { mg } from '../../utils';
 
 const ParamsForm = ({ setSteps, setSwiperRef }) => {
   const navigate = useNavigate();
@@ -67,8 +66,6 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
         navigate('/diary');
 
         Formik.resetForm();
-
-        setSteps(1);
       }}
     >
       {({ handleChange, values, setFieldValue, errors, touched }) => {
@@ -97,17 +94,12 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       autoComplete="off"
                     />
                     {errors.height && touched.height && (
-                      <p
-                        style={{
-                          color: 'red',
-                          paddingLeft: '10px',
-                          fontSize: '7px',
-                        }}
-                      >
+                      <ErrorMessage padding={true}>
                         {errors.height}
-                      </p>
+                      </ErrorMessage>
                     )}
                   </div>
+
                   <div>
                     <FormikField
                       type="number"
@@ -116,17 +108,12 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       autoComplete="off"
                     />
                     {errors.currentWeight && touched.currentWeight && (
-                      <p
-                        style={{
-                          color: 'red',
-                          paddingLeft: '10px',
-                          fontSize: '7px',
-                        }}
-                      >
+                      <ErrorMessage padding={true}>
                         {errors.currentWeight}
-                      </p>
+                      </ErrorMessage>
                     )}
                   </div>
+
                   <div>
                     <FormikField
                       type="number"
@@ -135,17 +122,12 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       autoComplete="off"
                     />
                     {errors.desiredWeight && touched.desiredWeight && (
-                      <p
-                        style={{
-                          color: 'red',
-                          paddingLeft: '10px',
-                          fontSize: '7px',
-                        }}
-                      >
+                      <ErrorMessage padding={true}>
                         {errors.desiredWeight}
-                      </p>
+                      </ErrorMessage>
                     )}
                   </div>
+
                   <CalendarWrapper>
                     <Calendar
                       name="birthday"
@@ -157,21 +139,14 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       onChange={setFieldValue}
                     />
                   </CalendarWrapper>
-
-                  {errors.birthday && (
-                    <p
-                      style={{
-                        color: 'red',
-                        paddingLeft: '10px',
-                        fontSize: '7px',
-                      }}
-                    >
-                      {errors.birthday}
-                    </p>
-                  )}
                 </InputGroup>
 
-                <ParamsBtn setSteps={setSteps} type={'next'} step={2} />
+                <ParamsBtn
+                  setSteps={setSteps}
+                  type={'next'}
+                  step={2}
+                  values={values}
+                />
 
                 <ParamsBlockCard type={'grey'} data={350} />
 
@@ -188,100 +163,36 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       name="radio-buttons-group1"
                     >
                       {errors.blood && touched.blood && (
-                        <p
-                          style={{
-                            color: 'red',
-                            fontSize: '7px',
-                          }}
-                        >
-                          {errors.blood}
-                        </p>
+                        <ErrorMessage>{errors.blood}</ErrorMessage>
                       )}
-                      <FormLabel
-                        style={{
-                          color: `${palette.white}`,
-                          fontSize: '14px',
-                          fontWeight: 400,
-                          lineHeight: '128.571%',
-                        }}
-                      >
-                        Blood:
-                      </FormLabel>
+                      <FormLabel style={RADIO_TITLE_STYLE}>Blood:</FormLabel>
 
                       <FormControlLabel
                         name="blood"
                         onChange={handleChange}
                         value="1"
-                        control={
-                          <Radio
-                            sx={{
-                              color: 'grey',
-                              '&.Mui-checked': {
-                                color: colors.orange[800],
-                              },
-                              '& .MuiSvgIcon-root': {
-                                fontSize: 18,
-                              },
-                            }}
-                          />
-                        }
+                        control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                         label="1"
                       />
                       <FormControlLabel
                         name="blood"
                         onChange={handleChange}
                         value="2"
-                        control={
-                          <Radio
-                            sx={{
-                              color: 'grey',
-                              '&.Mui-checked': {
-                                color: colors.orange[800],
-                              },
-                              '& .MuiSvgIcon-root': {
-                                fontSize: 18,
-                              },
-                            }}
-                          />
-                        }
+                        control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                         label="2"
                       />
                       <FormControlLabel
                         name="blood"
                         onChange={handleChange}
                         value="3"
-                        control={
-                          <Radio
-                            sx={{
-                              color: 'grey',
-                              '&.Mui-checked': {
-                                color: colors.orange[800],
-                              },
-                              '& .MuiSvgIcon-root': {
-                                fontSize: 18,
-                              },
-                            }}
-                          />
-                        }
+                        control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                         label="3"
                       />
                       <FormControlLabel
                         name="blood"
                         onChange={handleChange}
                         value="4"
-                        control={
-                          <Radio
-                            sx={{
-                              color: 'grey',
-                              '&.Mui-checked': {
-                                color: colors.orange[800],
-                              },
-                              '& .MuiSvgIcon-root': {
-                                fontSize: 18,
-                              },
-                            }}
-                          />
-                        }
+                        control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                         label="4"
                       />
                     </RadioGroup>
@@ -292,63 +203,23 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       style={{ marginLeft: '64px' }}
                     >
                       {errors.sex && touched.sex && (
-                        <p
-                          style={{
-                            color: 'red',
-                            fontSize: '7px',
-                          }}
-                        >
-                          {errors.sex}
-                        </p>
+                        <ErrorMessage>{errors.sex}</ErrorMessage>
                       )}
 
-                      <FormLabel
-                        style={{
-                          color: `${palette.white}`,
-                          fontSize: '14px',
-                          fontWeight: 400,
-                          lineHeight: '128.571%',
-                        }}
-                      >
-                        Sex:
-                      </FormLabel>
+                      <FormLabel style={RADIO_TITLE_STYLE}>Sex:</FormLabel>
 
                       <FormControlLabel
                         name="sex"
                         onChange={handleChange}
                         value="male"
-                        control={
-                          <Radio
-                            sx={{
-                              color: 'grey',
-                              '&.Mui-checked': {
-                                color: colors.orange[800],
-                              },
-                              '& .MuiSvgIcon-root': {
-                                fontSize: 18,
-                              },
-                            }}
-                          />
-                        }
+                        control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                         label="male"
                       />
                       <FormControlLabel
                         name="sex"
                         onChange={handleChange}
                         value="female"
-                        control={
-                          <Radio
-                            sx={{
-                              color: 'grey',
-                              '&.Mui-checked': {
-                                color: colors.orange[800],
-                              },
-                              '& .MuiSvgIcon-root': {
-                                fontSize: 18,
-                              },
-                            }}
-                          />
-                        }
+                        control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                         label="female"
                       />
                     </RadioGroup>
@@ -359,44 +230,16 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                     name="radio-buttons-group3"
                     style={{ padding: '2px' }}
                   >
-                    <FormLabel
-                      style={{
-                        color: `${palette.white}`,
-                        fontSize: '14px',
-                        fontWeight: 400,
-                        lineHeight: '128.571%',
-                      }}
-                    >
-                      Level:
-                    </FormLabel>
+                    <FormLabel style={RADIO_TITLE_STYLE}>Level:</FormLabel>
 
                     {errors.levelActivity && touched.levelActivity && (
-                      <p
-                        style={{
-                          color: 'red',
-                          fontSize: '7px',
-                        }}
-                      >
-                        {errors.levelActivity}
-                      </p>
+                      <ErrorMessage>{errors.levelActivity}</ErrorMessage>
                     )}
                     <FormControlLabel
                       name="levelActivity"
                       onChange={handleChange}
                       value="1"
-                      control={
-                        <Radio
-                          sx={{
-                            color: 'grey',
-                            '&.Mui-checked': {
-                              color: colors.orange[800],
-                            },
-                            '& .MuiSvgIcon-root': {
-                              fontSize: 18,
-                            },
-                          }}
-                        />
-                      }
+                      control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                       label="Sedentary lifestyle (little or no physical activity)"
                     />
 
@@ -404,19 +247,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       name="levelActivity"
                       onChange={handleChange}
                       value="2"
-                      control={
-                        <Radio
-                          sx={{
-                            color: 'grey',
-                            '&.Mui-checked': {
-                              color: colors.orange[800],
-                            },
-                            '& .MuiSvgIcon-root': {
-                              fontSize: 18,
-                            },
-                          }}
-                        />
-                      }
+                      control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                       label="Light activity (light exercises/sports 1-3 days per
                         week)"
                     />
@@ -425,19 +256,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       name="levelActivity"
                       onChange={handleChange}
                       value="3"
-                      control={
-                        <Radio
-                          sx={{
-                            color: 'grey',
-                            '&.Mui-checked': {
-                              color: colors.orange[800],
-                            },
-                            '& .MuiSvgIcon-root': {
-                              fontSize: 18,
-                            },
-                          }}
-                        />
-                      }
+                      control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                       label=" Moderately active (moderate exercises/sports 3-5 days
                         per week)"
                     />
@@ -446,19 +265,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       name="levelActivity"
                       onChange={handleChange}
                       value="4"
-                      control={
-                        <Radio
-                          sx={{
-                            color: 'grey',
-                            '&.Mui-checked': {
-                              color: colors.orange[800],
-                            },
-                            '& .MuiSvgIcon-root': {
-                              fontSize: 18,
-                            },
-                          }}
-                        />
-                      }
+                      control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                       label="Very active (intense exercises/sports 6-7 days per week)"
                     />
 
@@ -466,19 +273,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       name="levelActivity"
                       onChange={handleChange}
                       value="5"
-                      control={
-                        <Radio
-                          sx={{
-                            color: 'grey',
-                            '&.Mui-checked': {
-                              color: colors.orange[800],
-                            },
-                            '& .MuiSvgIcon-root': {
-                              fontSize: 18,
-                            },
-                          }}
-                        />
-                      }
+                      control={<Radio sx={RADIO_STYLE_OPTIONS} />}
                       label="Extremely active (very strenuous exercises/sports and
                     physical work)"
                     />
@@ -487,13 +282,19 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
 
                 <BtnsAndBlock>
                   <ParamsBtn setSteps={setSteps} type={'back'} step={1} />
-                  <ParamsBtn setSteps={setSteps} type={'next'} step={3} />
+                  <ParamsBtn
+                    setSteps={setSteps}
+                    type={'next'}
+                    step={3}
+                    values={values}
+                  />
 
                   <ParamsBlockCard data={350} type={'grey'} step={'2'} />
                 </BtnsAndBlock>
 
                 <ParamsBlockCard type={'orange'} data={24} measure={'hours'} />
               </SwiperSlide>
+
               <SwiperSlide>
                 <Title text={'Dear user'} margin={mg} />
 
@@ -503,16 +304,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                   }
                 />
 
-                <BtnSubmit
-                  type="submit"
-                  onClick={() => {
-                    if (Object.values(values).includes('')) {
-                      Notiflix.Notify.warning('Please, fill all fields');
-                    }
-                  }}
-                >
-                  Go
-                </BtnSubmit>
+                <BtnSubmit>Go</BtnSubmit>
 
                 <ParamsBtn setSteps={setSteps} type={'back'} step={2} />
 
