@@ -11,6 +11,10 @@ export const Header = () => {
   const { pathname } = useLocation();
   const isBorderToRender = isLoggedIn && pathname !== '/params';
 
+  if (pathname === '/error') {
+    return null;
+  }
+
   return (
     <HeaderContainer isBorderToRender={isBorderToRender}>
       <Logo />
