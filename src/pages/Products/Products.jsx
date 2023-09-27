@@ -52,10 +52,10 @@ const Products = () => {
                 return;
               }
 
-              const urlParams = { page, limit: 20 };
-              const paginationParams = new URLSearchParams(
-                urlParams,
-              ).toString();
+              const paginationParams = new URLSearchParams({
+                page,
+                limit: 20,
+              }).toString();
               dispatch(
                 fetchMoreProducts(`${searchParams}&${paginationParams}`),
               );
