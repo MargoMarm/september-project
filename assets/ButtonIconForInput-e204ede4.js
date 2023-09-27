@@ -1,24 +1,22 @@
-import{n as s,c as e,P as o,j as c}from"./index-f24ca9ef.js";const a=s.button`
+import{n as i,c as n,P as o,j as c}from"./index-cd569242.js";const a=i.button`
   position: absolute;
   top: 50%;
   right: ${({right:t})=>t||"0"};
   transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  padding: 0;
+  padding: 8px;
   border: none;
   outline: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  color: ${e.white};
+  color: ${n.white};
   transition:
     scale 200ms cubic-bezier(0.4, 0, 0.2, 1),
     color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    color: ${e.orange};
+    color: ${n.orange};
     scale: 1.15;
   }
-`;function p({children:t,onClick:n,right:r,type:i}){return c.jsx(a,{onClick:n,right:r,type:i,children:t})}p.propTypes={right:o.string,type:o.string,children:o.object.isRequired};export{p as B};
+`;function l({children:t,onClick:e,right:r,type:s}){return c.jsx(a,{onClick:e,right:r,type:s,children:t})}l.propTypes={right:o.string,type:o.string,children:o.object.isRequired};export{l as B};

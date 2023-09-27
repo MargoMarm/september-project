@@ -1,4 +1,4 @@
-import{n as I,m as et,j as f,r as Y,P as lt,c as z,B as os,D as ss,s as ce,k as fe,E as yo,F as rs,Q as cs,N as is,q as ls,u as as,G as ds}from"./index-f24ca9ef.js";import{c as Pt,f as vo}from"./formatDate-d1383d55.js";import{B as us}from"./BtnSubmit-e604c66f.js";const ps=(t,e)=>t==="product"?{subtitle:"DIET",title:Pt(e.title),button:"Add",text1:"Calories:",text2:"Category:",text3:"Weight:",subText1:e.calories,subText2:Pt(e.category),subText3:e.weight}:{subtitle:"WORKOUT",title:Pt(e.name),button:"Start",text1:"Burned calories:",text2:"Body part:",text3:"Target:",subText1:e.burnedCalories,subText2:Pt(e.bodyPart),subText3:Pt(e.target)},fs=I.ul`
+import{n as I,m as et,j as f,r as Y,P as lt,c as z,B as os,D as ss,s as ce,k as fe,E as yo,F as rs,Q as cs,N as is,q as ls,u as as,G as ds}from"./index-cd569242.js";import{c as Pt,f as vo}from"./formatDate-d1383d55.js";import{B as us}from"./BtnSubmit-5c990fbd.js";const ps=(t,e)=>t==="product"?{subtitle:"DIET",title:Pt(e.title),button:"Add",text1:"Calories:",text2:"Category:",text3:"Weight:",subText1:e.calories,subText2:Pt(e.category),subText3:e.weight}:{subtitle:"WORKOUT",title:Pt(e.name),button:"Start",text1:"Burned calories:",text2:"Body part:",text3:"Target:",subText1:e.burnedCalories,subText2:Pt(e.bodyPart),subText3:Pt(e.target)},fs=I.ul`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -109,7 +109,6 @@ import{n as I,m as et,j as f,r as Y,P as lt,c as z,B as os,D as ss,s as ce,k as 
 
   color: inherit;
   background-color: transparent;
-  cursor: pointer;
 
   color: ${z.orange};
 
@@ -220,7 +219,6 @@ import{n as I,m as et,j as f,r as Y,P as lt,c as z,B as os,D as ss,s as ce,k as 
     padding: 48px 32px;
   }
 `,Jr=I.button`
-  cursor: pointer;
   position: absolute;
   top: 14px;
   right: 14px;
@@ -372,7 +370,6 @@ import{n as I,m as et,j as f,r as Y,P as lt,c as z,B as os,D as ss,s as ce,k as 
     color: ${z.textWhite06};
     background: ${z.orangeSecondary};
 
-    cursor: not-allowed;
   }
 `,lc=I.button`
   display: flex;

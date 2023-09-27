@@ -1,4 +1,4 @@
-import{n as q,m as I,c as F,P as N,r as V,j as m,u as Q,a as R,q as oe,t as ce,v as pe,w as de,x as te,y as fe,s as ge,i as Z}from"./index-f24ca9ef.js";import{c as ue}from"./formatDate-d1383d55.js";import{e as me,c as K,b as be,d as Y,f as he,g as xe,n as ve,h as ye,S as Ee,a as Ce}from"./swiper-6ca4cb22.js";import{r as Le}from"./react-responsive-0890244d.js";import{s as G}from"./styled-components.browser.esm-62a5f6a7.js";import{T as ee}from"./Title-7827cf50.js";import{S as ke,P as we,a as $e}from"./ProductsOrExercisesItem-886350f2.js";import"./BtnSubmit-e604c66f.js";const Se=q.li`
+import{n as q,m as I,c as F,P as N,r as V,j as m,u as Q,a as R,q as oe,t as ce,v as pe,w as de,x as te,y as fe,s as ge,i as Z}from"./index-cd569242.js";import{c as ue}from"./formatDate-d1383d55.js";import{e as me,c as K,b as be,d as Y,f as he,g as xe,n as ve,h as ye,S as Ee,a as Ce}from"./swiper-839c78ed.js";import{r as Le}from"./react-responsive-2ad9469a.js";import{s as G}from"./styled-components.browser.esm-dde4bc6e.js";import{T as ee}from"./Title-3147abca.js";import{S as ke,P as we,a as $e}from"./ProductsOrExercisesItem-edd41813.js";import"./BtnSubmit-5c990fbd.js";const Se=q.li`
   margin-bottom: 20px;
 
   &:last-child {
@@ -22,7 +22,7 @@ import{n as q,m as I,c as F,P as N,r as V,j as m,u as Q,a as R,q as oe,t as ce,v
 `,Ae=q.a`
   display: block;
 
-  cursor: pointer;
+  cursor: url('./assets/cursor-pointer.png'), pointer;
   position: relative;
   border-radius: 12px;
   background-color: ${F.background05};

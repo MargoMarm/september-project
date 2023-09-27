@@ -1,5 +1,6 @@
-import{n as r,c as a,m as n,j as s,P as i}from"./index-f24ca9ef.js";const m=r.h2`
-  color: ${a.white};
+import{n as r,c as p,m as n,j as s,P as i}from"./index-cd569242.js";const m=r.h2`
+  animation: backInLeft 1s ease-in-out  alternate;
+  color: ${p.white};
 
   font-family: Roboto;
   font-size: 24px;
@@ -22,4 +23,4 @@ import{n as r,c as a,m as n,j as s,P as i}from"./index-f24ca9ef.js";const m=r.h2
   ${n.desktop} {
     margin-top: ${e=>{var t,o;return((o=(t=e.margin)==null?void 0:t.top)==null?void 0:o.desk)||"0"}}px;
   }
-`,p=({text:e,margin:t})=>s.jsx(m,{margin:t,children:e});p.propTypes={text:i.string,margin:i.object};const l=p;export{l as T};
+`,a=({text:e,margin:t})=>s.jsx(m,{margin:t,children:e});a.propTypes={text:i.string,margin:i.object};const l=a;export{l as T};
