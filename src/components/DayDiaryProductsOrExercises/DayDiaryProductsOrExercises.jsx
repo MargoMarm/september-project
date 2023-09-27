@@ -46,6 +46,7 @@ const DayDiaryProductsOrExercises = ({
           </ArrowRight>
         </AddLink>
       </DayDiarySubDiv>
+
       {list.length !== 0 ? (
         <>
           <TableForDiary

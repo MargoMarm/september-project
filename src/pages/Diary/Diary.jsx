@@ -19,6 +19,7 @@ import { mgForDiary } from '../../utils/descriptionTextMargin';
 import { mgForTitle } from '../../utils/titleMarginForDairyPage';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getIsLoadingDiary } from '../../redux/diary/selectors';
 
 import { getDiaryList } from '../../redux/diary/operations';
 import {
@@ -30,6 +31,7 @@ import sprite from '../../assets/sprite.svg';
 import CustomInputForCalendar from '../../components/CustomInputForCalendar/CustomInputForCalendar';
 
 import formatDate from '../../utils/formatDate';
+import Loader from '../../components/Lodaer/Loader';
 
 const Diary = () => {
   const [date, setDate] = useState(new Date());
@@ -37,7 +39,8 @@ const Diary = () => {
 
   const productsList = useSelector(getDiaryProducts);
   const exercisesList = useSelector(getDiaryExercises);
-
+	const isLoadingDairy = useSelector(getIsLoadingDiary);
+	
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -98,22 +101,26 @@ const Diary = () => {
             margin={mgForDiary}
           />
         </CustomDivForCards>
-        <CustomDivForTables>
-          <DayDiaryProductsOrExercises
-            marginBottom={40}
-            list={productsList}
-            productTable
-            date={parsedDate}
-            to={'/products'}
-          />
+        {isLoadingDairy ? (
+          <Loader size={'100'} />
+        ) : (
+          <CustomDivForTables>
+            <DayDiaryProductsOrExercises
+              marginBottom={40}
+              list={productsList}
+              productTable
+              date={parsedDate}
+              to={'/products'}
+            />
 
-          <DayDiaryProductsOrExercises
-            list={exercisesList}
-            exerciseTable
-            date={parsedDate}
-            to={'/exercises'}
-          />
-        </CustomDivForTables>{' '}
+            <DayDiaryProductsOrExercises
+              list={exercisesList}
+              exerciseTable
+              date={parsedDate}
+              to={'/exercises'}
+            />
+          </CustomDivForTables>
+        )}
       </DiaryPageContainer>
     </DiaryWrapper>
   );

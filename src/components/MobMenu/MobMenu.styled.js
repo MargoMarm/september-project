@@ -26,27 +26,43 @@ export const ButtonMenu = styled.button`
   align-items: center;
   gap: 8px;
   ${button}
-
   ${mq.desktop} {
     display: none;
   }
 `;
 
 export const AvatarWrapper = styled.div`
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid ${colors.orange};
   display: flex;
   align-items: center;
-  gap: 8px;
-  ${button}
+  justify-content: center;
 
+  > img {
+    width: 100%;
+    height: auto;
+  }
+  ${mq.tablet} {
+    width: 46px;
+    height: 46px;
+  }
   ${mq.desktop} {
     display: none;
   }
 `;
 
 export const Svg = styled.svg`
-  fill: ${colors.grey};
+  stroke: ${colors.grey};
   width: 24px;
   height: 24px;
+
+  ${mq.tablet} {
+    height: 32px;
+    width: 32px;
+  }
 `;
 export const SvgUser = styled.svg`
   @media (max-width: 376px) {
@@ -57,10 +73,8 @@ export const SvgUser = styled.svg`
 `;
 
 export const ButtonMenuExit = styled.button`
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
   ${button}
+  margin-left: auto;
 `;
 
 export const Span = styled.span`
@@ -73,7 +87,7 @@ export const Span = styled.span`
 
   ${mq.tablet} {
     color: ${colors.white};
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
   }
 `;
@@ -129,7 +143,7 @@ export const Overlay = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 99;
 `;
