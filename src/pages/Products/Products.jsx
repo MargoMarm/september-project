@@ -29,13 +29,8 @@ const Products = () => {
 
   const dispatch = useDispatch();
   const products = useSelector(getProducts);
-  const isLoading = useSelector(getAddProductIsLoading);
 
   const searchParams = useSelector(getSearchParams);
-
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
 
   useEffect(() => {
     setPage(1);
@@ -47,18 +42,16 @@ const Products = () => {
         <Title text="Products" />
         <ProductsFilter />
       </FlexWrapper>
-      {isLoading ? (
-        <Loader />
-      ) : products.length !== 0 ? (
+      {products.length !== 0 ? (
         <Scrollbar width={{ dt: '868' }}>
           <InfiniteScroll
-            pageStart={0}
+            pageStart={1}
             loadMore={() => {
               if (page === 1) {
                 setPage(prevPage => prevPage + 1);
                 return;
               }
-              console.log('page');
+
               const urlParams = { page, limit: 20 };
               const paginationParams = new URLSearchParams(
                 urlParams,
