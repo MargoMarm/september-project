@@ -32,11 +32,11 @@ export const ExercisesListContainer = styled.div`
 
 
   ${mq.tablet} {
-    padding: 72px 32px 48px 32px;
+    padding: 32px 32px 48px 32px;
   }
 
   ${mq.desktop} {
-    padding: 68px 81px 81px 96px;
+    padding: 0px 81px 81px 96px;
   }
 `;
 
