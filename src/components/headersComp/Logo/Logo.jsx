@@ -1,5 +1,6 @@
-import { Button, WrapLogo, Svg } from './Logo.styled';
+import { WrapLogo, Svg } from './Logo.styled';
 import sprite from '../../../assets/sprite.svg';
+import 'animate.css';
 
 import { UseAuth } from '../../../hooks/useAuth';
 

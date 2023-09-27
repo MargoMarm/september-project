@@ -23,6 +23,11 @@
     url('assets/fonts/roboto-bold-webfont.woff') format('woff');
 }
 
+html {
+  cursor: url('./assets/cursor-pointer.png'), pointer;
+}
+
+
 body {
   background-color: rgb(0, 0, 0);
   background-size: auto 100%;
@@ -36,6 +41,7 @@ body {
   height: 100vh;
   margin: 0;
 }
+
 h1,
 h2,
 h3,
