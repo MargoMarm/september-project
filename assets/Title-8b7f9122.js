@@ -1,4 +1,4 @@
-import{n as r,c as p,m as n,j as s,P as i}from"./index-34023d96.js";const m=r.h2`
+import{n as r,c as p,m as n,j as s,P as i}from"./index-1f286196.js";const m=r.h2`
   animation: backInLeft 1s ease-in-out  alternate;
   color: ${p.white};
 
