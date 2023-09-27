@@ -11,7 +11,7 @@ export const Logo = () => {
     <>
       <WrapLogo>
         <NavLink
-          to={isLoggedIn ? '/september-project/diary' : '/september-project/'}
+          to={isLoggedIn ? '/september-project/diary' : '/'}
         >
           <Svg>
             <use href={sprite + `#logo-big`}></use>
