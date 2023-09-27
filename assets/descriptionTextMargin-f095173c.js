@@ -1,4 +1,4 @@
-import{n as r,c as o,m as i,j as e,s as p,P as s}from"./index-636452aa.js";const h=r.li`
+import{n as r,c as o,m as i,j as e,s as p,P as s}from"./index-f87c70bf.js";const h=r.li`
   box-sizing: border-box;
   border: 1px solid;
 

@@ -1,4 +1,4 @@
-import{n as p,c as n,m as i,P as r,j as e}from"./index-636452aa.js";const T={top:{desk:116,tab:105,mob:66},bt:{tab:16,mob:14}},x=p.p`
+import{n as p,c as n,m as i,P as r,j as e}from"./index-f87c70bf.js";const T={top:{desk:116,tab:105,mob:66},bt:{tab:16,mob:14}},x=p.p`
   color: ${n.textWhite03};
 
   font-family: Roboto;
