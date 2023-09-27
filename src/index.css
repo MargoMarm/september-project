@@ -23,9 +23,7 @@
     url('assets/fonts/roboto-bold-webfont.woff') format('woff');
 }
 
-html {
-  cursor: url('./assets/cursor.png'), default;
-}
+
 
 body {
   background-color: rgb(0, 0, 0);
@@ -54,7 +52,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  cursor: url('./assets/cursor-pointer.png'), pointer;
+  cursor: pointer;
 }
 ul {
   list-style: none;
@@ -65,12 +63,11 @@ img {
   display: block;
 }
 button:hover {
-  cursor: url('./assets/cursor-pointer.png'), pointer;
+  cursor: pointer;
 }
 button:disabled {
-  cursor: url('./assets/cursor-disabled.png'), not-allowed;
+  cursor: not-allowed;
 }
-
 
 .css-9l3uo3 {
   color: #efede8;
