@@ -53,6 +53,8 @@
 - [Бурченков Петр -  developer](https://github.com/P-Burchenkov)
 - [Брагар Олександр  - developer](https://github.com/Bardjur)
 
+**вересень 2023**
+
 # Power Pulse (eng)
 
 **Our goal** is to make users' lives healthier and more comfortable by providing them with a convenient and effective tool for calorie tracking and healthy eating.
