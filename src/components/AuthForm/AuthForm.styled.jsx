@@ -51,6 +51,10 @@ export const TextInput = styled(Field)`
   &:focus-visible {
     border: 1px solid ${colors.orange};
   }
+
+  &[data-touch=true]{
+    border-color: ${colors.textSuccess};
+  }
 `;
 
 export const Warning = styled.div`

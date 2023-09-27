@@ -68,11 +68,14 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
       onSubmit={onSubmit}
       validationSchema={authSchema}
     >
-      <FormContainer>
+      {({ handleBlur, touched, errors }) => (
+        
+        <FormContainer>
+          ({console.log(errors)})
         <InputContainer>
           {nameIsShown && (
             <InputWrapper>
-              <TextInput id="name" type="text" placeholder="name" name="name" />
+              <TextInput id="name" type="text" placeholder="name" name="name" onBlur={handleBlur} data-touch={touched.name && !errors.name} />
               <Warning>
                 <ErrorMessage name="name">
                   {msg => (
@@ -93,6 +96,8 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
               type="email"
               placeholder="email"
               name="email"
+              onBlur={handleBlur} 
+              data-touch={touched.email && !errors.email}
             />
             <Warning>
               <ErrorMessage name="email">
@@ -113,6 +118,8 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
               type={typePasswordInput}
               placeholder="password"
               name="password"
+              onBlur={handleBlur} 
+              data-touch={touched.password && !errors.password}
             />
             <ButtonIconForInput
               type="button"
@@ -144,6 +151,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
         </InputContainer>
         <BtnSubmit title={btnTitle} fontSize="20px" />
       </FormContainer>
+      )}
     </Formik>
   );
 }
