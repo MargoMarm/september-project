@@ -20,7 +20,11 @@ export const InputGroup = styled.div`
 `;
 
 export const FormikField = styled(Field)`
-  width: 155px;
+	  width: 275px;
+
+  ${mq.mobile} {
+    width: 155px;
+  }
   height: 52px;
   padding: 14px 0 14px 14px;
   margin: 7px;
@@ -159,7 +163,8 @@ export const RADIO_TITLE_STYLE = {
 };
 
 export const ErrorMessage = styled.p`
-  font-size: 7px;
+  width: 155px;
+  font-size: 11px;
   padding-left: ${props => (props.padding ? 10 : 0)}px;
   color: ${colors.red};
 `;
