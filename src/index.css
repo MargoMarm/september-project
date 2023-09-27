@@ -24,9 +24,8 @@
 }
 
 html {
-  cursor: url('./assets/cursor-pointer.png'), pointer;
+  cursor: url('./assets/cursor.png'), default;
 }
-
 
 body {
   background-color: rgb(0, 0, 0);
@@ -54,6 +53,9 @@ p {
 a {
   text-decoration: none;
 }
+a:hover {
+  cursor: url('./assets/cursor-pointer.png'), pointer;
+}
 ul {
   list-style: none;
   padding: 0;
@@ -62,8 +64,15 @@ ul {
 img {
   display: block;
 }
-button {
-  cursor: pointer;
+button:hover {
+  cursor: url('./assets/cursor-pointer.png'), pointer;
+}
+button:disabled {
+  cursor: url('./assets/cursor-disabled.png'), not-allowed;
+}
+input:focus,
+input:hover {
+  cursor: url('./assets/cursor-text.png'), text;
 }
 
 .css-9l3uo3 {

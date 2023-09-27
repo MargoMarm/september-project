@@ -83,7 +83,6 @@ export const AddBtn = styled.button`
 
   color: inherit;
   background-color: transparent;
-  cursor: pointer;
 
   color: ${colors.orange};
 

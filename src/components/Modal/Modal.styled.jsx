@@ -34,7 +34,6 @@ export const ModalWrap = styled.div`
 `;
 
 export const ButtonExit = styled.button`
-  cursor: pointer;
   position: absolute;
   top: 14px;
   right: 14px;

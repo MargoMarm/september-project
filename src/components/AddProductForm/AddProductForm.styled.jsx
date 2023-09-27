@@ -148,7 +148,6 @@ export const AddButton = styled.button`
     color: ${colors.textWhite06};
     background: ${colors.orangeSecondary};
 
-    cursor: not-allowed;
   }
 `;
 

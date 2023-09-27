@@ -10,7 +10,7 @@ export const Option = styled.option`
   border-radius: 4px;
   background-color: #fff;
   appearance: none;
-  cursor: pointer;
+  cursor: url('./assets/cursor-pointer.png'), pointer;
 `;
 
 export const Select = styled.select`
