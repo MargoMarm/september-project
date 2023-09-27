@@ -41,6 +41,10 @@ export const FormikField = styled(Field)`
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  &[data-touch=true]{
+    border-color: ${colors.textSuccess};
+  }
+
   &::placeholder {
     color: ${colors.textWhite06};
   }

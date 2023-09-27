@@ -20,12 +20,14 @@ import { selectUser } from "../../redux/auth/selectors";
 import { useFormik } from "formik";
 import { sub } from 'date-fns';
 import validationSchema from "./validationSchema";
+import {isTheSameForm} from "../../utils"
+import { useMemo } from "react";
 
 
 const maxDate = sub(new Date(), { years: 18 });
 const minDate = sub(new Date(), { years: 70 });
 
-export default function UserForm({submit}) {
+export default function UserForm({submit, avatar}) {
   const {
     name,
     email,
@@ -58,6 +60,7 @@ export default function UserForm({submit}) {
     onSubmit: submit,
   });
 
+  let disBtn = useMemo(() => isTheSameForm(initialValues, formik.values) && !avatar, [formik.values, avatar]);
   return (
     <Form onSubmit={formik.handleSubmit} autoComplete="off">
       <InputGroup>
@@ -68,7 +71,9 @@ export default function UserForm({submit}) {
             name="name"
             value={formik.values.name}
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             aria-invalid={formik.errors.name}
+            data-touch={formik.touched.name && !formik.errors.name}
           />
 
            { formik.errors.name &&
@@ -97,7 +102,9 @@ export default function UserForm({submit}) {
               name="height"
               value={formik.values.height}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               aria-invalid={formik.errors.height}
+              data-touch={formik.touched.height && !formik.errors.height}
             />
 
             { formik.errors.height &&
@@ -114,7 +121,9 @@ export default function UserForm({submit}) {
               name="currentWeight"
               value={formik.values.currentWeight}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               aria-invalid={formik.errors.currentWeight}
+              data-touch={formik.touched.currentWeight && !formik.errors.currentWeight}
             />
 
              { formik.errors.currentWeight &&
@@ -133,7 +142,9 @@ export default function UserForm({submit}) {
               name="desiredWeight"
               value={formik.values.desiredWeight}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               aria-invalid={formik.errors.desiredWeight}
+              data-touch={formik.touched.desiredWeight && !formik.errors.desiredWeight}
             />
 
              { formik.errors.desiredWeight &&
@@ -292,11 +303,12 @@ export default function UserForm({submit}) {
         }
       </CheckboxList>
 
-      <Button type="submit">Save</Button>
+      <Button type="submit" disabled={disBtn}>Save</Button>
     </Form>
   );
 }
 
 UserForm.propTypes = {
   submit: PropTypes.func.isRequired,
+  avatar: PropTypes.oneOfType([PropTypes.object, PropTypes.instanceOf(null)]),
 }
