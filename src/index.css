@@ -70,10 +70,7 @@ button:hover {
 button:disabled {
   cursor: url('./assets/cursor-disabled.png'), not-allowed;
 }
-input:focus,
-input:hover {
-  cursor: url('./assets/cursor-text.png'), text;
-}
+
 
 .css-9l3uo3 {
   color: #efede8;
