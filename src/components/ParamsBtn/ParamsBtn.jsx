@@ -1,13 +1,34 @@
 import PropTypes from 'prop-types';
 import { BtnNav, Svg } from './ParamsBtn.styled';
+import Notiflix from 'notiflix';
 
-const ParamsBtn = ({ setSteps, type, step }) => {
+const ParamsBtn = ({ setSteps, type, step, values }) => {
   if (type === 'next') {
     return (
       <BtnNav
         type="button"
         onClick={() => {
-          setSteps(step);
+          if (
+            step === 2 &&
+            values.height !== '' &&
+            values.currentWeight !== '' &&
+            values.desiredWeight !== ''
+          ) {
+            setSteps(step);
+            return;
+          }
+
+          if (
+            step === 3 &&
+            values.blood !== '' &&
+            values.sex !== '' &&
+            values.levelActivity !== ''
+          ) {
+            setSteps(step);
+            return;
+          }
+
+          Notiflix.Notify.warning('pls fill all fields');
         }}
       >
         Next
@@ -39,6 +60,8 @@ ParamsBtn.propTypes = {
   setSteps: PropTypes.func.isRequired,
   type: PropTypes.string,
   step: PropTypes.number.isRequired,
+  validate: PropTypes.func,
+  values: PropTypes.object,
 };
 
 export default ParamsBtn;
