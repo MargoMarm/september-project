@@ -103,3 +103,4 @@ We are GoIT students and development enthusiasts. Our project is a sports app fo
 - [Petr Burchenkov - Developer](https://github.com/P-Burchenkov)
 - [Oleksandr Bragar - Developer](https://github.com/Bardjur)
 
+**september 2023**
