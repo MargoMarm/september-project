@@ -32,7 +32,7 @@ const MobMenu = () => {
 
   useEffect(() => {
     const handleKeyDown = e => {
-      if (e.code === 'Escape') {
+      if (e.code === 'Escape' && mobMenu) {
         toggleMobMenu();
       }
     };
@@ -42,7 +42,7 @@ const MobMenu = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [toggleMobMenu]);
+  }, [mobMenu, toggleMobMenu]);
 
   return (
     <>

@@ -29,7 +29,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
   const authSchema = Yup.object().shape({
     name: validateName(nameIsShown),
     email: Yup.string()
-      .matches(emailLyout, { message: 'Email must be valid' })
+      .matches(emailLyout, { message: 'Email must be valid! For example: example@gmail.com' })
       .email('Invalid email')
       .required('Email is required'),
     password: Yup.string()
@@ -94,7 +94,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
             <TextInput
               id="email"
               type="email"
-              placeholder="email"
+              placeholder="Email"
               name="email"
               onBlur={handleBlur} 
               data-touch={touched.email && !errors.email}
@@ -116,7 +116,7 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
             <TextInput
               id="password"
               type={typePasswordInput}
-              placeholder="password"
+              placeholder="Password"
               name="password"
               onBlur={handleBlur} 
               data-touch={touched.password && !errors.password}

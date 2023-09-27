@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from './redux/auth/operation';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
-// import SharedLayout from './components/SharedLayout/SharedLayout';
+
 import { PrivateRoute, PublicRoute } from './components/Routes';
 import { UseAuth } from './hooks/useAuth';
 
@@ -82,7 +82,7 @@ function App() {
             path="/profile"
             element={<PrivateRoute component={<Profile />} redirectTo="/" />}
           />
-          <Route path="/error" element={<Error />} />
+          <Route path="*" element={<Error />} />
         </Route>
       </Routes>
     )

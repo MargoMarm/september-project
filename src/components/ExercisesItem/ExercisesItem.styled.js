@@ -27,7 +27,7 @@ export const Item = styled.li`
 export const WrapCard = styled.a`
   display: block;
 
-  cursor: pointer;
+  cursor: url('./assets/cursor-pointer.png'), pointer;
   position: relative;
   border-radius: 12px;
   background-color: ${colors.background05};

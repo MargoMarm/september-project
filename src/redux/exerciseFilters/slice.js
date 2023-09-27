@@ -23,9 +23,11 @@ export const filterSlice = createSlice({
     builder.addCase(fetchFilters.fulfilled, (state, action) => {
       state.items = action.payload;
       state.error = null;
+      state.isLoading = false;
     });
     builder.addCase(fetchFilters.rejected, (state, action) => {
       state.error = action.payload;
+      state.isLoading = false;
     });
     builder.addCase(fetchFilters.pending, state => {
       state.isLoading = true;

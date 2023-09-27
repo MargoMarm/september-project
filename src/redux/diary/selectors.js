@@ -4,6 +4,10 @@ export const getDiaryExercises = state => state.diary.exercises;
 
 export const getIsLoadingDiary = state => state.diary.isLoading;
 
+export const getIsLoadingExercies = state => state.diary.isLoadingExercies;
+
+export const getIsLoadingPrfoducts = state => state.diary.isLoadingProducts;
+
 export const getError = state => state.diary.error;
 
 export const getErrorProductsAndExercisesError = state =>

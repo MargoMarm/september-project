@@ -20,11 +20,14 @@ export const exercisesSlice = createSlice({
       state.items = action.payload;
       state.getFilters = false;
       state.error = null;
+      state.isLoading = false;
     });
     builder.addCase(getExercises.rejected, (state, action) => {
       state.error = action.payload;
+      state.isLoading = false;
     });
     builder.addCase(getExercises.pending, state => {
+      state.isLoading = true;
       state.isLoading = true;
     });
 

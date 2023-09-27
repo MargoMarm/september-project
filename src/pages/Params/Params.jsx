@@ -21,7 +21,7 @@ const Params = () => {
       <ParamsPageWrapper steps={steps}>
         <ParamsForm setSwiperRef={setSwiperRef} setSteps={setSteps} />
 
-        <ParamsBar steps={steps} />
+        <ParamsBar steps={steps} setSteps={setSteps} />
       </ParamsPageWrapper>
     </>
   );

@@ -7,8 +7,7 @@ export const Label = styled.label`
   background-color: inherit;
   border: none;
 
-  cursor: pointer;
-
+  cursor: url('./assets/cursor-pointer.png'), pointer;
   &:hover svg,
   &:hover input {
     stroke: ${colors.orange};
@@ -31,8 +30,7 @@ export const Input = styled.input`
   font-weight: 700;
   line-height: 1.11;
 
-  cursor: pointer;
-
+  cursor: url('./assets/cursor-pointer.png'), pointer;
   color: ${colors.white};
   border: none;
   background-color: inherit;
