@@ -55,6 +55,7 @@
 
 **вересень 2023**
 
+![readme cover](./src/assets/images/readme.jpg)
 # Power Pulse (eng)
 
 **Our goal** is to make users' lives healthier and more comfortable by providing them with a convenient and effective tool for calorie tracking and healthy eating.
