@@ -33,3 +33,15 @@ export const getCategories = createAsyncThunk(
     },
   },
 );
+
+export const fetchMoreProducts = createAsyncThunk(
+  `fetchMoreProducts`,
+  async (params, thunkAPI) => {
+    try {
+      const { data } = await axios.get(`api/products?${params}`);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  },
+);
