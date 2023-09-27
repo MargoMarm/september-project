@@ -61,7 +61,6 @@ export default function UserForm({submit, avatar}) {
   });
 
   let disBtn = useMemo(() => isTheSameForm(initialValues, formik.values) && !avatar, [formik.values, avatar]);
-
   return (
     <Form onSubmit={formik.handleSubmit} autoComplete="off">
       <InputGroup>
@@ -72,7 +71,9 @@ export default function UserForm({submit, avatar}) {
             name="name"
             value={formik.values.name}
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             aria-invalid={formik.errors.name}
+            data-touch={formik.touched.name && !formik.errors.name}
           />
 
            { formik.errors.name &&
@@ -101,7 +102,9 @@ export default function UserForm({submit, avatar}) {
               name="height"
               value={formik.values.height}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               aria-invalid={formik.errors.height}
+              data-touch={formik.touched.height && !formik.errors.height}
             />
 
             { formik.errors.height &&
@@ -118,7 +121,9 @@ export default function UserForm({submit, avatar}) {
               name="currentWeight"
               value={formik.values.currentWeight}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               aria-invalid={formik.errors.currentWeight}
+              data-touch={formik.touched.currentWeight && !formik.errors.currentWeight}
             />
 
              { formik.errors.currentWeight &&
@@ -137,7 +142,9 @@ export default function UserForm({submit, avatar}) {
               name="desiredWeight"
               value={formik.values.desiredWeight}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               aria-invalid={formik.errors.desiredWeight}
+              data-touch={formik.touched.desiredWeight && !formik.errors.desiredWeight}
             />
 
              { formik.errors.desiredWeight &&

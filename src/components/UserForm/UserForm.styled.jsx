@@ -60,6 +60,10 @@ export const Input = styled.input`
   border-radius: 12px;
   transition: border-color 0.3s;
 
+  &[data-touch] {
+    border-color: ${colors.textSuccess};
+  }
+
   &[aria-invalid] {
     border-color: ${colors.textError}!important;
     color: ${colors.textError}!important;
