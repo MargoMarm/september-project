@@ -1,7 +1,7 @@
-import{n as o,m as i}from"./index-e7bc8c20.js";const t="/september-project/assets/home-page_desktop_1x-2dc737d6.jpg",p="/september-project/assets/home-page_desktop_2x-2c5d358c.jpg",m="/september-project/assets/home-page_desktop_3x-30837f7d.jpg",a="/september-project/assets/home-page_tablet_1x-3f850f85.jpg",s="/september-project/assets/home-page_tablet_2x-16fa8106.jpg",n="/september-project/assets/home-page_tablet_3x-96c27aa0.jpg",r="/september-project/assets/home-page_mobile_1x-516df911.jpg",g="/september-project/assets/home-page_mobile_2x-1e729053.jpg",d="/september-project/assets/home-page_mobile_3x-10fc07f4.jpg",e={imgDx1:t,imgDx2:p,imgDx3:m,imgTx1:a,imgTx2:s,imgTx3:n,imgMx1:r,imgMx2:g,imgMx3:d},c=o.ul`
+import{n as o,m as t}from"./index-a6c0a827.js";const p="/september-project/assets/home-page_desktop_1x-2dc737d6.jpg",s="/september-project/assets/home-page_desktop_2x-2c5d358c.jpg",a="/september-project/assets/home-page_desktop_3x-30837f7d.jpg",r="/september-project/assets/home-page_tablet_1x-3f850f85.jpg",m="/september-project/assets/home-page_tablet_2x-16fa8106.jpg",n="/september-project/assets/home-page_tablet_3x-96c27aa0.jpg",g="/september-project/assets/home-page_mobile_1x-516df911.jpg",d="/september-project/assets/home-page_mobile_2x-1e729053.jpg",x="/september-project/assets/home-page_mobile_3x-10fc07f4.jpg",e={imgDx1:p,imgDx2:s,imgDx3:a,imgTx1:r,imgTx2:m,imgTx3:n,imgMx1:g,imgMx2:d,imgMx3:x},l=o.ul`
   display: flex;
   gap: 20px;
-`,l=o.div`
+`,u=o.div`
   position: relative;
   height: 685px;
   background-image: url(${e.imgMx1});
@@ -28,7 +28,7 @@ import{n as o,m as i}from"./index-e7bc8c20.js";const t="/september-project/asset
     }
   }
 
-  ${i.tablet} {
+  ${t.tablet} {
     height: 832px;
     background-image: url(${e.imgTx1});
     background-size: 437px 893px;
@@ -51,13 +51,13 @@ import{n as o,m as i}from"./index-e7bc8c20.js";const t="/september-project/asset
       }
     }
   }
-  ${i.desktop} {
+  ${t.desktop} {
     height: 0;
     background: none;
     padding: 0 0 0 96px;
   }
 `,b=o.div`
-  ${i.desktop} {
+  ${t.desktop} {
     position: absolute;
     top: 0;
     right: 0;
@@ -85,4 +85,4 @@ import{n as o,m as i}from"./index-e7bc8c20.js";const t="/september-project/asset
       }
     }
   }
-`;export{c as L,b as W,l as a};
+`,k=i=>i.statistics.allExercises,h=i=>i.statistics.usersBurnedCalories;export{l as L,b as W,h as a,u as b,k as g};
