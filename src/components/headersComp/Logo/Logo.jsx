@@ -1,7 +1,8 @@
-import { Button, WrapLogo, Svg } from './Logo.styled';
+import { WrapLogo, Svg } from './Logo.styled';
 import sprite from '../../../assets/sprite.svg';
 
 import { UseAuth } from '../../../hooks/useAuth';
+import { NavLink } from 'react-router-dom';
 
 export const Logo = () => {
   const { isLoggedIn } = UseAuth();
@@ -9,13 +10,13 @@ export const Logo = () => {
   return (
     <>
       <WrapLogo>
-        <a
-          href={isLoggedIn ? '/september-project/diary' : '/september-project/'}
+        <NavLink
+          to={isLoggedIn ? '/september-project/diary' : '/'}
         >
           <Svg>
             <use href={sprite + `#logo-big`}></use>
           </Svg>{' '}
-        </a>
+        </NavLink>
       </WrapLogo>
     </>
   );

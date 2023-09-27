@@ -25,7 +25,7 @@ const ParamsBlockCard = ({ data, measure, type, step, page }) => {
           </GreySvg>
         </GreySvgWrapper>
         <GreyTextWrapper>
-          <GreyDynamicText>{data}+</GreyDynamicText>
+          <GreyDynamicText>{data}</GreyDynamicText>
           <GreyStaticText>Video tutorial</GreyStaticText>
         </GreyTextWrapper>
       </GreyCard>
@@ -51,7 +51,7 @@ const ParamsBlockCard = ({ data, measure, type, step, page }) => {
 };
 
 ParamsBlockCard.propTypes = {
-  data: PropTypes.number,
+  data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   type: PropTypes.string,
   measure: PropTypes.string,
   step: PropTypes.string,

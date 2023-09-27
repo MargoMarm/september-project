@@ -9,7 +9,7 @@ export const ProductPageContainer = styled.div`
   padding: 40px 20px 80px 20px;
   gap: 40px;
   position: relative;
-
+  height: 100vh;
   ${mq.tablet} {
     gap: 32px;
     padding: 72px 32px 48px 32px;

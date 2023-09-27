@@ -4,8 +4,8 @@ import Title from '../../components/Title/Title';
 import {
   TitleThumb,
   ExercisesContainer,
-	ExercisesListContainer,
-  BGImg
+  ExercisesListContainer,
+  BGImg,
 } from './Exercises.styled';
 
 import ProductsOrExercisesContainer from '../../components/ProductOrExerciseContainer/ProductOrExerciseContainer';
@@ -14,15 +14,23 @@ import ProductsOrExercisesItem from '../../components/ProductsOrExercisesItem/Pr
 import { useSelector } from 'react-redux';
 import { selectGetFilters } from '../../redux/exercises/selectors';
 
-import { selectCurrentTitle } from '../../redux/exerciseFilters/selectors';
+import {
+  selectCurrentTitle,
+  selectIsLoading,
+} from '../../redux/exerciseFilters/selectors';
+import { selectIsLoadingExercises } from '../../redux/exercises/selectors';
 import { selectItems } from '../../redux/exercises/selectors';
+
 import ExercisesBtnBack from '../../components/ExercisesBtnBack/ExercisesBtnBack';
 import Scrollbar from '../../components/Scrollbar';
+import Loader from '../../components/Lodaer/Loader';
 
 const Exercises = () => {
   let shouldGetFilters = useSelector(selectGetFilters);
   let items = useSelector(selectItems);
   let currentTitle = useSelector(selectCurrentTitle);
+  const isLoadingFilters = useSelector(selectIsLoading);
+  const isLoadingExercises = useSelector(selectIsLoadingExercises);
 
   return (
     <>
@@ -64,29 +72,35 @@ const Exercises = () => {
           <ExercisesCategories />
         </TitleThumb>
       </ExercisesContainer>
-      {shouldGetFilters ? (
+      {isLoadingFilters ? (
+        <Loader size={'60'} />
+      ) : shouldGetFilters ? (
         <ExercisesContainer>
           <ExercisesItemList />
         </ExercisesContainer>
       ) : (
-				  <ExercisesListContainer>
-					  <BGImg/>
-          <Scrollbar width={{ dt: '868' }}>
-            <ProductsOrExercisesContainer>
-              {items.map((item, i) => {
-                if (i < 20) {
-                  return (
-                    <ProductsOrExercisesItem
-                      key={item._id}
-                      page="exercise"
-                      data={item}
-                    />
-                  );
-                }
-                return null;
-              })}
-            </ProductsOrExercisesContainer>
-          </Scrollbar>
+        <ExercisesListContainer>
+          <BGImg />
+          {isLoadingExercises ? (
+            <Loader size={'60'} />
+          ) : (
+            <Scrollbar width={{ dt: '868' }}>
+              <ProductsOrExercisesContainer>
+                {items.map((item, i) => {
+                  if (i < 20) {
+                    return (
+                      <ProductsOrExercisesItem
+                        key={item._id}
+                        page="exercise"
+                        data={item}
+                      />
+                    );
+                  }
+                  return null;
+                })}
+              </ProductsOrExercisesContainer>
+            </Scrollbar>
+          )}
         </ExercisesListContainer>
       )}
     </>
