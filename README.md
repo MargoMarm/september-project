@@ -1,3 +1,4 @@
+![readme cover](./src/assets/images/readme.jpg)
 # Power Pulse (ukr)
 
 Наша мета - зробити життя користувачів здоровішим і комфортнішим, надаючи їм
