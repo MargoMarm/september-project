@@ -23,6 +23,7 @@ import {
 import debounce from 'lodash.debounce';
 
 import { capitalizeWord } from '../../utils/capitalizeWord';
+import { addSearchParams } from '../../redux/productsFilter/slice';
 
 export default function ProductsFilter() {
   const makeReqObj = (input, category, recommended) => {
@@ -52,6 +53,7 @@ export default function ProductsFilter() {
   useEffect(() => {
     const reqObj = makeReqObj(query, currentCategory, isRecommended);
     const urlParams = new URLSearchParams(reqObj).toString();
+    dispatch(addSearchParams(urlParams));
     dispatch(fetchProducts(urlParams));
   }, [query, currentCategory, isRecommended, dispatch]);
 

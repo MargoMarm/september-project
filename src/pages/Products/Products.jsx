@@ -5,21 +5,41 @@ import { FlexWrapper, ProductPageContainer } from './Products.styled';
 import Scrollbar from '../../components/Scrollbar';
 import ProductsOrExercisesItem from '../../components/ProductsOrExercisesItem/ProductsOrExercisesItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts } from '../../redux/productsFilter/selectors';
+
 import { getAddProductIsLoading } from '../../redux/products/selectors';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchProducts } from '../../redux/productsFilter/operations';
 import EmptyProductList from '../../components/EmptyProductList/EmptyProductList';
 import Loader from '../../components/Lodaer/Loader';
+import { fetchMoreProducts } from '../../redux/productsFilter/operations';
+import {
+  getIsLoading,
+  getSearchParams,
+  getProducts,
+  getHasMore,
+} from '../../redux/productsFilter/selectors';
+import InfiniteScroll from 'react-infinite-scroller';
 
 const Products = () => {
+  const [page, setPage] = useState(1);
+
+  const hasMore = useSelector(getHasMore);
+
+  const isLoadingMoreProducts = useSelector(getIsLoading);
+
   const dispatch = useDispatch();
   const products = useSelector(getProducts);
   const isLoading = useSelector(getAddProductIsLoading);
 
+  const searchParams = useSelector(getSearchParams);
+
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [searchParams]);
 
   return (
     <ProductPageContainer>
@@ -31,17 +51,43 @@ const Products = () => {
         <Loader />
       ) : products.length !== 0 ? (
         <Scrollbar width={{ dt: '868' }}>
-          <ProductsOrExercisesContainer>
-            {products.map(product => {
-              return (
-                <ProductsOrExercisesItem
-                  key={product.id}
-                  page="product"
-                  data={product}
-                />
+          <InfiniteScroll
+            pageStart={0}
+            loadMore={() => {
+              if (page === 1) {
+                setPage(prevPage => prevPage + 1);
+                return;
+              }
+              console.log('page');
+              const urlParams = { page, limit: 20 };
+              const paginationParams = new URLSearchParams(
+                urlParams,
+              ).toString();
+              dispatch(
+                fetchMoreProducts(`${searchParams}&${paginationParams}`),
               );
-            })}
-          </ProductsOrExercisesContainer>
+              setPage(prevPage => prevPage + 1);
+            }}
+            hasMore={hasMore && !isLoadingMoreProducts}
+            loader={
+              <div className="loader" key={0}>
+                Loading ...
+              </div>
+            }
+            useWindow={false}
+          >
+            <ProductsOrExercisesContainer>
+              {products.map(product => {
+                return (
+                  <ProductsOrExercisesItem
+                    key={product.id}
+                    page="product"
+                    data={product}
+                  />
+                );
+              })}
+            </ProductsOrExercisesContainer>
+          </InfiniteScroll>
         </Scrollbar>
       ) : (
         <EmptyProductList />
