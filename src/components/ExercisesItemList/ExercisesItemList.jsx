@@ -52,6 +52,7 @@ const ExercisesList = () => {
 
   return (
     <Swiper
+      key={category}
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
