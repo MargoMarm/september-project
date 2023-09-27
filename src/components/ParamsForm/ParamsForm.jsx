@@ -68,7 +68,7 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
         Formik.resetForm();
       }}
     >
-      {({ handleChange, values, setFieldValue, errors, touched }) => {
+      {({ handleChange, values, setFieldValue, errors, touched, handleBlur }) => {
         return (
           <Form>
             <Swiper
@@ -92,6 +92,8 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       name="height"
                       placeholder="Height"
                       autoComplete="off"
+                      onBlur={handleBlur}
+                      data-touch={touched.height && !errors.height}
                     />
                     {errors.height && touched.height && (
                       <ErrorMessage padding={true}>
@@ -106,6 +108,8 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       name="currentWeight"
                       placeholder="Current Weight"
                       autoComplete="off"
+                      onBlur={handleBlur}
+                      data-touch={touched.currentWeight && !errors.currentWeight}
                     />
                     {errors.currentWeight && touched.currentWeight && (
                       <ErrorMessage padding={true}>
@@ -120,6 +124,8 @@ const ParamsForm = ({ setSteps, setSwiperRef }) => {
                       name="desiredWeight"
                       placeholder="Desired Weight"
                       autoComplete="off"
+                      onBlur={handleBlur}
+                      data-touch={touched.desiredWeight && !errors.desiredWeight}
                     />
                     {errors.desiredWeight && touched.desiredWeight && (
                       <ErrorMessage padding={true}>
