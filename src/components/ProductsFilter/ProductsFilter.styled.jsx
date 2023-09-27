@@ -10,7 +10,7 @@ export const Option = styled.option`
   border-radius: 4px;
   background-color: #fff;
   appearance: none;
-  cursor: pointer;
+  cursor: url('./assets/cursor-pointer.png'), pointer;
 `;
 
 export const Select = styled.select`
@@ -124,26 +124,28 @@ export const TextInput = styled.input`
     border: 1px solid ${colors.orange};
   }
 
-  &:focus-visible + span {
-    color: ${colors.orange};
+  &:focus-visible + span > svg{
+    stroke: ${colors.orange};
   }
 `;
 
 export const Svg = styled.svg`
-  stroke: currentColor;
+  stroke: ${colors.textWhite06};
 
   width: 18px;
   height: 18px;
+
+  &:hover {
+    stroke: ${colors.orange};
+  }
 `;
 
 export const SpanForSvg = styled.span`
   position: absolute;
   top: 15px;
   right: 18px;
-
   width: 18px;
   height: 18px;
-
   ${mq.tablet} {
     top: 17px;
   }

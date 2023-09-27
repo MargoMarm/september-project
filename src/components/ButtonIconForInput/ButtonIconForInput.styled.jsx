@@ -6,9 +6,7 @@ export const Button = styled.button`
   top: 50%;
   right: ${({ right }) => right || '0'};
   transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  padding: 0;
+  padding: 8px;
   border: none;
   outline: none;
   display: inline-flex;

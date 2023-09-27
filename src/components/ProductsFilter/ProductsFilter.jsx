@@ -105,7 +105,7 @@ export default function ProductsFilter() {
             <use href={sprite + `#icon-search`}></use>
           </Svg>
         </SpanForSvg>
-        <ButtonIconForInput right="42px" type="reset">
+        <ButtonIconForInput right="35px" type="reset">
           <Svg>
             <use href={sprite + `#close`}></use>
           </Svg>

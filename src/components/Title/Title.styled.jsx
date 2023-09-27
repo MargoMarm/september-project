@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { mq, colors } from '../../utils';
 
 export const StyledTitle = styled.h2`
+  animation: backInLeft 1s ease-in-out  alternate;
   color: ${colors.white};
 
   font-family: Roboto;
