@@ -10,8 +10,11 @@ import {
   LogoText,
 } from './Error.styled';
 import sprite from '../../assets/sprite.svg';
+import { UseAuth } from '../../hooks/useAuth';
 
 const Error = () => {
+  const { isLoggedIn } = UseAuth();
+
   return (
     <Container>
       <Content>
@@ -31,7 +34,12 @@ const Error = () => {
           another dimension. We apologize for this inconvenience.
         </Text>
 
-        <CustomBtn type="button" text={'Go Home'} isorange={'true'} to={'/'} />
+        <CustomBtn
+          type="button"
+          text={'Go Home'}
+          isorange={'true'}
+          to={isLoggedIn ? '/diary' : '/'}
+        />
       </Content>
 
       <BGImg />

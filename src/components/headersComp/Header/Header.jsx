@@ -8,10 +8,21 @@ import { UseAuth } from '../../../hooks/useAuth';
 
 export const Header = () => {
   const { isLoggedIn } = UseAuth();
-  const { pathname } = useLocation();
+	const { pathname } = useLocation();
+	const isMatchingRoute = [
+    '/',
+    '/signin',
+    '/signup',
+    '/params',
+    '/profile',
+    '/diary',
+    '/exercises',
+    '/products',
+	].some(route => pathname === route);
+	
   const isBorderToRender = isLoggedIn && pathname !== '/params';
 
-  if (pathname === '/error') {
+  if (!isMatchingRoute) {
     return null;
   }
 
