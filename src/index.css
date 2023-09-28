@@ -108,3 +108,7 @@ button:disabled {
 .pagination .swiper-pagination-bullet-active {
   background: #e6533c;
 }
+
+.body-scroll-lock {
+  overflow: hidden;
+}

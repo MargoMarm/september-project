@@ -42,7 +42,10 @@ const ProductsOrExercisesItem = ({ page, data }) => {
 
   const isTimerGoingOn = useSelector(isTimerOn);
 
-  const toggleAddModal = () => setIsModalAddOpen(state => !state);
+	const toggleAddModal = () => {
+		setIsModalAddOpen(state => !state)
+		 document.body.classList.toggle('body-scroll-lock');
+	};
   const toggleSuccessModal = () => setIsModalOpen(state => !state);
 
   const dispatch = useDispatch();

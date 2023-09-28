@@ -44,11 +44,3 @@ export const Modal = ({ children, openModal, width }) => {
 
 export default Modal;
 
-// =================for testing============================================================================
-
-//  const [openModal, setOpenModal] = useState(false)
-
-//     <>
-//         <button onClick={() => setOpenModal(true)}>Open</button>
-//         {openModal && <Modal children={<YOU MODAL COMPONENT/>} openModal={setOpenModal} />}
-//     </>
