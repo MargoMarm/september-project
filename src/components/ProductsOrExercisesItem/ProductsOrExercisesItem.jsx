@@ -42,11 +42,14 @@ const ProductsOrExercisesItem = ({ page, data }) => {
 
   const isTimerGoingOn = useSelector(isTimerOn);
 
-	const toggleAddModal = () => {
-		setIsModalAddOpen(state => !state)
-		 document.body.classList.toggle('body-scroll-lock');
-	};
-  const toggleSuccessModal = () => setIsModalOpen(state => !state);
+  const toggleAddModal = () => {
+    setIsModalAddOpen(state => !state);
+    document.body.classList.toggle('body-scroll-lock');
+  };
+  const toggleSuccessModal = () => {
+    setIsModalOpen(state => !state);
+    document.body.classList.toggle('body-scroll-lock');
+  };
 
   const dispatch = useDispatch();
 
@@ -175,6 +178,7 @@ const ProductsOrExercisesItem = ({ page, data }) => {
             page === 'product' ? toggleAddModal : closeModalWithoutData
           }
           width={page === 'product' ? 481 : 696}
+          height={page === 'product' ? [285, 286] : [405, 550]}
         >
           {page === 'product' && (
             <AddProductForm
@@ -190,7 +194,11 @@ const ProductsOrExercisesItem = ({ page, data }) => {
       )}
 
       {isModalSuccessOpen && (
-        <Modal openModal={toggleSuccessModal} width={430}>
+        <Modal
+          openModal={toggleSuccessModal}
+          width={430}
+          height={page === 'product' ? [389, 428] : [402, 408]}
+        >
           {page === 'product' && (
             <ProductOrExerciseModal
               modalType="product"
