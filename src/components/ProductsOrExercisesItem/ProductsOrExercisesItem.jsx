@@ -171,7 +171,7 @@ const ProductsOrExercisesItem = ({ page, data }) => {
           openModal={
             page === 'product' ? toggleAddModal : closeModalWithoutData
           }
-          width={page === 'product' ? 479 : 694}
+          width={page === 'product' ? 481 : 696}
         >
           {page === 'product' && (
             <AddProductForm

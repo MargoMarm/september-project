@@ -17,6 +17,9 @@ export const ModalWrap = styled.div`
   border: 1px solid ${colors.textWhite02};
   position: absolute;
 
+  overflow: auto;
+  height: 384px;
+
   display: flex;
   justify-content: center;
   align-items: center;
