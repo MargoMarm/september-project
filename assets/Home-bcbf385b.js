@@ -1,4 +1,4 @@
-import{n as p,c as l,m as e,j as s,s as x,u as c,a as i,r as g,g as h,C as a}from"./index-a3e616c5.js";import{P as r}from"./ParamsBlockCard-285f35e2.js";import{g as d,a as u,W as m,b as j,L as f}from"./selectors-4d610b57.js";const b=p.h1`
+import{n as p,c as l,m as e,j as s,s as x,u as c,a as i,r as g,g as h,C as a}from"./index-27b007ba.js";import{P as r}from"./ParamsBlockCard-bc3c884d.js";import{g as d,a as u,W as m,b as j,L as f}from"./selectors-84c8b1a9.js";const b=p.h1`
   letter-spacing: 0.38px;
   font-weight: 500;
   color: ${l.white};

@@ -1,4 +1,4 @@
-import{n as e,m as t,c as i,U as s,j as o,s as n,C as r}from"./index-a3e616c5.js";import{i as p}from"./exercises_desk_2x-1531e374.js";const d=e.div`
+import{n as e,m as t,c as i,U as s,j as o,s as n,C as r}from"./index-27b007ba.js";import{i as p}from"./exercises_desk_2x-1531e374.js";const d=e.div`
   display: flex;
   position: relative;
   ${t.mobile} {
