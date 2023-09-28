@@ -8,10 +8,9 @@ export default function ProductsOrExercisesContainer({ children, ...props }) {
   const containerRef = useRef();
   const searchParams = useSelector(getSearchParams);
 
-  // useEffect(() => {
-  //   console.log('scroll', containerRef.current.firstChild);
-  //   containerRef.current.firstChild?.scrollIntoView();
-  // }, [searchParams]);
+  useEffect(() => {
+    containerRef.current.firstChild?.scrollIntoView();
+  }, [searchParams]);
 
   return (
     <Container ref={containerRef} {...props}>

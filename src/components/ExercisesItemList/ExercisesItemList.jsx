@@ -28,9 +28,7 @@ const ExercisesList = () => {
 
   const handleGetExercises = (params, name) => {
     dispatch(getExercises(params));
-    console.log(params);
     dispatch(addSearchExerciseParams(params));
-
     dispatch(setCurrentTitle(name));
   };
 
