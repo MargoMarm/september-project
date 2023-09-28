@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { mq, colors } from '../../../utils';
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
   position: relative;
   background-color: ${colors.black};
   height: 61px;

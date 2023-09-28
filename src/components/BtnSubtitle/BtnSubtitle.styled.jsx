@@ -17,6 +17,11 @@ export const BtnSubtitleLink = styled(Link)`
   line-height: 150%;
   text-decoration-line: underline;
   margin-left: 5px;
+  transition: color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  &:hover,
+  &:focus {
+    color: ${colors.orange};
+  }
 `;
 
 export const TextWrapper = styled.div`

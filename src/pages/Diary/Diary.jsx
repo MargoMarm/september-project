@@ -68,61 +68,63 @@ const Diary = () => {
     handleChangeAndParsedDate(currentDate, currentDate);
   };
 
-  return (
-    <DiaryWrapper>
-      <Title text={'Diary'} margin={mgForTitle} />
-      <CalendarContainer>
-        <Calendar
-          value={date}
-          onChange={handleChangeAndParsedDate}
-          name="name"
-          dateFormat={'dd/MM/yyyy'}
-          customInput={<CustomInputForCalendar />}
-          withoutВorder
-        />
-        <CalendarBtn onClick={() => changeDay('previousDay', date)}>
-          <CalendarBtnIcon>
-            <use href={sprite + `#chevron-left`}></use>
-          </CalendarBtnIcon>
-        </CalendarBtn>
-        <CalendarBtn onClick={() => changeDay('nextDay', date)}>
-          <CalendarBtnIcon>
-            <use href={sprite + `#chevron-right`}></use>
-          </CalendarBtnIcon>
-        </CalendarBtn>
-      </CalendarContainer>
-      <DiaryPageContainer>
-        <CustomDivForCards>
-          <DairyStatisticList />
-          <DescriptionText
-            text="Record all your meals in a calorie diary every day. This will help me be
-     aware of my nutrition and make me responsible for my choices."
-            width={{ tablet: 593, desktop: 390 }}
-            margin={mgForDiary}
+	return (
+    <main>
+      <DiaryWrapper>
+        <Title text={'Diary'} margin={mgForTitle} />
+        <CalendarContainer>
+          <Calendar
+            value={date}
+            onChange={handleChangeAndParsedDate}
+            name="name"
+            dateFormat={'dd/MM/yyyy'}
+            customInput={<CustomInputForCalendar />}
+            withoutВorder
           />
-        </CustomDivForCards>
-        {isLoadingDairy ? (
-          <Loader size={'100'} />
-        ) : (
-          <CustomDivForTables>
-            <DayDiaryProductsOrExercises
-              marginBottom={40}
-              list={productsList}
-              productTable
-              date={parsedDate}
-              to={'/products'}
+          <CalendarBtn onClick={() => changeDay('previousDay', date)}>
+            <CalendarBtnIcon>
+              <use href={sprite + `#chevron-left`}></use>
+            </CalendarBtnIcon>
+          </CalendarBtn>
+          <CalendarBtn onClick={() => changeDay('nextDay', date)}>
+            <CalendarBtnIcon>
+              <use href={sprite + `#chevron-right`}></use>
+            </CalendarBtnIcon>
+          </CalendarBtn>
+        </CalendarContainer>
+        <DiaryPageContainer>
+          <CustomDivForCards>
+            <DairyStatisticList />
+            <DescriptionText
+              text="Record all your meals in a calorie diary every day. This will help me be
+     aware of my nutrition and make me responsible for my choices."
+              width={{ tablet: 593, desktop: 390 }}
+              margin={mgForDiary}
             />
+          </CustomDivForCards>
+          {isLoadingDairy ? (
+            <Loader size={'100'} />
+          ) : (
+            <CustomDivForTables>
+              <DayDiaryProductsOrExercises
+                marginBottom={40}
+                list={productsList}
+                productTable
+                date={parsedDate}
+                to={'/products'}
+              />
 
-            <DayDiaryProductsOrExercises
-              list={exercisesList}
-              exerciseTable
-              date={parsedDate}
-              to={'/exercises'}
-            />
-          </CustomDivForTables>
-        )}
-      </DiaryPageContainer>
-    </DiaryWrapper>
+              <DayDiaryProductsOrExercises
+                list={exercisesList}
+                exerciseTable
+                date={parsedDate}
+                to={'/exercises'}
+              />
+            </CustomDivForTables>
+          )}
+        </DiaryPageContainer>
+      </DiaryWrapper>
+    </main>
   );
 };
 

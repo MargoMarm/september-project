@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { mq, colors, button, svgUser } from '../../../utils';
 
-export const WrapUserNav = styled.div`
+export const WrapUserNav = styled.nav`
   ${mq.smallMobile} {
     display: none;
   }
@@ -19,7 +19,7 @@ export const Svg = styled.svg`
   transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
-  :focus {
+  &:focus {
     scale: 1.2;
   }
 `;

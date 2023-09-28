@@ -49,37 +49,39 @@ const Products = () => {
   };
 
   return (
-    <ProductPageContainer>
-      <FlexWrapper>
-        <Title text="Products" />
-        <ProductsFilter />
-      </FlexWrapper>
-      {products.length !== 0 ? (
-        <ScrollBar width={{ dt: '878' }}>
-          <InfiniteScroll
-            pageStart={0}
-            loadMore={onLoadMore}
-            hasMore={hasMore && !isLoadingMoreProducts}
-            loader={<Loader key={'qwe789'} size={'60'} />}
-            useWindow={false}
-          >
-            <ProductsOrExercisesContainer>
-              {products.map(product => {
-                return (
-                  <ProductsOrExercisesItem
-                    key={product.id}
-                    page="product"
-                    data={product}
-                  />
-                );
-              })}
-            </ProductsOrExercisesContainer>
-          </InfiniteScroll>
-        </ScrollBar>
-      ) : (
-        <EmptyProductList />
-      )}
-    </ProductPageContainer>
+    <main>
+      <ProductPageContainer>
+        <FlexWrapper>
+          <Title text="Products" />
+          <ProductsFilter />
+        </FlexWrapper>
+        {products.length !== 0 ? (
+          <ScrollBar width={{ dt: '878' }}>
+            <InfiniteScroll
+              pageStart={0}
+              loadMore={onLoadMore}
+              hasMore={hasMore && !isLoadingMoreProducts}
+              loader={<Loader key={'qwe789'} size={'60'} />}
+              useWindow={false}
+            >
+              <ProductsOrExercisesContainer>
+                {products.map(product => {
+                  return (
+                    <ProductsOrExercisesItem
+                      key={product.id}
+                      page="product"
+                      data={product}
+                    />
+                  );
+                })}
+              </ProductsOrExercisesContainer>
+            </InfiniteScroll>
+          </ScrollBar>
+        ) : (
+          <EmptyProductList />
+        )}
+      </ProductPageContainer>
+    </main>
   );
 };
 

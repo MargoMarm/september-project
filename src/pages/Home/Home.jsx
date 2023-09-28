@@ -22,7 +22,7 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <main>
       <WrapperDesktop></WrapperDesktop>
       <Wrapper>
         <MainTitle />
@@ -48,7 +48,7 @@ const Home = () => {
           measure={'cal'}
         />
       </Wrapper>
-    </>
+    </main>
   );
 };
 

@@ -30,36 +30,36 @@ const SignIn = () => {
   };
 
   return (
-    <>
-      <WrapperDesktop></WrapperDesktop>
-      <Wrapper>
-        <Title text={'Sign In'} margin={mg} />
-        <SubTitle
-          text={
-            'Welcome! Please enter your credentials to login to the platform:'
-          }
-        />
-        <AuthForm btnTitle="Sign In" nameIsShown={false} onSubmit={logIn} />
-        <BtnSubtitle
-          text={'Don’t have an account?'}
-          to={'/signup'}
-          linkText={'Sign Up'}
-        />
+      <main>
+        <WrapperDesktop></WrapperDesktop>
+        <Wrapper>
+          <Title text={'Sign In'} margin={mg} />
+          <SubTitle
+            text={
+              'Welcome! Please enter your credentials to login to the platform:'
+            }
+          />
+          <AuthForm btnTitle="Sign In" nameIsShown={false} onSubmit={logIn} />
+          <BtnSubtitle
+            text={'Don’t have an account?'}
+            to={'/signup'}
+            linkText={'Sign Up'}
+          />
 
-        <ParamsBlockCard
-          type={'grey'}
-          page={'auth'}
-          data={videoExercisesCount}
-        />
+          <ParamsBlockCard
+            type={'grey'}
+            page={'auth'}
+            data={videoExercisesCount}
+          />
 
-        <ParamsBlockCard
-          type={'orange'}
-          page={'auth'}
-          data={allBurnedCalories}
-          measure={'cal'}
-        />
-      </Wrapper>
-    </>
+          <ParamsBlockCard
+            type={'orange'}
+            page={'auth'}
+            data={allBurnedCalories}
+            measure={'cal'}
+          />
+        </Wrapper>
+      </main>
   );
 };
 

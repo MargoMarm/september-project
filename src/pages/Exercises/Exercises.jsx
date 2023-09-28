@@ -64,7 +64,7 @@ const Exercises = () => {
   };
 
   return (
-    <>
+    <main>
       <ExercisesContainer>
         {shouldGetFilters ? null : <ExercisesBtnBack />}
         <TitleThumb>
@@ -135,7 +135,7 @@ const Exercises = () => {
           </ScrollBar>
         </ExercisesListContainer>
       )}
-    </>
+    </main>
   );
 };
 

@@ -30,7 +30,7 @@ const SignUp = () => {
   };
 
   return (
-    <>
+    <main>
       <WrapperDesktop></WrapperDesktop>
       <Wrapper>
         <Title text={'Sign Up'} margin={mg} />
@@ -64,7 +64,7 @@ const SignUp = () => {
           measure={'cal'}
         />
       </Wrapper>
-    </>
+    </main>
   );
 };
 

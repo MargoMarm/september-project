@@ -16,14 +16,14 @@ const Params = () => {
   }, [steps, swiperRef]);
 
   return (
-    <>
+    <main>
       <ParamsPageWrapperDesktop steps={steps}></ParamsPageWrapperDesktop>
       <ParamsPageWrapper steps={steps}>
         <ParamsForm setSwiperRef={setSwiperRef} setSteps={setSteps} />
 
         <ParamsBar steps={steps} setSteps={setSteps} />
       </ParamsPageWrapper>
-    </>
+    </main>
   );
 };
 

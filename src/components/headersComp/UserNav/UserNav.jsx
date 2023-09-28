@@ -18,7 +18,8 @@ import { selectUser } from '../../../redux/auth/selectors';
 export const UserNav = () => {
   const dispatch = useDispatch();
   const { avatarURL } = useSelector(selectUser);
-  return (
+	return (
+	  
     <WrapUserNav>
       <CustomNavLink to="/diary" text="Diary" isinheader={'true'} />
       <CustomNavLink to="/products" text="Products" isinheader={'true'} />

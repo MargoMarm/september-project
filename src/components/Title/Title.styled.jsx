@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { mq, colors } from '../../utils';
 
-export const StyledTitle = styled.h2`
+export const StyledTitle = styled.h1`
   animation: backInLeft 1s ease-in-out  alternate;
   color: ${colors.white};
 
