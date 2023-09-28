@@ -12,7 +12,7 @@ export const Logo = () => {
     <>
       <WrapLogo>
         <NavLink
-          to={isLoggedIn ? '/september-project/diary' : '/'}
+          to={isLoggedIn ? '/diary' : '/'}
         >
           <Svg>
             <use href={sprite + `#logo-big`}></use>
