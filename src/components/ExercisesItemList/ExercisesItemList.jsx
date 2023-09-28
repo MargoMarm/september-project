@@ -21,13 +21,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { nanoid } from '@reduxjs/toolkit';
+import { addSearchExerciseParams } from '../../redux/exercises/slice';
 
 const ExercisesList = () => {
   const dispatch = useDispatch();
 
   const handleGetExercises = (params, name) => {
     dispatch(getExercises(params));
-
+    dispatch(addSearchExerciseParams(params));
     dispatch(setCurrentTitle(name));
   };
 

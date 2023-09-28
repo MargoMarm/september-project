@@ -8,8 +8,6 @@ export const Item = styled.li`
     margin-bottom: 0px;
   }
 
-
-
   ${mq.tablet} {
     flex-basis: calc((100% - 32px) / 3);
     margin-bottom: 0;
@@ -27,7 +25,7 @@ export const Item = styled.li`
 export const WrapCard = styled.a`
   display: block;
 
-  cursor: url('./assets/cursor-pointer.png'), pointer;
+  cursor: pointer;
   position: relative;
   border-radius: 12px;
   background-color: ${colors.background05};
