@@ -16,6 +16,12 @@ export const Svg = styled.svg`
   width: 24px;
   height: 24px;
   stroke: currentColor;
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  :focus {
+    scale: 1.2;
+  }
 `;
 export const SvgUser = styled.svg`
   ${svgUser}

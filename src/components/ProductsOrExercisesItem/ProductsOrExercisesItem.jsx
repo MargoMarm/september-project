@@ -119,7 +119,7 @@ const ProductsOrExercisesItem = ({ page, data }) => {
           return;
         },
         {
-          backgroundColor: `${colors.black}`,
+          backgroundColor: `#2f2e2e`,
           titleColor: `${colors.orange}`,
           messageColor: `${colors.orangeSecondary}`,
           okButtonBackground: `${colors.orange}`,

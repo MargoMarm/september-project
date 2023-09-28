@@ -18,11 +18,10 @@ export const ModalWrap = styled.div`
   position: absolute;
 
   overflow: auto;
-  height: ${props => props.height[0]}px;
+  max-height: ${props => props.height[0]}px;
 
   display: flex;
   justify-content: center;
-  align-items: center;
 
   ${mq.smallMobile} {
     width: 300px;
@@ -37,7 +36,7 @@ export const ModalWrap = styled.div`
 
   ${mq.tablet} {
     width: ${props => props.width}px;
-    height: ${props => props.height[1]}px;
+    max-height: ${props => props.height[1]}px;
 
     padding: 48px 32px;
   }

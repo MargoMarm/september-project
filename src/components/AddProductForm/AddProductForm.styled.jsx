@@ -27,7 +27,7 @@ export const InputTitle = styled.input`
   height: 34px;
   padding: 8px 14px;
   border-radius: 12px;
-  border: 1px solid ${colors.orange};
+  border: 1px solid ${colors.textWhite03};
   gap: 10px;
   background-color: inherit;
   color: ${colors.textWhite03};
@@ -104,7 +104,7 @@ export const Calories = styled.p`
 
 export const TitleCalories = styled.span`
   font-family: Roboto;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0px;
