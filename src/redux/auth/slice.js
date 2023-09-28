@@ -62,8 +62,10 @@ export const authSlice = createSlice({
       state.error = null;
     });
     builder.addCase(logInUser.rejected, (state, action) => {
-		 state.error = action.payload;
-		 Notify.failure("Oops... Something went wrong! Enter correct email or password")
+      state.error = action.payload;
+      Notify.failure(
+        'Oops... Something went wrong! Enter correct email or password',
+      );
     });
 
     builder.addCase(logOutUser.fulfilled, state => {
@@ -89,12 +91,18 @@ export const authSlice = createSlice({
       state.isLoggedIn = true;
       state.error = null;
       state.isRefreshing = false;
+      Loading.remove();
     });
     builder.addCase(fetchCurrentUser.rejected, state => {
       state.isRefreshing = false;
+      Loading.remove();
     });
     builder.addCase(fetchCurrentUser.pending, state => {
       state.isRefreshing = true;
+      Loading.standard({
+        svgColor: '#E6533C',
+        backgroundColor: '#040404',
+      });
     });
 
     //Update user data
@@ -105,7 +113,7 @@ export const authSlice = createSlice({
       replaceUserState(state, payload);
       state.error = null;
       Loading.remove();
-      Notify.success('Your details have been updated');
+      Notify.success('Your details have been successfully updated');
     });
     builder.addCase(updateUserData.rejected, (state, action) => {
       state.error = action.payload;

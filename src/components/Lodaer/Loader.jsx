@@ -1,5 +1,6 @@
 import { Puff } from 'react-loader-spinner';
-const Loader = ({ size }) => {
+
+const Loader = ({ size, needToCenter }) => {
   return (
     <Puff
       height={size}
@@ -10,6 +11,8 @@ const Loader = ({ size }) => {
       wrapperStyle={{
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: needToCenter ? '100vh' : null,
         margin: '20px auto 0 auto',
       }}
       wrapperClass=""

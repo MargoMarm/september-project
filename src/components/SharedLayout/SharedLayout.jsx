@@ -8,7 +8,7 @@ const SharedLayout = () => {
   return (
     <Container>
       <Header />
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader needToCenter/>}>
         <Outlet />
       </Suspense>
     </Container>
