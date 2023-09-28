@@ -1,4 +1,4 @@
-import{n as r,m as n,c as s,G as V,a as L,Y as F,r as C,u as T,j as e,s as j,$ as G,P as a,a0 as H}from"./index-bf61e43f.js";import{T as M}from"./Title-56b796f0.js";import{D as $,a as P,m as z}from"./descriptionTextMargin-82f76041.js";import{F as Y,I as w,L as A,b as m,E as u,d as B,H as y,C as _,e as X,f as S,g as J,h as K,B as N}from"./Calendar-f647b992.js";import{c as Q,b,e as k,f as Z,u as ee}from"./formik.esm-cb532871.js";import{s as U}from"./index-e918e79f.js";function te(i,o){const p=Object.keys(i);let h=!0;return p.forEach(c=>{i[c]!=o[c]&&(h=!1)}),h}const re=r.div`
+import{n as r,m as n,c as s,G as V,a as L,Y as F,r as C,u as T,j as e,s as j,$ as G,P as a,a0 as H}from"./index-c9cecb98.js";import{T as M}from"./Title-ff70d31a.js";import{D as $,a as P,m as z}from"./descriptionTextMargin-5f7fa091.js";import{F as Y,I as w,L as A,b as m,E as u,d as B,H as y,C as _,e as X,f as S,g as J,h as K,B as N}from"./Calendar-b3037e36.js";import{c as Q,b,e as k,f as Z,u as ee}from"./formik.esm-6d2d7948.js";import{s as U}from"./index-a2e10571.js";function te(i,o){const p=Object.keys(i);let h=!0;return p.forEach(c=>{i[c]!=o[c]&&(h=!1)}),h}const re=r.div`
   flex-shrink: 0;
   max-width: 439px;
   margin: 0 auto;
@@ -229,4 +229,4 @@ import{n as r,m as n,c as s,G as V,a as L,Y as F,r as C,u as T,j as e,s as j,$ a
     padding-right: 64px;
     border-right: 1px solid ${s.textWhite02};
   }
-`;function we(){const[i,o]=C.useState(null),p=T(),h=c=>{const d=new FormData;Object.entries(c).forEach(x=>{d.append(x[0],x[1])}),i&&d.append("avatar",i,i.name),p(H(d)),o(null)};return e.jsxs(ve,{children:[e.jsx(M,{text:"Profile Settings"}),e.jsxs(ye,{children:[e.jsx(R,{setAvatar:o}),e.jsx(be,{children:e.jsx(O,{submit:h,avatar:i})})]})]})}export{we as default};
+`;function we(){const[i,o]=C.useState(null),p=T(),h=c=>{const d=new FormData;Object.entries(c).forEach(x=>{d.append(x[0],x[1])}),i&&d.append("avatar",i,i.name),p(H(d)),o(null)};return e.jsx("main",{children:e.jsxs(ve,{children:[e.jsx(M,{text:"Profile Settings"}),e.jsxs(ye,{children:[e.jsx(R,{setAvatar:o}),e.jsx(be,{children:e.jsx(O,{submit:h,avatar:i})})]})]})})}export{we as default};

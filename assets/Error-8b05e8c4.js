@@ -1,4 +1,4 @@
-import{n as e,m as t,c as i,U as s,j as o,s as n,C as r}from"./index-bf61e43f.js";import{i as p}from"./exercises_desk_2x-1531e374.js";const d=e.div`
+import{n as e,m as t,c as i,U as s,j as o,s as n,C as r}from"./index-c9cecb98.js";import{i as p}from"./exercises_desk_2x-1531e374.js";const d=e.div`
   display: flex;
   position: relative;
   ${t.mobile} {
@@ -43,7 +43,7 @@ import{n as e,m as t,c as i,U as s,j as o,s as n,C as r}from"./index-bf61e43f.js
     padding-bottom: 96px;
     height: 100vh;
   }
-`,g=e.h1`
+`,x=e.h1`
   margin-bottom: 14px;
 
   color: ${i.white};
@@ -61,7 +61,7 @@ import{n as e,m as t,c as i,U as s,j as o,s as n,C as r}from"./index-bf61e43f.js
     font-size: 160px;
     margin-bottom: 28px;
   }
-`,x=e.p`
+`,g=e.p`
   margin-bottom: 28px;
 
   color: ${i.white};
@@ -121,4 +121,4 @@ import{n as e,m as t,c as i,U as s,j as o,s as n,C as r}from"./index-bf61e43f.js
 `,b=e.svg`
   width: 100px;
   height: 17px;
-`,w=()=>{const{isLoggedIn:a}=s();return o.jsxs(d,{children:[o.jsxs(h,{children:[o.jsxs(c,{children:[o.jsx(m,{children:o.jsx("use",{href:n+"#icon-logo_error"})}),o.jsx(b,{children:o.jsx("use",{href:n+"#icon-PowerPulse"})})]}),o.jsx(g,{children:"404"}),o.jsx(x,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),o.jsx(r,{type:"button",text:"Go Home",isorange:"true",to:a?"/diary":"/"})]}),o.jsx(l,{})]})};export{w as default};
+`,w=()=>{const{isLoggedIn:a}=s();return o.jsx("main",{children:o.jsxs(d,{children:[o.jsxs(h,{children:[o.jsxs(c,{children:[o.jsx(m,{children:o.jsx("use",{href:n+"#icon-logo_error"})}),o.jsx(b,{children:o.jsx("use",{href:n+"#icon-PowerPulse"})})]}),o.jsx(x,{children:"404"}),o.jsx(g,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),o.jsx(r,{type:"button",text:"Go Home",isorange:"true",to:a?"/diary":"/"})]}),o.jsx(l,{})]})})};export{w as default};
