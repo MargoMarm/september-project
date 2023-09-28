@@ -1,108 +1,107 @@
-# React + Vite template
+![readme cover](./src/assets/images/readme.jpg)
+# Power Pulse (ukr)
 
-Цей проєкт було створено за допомогою [Create Vite](https://vitejs.dev/). Для
-знайомства і налаштування додаткових можливостей
-[звернися до документації](https://vitejs.dev/guide/).
+**Наша мета** - зробити життя користувачів здоровішим і комфортнішим, надаючи їм
+зручний і ефективний інструмент для ведення обліку калорій та здорового
+харчування.
+## Наша цільова аудиторія
 
-## Створення репозиторію за шаблоном
+Ми розробляємо додаток для підрахунку калорій з урахуванням різних фізичних активностей та діет. Наша цільова аудиторія - люди, які цікавляться здоровим способом життя, спортом і контролем щоденного харчування.
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення
-репозиторію свого проєкту. Для цього натисни на кнопку `"Use this template"` і
-обери опцію `"Create a new repository"`, як показано на зображенні.
+## Технології
 
-![Creating repo from a template step 1](./src/assets/template-step-1.png)
+- [HTML](https://html.com/)
+- [CSS](https://www.css3.com/)
+- [Javacript](https://www.javascript.com/)
+- [React](https://legacy.reactjs.org/)
+- [Redux](https://github.com/redux-offline/redux-offline)
 
-На наступному кроці відкриється сторінка створення нового репозиторію. Заповни
-поле його імені, переконайся що репозиторій публічний, після чого натисни кнопку
-`"Create repository from template"`.
 
-![Creating repo from a template step 2](./src/assets/template-step-2.png)
+## Contributing
 
-Після того як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як показано
-на зображенні.
+**Let's Ask Something Now!**
 
-![Settings GitHub Actions permissions step 1](./src/assets/gh-actions-perm-1.png)
+Якщо вас цікавить докладніша інформація про наш проект, ви можете знайти деталі за цими посиланнями.
+- [Жива сторінка](https://margomarm.github.io/september-project/)
+- [GitHub репозиторій](https://github.com/MargoMarm/september-project)
 
-Проскроливши сторінку до самого кінця, у секції `"Workflow permissions"` вибери
-опцію `"Read and write permissions"` і постав галочку в чекбоксі. Це необхідно
-для автоматизації процесу деплою проєкту.
 
-![Settings GitHub Actions permissions step 2](./src/assets/gh-actions-perm-2.png)
+## Наша мета
 
-Тепер у тебе є особистий репозиторій проєкту, зі структурою файлів і папок
-репозиторія-шаблону. Далі працюй з ним як з будь-яким іншим особистим
-репозиторієм, клонуй його собі на комп'ютер, пиши код, роби комміти і відправляй
-їх на GitHub.
+Наша технічна мета - розробити додаток, який буде швидким, надійним і дружнім до
+користувача. Ми прагнемо до високої продуктивності, безпеки даних та зручного
+інтерфейсу, щоб забезпечити найкращий досвід користувачів
 
-## Підготовка до роботи
 
-1. Переконайся, що на комп'ютері встановлена LTS-версія Node.js.
-   [Скачай і встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встановіть базові залежності проекту командою `npm install`.
-3. Запустіть режим розробки, виконавши команду `npm run dev`.
-4. Перейди в браузері за адресою, що зазначено в терміналі.
+## Команда проекту
 
-## Деплой
+**Хто така команда "Scoiattoli"?**
 
-Продакшн версія проєкту буде автоматично збиратися і деплоїтися на GitHub Pages,
-у гілку `gh-pages`, щоразу, коли оновлюється гілка `main`. Наприклад, після
-прямого пушу або прийнятого пул-реквесту. Для цього необхідно у файлі
-`vite.config.js` відредагувати поле `base`, замінивши `react_vite` на свою назву
-репозиторію `"/your_repo_name"`, і відправити зміни на GitHub.
+Ми - студенти GoIT та ентузіасти розробки. Наш проект - спортивний додаток для розрахунку калорій. Ми завжди готові вдосконалювати свої навички та приймати нові виклики в технологіях, оскільки віримо, що вони формують майбутнє.
 
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) і
-виставити роздачу продакшн версії файлів із папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
 
-![GitHub Pages settings](./src/assets/repo-settings.png)
+- [Герасименко Марго - Front-end Team Lead](https://github.com/MargoMarm)
+- [Зражевський Назар - Back-end Team Lead](https://github.com/nzend)
+- [Куцевич Владислав - Scrum master](https://github.com/KutsVlad8)
 
-### Статус деплоя
+- [Тимощук Іван - developer](https://github.com/IvanTymoshchuk)
+- [Бекеш Владислав - developer](https://github.com/Vladyslav-Bekesh)
+- [Балабан Василь - developer](https://github.com/TaurusVB)
+- [Коміссаров Ілля - developer](https://github.com/IlliaKomissarov)
+- [Базалінська Анжела - developer](https://github.com/Anzheliika)
+- [Чебаненко Микита - developer](https://github.com/nY2en)
+- [Бурченков Петр -  developer](https://github.com/P-Burchenkov)
+- [Брагар Олександр  - developer](https://github.com/Bardjur)
 
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
+**вересень 2023**
 
-- **Жовтий колір** - виконується збірка і деплой проєкту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час збирання або деплою сталася помилка.
+![readme cover](./src/assets/images/readme.jpg)
+# Power Pulse (eng)
 
-Детальнішу інформацію про статус можна подивитися, клікнувши на іконку, і в
-випадаючому вікні перейти за посиланням `Details`.
+**Our goal** is to make users' lives healthier and more comfortable by providing them with a convenient and effective tool for calorie tracking and healthy eating.
 
-![Deployment status](./src/assets/deploy-status.png)
+## Target Audience
 
-### Жива сторінка
+We are developing a calorie counting app that takes into account various physical activities and diets. Our target audience consists of people interested in a healthy lifestyle, sports, and daily nutrition control.
 
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися за
-адресою, вказаною в налаштуваннях GitHub-репозиторію (`Settings` > `Pages`).
+## Technologies
 
-![GitHub-pages URL](./src/assets/gh-pages-url.png)
+- [HTML](https://html.com/)
+- [CSS](https://www.css3.com/)
+- [JavaScript](https://www.javascript.com/)
+- [React](https://legacy.reactjs.org/)
+- [Redux](https://github.com/redux-offline/redux-offline)
 
-Якщо відкривається порожня сторінка, переконайся що у вкладці `Console` немає
-помилок пов'язаних із неправильними шляхами до CSS і JS файлів проекту
-(**404**). Швидше за все найімовірніше, у тебе неправильне значення поля `base`
-у файлі `vite.config.js`.
+## Contributing
 
-### Маршрутизація
+**Let's Connect!**
 
-Якщо додаток використовує бібліотеку `react-router-dom` для маршрутизації,
-необхідно додатково налаштувати компонент `<BrowserRouter>`, передавши в пропе
-`basename` точну назву твого репозиторію. Слеш на початку рядка обов'язковий.
+If you want more detailed information about our project, you can find details at these links.
 
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-### Додавання змінних в  .env
-Для зберігання конфігураційних даних, таких як API ключі, адреси серверів, порти та інші змінні використовуйте файл `.env`. Для цього необхідно з назви файлу `.env.template` видалити зайві ".template",після чого файл відповідатиме умовам файлу `.ignore` і буде зберігатися лише локально, не публікуючись на віддаленому репозиторії з метою безпеки. Задля використання змінних на GitHub-pages усі змінні, передбачені файлом .env, слід додати до файлу `.github/workflows/deploy.yml`, а також до налаштувань репозиторію. Для цього слід перейти (`Settings` > `Secrets and variables` > `Actions`)
+- [Live Page](https://margomarm.github.io/september-project/)
+- [GitHub Repository](https://github.com/MargoMarm/september-project)
 
-![Add enviroments from .env](./src/assets/secrets.png)
+## Our Goal
 
-## Як це працює
+Our technical goal is to develop an app that is fast, reliable, and user-friendly. We aim for high performance, data security, and a convenient interface to provide the best user experience.
 
-1. Після кожного пушу в гілку `main` GitHub-репозиторію, запускається
-   спеціальний скрипт (GitHub Action) з файлу `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проєкт ініціалізується і
-   проходить збірку перед деплоєм. 3 Якщо всі кроки пройшли успішно, зібрана
-   продакшн-версія файлів проєкту відправляється в гілку `gh-pages`. В іншому
-   випадку, в логах виконання скрипта буде вказано в чому проблема.
+## Project Team
+
+**Who is the "Scoiattoli" Team?**
+
+We are GoIT students and development enthusiasts. Our project is a sports app for calorie calculation. We are always ready to improve our skills and take on new challenges in technology because we believe they shape the future.
+
+- [Margo Herasymenko - Front-end Team Lead](https://github.com/MargoMarm)
+- [Nazar Zrazhevskyi - Back-end Team Lead](https://github.com/nzend)
+- [Vladyslav Kutsevych - Scrum Master](https://github.com/KutsVlad8)
+
+- [Ivan Tymoshchuk - Developer](https://github.com/IvanTymoshchuk)
+- [Vladyslav Bekesh - Developer](https://github.com/Vladyslav-Bekesh)
+- [Vasyl Balaban - Developer](https://github.com/TaurusVB)
+- [Illia Komissarov - Developer](https://github.com/IlliaKomissarov)
+- [Angela Bazalinska - Developer](https://github.com/Anzheliika)
+- [Mykyta Chebanenko - Developer](https://github.com/nY2en)
+- [Petr Burchenkov - Developer](https://github.com/P-Burchenkov)
+- [Oleksandr Bragar - Developer](https://github.com/Bardjur)
+
+**september 2023**
