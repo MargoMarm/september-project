@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const fetchProducts = createAsyncThunk(
   `filter/getProducts`,
-  async (searchParams, thunkAPI) => {
+  async (searchParams = '', thunkAPI) => {
     try {
       const res = await axios.get(`api/products?${searchParams}`);
       return res.data;
@@ -13,26 +13,35 @@ export const fetchProducts = createAsyncThunk(
   },
 );
 
-
-
 export const getCategories = createAsyncThunk(
   `categories/getCategories`,
   async (_, thunkAPI) => {
     try {
-      const res = await axios.get("api/categories"); 
-    
+      const res = await axios.get('api/categories');
+
       return res.data[0].categories;
-      
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
-    } 
+    }
   },
   {
     condition: (_, { getState, extra }) => {
-      const  state  = getState();
+      const state = getState();
       if (state.products.categories.length > 1) {
-        return false
+        return false;
       }
+    },
+  },
+);
+
+export const fetchMoreProducts = createAsyncThunk(
+  `fetchMoreProducts`,
+  async (params, thunkAPI) => {
+    try {
+      const { data } = await axios.get(`api/products?${params}`);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
     }
-  }
+  },
 );

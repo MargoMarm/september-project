@@ -1,17 +1,30 @@
 import Title from '../../components/Title/Title';
 import SubTitle from '../../components/SubTitle/SubTitle';
 import AuthForm from '../../components/AuthForm';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { authUser } from '../../redux/auth/operation';
 import BtnSubtitle from '../../components/BtnSubtitle/BtnSubtitle';
 import { Wrapper, WrapperDesktop } from '../Home/Home.styled';
 import ParamsBlockCard from '../../components/ParamsBlockСard/ParamsBlockCard';
 import { mg } from '../../utils';
+import {
+  getAllExercises,
+  getUsersBurnedCalories,
+} from '../../redux/statistic/selectors';
+import { useEffect } from 'react';
+import { getVideoCountAndBurnedCaloriesStatistics } from '../../redux/statistic/operations';
 
 const SignUp = () => {
   const dispatch = useDispatch();
+
+  const videoExercisesCount = useSelector(getAllExercises);
+  const allBurnedCalories = useSelector(getUsersBurnedCalories);
+
+  useEffect(() => {
+    dispatch(getVideoCountAndBurnedCaloriesStatistics());
+  }, [dispatch]);
+
   const handleSubmit = (user, { resetForm }) => {
-    console.log(user);
     dispatch(authUser(user));
     resetForm();
   };
@@ -38,12 +51,16 @@ const SignUp = () => {
           linkText={'Sign In'}
         />
 
-        <ParamsBlockCard type={'grey'} page={'auth'} data={350} />
+        <ParamsBlockCard
+          type={'grey'}
+          page={'auth'}
+          data={videoExercisesCount}
+        />
 
         <ParamsBlockCard
           type={'orange'}
           page={'auth'}
-          data={500}
+          data={allBurnedCalories}
           measure={'cal'}
         />
       </Wrapper>

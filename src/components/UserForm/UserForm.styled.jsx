@@ -34,7 +34,7 @@ export const Label = styled.label`
   display: block;
   max-width: 345px;
   width: 100%;
-  margin-bottom: 14px;
+  margin-bottom: 21px;
   font-size: 12px;
   line-height: 1.5;
   color: ${colors.textWhite05};
@@ -60,6 +60,10 @@ export const Input = styled.input`
   border-radius: 12px;
   transition: border-color 0.3s;
 
+  &[data-touch] {
+    border-color: ${colors.textSuccess};
+  }
+
   &[aria-invalid] {
     border-color: ${colors.textError}!important;
     color: ${colors.textError}!important;
@@ -69,8 +73,8 @@ export const Input = styled.input`
     color: ${colors.textWhite06};
   }
 
-  &:hover,
-  &:focus {
+  &:hover:not([disabled]),
+  &:focus:not([disabled]){
     border-color: ${colors.orange};
     outline: none;
   }
@@ -115,16 +119,20 @@ export const Button = styled.button`
 
   min-width: 115px;
   padding: 12px;
-  color: ${colors.textWhite06};
+  color: ${colors.white};
   background-color: ${colors.orange};
   border-radius: 12px;
   transition:
     color 0.3s,
     background-color 0.3s;
 
-  &:hover,
-  &:focus {
-    color: ${colors.textWhite08};
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
     background-color: ${colors.orangeSecondary};
+  }
+
+  &:disabled {
+    color: ${colors.textWhite06};
+    cursor: default;
   }
 `;

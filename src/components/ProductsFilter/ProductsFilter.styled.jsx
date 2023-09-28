@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import { colors, mq } from '../../utils';
-import shewron from '../../assets/chevron-down.png'
-
-
+import shewron from '../../assets/chevron-down.png';
 
 export const Option = styled.option`
   width: 200px;
@@ -10,20 +8,18 @@ export const Option = styled.option`
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color:#fff;
+  background-color: #fff;
   appearance: none;
   cursor: pointer;
-`
-
+`;
 
 export const Select = styled.select`
   appearance: none;
   position: reletive;
-  
+
   height: 46px;
   width: 100%;
 
-  
   ${mq.tablet} {
     width: 204px;
     height: 52px;
@@ -43,11 +39,7 @@ export const Select = styled.select`
 
   color: ${colors.textWhite06};
   background-color: transparent;
- 
-
 `;
-
-
 
 export const FilterContainer = styled.div`
   position: relative;
@@ -78,28 +70,26 @@ export const SelectContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-   ${mq.tablet} {
+  ${mq.tablet} {
     flex-direction: row;
-    
   }
-
 `;
 
 export const SelectPointer = styled.div`
   position: relative;
-&::after {
-  content: " ";
-  width: 18px;
-  height: 18px;
-  background-image: url(${shewron}); 
-  color: red;
-  position: absolute;
-  top: 50%;
-  right: 14px;
-  transform: translateY(-50%);
-  pointer-events: none; 
-}
-`
+  &::after {
+    content: ' ';
+    width: 18px;
+    height: 18px;
+    background-image: url(${shewron});
+    color: red;
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+`;
 
 export const InputWrapper = styled.form`
   position: relative;
@@ -130,21 +120,37 @@ export const TextInput = styled.input`
   color: ${colors.textWhite06};
   background-color: transparent;
 
-  
   &:focus-visible {
     border: 1px solid ${colors.orange};
   }
 
-  &:focus-visible + button {
-    color: ${colors.orange};
+  &:focus-visible + span > svg {
+    stroke: ${colors.orange};
   }
 `;
 
 export const Svg = styled.svg`
-  stroke: currentColor;
+  stroke: ${colors.textWhite06};
 
   width: 18px;
   height: 18px;
+
+  &:hover {
+    stroke: ${colors.orange};
+  }
 `;
 
+export const SpanForSvg = styled.span`
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  width: 18px;
+  height: 18px;
+  ${mq.tablet} {
+    top: 17px;
+  }
 
+  ${mq.desktop} {
+    top: 18px;
+  }
+`;

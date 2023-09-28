@@ -132,6 +132,7 @@ export const GlobalStyles = css`
   .react-datepicker__day:active {
     background: ${colors.textWhite04};
     color: ${colors.orange};
+    cursor: pointer;
   }
 
   .react-datepicker__day--outside-month {

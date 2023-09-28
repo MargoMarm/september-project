@@ -12,6 +12,7 @@ export const WrapLogo = styled.div`
 `;
 
 export const Svg = styled.svg`
+  animation: pulse 2s ease-in-out infinite alternate;
   width: 126px;
   height: 13px;
   ${mq.tablet} {

@@ -8,7 +8,6 @@ export const Label = styled.label`
   border: none;
 
   cursor: pointer;
-
   &:hover svg,
   &:hover input {
     stroke: ${colors.orange};
@@ -32,7 +31,6 @@ export const Input = styled.input`
   line-height: 1.11;
 
   cursor: pointer;
-
   color: ${colors.white};
   border: none;
   background-color: inherit;

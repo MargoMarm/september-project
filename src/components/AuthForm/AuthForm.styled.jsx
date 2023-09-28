@@ -15,11 +15,17 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 28px;
-  margin-bottom: 28px;
+  gap: 32px;
+  margin-bottom: 32px;
+
+  ${mq.mobile} {
+    gap: 33px;
+    margin-bottom: 34px;
+  }
+
   ${mq.tablet} {
-    gap: 32px;
-    margin-bottom: 64px;
+    gap: 34px;
+    margin-bottom: 54px;
   }
 `;
 
@@ -51,12 +57,24 @@ export const TextInput = styled(Field)`
   &:focus-visible {
     border: 1px solid ${colors.orange};
   }
+
+  &[data-touch=true]{
+    border-color: ${colors.textSuccess};
+  }
 `;
 
 export const Warning = styled.div`
   position: absolute;
   ${mq.smallMobile} {
-    bottom: -24px;
+    bottom: -28px;
+  }
+
+  ${mq.Mobile} {
+    bottom: -29px;
+  }
+
+  ${mq.tablet} {
+    bottom: -30px;
   }
 `;
 

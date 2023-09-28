@@ -10,7 +10,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   padding: 0 20px;
   border-bottom: ${props =>
-    props.isLoggedIn ? `1px solid ${colors.textWhite03}` : 'none'};
+    props.isBorderToRender ? `1px solid ${colors.textWhite03}` : 'none'};
   ${mq.tablet} {
     background-color: ${colors.black};
     padding: 0 32px;
@@ -20,6 +20,5 @@ export const HeaderContainer = styled.div`
   ${mq.desktop} {
     background-color: transparent;
     padding-left: 96px;
-	 
   }
 `;

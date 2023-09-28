@@ -20,7 +20,11 @@ export const InputGroup = styled.div`
 `;
 
 export const FormikField = styled(Field)`
-  width: 155px;
+	  width: 275px;
+
+  ${mq.mobile} {
+    width: 155px;
+  }
   height: 52px;
   padding: 14px 0 14px 14px;
   margin: 7px;
@@ -36,6 +40,10 @@ export const FormikField = styled(Field)`
   color: ${colors.textWhite06};
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &[data-touch=true]{
+    border-color: ${colors.textSuccess};
+  }
 
   &::placeholder {
     color: ${colors.textWhite06};
@@ -139,4 +147,28 @@ export const CalendarPlaceholder = styled.p`
     font-size: 16px;
     line-height: 150%;
   }
+`;
+
+export const RADIO_STYLE_OPTIONS = {
+  color: 'grey',
+  '&.Mui-checked': {
+    color: colors.orangeSecondary,
+  },
+  '& .MuiSvgIcon-root': {
+    fontSize: 18,
+  },
+};
+
+export const RADIO_TITLE_STYLE = {
+  color: `${colors.white}`,
+  fontSize: '14px',
+  fontWeight: 400,
+  lineHeight: '128.571%',
+};
+
+export const ErrorMessage = styled.p`
+  width: 155px;
+  font-size: 11px;
+  padding-left: ${props => (props.padding ? 10 : 0)}px;
+  color: ${colors.red};
 `;
