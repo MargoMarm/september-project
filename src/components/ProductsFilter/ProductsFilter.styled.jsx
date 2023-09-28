@@ -10,7 +10,7 @@ export const Option = styled.option`
   border-radius: 4px;
   background-color: #fff;
   appearance: none;
-  cursor: url('./assets/cursor-pointer.png'), pointer;
+  cursor: pointer;
 `;
 
 export const Select = styled.select`
@@ -124,7 +124,7 @@ export const TextInput = styled.input`
     border: 1px solid ${colors.orange};
   }
 
-  &:focus-visible + span > svg{
+  &:focus-visible + span > svg {
     stroke: ${colors.orange};
   }
 `;

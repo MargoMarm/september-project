@@ -36,7 +36,7 @@ export const GlobalStyles = css`
     display: flex;
     justify-content: center;
     text-align: center;
-    cursor: url('./assets/cursor-pointer.png'), pointer;
+    cursor: pointer;
     position: absolute;
     top: 12px;
     padding: 0;
@@ -118,7 +118,7 @@ export const GlobalStyles = css`
     height: 32px;
     border-radius: 50%;
     font-size: 14px;
-    cursor: url('./assets/cursor-pointer.png'), pointer;
+    cursor: pointer;
     transition:
       color 0.3s,
       background-color 0.3s;
@@ -132,7 +132,7 @@ export const GlobalStyles = css`
   .react-datepicker__day:active {
     background: ${colors.textWhite04};
     color: ${colors.orange};
-    cursor: url('./assets/cursor-pointer.png'), pointer;
+    cursor: pointer;
   }
 
   .react-datepicker__day--outside-month {
@@ -149,7 +149,7 @@ export const GlobalStyles = css`
     position: absolute;
     top: 16px;
     right: 40px;
-    cursor: url('./assets/cursor-pointer.png'), pointer;
+    cursor: pointer;
   }
 
   .react-datepicker__month-read-view--selected-month,
