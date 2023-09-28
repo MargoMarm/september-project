@@ -25,7 +25,7 @@ export const InputContainer = styled.div`
 
   ${mq.tablet} {
     gap: 34px;
-    margin-bottom: 64px;
+    margin-bottom: 54px;
   }
 `;
 

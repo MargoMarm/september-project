@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 
 const modalRoot = document.querySelector('#modal-root');
 
-export const Modal = ({ children, openModal, width }) => {
+export const Modal = ({ children, openModal, width, height }) => {
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
@@ -28,7 +28,7 @@ export const Modal = ({ children, openModal, width }) => {
 
   return createPortal(
     <Backdrop onClick={handleBackdropClick}>
-      <ModalWrap width={width}>
+      <ModalWrap width={width} height={height}>
         <ButtonExit type="button" onClick={() => openModal()}>
           <Svg>
             <use href={sprite + '#close'} />
@@ -44,11 +44,3 @@ export const Modal = ({ children, openModal, width }) => {
 
 export default Modal;
 
-// =================for testing============================================================================
-
-//  const [openModal, setOpenModal] = useState(false)
-
-//     <>
-//         <button onClick={() => setOpenModal(true)}>Open</button>
-//         {openModal && <Modal children={<YOU MODAL COMPONENT/>} openModal={setOpenModal} />}
-//     </>

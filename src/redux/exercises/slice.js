@@ -10,11 +10,15 @@ export const exercisesSlice = createSlice({
     getFilters: true,
     hasMore: false,
     searchParams: '',
+    isTimerOn: false,
   },
 
   reducers: {
     changeStatusFilter: (state, action) => {
       state.getFilters = action.payload;
+    },
+    changeStatusTimer: (state, action) => {
+      state.isTimerOn = action.payload;
     },
     addSearchExerciseParams: {
       reducer(state, action) {
@@ -36,7 +40,7 @@ export const exercisesSlice = createSlice({
     });
     builder.addCase(getExercises.pending, state => {
       state.isLoading = true;
-      state.isLoading = true;
+      state.error = null;
     });
 
     builder.addCase(addExercise.fulfilled, state => {
@@ -48,7 +52,7 @@ export const exercisesSlice = createSlice({
       state.isLoading = false;
     });
     builder.addCase(addExercise.pending, state => {
-      state.isLoading = true;
+      // state.isLoading = true;
       state.error = null;
     });
     builder.addCase(getMoreExercises.fulfilled, (state, action) => {
@@ -68,7 +72,10 @@ export const exercisesSlice = createSlice({
     });
   },
 });
-export const { changeStatusFilter, addSearchExerciseParams } =
-  exercisesSlice.actions;
+export const {
+  changeStatusFilter,
+  changeStatusTimer,
+  addSearchExerciseParams,
+} = exercisesSlice.actions;
 
 export default exercisesSlice.reducer;

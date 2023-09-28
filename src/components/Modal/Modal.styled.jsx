@@ -17,11 +17,19 @@ export const ModalWrap = styled.div`
   border: 1px solid ${colors.textWhite02};
   position: absolute;
 
+  overflow: auto;
+  height: ${props => props.height[0]}px;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 335px;
+  ${mq.smallMobile} {
+    width: 300px;
+  }
+  ${mq.mobile} {
+    width: 335px;
+  }
   padding: 48px 20px;
   border-radius: 8px;
   background-color: ${colors.modalBlack};
@@ -29,6 +37,8 @@ export const ModalWrap = styled.div`
 
   ${mq.tablet} {
     width: ${props => props.width}px;
+    height: ${props => props.height[1]}px;
+
     padding: 48px 32px;
   }
 `;

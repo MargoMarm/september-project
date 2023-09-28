@@ -18,6 +18,8 @@ import {
 
 import formatDate from '../../utils/formatDate';
 import { AddButton } from '../AddProductForm/AddProductForm.styled';
+import { useDispatch } from 'react-redux';
+import { changeStatusTimer } from '../../redux/exercises/slice';
 
 export default function AddExerciseForm({ data, addExercise }) {
   const {
@@ -36,6 +38,8 @@ export default function AddExerciseForm({ data, addExercise }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
 
+  const dispatch = useDispatch();
+
   const countCalory = (calory, time, exTime) => {
     const burnedCalory = Math.floor((exTime * calory) / (time * 60));
     setBurnedCalory(burnedCalory);
@@ -53,6 +57,7 @@ export default function AddExerciseForm({ data, addExercise }) {
     const intervalId = setInterval(writeTime, 1000);
     setIntervalId(intervalId);
     setIsPlaying(true);
+    dispatch(changeStatusTimer(true));
   };
 
   const stopExercise = () => {
@@ -121,14 +126,15 @@ export default function AddExerciseForm({ data, addExercise }) {
         <AddButton
           disabled={burnedCalory > 10 ? false : true}
           type="button"
-          onClick={() =>
+          onClick={() => {
             addExercise({
               id: _id,
               date,
               time: exTime,
               burnedCalories: burnedCalory,
-            })
-          }
+            });
+            dispatch(changeStatusTimer(false));
+          }}
         >
           Add to diary
         </AddButton>

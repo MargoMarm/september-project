@@ -29,7 +29,9 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
   const authSchema = Yup.object().shape({
     name: validateName(nameIsShown),
     email: Yup.string()
-      .matches(emailLyout, { message: 'Email must be valid! For example: example@gmail.com' })
+      .matches(emailLyout, {
+        message: 'Email must be valid! For example: example@gmail.com',
+      })
       .email('Invalid email')
       .required('Email is required'),
     password: Yup.string()
@@ -69,15 +71,45 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
       validationSchema={authSchema}
     >
       {({ handleBlur, touched, errors }) => (
-        
         <FormContainer>
-          ({console.log(errors)})
-        <InputContainer>
-          {nameIsShown && (
+          <InputContainer>
+            {nameIsShown && (
+              <InputWrapper>
+                <TextInput
+                  id="name"
+                  type="text"
+                  placeholder="name"
+                  name="name"
+                  onBlur={handleBlur}
+                  data-touch={touched.name && !errors.name}
+                />
+                <Warning>
+                  <ErrorMessage name="name">
+                    {msg => (
+                      <Error>
+                        <svg width="20" height="20">
+                          <use
+                            href={sprite + `#icon-checkbox-circle-fill`}
+                          ></use>
+                        </svg>
+                        {msg}
+                      </Error>
+                    )}
+                  </ErrorMessage>
+                </Warning>
+              </InputWrapper>
+            )}
             <InputWrapper>
-              <TextInput id="name" type="text" placeholder="name" name="name" onBlur={handleBlur} data-touch={touched.name && !errors.name} />
+              <TextInput
+                id="email"
+                type="email"
+                placeholder="Email"
+                name="email"
+                onBlur={handleBlur}
+                data-touch={touched.email && !errors.email}
+              />
               <Warning>
-                <ErrorMessage name="name">
+                <ErrorMessage name="email">
                   {msg => (
                     <Error>
                       <svg width="20" height="20">
@@ -89,68 +121,45 @@ export default function AuthForm({ nameIsShown, btnTitle, onSubmit }) {
                 </ErrorMessage>
               </Warning>
             </InputWrapper>
-          )}
-          <InputWrapper>
-            <TextInput
-              id="email"
-              type="email"
-              placeholder="Email"
-              name="email"
-              onBlur={handleBlur} 
-              data-touch={touched.email && !errors.email}
-            />
-            <Warning>
-              <ErrorMessage name="email">
-                {msg => (
-                  <Error>
-                    <svg width="20" height="20">
-                      <use href={sprite + `#icon-checkbox-circle-fill`}></use>
-                    </svg>
-                    {msg}
-                  </Error>
-                )}
-              </ErrorMessage>
-            </Warning>
-          </InputWrapper>
-          <InputWrapper>
-            <TextInput
-              id="password"
-              type={typePasswordInput}
-              placeholder="Password"
-              name="password"
-              onBlur={handleBlur} 
-              data-touch={touched.password && !errors.password}
-            />
-            <ButtonIconForInput
-              type="button"
-              right="16px"
-              onClick={toglePassword}
-            >
-              <svg width="20" height="20">
-                <use
-                  href={
-                    sprite +
-                    `${isPasswordShown ? `#icon-eye-off` : `#icon-eye`}`
-                  }
-                ></use>
-              </svg>
-            </ButtonIconForInput>
-            <Warning>
-              <ErrorMessage name="password">
-                {msg => (
-                  <Error>
-                    <svg width="20" height="20">
-                      <use href={sprite + `#icon-checkbox-circle-fill`}></use>
-                    </svg>
-                    {msg}
-                  </Error>
-                )}
-              </ErrorMessage>
-            </Warning>
-          </InputWrapper>
-        </InputContainer>
-        <BtnSubmit title={btnTitle} fontSize="20px" />
-      </FormContainer>
+            <InputWrapper>
+              <TextInput
+                id="password"
+                type={typePasswordInput}
+                placeholder="Password"
+                name="password"
+                onBlur={handleBlur}
+                data-touch={touched.password && !errors.password}
+              />
+              <ButtonIconForInput
+                type="button"
+                right="16px"
+                onClick={toglePassword}
+              >
+                <svg width="20" height="20">
+                  <use
+                    href={
+                      sprite +
+                      `${isPasswordShown ? `#icon-eye-off` : `#icon-eye`}`
+                    }
+                  ></use>
+                </svg>
+              </ButtonIconForInput>
+              <Warning>
+                <ErrorMessage name="password">
+                  {msg => (
+                    <Error>
+                      <svg width="20" height="20">
+                        <use href={sprite + `#icon-checkbox-circle-fill`}></use>
+                      </svg>
+                      {msg}
+                    </Error>
+                  )}
+                </ErrorMessage>
+              </Warning>
+            </InputWrapper>
+          </InputContainer>
+          <BtnSubmit title={btnTitle} fontSize="20px" />
+        </FormContainer>
       )}
     </Formik>
   );

@@ -17,16 +17,19 @@ import PropTypes from 'prop-types';
 import sprite from '../../assets/sprite.svg';
 import { useEffect, useState } from 'react';
 
-import { pageContentToRender } from '../../utils';
+import { colors, pageContentToRender } from '../../utils';
 
 import Modal from '../../components/Modal/Modal';
 import AddProductForm from '../../components/AddProductForm/AddProductForm';
 import AddExerciseForm from '../AddExerciseForm';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addProduct } from '../../redux/products/operations';
 import textLength from '../../utils/textLength';
 import ProductOrExerciseModal from '../ProductOrExerciseModal/ProductOrExerciseModal';
 import { addExercise } from '../../redux/exercises/operations';
+import { Confirm } from 'notiflix';
+import { isTimerOn } from '../../redux/exercises/selectors';
+import { changeStatusTimer } from '../../redux/exercises/slice';
 
 const ProductsOrExercisesItem = ({ page, data }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -37,8 +40,16 @@ const ProductsOrExercisesItem = ({ page, data }) => {
   const [addedExerciseBurnedCalories, setAddedExerciseBurnedCalories] =
     useState(0);
 
-  const toggleAddModal = () => setIsModalAddOpen(state => !state);
-  const toggleSuccessModal = () => setIsModalOpen(state => !state);
+  const isTimerGoingOn = useSelector(isTimerOn);
+
+  const toggleAddModal = () => {
+    setIsModalAddOpen(state => !state);
+    document.body.classList.toggle('body-scroll-lock');
+  };
+  const toggleSuccessModal = () => {
+    setIsModalOpen(state => !state);
+    document.body.classList.toggle('body-scroll-lock');
+  };
 
   const dispatch = useDispatch();
 
@@ -93,6 +104,32 @@ const ProductsOrExercisesItem = ({ page, data }) => {
     toggleSuccessModal();
   };
 
+  const closeModalWithoutData = () => {
+    if (isTimerGoingOn) {
+      Confirm.show(
+        'Warning',
+        'Do you really want to exit? You will lost all of your progress.',
+        'Yes',
+        'No',
+        () => {
+          dispatch(changeStatusTimer(false));
+          toggleAddModal();
+        },
+        () => {
+          return;
+        },
+        {
+          backgroundColor: `${colors.black}`,
+          titleColor: `${colors.orange}`,
+          messageColor: `${colors.orangeSecondary}`,
+          okButtonBackground: `${colors.orange}`,
+        },
+      );
+    } else {
+      toggleAddModal();
+    }
+  };
+
   return (
     <Item>
       <SubDiv>
@@ -137,8 +174,11 @@ const ProductsOrExercisesItem = ({ page, data }) => {
 
       {isModalAddOpen && (
         <Modal
-          openModal={toggleAddModal}
-          width={page === 'product' ? 479 : 694}
+          openModal={
+            page === 'product' ? toggleAddModal : closeModalWithoutData
+          }
+          width={page === 'product' ? 481 : 696}
+          height={page === 'product' ? [285, 286] : [405, 550]}
         >
           {page === 'product' && (
             <AddProductForm
@@ -154,7 +194,11 @@ const ProductsOrExercisesItem = ({ page, data }) => {
       )}
 
       {isModalSuccessOpen && (
-        <Modal openModal={toggleSuccessModal} width={430}>
+        <Modal
+          openModal={toggleSuccessModal}
+          width={430}
+          height={page === 'product' ? [389, 428] : [402, 408]}
+        >
           {page === 'product' && (
             <ProductOrExerciseModal
               modalType="product"
