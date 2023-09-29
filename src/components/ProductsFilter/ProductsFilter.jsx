@@ -70,7 +70,7 @@ export default function ProductsFilter() {
   }, 500);
 
   const handleChangeQuery = event => {
-    const selectedValue = event.target.value;
+    const selectedValue = event.target.value.trim();
     debouncedHandleChange(selectedValue);
   };
   const handleChangeisReccomended = event => {
