@@ -1,4 +1,4 @@
-import{n as O,m as I,c as F,P as N,r as G,j as b,u as _,a as q,v as oe,w as ce,x as pe,y as de,z as fe,A as te,B as ge,s as ue,k as Z,D as me}from"./index-ebb62a26.js";import{s as se,f as be,h as he,i as xe,j as ve,S as ye,I as Ee,P as Ce,e as Le}from"./ProductsOrExercisesItem-3af7821c.js";import{c as ke}from"./formatDate-d1383d55.js";import{e as we,c as K,b as Se,d as Q,f as $e,g as Me,n as Ae,h as De,S as Be,a as ze}from"./swiper-bdc1d1ed.js";import{r as Ie}from"./react-responsive-ad4aff0c.js";import{s as W}from"./styled-components.browser.esm-3634f874.js";import{T as ee}from"./Title-cd076079.js";import{i as Pe}from"./exercises_desk_2x-1531e374.js";import"./BtnSubmit-1777b6be.js";import"./notiflix-aio-3.2.6.min-ad58fe18.js";const Te=O.li`
+import{n as O,m as I,c as F,P as N,r as G,j as b,u as _,a as q,v as oe,w as ce,x as pe,y as de,z as fe,A as te,B as ge,s as ue,k as Z,D as me}from"./index-5385bbe7.js";import{s as se,f as be,h as he,i as xe,j as ve,S as ye,I as Ee,P as Ce,e as Le}from"./ProductsOrExercisesItem-43eae59c.js";import{c as ke}from"./formatDate-d1383d55.js";import{e as we,c as K,b as Se,d as Q,f as $e,g as Me,n as Ae,h as De,S as Be,a as ze}from"./swiper-d9c95fcc.js";import{r as Ie}from"./react-responsive-51725be9.js";import{s as W}from"./styled-components.browser.esm-57a73a3d.js";import{T as ee}from"./Title-3bc2e008.js";import{i as Pe}from"./exercises_desk_2x-1531e374.js";import"./BtnSubmit-3c1b0633.js";import"./notiflix-aio-3.2.6.min-fa66e212.js";const Te=O.li`
   margin-bottom: 20px;
 
   &:last-child {
@@ -159,11 +159,11 @@ import{n as O,m as I,c as F,P as N,r as G,j as b,u as _,a as q,v as oe,w as ce,x
 
 
   ${I.tablet} {
-    padding: 32px 32px 48px 32px;
+    padding: 32px 32px 0px 32px;
   }
 
   ${I.desktop} {
-    padding: 0px 81px 81px 96px;
+    padding: 0px 81px 0px 96px;
   }
 `,Ze=O.div`
   ${I.desktop} {
