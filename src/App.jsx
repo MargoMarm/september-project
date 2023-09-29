@@ -6,11 +6,7 @@ import { fetchCurrentUser } from './redux/auth/operation';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
 
-import {
-  PrivateRoute,
-  PublicRoute,
-  RestrictedRoute,
-} from './components/Routes';
+import { PrivateRoute, PublicRoute } from './components/Routes';
 import { UseAuth } from './hooks/useAuth';
 
 const Home = lazy(() => import('../src/pages/Home/Home'));
@@ -31,10 +27,8 @@ const Profile = lazy(() => import('./pages/Profile/Profile'));
 function App() {
   const dispatch = useDispatch();
 
-  const { isRefreshing, isLoggedIn, user } = UseAuth();
+  const { isRefreshing, isLoggedIn } = UseAuth();
   const { pathname } = useLocation();
-
-  const emptyUserParams = Object.keys(user.bodyParameters).length === 0;
 
   if (isLoggedIn && pathname !== '/') {
     localStorage.setItem('location', pathname);
@@ -59,10 +53,7 @@ function App() {
           <Route
             path="/signin"
             element={
-              <PublicRoute
-                component={<SignIn />}
-                redirectTo={emptyUserParams ? '/params' : '/diary'}
-              />
+              <PublicRoute component={<SignIn />} redirectTo={'/diary'} />
             }
           />
           <Route
@@ -77,7 +68,7 @@ function App() {
           />
           <Route
             path="/params"
-            element={<RestrictedRoute component={<Params />} redirectTo="/" />}
+            element={<PrivateRoute component={<Params />} redirectTo="/" />}
           />
           <Route
             path="/exercises"

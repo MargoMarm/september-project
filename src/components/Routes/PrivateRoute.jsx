@@ -3,16 +3,10 @@ import PropTypes from 'prop-types';
 import { UseAuth } from '../../hooks/useAuth';
 
 const PrivateRoute = ({ component, redirectTo = '/' }) => {
-  const { isLoggedIn, isRefreshing, user } = UseAuth();
+  const { isLoggedIn, isRefreshing } = UseAuth();
   const shouldRedirect = isLoggedIn && !isRefreshing;
 
-  const emptyUserParams = Object.keys(user.bodyParameters).length === 0;
-
-  return shouldRedirect ? (
-    component
-  ) : (
-    <Navigate to={emptyUserParams ? '/params' : redirectTo} />
-  );
+  return shouldRedirect ? component : <Navigate to={redirectTo} />;
 };
 
 PrivateRoute.propTypes = {
