@@ -10,3 +10,4 @@ export const selectDailyСalories = state => state.auth.user.dailyСalories;
 
 export const selectError = state => state.auth.error;
 
+export const isLoadingSignInOrSignUp = state => state.auth.isLoading;
