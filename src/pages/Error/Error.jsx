@@ -13,19 +13,7 @@ import sprite from '../../assets/sprite.svg';
 import { UseAuth } from '../../hooks/useAuth';
 
 const Error = () => {
-  const { isLoggedIn, user } = UseAuth();
-
-  const emptyUserParams = Object.keys(user.bodyParameters).length === 0;
-
-  const redirectRoute = () => {
-    if (isLoggedIn && emptyUserParams) {
-      return '/params';
-    } else if (isLoggedIn && !emptyUserParams) {
-      return 'diary';
-    } else if (isLoggedIn === false) {
-      return '/';
-    }
-  };
+  const { isLoggedIn } = UseAuth();
 
   return (
     <main>
@@ -51,7 +39,7 @@ const Error = () => {
             type="button"
             text={'Go Home'}
             isorange={'true'}
-            to={redirectRoute()}
+            to={isLoggedIn ? '/diary' : '/'}
           />
         </Content>
 
