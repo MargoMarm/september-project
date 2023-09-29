@@ -24,6 +24,7 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  isLoading: false,
 };
 
 const replaceUserState = (state, payload) => {
@@ -40,15 +41,22 @@ export const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: builder => {
+    builder.addCase(authUser.pending, state => {
+      state.error = null;
+      state.isLoading = true;
+    });
     builder.addCase(authUser.fulfilled, (state, action) => {
       state.token = action.payload.token;
       state.user.name = action.payload.name;
       state.user.email = action.payload.email;
       state.isLoggedIn = true;
       state.error = null;
+      state.isLoading = false;
     });
-    builder.addCase(authUser.rejected, (state, action) => {
-      state.error = action.payload;
+    builder.addCase(authUser.rejected, (state, { payload }) => {
+      state.error = payload;
+      Notify.failure(payload);
+      state.isLoading = false;
     });
 
     builder.addCase(updateBodyParts.fulfilled, (state, { payload }) => {
@@ -60,12 +68,18 @@ export const authSlice = createSlice({
       state.token = payload.token;
       state.isLoggedIn = true;
       state.error = null;
+      state.isLoading = false;
     });
     builder.addCase(logInUser.rejected, (state, action) => {
       state.error = action.payload;
+      state.isLoading = false;
       Notify.failure(
         'Oops... Something went wrong! Enter correct email or password',
       );
+    });
+    builder.addCase(logInUser.pending, state => {
+      state.error = null;
+      state.isLoading = true;
     });
 
     builder.addCase(logOutUser.fulfilled, state => {

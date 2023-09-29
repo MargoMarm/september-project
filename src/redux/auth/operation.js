@@ -23,7 +23,7 @@ export const authUser = createAsyncThunk(
       return data;
     } catch (error) {
       toast.error('Oops... Something went wrong! Try again!');
-      return rejectWithValue('Oops... Something went wrong!');
+      return rejectWithValue(error.response.data.message);
     }
   },
 );
