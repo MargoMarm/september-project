@@ -10,6 +10,7 @@ export const ScrollContainer = styled.div`
 
   ${mq.tablet} {
     width: ${({ width }) => width?.tab + 'px' || '100%'};
+    height: 550px;
     scrollbar-color: ${colors.orange} ${colors.textWhite01};
     scrollbar-width: thin;
     ::-webkit-scrollbar {
@@ -27,6 +28,6 @@ export const ScrollContainer = styled.div`
   }
   ${mq.desktop} {
     width: ${({ width }) => width?.dt + 'px' || '100%'};
-    height: calc(100vh - 230px);
+    height: 570px;
   }
 `;

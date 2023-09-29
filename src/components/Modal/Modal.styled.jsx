@@ -29,7 +29,7 @@ export const ModalWrap = styled.div`
   ${mq.mobile} {
     width: 335px;
   }
-  padding: 48px 20px;
+  padding: 40px 20px;
   border-radius: 8px;
   background-color: ${colors.modalBlack};
   z-index: 1;
@@ -38,7 +38,7 @@ export const ModalWrap = styled.div`
     width: ${props => props.width}px;
     max-height: ${props => props.height[1]}px;
 
-    padding: 48px 32px;
+    padding: 40px 32px;
   }
 `;
 
