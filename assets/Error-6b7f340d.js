@@ -1,4 +1,4 @@
-import{n as o,m as t,c as n,U as d,j as e,s,C as h}from"./index-1ab40bd0.js";import{i as l}from"./exercises_desk_2x-1531e374.js";const g=o.div`
+import{n as e,m as t,c as i,U as s,j as o,s as n,C as r}from"./index-5385bbe7.js";import{i as p}from"./exercises_desk_2x-1531e374.js";const d=e.div`
   display: flex;
   position: relative;
   ${t.mobile} {
@@ -12,7 +12,7 @@ import{n as o,m as t,c as n,U as d,j as e,s,C as h}from"./index-1ab40bd0.js";imp
   ${t.desktop} {
     width: 1440px;
   }
-`,x=o.div`
+`,h=e.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -22,7 +22,7 @@ import{n as o,m as t,c as n,U as d,j as e,s,C as h}from"./index-1ab40bd0.js";imp
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
-  background-color: ${n.orange};
+  background-color: ${i.orange};
 
   ${t.mobile} {
     width: 240px;
@@ -43,10 +43,10 @@ import{n as o,m as t,c as n,U as d,j as e,s,C as h}from"./index-1ab40bd0.js";imp
     padding-bottom: 96px;
     height: 100vh;
   }
-`,c=o.h1`
+`,x=e.h1`
   margin-bottom: 14px;
 
-  color: ${n.white};
+  color: ${i.white};
   font-family: Roboto;
   font-size: 66px;
   font-style: normal;
@@ -61,10 +61,10 @@ import{n as o,m as t,c as n,U as d,j as e,s,C as h}from"./index-1ab40bd0.js";imp
     font-size: 160px;
     margin-bottom: 28px;
   }
-`,m=o.p`
+`,g=e.p`
   margin-bottom: 28px;
 
-  color: ${n.white};
+  color: ${i.white};
   font-family: Roboto;
   font-size: 14px;
   font-style: normal;
@@ -83,7 +83,7 @@ import{n as o,m as t,c as n,U as d,j as e,s,C as h}from"./index-1ab40bd0.js";imp
   ${t.desktop} {
     width: 447px;
   }
-`,b=o.div`
+`,l=e.div`
   display: none;
   ${t.mobile} {
     position: absolute;
@@ -98,7 +98,7 @@ import{n as o,m as t,c as n,U as d,j as e,s,C as h}from"./index-1ab40bd0.js";imp
     background-repeat: no-repeat;
     background-position: center;
     background-size: 446px auto;
-    background-image: url(${l});
+    background-image: url(${p});
   }
 
   ${t.tablet} {
@@ -111,14 +111,14 @@ import{n as o,m as t,c as n,U as d,j as e,s,C as h}from"./index-1ab40bd0.js";imp
     width: 670px;
     height: 100vh;
   }
-`,f=o.div`
+`,c=e.div`
   margin-top: 24px;
   margin-bottom: 125px;
-`,u=o.svg`
+`,m=e.svg`
   width: 44px;
   height: 17px;
   margin-right: 8px;
-`,w=o.svg`
+`,b=e.svg`
   width: 100px;
   height: 17px;
-`,v=()=>{const{isLoggedIn:i,user:a}=d(),r=Object.keys(a.bodyParameters).length===0,p=()=>{if(i&&r)return"/params";if(i&&!r)return"diary";if(i===!1)return"/"};return e.jsx("main",{children:e.jsxs(g,{children:[e.jsxs(x,{children:[e.jsxs(f,{children:[e.jsx(u,{children:e.jsx("use",{href:s+"#icon-logo_error"})}),e.jsx(w,{children:e.jsx("use",{href:s+"#icon-PowerPulse"})})]}),e.jsx(c,{children:"404"}),e.jsx(m,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),e.jsx(h,{type:"button",text:"Go Home",isorange:"true",to:p()})]}),e.jsx(b,{})]})})};export{v as default};
+`,w=()=>{const{isLoggedIn:a}=s();return o.jsx("main",{children:o.jsxs(d,{children:[o.jsxs(h,{children:[o.jsxs(c,{children:[o.jsx(m,{children:o.jsx("use",{href:n+"#icon-logo_error"})}),o.jsx(b,{children:o.jsx("use",{href:n+"#icon-PowerPulse"})})]}),o.jsx(x,{children:"404"}),o.jsx(g,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),o.jsx(r,{type:"button",text:"Go Home",isorange:"true",to:a?"/diary":"/"})]}),o.jsx(l,{})]})})};export{w as default};
