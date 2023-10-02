@@ -93,7 +93,15 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const Watch = styled.span`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: 16px;
   line-height: 150%;
   color: ${colors.white};
+`;
+
+export const Round = styled.span`
+  display: block;
 `;

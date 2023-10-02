@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import { capitalizeWord } from '../../utils/capitalizeWord';
+import { useDispatch } from 'react-redux';
 
 import Timer from '../Timer';
 import {
@@ -14,12 +14,13 @@ import {
   InfoCardConteiner,
   TimerContainer,
   Container,
+  Round,
 } from './AddExerciseForm.styled';
-
-import formatDate from '../../utils/formatDate';
 import { AddButton } from '../AddProductForm/AddProductForm.styled';
-import { useDispatch } from 'react-redux';
+
 import { changeStatusTimer } from '../../redux/exercises/slice';
+import { capitalizeWord } from '../../utils/capitalizeWord';
+import formatDate from '../../utils/formatDate';
 
 export default function AddExerciseForm({ data, addExercise }) {
   const {
@@ -37,6 +38,7 @@ export default function AddExerciseForm({ data, addExercise }) {
   const [exTime, setExTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
+  const [round, setRound] = useState(1);
 
   const dispatch = useDispatch();
 
@@ -45,16 +47,34 @@ export default function AddExerciseForm({ data, addExercise }) {
     setBurnedCalory(burnedCalory);
   };
 
+  const countRound = () => {
+    if (exTime > 0 && exTime % 180 === 0) {
+      setRound(prevSt => prevSt + 1);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [intervalId]);
+
+  useEffect(() => {
+    return () => {
+      setRound(1);
+    };
+  }, []);
+
   useEffect(() => {
     countCalory(calories, time, exTime);
   }, [calories, time, exTime]);
 
-  const writeTime = () => {
-    setExTime(prevSt => prevSt + 1);
-  };
+  useEffect(countRound, [exTime]);
 
   const startExercise = () => {
-    const intervalId = setInterval(writeTime, 1000);
+    const intervalId = setInterval(() => {
+      setExTime(prevSt => prevSt + 1);
+    }, 1000);
     setIntervalId(intervalId);
     setIsPlaying(true);
     dispatch(changeStatusTimer(true));
@@ -79,9 +99,12 @@ export default function AddExerciseForm({ data, addExercise }) {
         : '0' + (remainingTime % 60);
 
     return (
-      <Watch>
-        {minutes}:{seconds}
-      </Watch>
+      <>
+        <Watch>
+          {minutes}:{seconds}
+          <Round>Round: {round}</Round>
+        </Watch>
+      </>
     );
   };
 
@@ -98,6 +121,7 @@ export default function AddExerciseForm({ data, addExercise }) {
           calory={burnedCalory}
           writeTime={writeRemainengTime}
           isPlaying={isPlaying}
+          round={round}
         />
       </TimerContainer>
       <InfoCardConteiner>
