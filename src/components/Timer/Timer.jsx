@@ -17,6 +17,8 @@ export default function Timer({
   calory,
   startExercise,
   stopExercise,
+
+  round,
 }) {
   return (
     <>
@@ -25,10 +27,13 @@ export default function Timer({
         <CountdownCircleTimer
           size={124}
           duration={180}
-          colors="#E6533C"
+          colors={round === 1 ? '#E6533C' : '#419B09'}
           strokeWidth={4}
           trailColor="#EFEDE81A"
           isPlaying={isPlaying}
+          onComplete={() => {
+            return { shouldRepeat: true, delay: 0 };
+          }}
         >
           {writeTime}
         </CountdownCircleTimer>
@@ -63,4 +68,5 @@ Timer.propTypes = {
   startExercise: PropTypes.func.isRequired,
   stopExercise: PropTypes.func.isRequired,
   isPlaying: PropTypes.bool.isRequired,
+  round: PropTypes.number.isRequired,
 };
